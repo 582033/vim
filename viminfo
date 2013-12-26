@@ -1,0 +1,3244 @@
+# 这个 viminfo 文件是由 Vim 7.4 所产生。
+# 如果想要自行修改请特别小心！
+
+# 文件被写的时候 ‘encoding’ 的值
+*encoding=utf-8
+
+
+# hlsearch on (H) or off (h):
+~H
+# 上个 Search 图案：
+~MSle0~/2Arr
+
+# 上个 替换 Search 图案：
+~MSle0&PN
+
+# 最后替换的字符串
+$mfrs
+
+# 命令行 历史记录 (从新到旧)：
+:q
+:sp tcm
+:sp 
+:q!
+:wq
+:!tail -f /tmp/dig_count.txt
+:sp ../models/ichat/ichat_dig_model.php
+:w
+:!tail -f /tmp/dig_
+:!
+:sp tcm/
+:asdfjsdaf 
+:!tail -f /tmp/json.txt
+:se nu
+:sp
+:!tail -f /tmp/json.t
+:sp ../
+:sp ichat_model.php
+:sp kpilib.php
+:'<,'>s/PN/mfrs/g
+:'<,'>s/tmp_file/PN/g
+:'<,'>s/mfrs/PN/g
+:'<,'>s/end_time/mfrs/g
+:'<,'>s/file_path/end_time/g
+:'<,'>s/file_path/start_time/g
+:'<,'>s/start/end/g
+:sp ../../controllers/attendence/TCM.php
+:sp tcm/kemi.php
+:'<,'>s/'/"/g
+:se fdm=indent
+:'<,'>s/time/date/g
+:%s/1000/500/g
+:'<,'>s/start_time/end_time/g
+:sp ../manage_settinglib.php
+:sp ../manage_companylib.php
+:sp ../learning_courseslib.php
+:'<,'>s/_this/_tmpObj/g
+:se paste
+:'<,'>s/"/'/g
+:set fdm=indent
+:sp 001-company_private_message_frequently_create.sql
+:%s/\r//g
+:%s/
+:'<,'>s/kemi/zhongkong/g
+:sp tcm/kemilib.php
+:sp ../../../dev/manage_learning/
+:set fdm=marker
+:sp ../../third_party/linuxUpload/disposeFile.php
+:vi ..
+:vi 
+:w !sudo tee "%"
+:we
+:sp base_controller.php
+:s
+:sp ../../libraries/mqlib.php
+:sp ../../libraries/cnemaillib.php
+:sp ../profile/member.php
+:BundleInstall
+:set 
+:'<,'>q
+:set fdm=maker
+:h hl-pmenu
+:sp ../../../default/manage/setting/company_background_custom.html
+:sp ../l
+:w!!
+:sp learning_coursesfeedbacklib.php
+:sp admin_accountlib.php
+:Q
+:vs application/views/default/manage/setting/company_level.html
+:vs application/views/default/manage/se
+:vi application/libraries/manage_settinglib.php
+:v
+:%s/score/exp/g
+:sp application/views/default/manage/setting/company_level.html
+:'<,'>s/score/exp/g
+:'<,'>s/level/title/g
+:sp detail.html2
+:split 
+:'<,'>s/courseObj/attachmentObj/g
+:'<,'>s/coursewareObj/courseObj/g
+:'<,'>s/title/content/g
+:'<,'>s/coursewareObj/obj/g
+:sp ../../libraries/learning_courseslib.php
+:vs ../../config/routes.php
+:'<,'>s/path/file/g
+:/th	
+:sp ../../third_party/linuxUpload/
+:q!~
+:Lw
+:'<,'>s/附件/缓存附件/g
+:!ping 208.110.83.242
+:%s/rank/exp/g
+:!tail -f /tmp/a.txt
+:L
+:se paragraphs
+:e ++enc=utf8;
+:q!==	
+:e ++enc =utf8;
+:set fileencoding=utf8;
+:set env=utf8;
+:sp ../../views/dev/_header.html
+:sp questions.php
+:sp account.php
+:'<,'>s/Info/_info/g
+:w'
+:sp domain_model.php
+:sp ../../../dev/manage/setting/company_info.html
+:sp ../../../system/libraries/kindeditor_upload.php
+:vi ../../
+:sp ../../libraries/editorlib.php
+:sp ../manage/announce.php
+:'<,'>s/manage/admin/g
+:'<,'>s/score/data/g
+:sp settings.php
+:sp 006-company_department-table-add-department_leader_id.sql
+:'<,'>s/公告/帮助/g
+:'<,'>s
+:sp 006-create-table-system_help.sql
+:sp member.php
+:sp test.php
+:'<,'>s/accept/refuse/g
+:%s/\n//g
+:'<,'>s/independent_domain/record/g
+:sp system/helpers/url_helper.php
+:sp 033-create-company_log_score-table.sql
+:sp manage_companylib.php
+:sp ../../../config/data/
+:sp ../../../config/config.php
+:sp ../third_party/php-amqplib/demo/config.php
+:help fdm
+:set fmd=indent
+:sp application/views/dev/manage/setting/company_info.html
+:sp system/
+:sp company_setting.php
+:sp 018-company_member_token_table_change_last_login_datetime.sql
+:'<,'>s/_mail/_sms/g
+:sp manage_settinglib.php
+:sp constant.php
+:%s/manage_mail_model/manage_conf_mail_model/g
+:sp constants.php
+:sp manage_memberlib.php
+:sp test_model.php
+:sp company_info.html
+:qw
+:sp system/database/drivers/mysql/mysql_driver.php
+:sp system/database/drivers/mysql/mysql_forge.php
+:set
+:set paste
+:sp ~/letou/clean_ci/application/core/MY_Controller.php
+:'<,'>w
+:%s/\n/\n\r/g
+:%s/\r/\n\r/g
+:'<,'>s/width/height/g
+:W
+:'<,'>s/view/real/g
+:sp ../../libraries/imagelib.php
+:Tlist
+:tlist
+:'<,'>s/province/city/g
+:wjjjjk
+:sp ../test.php
+:sp ../../test/index.html
+:sp support_lang_type.inc.php
+:vs support_lang_name.inc.php
+:sp user_level.inc.php
+:sp bearos.sql
+:'<,'>s/type/action/g
+:%s/uid/member_id/g
+:sp test.sql
+:sp beareos.sql
+:%s/secord/second/g
+:%s/did/domain_id/g
+:%s/cid/company_id/g
+:sp ../local.config.php
+:se pas
+:'<,'>s/;//g
+:sp ../../../sta/js/main.coffee
+:wq!
+:w!
+:vi auth.php
+:vi login.php
+:sp user.php
+://www.csser.com/tools/backbone/backbone.js.html*--rz -E
+:vs ../models/base_model.php
+:vs ../views/admin/recipe_edit.tpl
+:sp ../models/recipe_model.php
+:sp yjiang
+:sp redis_demo.php
+:sp ../models/demo_model.php
+:sp ../libraries/demolib.php
+:vs ../core/MY_Controller.php
+:sp ../../system/libraries/Cache/drivers/Cache_redis.php
+:sp ../core/MY_Controller.php
+:vs config.php
+:sp my_load.php
+::q
+:sp test.py
+:vi ../config/local.config.php
+:vs ../config/local.config.php
+:vi ../config/config.php
+:vi ../controllers/api/app.php
+:'<,'>s/encode/decode/g
+:sp ../config/routes.php
+:'<,'>s/setline/append/g
+:sp b.coffee
+:q:q
+:tagList
+:sp topic_list.tpl
+:sp ../models/follow_model.php
+:sp user_model.php
+:'<,'>s/xschool/aigou/g
+:vi ../views/libs/
+:'<,'>s/aigou/xschool/g
+:sp ../controllers/base.php
+:sp ../models/thirdparty_model.php
+:vs ../controllers/base.php
+:vs bind_model.php
+:sp ../models/bind_model.php
+:sp ../controllers/binds.php
+:vi ../models/xschool_model.php
+:sp ../models/application_model.php
+:sp ../models/member_application_model.php
+:sp ../../controllers/binds.php
+:sp binds.php
+:%s/006cfe/FF7200/g
+:vs ../models/mail_model.php
+:sp ../models/register_model.php
+:sp ../models/user_model.php
+:sp ../models/login_model.php
+:sp ../config/config.php
+:sp ../controllers/follow.php
+:ql
+:sp libs/header.tpl
+:vi welcome.tpl
+:sp login.css
+:vi ../../../js/register.coffee
+:sp ../../../
+:sp ../../../js/checkform.coffee
+:sp ../../../js/register.coffee
+:vi ../models/mail_model.php
+:set paragraphs
+:sp ../views/admin/user_list.tpl
+:vi ../views/
+:vi rewards/reward_bank.tpl
+:vi ../re
+:vi ../config/routes.php
+:vi ../config/
+:vs ../config/config.php
+:vi ../models/re
+:sp comment.php
+:'<,'>s/'/"/
+:sp recipe.php
+:vs recipe.php
+:vi login.tpl
+:vi index.tpl
+:sp login.tpl
+:vs comment.php
+:!pwd
+:vi ads_list.tpl
+:sp comment_list.tpl
+:vi comment.php
+:vi recipe.php
+:vs ../models/recipe_model.php
+:sp ../models/ads_model.php
+:vi ../models/ads_model.php
+:vs ../models/uploads.php
+:'<,'>s/cover_url/picture/g
+:'<,'>s/recipe_id/ads_id/g
+:vi follow.php
+:vi ../config/autoload.php
+:'<,'>s/comment/ads/g
+:sp admin.php
+:sp follow.php
+:sp login.php
+:'<,'>s/content/describe/g
+:'<,'>s/comment/follow/g
+:sp admin/comment_list.tpl
+:'<,'>s/describe/content/g
+:sp ../index.tpl
+:'<,'>s/follow/comment/g
+:'<,'>s/recipe/follow/g
+:sp index.tpl
+:sp recipe_e
+:sp libs/head.tpl
+:'<,'>s/recipe_id/topic_id/g
+:sp ../views/admin/topic_edit.tpl
+:'<,'>s/name/recipe_ids/g
+:'<,'>s/recipe/topic/g
+:vi ../models/recipe_model.php
+:sp ../models/re
+:sp admin/recipe_list.tpl
+:'<,'>s/cover/instruction_url/g
+:'<,'>s/gredient/struction/g
+:'<,'>s/name/amount/g
+:vs ../views/admin/cate_edit.tpl
+:sp ad
+:sp cate_list.tpl
+:%s/专辑/专题/g
+:vi topic.php
+:sp base_model.php
+:vi ../models/follow_model.php
+:sp re
+:%s/category/ads/g
+:sp ads_list.tpl
+:sp ../admin/ads_list.tpl
+:wk
+:sp config.php
+:j
+:vi
+:'<,'>s/avatar/resume/g
+:vi recipe_list.tpl
+:'<,'>s/ads/users/g
+:vs ../models/follow_model.php
+:vi ../models/user_model.php
+:sp ads.php
+:vi comment_list.tpl
+:vi recommand_list.tpl
+:sp recipe_list.tpl
+:vi sites-enabled/beartech
+:sp /etc/varnish/default.vcl
+:sp /etc/apache2/sites-enabled/beartech
+:vi yjiang
+:vi aa
+:'<,'>s/pipe/pass/g
+:sp recipe_model.php
+:sp topic_edit.tpl
+:vi topic_edit.tpl
+:sp recipe_edit.tpl
+:sp cate_edit.tpl
+:'<,'>s/add/edit/g
+:'<,'>add/edit/g
+:'<,'>s/del/add/g
+:'<,'>s/topic/recommand/g
+:'<,'>s/ads/user/g
+:sp aa
+:sp ../admin/
+:wq]
+:vi /etc/apache2/sites-enabled/beartech
+:sp ../models/tag_model.php
+:vi /etc/apache2/sites
+:sp admin/index.tpl
+:%s/爱提问/X用户俱乐部/g
+:vi libs/footer.tpl
+:sp index
+:sp welcome.tpl
+:set nu
+:vi ../../../js/main.coffee
+:sp ../../../css/style.css
+:sp buttons.css
+:sp ~/beartech/food_backend/application/models/follow_model.php
+:vi models/user_model.php
+:sp controllers/binds.php
+:sp models/bind_model.php
+:sp controllers/
+:vi ../models/admin_model.php
+:vs ../views/admin/cate_list.tpl
+:vs ../views/admin/libs/head.tpl
+:sp ../views/admin/admin_edit.tpl
+:sp ../views/
+:!python test.py
+:!! python test.py
+:.,.+2q
+:sp ../controllers/demo.php
+:vs ../libraries/demolib.php
+:vi demo_model.php
+:sp basemodel.php
+:c
+:sp autoload.php
+:se nonu
+:sp barlib.php
+:sp ../barlib.php
+:sp Common.php
+:vs ../../system/core/
+:vs ../../system/libraries/
+:vs ../../system/libraries/Javascript.php
+:vs ../../
+:sp ../cuantudou/
+:sp updateVersion.sh
+:sp ~/beartech/cuantudou/application/config/constants.php
+:'<,'>s/\$(\'#upload_logo_form\')/logo_form/g
+://news.163.com/13/0923/22/99G6A0I50001124J.html
+:'<,'>s/data/return/g
+:se pars
+:i
+:sp ../../_footer.html
+:'<,'>s/_name/_short/g
+:sp 006-company_group-table-change-create_time.sql
+:sp 005-company_group_member_table-change-group_meber_id.sql
+:sp 001-company_group-table-change-group_name.sql
+:sp 002-company_member-table-change-status.sql
+:sp 02
+:sp ../readme.md
+:sp 08.sql
+:sp ../../libraries/manage_settinglib.php
+:sp ../../helpers/form_helper.php
+:sp ../../models/test_model.php
+:sp ../../models/domain_model.php
+:sp member_add.php
+:sp company_model.php
+:sp 004-company_group_member-table-add-company_id.sql
+:'<,'>s/ci/obj/g
+:sp memcached.php
+:sp group.php
+:w3q
+:sp manage_grouplib.php
+:vs manage_grouplib.php
+:sp ../models/test_model.php
+:sp manage_departmentlib.php
+:sp testlib.php
+:%s/\r/\r\r/g
+:%s/\r/\n/g
+:%s/\n\r/\n/g
+:sp company_sms.html
+:'<,'>s/default_level/conf/g
+:'<,'>s/mail/sms/g
+:help
+:help syntax
+:set fdm=mark
+:set fdm=syntax
+:set fdm=sytax
+:set fdm=?
+:'<,'>s/level/rule/g
+:se fdm=?
+:fdm=?
+:?fdm
+:se fdm=syntax
+:'<,'>s/default_1/config\[\'3\'\]/g
+:'<,'>s/default_2/config\[\'2\'\]/g
+:'<,'>s/default_1/config\[\'1\'\]/g
+:'<,'>s/default_1/default_2/g
+:'<,'>s/config/default_1/g
+:'<,'>s/config
+:%s/config\[/config\[\'0\'\]\[/g
+:%s/config[/config[\'0\'][/g
+:%s/config[/config[\'0\']/g
+:sp 014-company_membe_table-change-index.sql
+:'<,'>s/score/max/g
+:sp ../_header_menu.html
+:sp company_
+:'<,'>s/title/score/g
+:'<,'>s/rule/score_rule/g
+:'<,'>s/level_id/conf_offset/g
+:'<,'>s/title/max/g
+:'<,'>s/level/score_rule/g
+:sp ../manage/setting/company_level.html
+:sp ../../libraries/manage_companylib.php
+:sp ../manage/system_setting.php
+:'<,'>s/type/detail/g
+:'<,'>s/type/detail.g
+:'<,'>s/type_id/service_id/g
+:'<,'>s/max_messages/available_capacity/g
+:'<,'>s/max_messages/expiration/g
+:'<,'>s/apps/messages/g
+:'<,'>s/peple/people
+:qq
+:'<,'>s/start/offset/g
+:'<,'>s/limit/perpage/g
+:'<,'>s/start/
+:sp ~/beartech/chinese_food/application/core/MY_Controller.php
+:sp system_setting.php
+:'<,'>s/manage_companylib/system_settinglib/g
+:sp ..
+:sp manage_report_memberlib.php
+:Zw
+:'<,'>s/start/limit/g
+:'<,'>s/start/limit/hg
+:vi company_level.html
+:'<,'>s/',/,/g
+:'<,'>s/domain_id/action/g
+:%s/\n$//g
+:%s/\n\r//g
+:%s/^\r$//g
+:%s/^\n$//g
+:%s/^/n//g
+:%s/^/r//g
+:sp ../phpmyadmin_old/config.inc.php
+:vi 001-company_private_message_frequently_create.sql
+:sp 004-company_member_add_images.sql
+:wqa
+:'<,'>s/score/images/g
+:sp uploads.php
+:vi member.php
+:vi ../manage/company_setting.php
+:'<,'>s/company_id/member_id/g
+:Tlistr
+:sp ../controllers/api/settings.php
+:sp folderlib.php
+:sp ../../models/member_model.php
+:'<,'>s/6/8/g
+:'<,'>s/WEB/APP/g
+:'<,'>s/web/app/g
+:sp system_help_model.php
+:sp system_settinglib.php
+:sp ../libraries/system_helplib.php
+://living.dangdang.com/20131028_eayd?_ddclickunion=P-295759|ad_type=10|sys_id=1#dd_refer=http%3A%2F%2Fwww.smzdm.com%2Fgo%2F336065
+:264
+<//living.dangdang.com/20131028_eayd?_ddclickunion=P-295759|ad_type=10|sys_id=1#dd_refer=http%3A%2F%2Fwww.smzdm.com%2Fgo%2F336065http://living.dangdang.com/20131028_eayd?_ddclickunion=P-295759|ad_type=10|sys_id=1#dd_refer=http%3A%2F%2Fwww.smzdm.com%2Fgo%2F336065
+:sp announce.php
+:sp memberlib.php
+:sp 008-system_help-table-add-order-field.sql
+:sp list.html
+:sp ../../manage/announce/add.html
+:/as;ljfdasldf
+:'<,'>s/d/h/g
+:'<,'>s/return/data/g
+:sp ../../libraries/manage_
+:set fmd=syntx
+:hep fdm
+:se fdmsyntax
+:se fd=syntax
+:sp libs/company_default_logo.html
+:%s/customPressBar/progressBar/g
+:'<,'>
+:vs ../company/index.html
+:vs ../../models/domain_model.php
+:SP ../../
+:'<,'>s/
+:sp ../../../dev/manage/setting/company_domain.html
+:sp ../models/domain_model.php
+::
+:%s/source_logo_img/custom_logo_image_result/g
+:sp ../../libraries/system_settinglib.php
+:'<,'>s/member_name/score/g
+:%s/default_value/placeholder/g
+:sp language_setting.html
+:set parst
+:set fileencoding=gbk
+:set fileencoding
+:sp application/config/local.tpl_dir.php
+:help enc
+:se ++enc=?
+:set enc=?
+:se enc=?
+:help encoding
+:set encoding=?
+:sp application/config/options/
+:sp application/config/data/
+:sp application/config/config.php
+:'<,'>s/\$url/\$src/g
+:sp ../libraries/imagelib.php
+:'<,'>s/static/public/g
+:'<,'>static/public/g
+:sp ../../libraries/memberlib.php
+:a
+:vi ../../models/member_model.php
+:'<,'>s/cute/martial/g
+:'<,'>s/scape/building/g
+:'<,'>s/scape/biulding/g
+:sp 011-company_member_update.sql
+:sp 011-company_member_
+:'<,'>s/member_name/avatar/g
+:sp application/core/MY_Controller.php
+:'<,'>s/,/,\ /g
+:help ls
+:bd
+:db
+:b
+:ls
+:reg
+:sp ./
+:sp ../bearos.sql
+:sp ../learning.sql
+:'<,'>s/information/courseware/g
+:sp application/libraries/learning_courseslib.php
+:sp ../../../beartech
+:sp ../../views/default/manage/setting/company_level.html
+:sp member_model.php
+:sp 018-company_private_message_content_add_field.sql
+:sp ../../config/routes.php
+:sp function.html_options.php
+:sp function.html_image.php
+:sp city.inc.php
+:sp company_menu_custom.html
+:vs company_background_custom.html
+:sp libs/company_custom_lib.html
+:sp ../../../dev/manage/setting/company_score_rule.html
+:vs learning_training_course_model.php
+:vs ../libraries/learning_courseslib.php
+:sp learning_training_course_model.php
+:sp member.phpq
+:sp tag.php
+:sp ../third_party/linuxUpload/uploads.php
+:sp libs/member_info.html
+:sp avatar.html
+:sp account_manage.html
+:sp libs/sub_menus.html
+:'<,'>s/score/rule/g
+:'<,'>s/;/,/g
+:'<,'>s/level/score/g
+:sp ../../controllers/
+:sp ../../
+:'<,'>s/level/result/g
+:sp ../../../default/manage/setting/
+:'<,'>s/error/size/g
+:'<,'>s/type/error/g
+:'<,'>s/type/tmp_name/g
+:'<,'>s/name/type/g
+:'<,'>s/api/json/g
+:sp ../../../application/config/routes.php
+:sp ../../../application/
+:'<,'>s/url/uri/g
+:'<,'>s/200/120/g
+:sp score_rule.inc.php
+:sp file_type.inc.php
+:sp state.inc.php
+:sp ../../libraries/auditlib.php
+:sp kpiconfiglib.php
+:sp manage/system_setting.php
+:sp ../../libraries/kpiconfiglib.php
+:sp ../models/
+:sp ../config/options/zh_cn/operate_description.inc.php
+:vs manage_companylib.php
+:sp scorelib.php
+:vi scorelib.php
+:sp ../publics.php
+:se 
+:sp imagelib.php
+:sp ../ra
+:sp ../er
+:vs ../../libraries/imagelib.php
+:'<,'>s/_cute//g
+:vi ../../libraries/avatarlib.php
+:vs ../../libraries/avatarlib.php
+:sp ../api/settings.php
+:sp ../api/member.php
+:sp ../../config/options/zh_cn/operate_description.inc.php
+:sp ../../views/default/profile/member/profile.html
+:vi ../../libraries/auditlib.php
+:vi ../../config/options/zh_cn/operate_description.inc.php
+:sp auditlib.php
+:'<,'>s/title/description/g
+:'<,'>s/title/descr
+:vi kpiconfiglib.php
+:'<,'>s/male/female/g
+:'<,'>s/martial/male/g
+:'<,'>s/martial/female/g
+:'<,'>s/cute/male/g
+:'<,'>s/url
+:sp application/views/default/profile/member/avatar.html
+:sp ../../manage/setting/libs/company_default_logo.html
+:sp libs/custom_div_lib.html
+:sp ../../../controllers/
+:sp ../manage/setting/company_info.html
+:%s/‘/
+:sp ../libraries/manage_settinglib.php
+:sp ichat_score_rule.inc.php
+:'<,'>s/300/\$exp/g
+:'<,'>s/web/all/g
+:'<,'>s/web/a;;/g
+:'<,'>s/分值/经验/g
+:vi ../../libraries/manage_companylib.php
+:vi ../../libraries/manage_memberlib.php
+:sp commonpagelib.php
+:vi c
+:sp ../controllers/profile/member.php
+:vs auditlib.php
+:%s/AuditLIb/ScoreLib/g
+:sp ../controllers/profile/
+:vs application/libraries/auditlib.php
+:sp application/libraries/scorelib.php
+:vs application/libraries/kpilib.php
+:vi application/libraries/scorelib.php
+:sp application/libraries/kpilib.php
+:'<,'>s/member_id/company_id/g
+:vs ../
+:vs accountlib.php
+:sp obj-
+:vi kpilib.php
+:sp ../controllers/account.php
+:sp company_score_rule.html
+:'<,'>s/exp/max_exp/g
+:'<,'>s/max/exp/g
+:sp ../../../../static/public/framework/flexpaper/
+:vi  
+:sp ../index.html
+:se fdm=marker
+:set vimr
+:h fdm
+
+# 查找字符串 历史记录 (从新到旧)：
+? ^\([ 	]*Last modified: \)
+?/2Arr
+?/checking
+?/kaljsdfldjasf
+?/publis
+? \<FielConvert\>
+?/tmp\/json
+?/tmp
+?/exec
+?/json_decode
+? \<json_encode\>
+?//array_encode
+? \<setDocumentConvert\>
+?/get
+?/cache
+? \<ichat_dig_model\>
+?/incDigCount
+?/dig
+?/canceldig
+? PN
+? tmp_file
+? mfrs
+? end_time
+?/import
+?/dispose
+?/TCMIDU
+?/T
+?/shunt
+?/i
+? \<txt2Array\>
+?/fmrs
+? \<TCMIDUniq\>
+? file_path
+? start
+? \<file_path\>
+?/use
+? \<checkTCMID\>
+? \<checkTCMIDs\>
+?/explode
+?/str_re
+?/date
+? \<date_box\>
+?/start
+? \<dateConvert\>
+? \<end_time\>
+? \<str_replace\>
+?/empty
+?/tab_complist
+?/start_time
+?/input
+?/length
+? \<import_btn\>
+?/im
+? '
+?/import_btn
+?/impor
+? \<start_time\>
+?/model
+?/1200101
+? time
+?/record
+?/relationComplete
+? 1000
+?/1000
+? \<tab_complist\>
+? \<checkAndPost\>
+? \<completeTCMID\>
+?/neo
+?/link_btn
+?/hide
+?/未关联
+?/开始导入
+?/improt
+?/checkT
+? \<tempSave\>
+? \<runbag\>
+?/check
+?/tmpFIle
+?/_
+?/push
+?/JSON
+? \<analysis\>
+? \<file\>
+?/Upfile
+?/test
+? start_time
+? \<save\>
+?/repe
+? _this
+?/_this
+?/tcmid
+?/TCMID
+?/table
+? \<mfrsDom\>
+?/var_
+? \<dataJson\>
+?/data
+? "
+?/com
+?/console
+?/un
+? \<mediumint\>
+?/tcm
+?/PN
+? \r
+? \<upload_file\>
+?/vmware
+?/vmwar3e
+?/local
+? kemi
+? \<attendence_tcm_kemilib\>
+?/files
+?/form
+? \<courseware\>
+?/file
+?/attendent
+?/leave_lib
+? \<_upload_attchment\>
+?/new
+? \<disposeFile\>
+? \<upFile\>
+?/shell
+?/sh
+? \<FileType\>
+?/HEAD
+? \<config_info\>
+? \<array_init_finished_not\>
+? \<need_init_url\>
+?/work_time
+? \<check_init_finished\>
+?/white
+?/whrite
+?/consume
+?/save_path
+? \<_getThumb\>
+? \<extend\>
+?/repath
+?/rename
+?/BufNewFile
+?/\.html
+?/Template
+?/template
+?/editorconfig
+?/editor
+?/php-doc
+?/php
+?/F
+? @JAVA_PACKAGE@
+?/Pmenu
+?/black
+?/tmux
+?/tmuxp
+?/&
+?/bear
+?/en_or
+?/max
+?/is_natural_no_zero
+?/{{{
+?/company_member
+?/RankingS
+?/obj
+?/getRankingS
+?/rankingS
+?/封顶
+?/登记
+?/httpd
+?/where
+? \<LOGIN_HISTORY_MESSAGE\>
+? \<func_get_args\>
+?/del_
+?/del_width
+?/save_with
+?/save
+? \<\$public_cache_key\>
+? \<SOURCE_WEB\>
+?/8000
+?/company_custom
+? \<\$score_list\>
+?/get_company
+?/get_custom
+?/get_cu
+?/custom_level
+? \<array_del\>
+? \<form\>
+?/level_setting
+?/action
+? score
+?/score
+?/get_custom_level
+?/company_custom_level
+?/getRankname
+? \<\$sorce_new_arr_big\>
+? \<\$big_arr\>
+? \<\$level\>
+?/user_level
+?/default_level
+?/get_company_level
+? level
+?/60
+?/src
+?/img
+?/submit_btn
+?/defaultLogo
+? \<defaultLogoList\>
+?/350
+?/custom_logo_image
+? \<_content\>
+? courseObj
+? coursewareObj
+?/ss
+? \<courseInfo\>
+? title
+? \<viewer\>
+?/init
+?/asdkfj
+?/dev
+?/score_rule
+?/company_id
+?/company
+? path
+? \<complete\>
+? 附件
+? \<register_function\>
+?/getCourse
+? rank
+?/rank
+?/mkdir
+?/createFolder
+?/setC
+? \<clearCache\>
+? \<setClearCache\>
+? \<buildCourseResult\>
+?/getCour
+?/appback
+?/logo
+?/default_logo
+?/APPPATH
+?/FC
+?/e
+? \<\$file_info\>
+? Info
+?/eval
+?/total
+?/count
+?/get_file_type
+? \<SYSTEM_COMPANY_ID\>
+?/upload
+? \<alert_err\>
+?/file_list
+? \<kindeditor_upload\>
+? manage
+? \<tinyint\>
+? 公告
+?/asdlkfjadf
+?/{{
+?/installed
+? \<check_token\>
+?/getS
+?/no
+?/t
+? accept
+? \n
+? independent_domain
+?/?:
+?/proxy
+?/lskdjfaljsdf
+?/encrypt
+?/encry
+?/encode
+?/Api
+? \<custom_conf_level\>
+?/default
+?/title
+?/error
+? _mail
+? manage_mail_model
+?/manage_mail_model
+?/role
+?/#logo
+? \<company_logo\>
+?/name=\'logo
+?/submit
+?/name=logo
+?/split
+?/rand
+?/mysql_real_escape_string
+?/lib
+?/get_instance
+?/26
+?/by
+?/company_info
+? width
+? view
+?/_images
+?/up
+? province
+?/tpl
+?/deltete
+?/member
+?/level
+? \<company_log_operate_text\>
+?/operate
+?/log
+?/lang
+?/language
+?/log_mail
+?/log_
+?/feed
+?/company_log
+?/company_log_mail
+?/company_app
+?/company_level
+?/system
+?/rule
+?/comnay
+? \<score_rule_desc_id\>
+?/cn
+?/cn_title
+?/language_id
+?/domain
+?/tbl_domain
+?/avatar
+?/tag
+?/member_Tag
+?/tbl_company_app
+?/tbl_app
+? \<language_id\>
+? \<tbl_language\>
+?/pla
+?/createi
+?/createtime
+? type
+? uid
+?/uid
+?/member_id
+? secord
+?/se
+?/secord
+?/comany
+?/domian
+?/mid
+? did
+?/did
+? cid
+?/cid
+?/k
+?/alias
+?/vfile
+? ;
+?/addRe
+?/addT
+?/update
+? \<getTopicById\>
+?/Topic
+?/alter
+? \<recipe_post\>
+?/cate
+? \<_getTopicRicipeItem\>
+?/top
+?/study
+?/yjiang.tk
+? \<ZSH\>
+?/gitconfig
+?/diff
+?/std
+?/driv
+?/driver
+?/<F10>/*
+?/ci_lib
+? \<\$_ci_library_paths\>
+? \<_ci_load_class\>
+?/now
+? \<outPutWattingPage\>
+? \<\$redirect_url\>
+?/session
+?/SESSION
+? encode
+?/python
+?/a.py
+? setline
+?/markd
+?/autoc
+?/audoc
+?/autocommand
+?/markdown
+?/yjiang
+?/py
+? \<cycle_banner\>
+?/cycle
+?/cp
+? \<cycle_init\>
+?/gift
+?/shortcut
+? \<_getFavour\>
+?/open
+?/on
+?/disposeInput
+?/失败
+? xschool
+? aigou
+?/getAppID
+?/User
+? \<checkBind\>
+? \<getAppID\>
+?/user
+?/dd-container
+?/bind_input
+?/register
+?/realname
+?/user_info
+?/0042ff
+? 006cfe
+?/006
+?/gift_po
+?/select
+?/reg_
+?/gray
+?/buto
+?/gary
+?/reward_details_table
+?/button
+?/autocolor
+?/gtlg1
+? \<sendMail\>
+? \<whenPwdError\>
+? \<\$user_info\>
+?/excel
+? \<jquery_cycle_init\>
+?/search
+? \<tips\>
+? \<checkNickName\>
+?/regiser
+?/send
+? \<\$topic\>
+?/rsync
+?/exit
+? \<_get_instruction\>
+?/skdljf
+? \<_RecommandIsExists\>
+?/adfj
+?/delRecommand
+? cover_url
+? recipe_id
+? comment
+? content
+? describe
+? follow
+?/asldkfjlskdfj
+? recipe
+? \<_recipeIsExists\>
+?/exist
+? name
+?/cover
+?/topic
+?/summary
+?/step
+? cover
+?/uploads
+?/^\([ 	]*Last modified: \)
+? \<\$recipe_id\>
+? \<\$origin_instruction\>
+?/Origin
+? \<_mappingRecipe\>
+? \<file_infos\>
+? \<_get_cover\>
+? gredient
+? \<\$url\>
+?/recipe_post
+? \<disposeCategory\>
+? \<pic_management\>
+? 专辑
+?/direc
+? \<_topicIsExists\>
+? \<update_row\>
+?/status
+? \<_mappingFollow\>
+?/author
+? \<getAllFollow\>
+?/auther
+?/recipe
+? \<_getComment\>
+? \<getComment\>
+? category
+?/food
+? avatar
+? ads
+? pipe
+? add
+? del
+? topic
+?/page
+?/web
+? \<port\>
+? \<vcl_pipe\>
+?/itquestion
+? 爱提问
+?/%s爱提问/X用户俱乐部/g
+?/question
+?/帐号
+?/reg_tips
+?/add_new_exam
+? \<getQuerySQL\>
+? \<total_rows\>
+? \<\$per_page\>
+? \<\$sort_direction\>
+? \<convertParams\>
+? \<search\>
+?/BiWuSearchResult
+?/is_passed
+? \<buildResult\>
+?/Que
+?/#
+?/it
+?/686868
+?/6868
+?/1.8
+? \<family\>
+?/info
+?/real
+?/del
+? \<del\>
+?/getFollowBy
+? \<checkUserAppBind\>
+?/slide_b
+?/itqu
+?/_ci_assign_to_models
+? \<setex\>
+? \<_redis\>
+?/function\ set
+?/set
+? \<model\>
+?/load_class
+? \<initialize\>
+? \<_ci_autoloader\>
+?/model(
+?/feedback
+?/app
+? \<content\>
+?/service_id
+? \<member_id\>
+? \<company_log_operate\>
+?/mail
+?/____
+? \<text\>
+?/bear_member
+?/conf_me
+?/conf
+?/option
+?/submui
+?/source_log
+?/200
+?/.
+?/id=\'logo
+?/logo_btn
+? \<progress\>
+? \<upload_logo_li\>
+? \<logo_li\>
+?/console.log
+?/xhr
+?/company_crop
+? \$(\'#upload_logo_form\')
+?/cr
+?/myfile
+? data
+? _name
+?/,
+?/a
+?/error_passwd
+?/test_lang
+?/get_table_fileds 
+? \<get_option\>
+? ci
+?/addsl
+?/error_re
+? \<form_post\>
+? n
+? \/\*\*n
+?/n
+? \n\r
+?/+
+? \<\$custom_conf_level\>
+?/manage/company_setting/company_domain
+? default_level
+? mail
+?/company_model
+? \<\$post\>
+?/trim
+?/fdm
+?/fmd
+?/Error
+?/error_reporting
+? fdm
+? default_1
+? default_2
+? config
+? config\[
+? config[/config[\'0\'][/g
+? config[/config[\'0\']
+?/add
+? \<submit\>
+? rule
+?/getB
+? level_id
+?/view
+?/sshchina
+? type_id
+? max_messages
+? apps
+?/token
+?/decode
+?/helper
+?/overdue_token
+? peple
+? \<peopleModalWindow\>
+? limit
+? \<system_settinglib\>
+? manage_companylib
+? \<manage_settinglib\>
+? \<ROLE_CLERK\>
+?/getSele
+?/Contr
+? ',
+? \<update\>
+?/roll
+?/rooBack
+?/PDO
+? domain_id
+?/Admin
+?/load
+?/db
+?/>>>
+? \<\$domain_info\>
+? \<domain_info\>
+? \<\$company_info\>
+? \n$
+? ^\r$
+? ^\n$
+?/ssh
+?/enc
+?/array_merge
+? \<get_my_app\>
+?/persi
+?/Per
+? \<get_file_infos\>
+? \<disposePhoto\>
+?/upload)path
+? company_id
+? \<_createFolder\>
+?/ex
+? 6
+? WEB
+? web
+? \<HELP_TYPE_APP\>
+? \<HELP_TYPE_WEB\>
+? \<RABBITMQ_TYPE\>
+?/mysql
+?/show
+?/slice
+?/getScore
+? \<HELP_TYPE_WEB_CACHE_KEY\>
+?/getM
+?/getMe
+?/get_member
+?/score_
+?/alert_suc
+?/alert
+? \<\$company_id\>
+? \<upload\>
+?/alskdjf
+??>
+? as;ljfdasldf
+? d
+? \<HELP_TYPE_APP_CACHE_KEY\>
+? return
+??></
+? \<logo_custom\>
+? \<progressBar\>
+? customPressBar
+? \<customPressBar\>
+? \<defaultLogo\>
+? \<crop_options\>
+?/selection
+? \<info_form\>
+? \<logo_form\>
+? \<no_custom_logo\>
+? \<bar\>
+? \<logo\>
+?/defined
+?/bearos
+? \<bearos\>
+? \<tip\>
+? \<status_one\>
+? \<save_sub_domain\>
+?/convert
+?/180
+?/160
+?/170
+? \<180\>
+? \<source_logo_file\>
+?/company_logo
+?/company_pic
+?/pic_
+?/pic
+?/namek
+? \<custom_logo_image_result\>
+? source_logo_img
+? \<source_logo_img\>
+? \<upload_logo_form\>
+?/100
+? \<percentVal\>
+?/progress
+?/pro
+? \<background_custom\>
+? \<\$post_data\>
+?/merge
+? \<transfer_super_admin\>
+??{{{
+? member_name
+?/B
+?/ById
+? default_value
+?/default_value
+? \<required\>
+?/reque
+?/requ
+? \<update_company_info\>
+?/cache_key
+?/email
+?/memca
+?/1
+? \<\$where_admin2Clerk\>
+?/get_admins
+?/put
+? \<putPermission\>
+?/admini
+? \<\$template_dir\>
+?/url
+? \$url
+?/file_md5
+? static
+?/_path
+?/thumb_uri
+? \<getRanking\>
+?/\<getRankingScore\>
+? \<getRankingScore\>
+?/getRank
+? cute
+? scape
+? \<update_member_info\>
+?/\ p
+?/check_token
+? ,
+? \<getCoursesList\>
+? information
+?/getCoursesList
+?/getCourses
+?/supp
+? \<cache\>
+? \<level_input_td\>
+? \<level_part\>
+? \<level_input_tr\>
+? \<level_id\>
+?/clone
+? \<level_template_table\>
+?/level_template_table
+?/text_input
+?/tip
+?/le
+?/params
+?/smarty3
+?/d
+?/information
+?/infomation
+?/smarty
+? \<ci_json_encode\>
+?/display
+? \<_set_content_type\>
+?/upload_image
+?/ci
+?/0%
+?/prog
+?/include
+?/sub_menu
+? \<custom_avatar_image_result\>
+?/image
+?/radio
+?/checkbox
+?/get_custom_conf_level
+? \<ENVIRONMENT\>
+?/txt
+?/tt
+?/dev/
+? error
+?/imageTraversal
+? \<\$writeable_dir\>
+?/WRI
+?/dev.txt
+? api
+? url
+? 200
+?/exp
+?/amqp
+? \<AUDIT_TYPE_UPLOAD_AVATAR\>
+?/TYPE_USER
+?/UPL
+? \<KPI_ACTION_UPLOAD_PICTURE\>
+? \<kpiconfig\>
+?/:Tlist
+?/conn
+?/\$this->conn
+?/\$conn
+?/Ranking
+?/audit
+? \<\$count_upload_avatar\>
+?/score_log_do
+? \<AUDIT_TYPE_LOGIN_HISTORY\>
+?/LOGIN_HISTORY_MESSAGE
+? \<del_cache\>
+?/return
+?/搜索
+?/imageTraver
+? \<\$imgs\>
+? _cute
+?/cute
+? \<completed_personal\>
+? \<\$score\>
+?/member_add
+? \<AUDIT_TYPE_COMPLETED_PERSONAL\>
+? \<AUDIT_TYPE_COMPLETED_PERSONALTE_PERSONAL\>
+?/updateU
+? \<KPI_SAVE_CUT\>
+? \<get_score_rule\>
+? \<conf_offset\>
+? \<\$score_rule\>
+? male
+? martial
+?/marti
+? \<profile\>
+?/update_do
+?/default_log
+?/click
+?/change
+?/crop
+?/裁切
+?/after
+?/default_
+?/name
+? \<c_id\>
+?/industry
+?/state
+? \<state_id\>
+?/short
+?/company_short
+? \<required_with_default\>
+?/rules
+?/qm
+?/en_U
+?/FlexPaperViewer
+?/css
+?/print
+? \<startDocument\>
+? \<getDocumentUrl\>
+? \<documentViewer\>
+?/No
+?/notice
+?/jjjjjjjjjj
+?/9
+? 300
+? \<\$operate_description\>
+? 分值
+?/get_company_rule
+?/score_log_list
+? \<verifc_company\>
+?/ver
+?/verf
+?/verifc
+?/scorelib
+?/Score
+?/Sco
+? AuditLIb
+?/score_do
+?/score_rule_do
+?/compl
+?/upload_avatar
+?/Audi
+?/ScoreLi
+?/Sc
+?/AuditLI
+?/sco
+? \<KPI_ACTION_CONTINUOUS_LOGIN\>
+? \<getKPIUserLogin\>
+?/KPI_ACTION_CONTINUOUS_LOGIN
+?/http://www.siyuyiju.com/plus/view.php?aid=420
+?/3天
+? member_id
+? \<set_cache\>
+?/signin
+? \<get_cache\>
+?/completed_personal
+? \<_get_score_rule\>
+? exp
+? max
+?/js\/
+?/js
+?/SWFFile
+?/FlexP
+?/false
+? \<_SWFFile\>
+?/format_
+?/group_id
+?/as\ a
+?/is_fo
+? \<sessio\>
+?/jUpfile
+?/vimrc
+?/Bundle
+?/patho
+?/mapping
+?/help fdm
+?/filety
+?/bundle
+?/Bun
+?/beauti
+?/autocmd
+?/php-d
+
+# 表达式 历史记录 (从新到旧)：
+=acp#onPopupPost()
+
+# 输入行 历史记录 (从新到旧)：
+
+# 输入行 历史记录 (从新到旧)：
+
+# 寄存器:
+"0	LINE	0
+						exec("echo '+{$mark_dig}' >> /tmp/dig_count.txt");
+""1	LINE	0
+						exec("echo '{$mark_dig}' >> /tmp/dig_count.txt");
+"2	LINE	0
+						exec("echo '+{$mark_dig}' >> /tmp/dig_count.txt");
+"3	LINE	0
+					var_dump($mark_dig);exit;
+"4	LINE	0
+					exec("echo '-{$statu}' >> /tmp/dig_count.txt");
+"5	LINE	0
+					exec("echo '+{$mark_dig}' >> /tmp/dig_count.txt");
+"6	LINE	0
+				exec("echo " . $mark_dig . ">> /tmp/dig_count.txt");
+"7	LINE	0
+			//exec("echo ". $msg . " >> /tmp/json.txt");
+"8	LINE	0
+			exec("echo {$msg} >> /tmp/json.txt");
+"9	LINE	0
+			exec("echo ".json_encode($documents_read_type_arr)." >> /tmp/json.txt");
+"k	CHAR	0
+	kk
+"q	CHAR	0
+	841
+<jkhhhh kkkkkkkkkkkkkkkjjjjjjjjjjjoiujkouV++ypuko$thetype = $this->p('type');//类型        $offset = $this->p('offset');        $per_page = $this->p('per_page');        $order = $this->p('order');//order=1 表示参加人数 order=2 表示热度（赞人数）        $company_id = $this->member['company_id'];        $order_by = !empty($order)?$order:'0';        $data = $this->learning_courseslib->getCoursesList($company_id,$thetype,$offset,$per_page,$order_by);Vkkkkkk=jjjIkkki=2uVjjjj:lsVjjy:bVkkyopppuuuu:help lskkkkjjjjjjkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj:db:bduuuuu::help lsjjjjkkkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj :q
+"-	CHAR	0
+	'
+
+# 全局变量:
+!VIMPRESS	LIS	[{'username': 'yjiang', 'blog_url': 'http://yjiang.blog/'}]
+!VIMRC_EXTRA	STR	~/.vim/local/vimrc
+!GVIMRC_EXTRA	STR	~/.vim/local/gvimrc
+
+# 文件标记:
+'0  22  0  ~/.vim/vimrc
+'1  1  0  ~/beartech/project-k/bearos/application/libraries/attendence/a
+'2  1  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+'3  162  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+'4  3  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+'5  33  2  ~/beartech/project-k/bearos/application/libraries/attendence/tcm/kemi.php
+'6  1  0  ~/beartech/project-k/bearos/application/libraries/mqlib.php
+'7  16  14  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
+'8  139  59  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+'9  144  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+
+# 跳转列表 (从新到旧):
+-'  22  0  ~/.vim/vimrc
+-'  1  0  ~/.vim/vimrc
+-'  1  0  ~/beartech/project-k/bearos/application/libraries/attendence/a
+-'  1  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  162  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  3  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  33  2  ~/beartech/project-k/bearos/application/libraries/attendence/tcm/kemi.php
+-'  15  0  ~/beartech/project-k/bearos/application/libraries/attendence/NERD_tree_1
+-'  16  2  ~/beartech/project-k/bearos/application/libraries/attendence/NERD_tree_1
+-'  1  0  ~/beartech/project-k/bearos/application/libraries/attendence/NERD_tree_1
+-'  2  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  1  0  ~/beartech/project-k/bearos/application/libraries/mqlib.php
+-'  16  14  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
+-'  23  23  ~/beartech/project-k/bearos/application/libraries/ichat_diglib.php
+-'  25  25  ~/beartech/project-k/bearos/application/libraries/ichat_diglib.php
+-'  24  4  ~/beartech/project-k/bearos/application/libraries/ichat_diglib.php
+-'  1  0  ~/beartech/project-k/bearos/application/libraries/ichat_diglib.php
+-'  139  59  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  137  79  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  144  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  154  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  236  7  ~/beartech/project-k/bearos/application/libraries/attendence/configlib.php
+-'  21  0  ~/beartech/project-k/bearos/application/libraries/attendence/configlib.php
+-'  1  0  ~/beartech/project-k/bearos/application/libraries/attendence/configlib.php
+-'  624  3  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  641  2  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  629  106  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  625  0  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  626  76  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  623  49  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  647  7  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  638  61  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  562  32  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  649  30  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  1  0  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  591  4  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  650  12  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  627  118  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  648  10  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  613  34  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  121  101  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  120  5  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  116  3  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  284  50  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  241  48  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  233  100  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  639  10  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  342  40  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  637  10  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  602  3  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  618  2  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  635  19  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  633  0  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  387  4  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  8  0  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  261  0  ~/beartech/project-k/bearos/application/controllers/documents/documents.php
+-'  255  0  ~/beartech/project-k/bearos/application/controllers/documents/documents.php
+-'  40  0  ~/beartech/project-k/bearos/application/controllers/documents/documents.php
+-'  1  0  ~/beartech/project-k/bearos/application/controllers/documents/documents.php
+-'  115  8  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  31  2  ~/beartech/project-k/bearos/application/libraries/attendence/NERD_tree_1
+-'  62  0  ~/beartech/project-k/bearos/application/libraries/ichat_diglib.php
+-'  22  16  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
+-'  30  2  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
+-'  27  18  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
+-'  29  16  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
+-'  1  0  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
+-'  9  13  ~/beartech/project-k/bearos/application/models/ichat/ichat_model.php
+-'  110  7  ~/beartech/project-k/bearos/application/models/ichat/ichat_model.php
+-'  1  4  ~/beartech/project-k/bearos/application/models/ichat/ichat_model.php
+-'  2  0  ~/beartech/project-k/bearos/application/models/ichat/ichat_model.php
+-'  4  0  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
+-'  55  0  ~/beartech/project-k/bearos/application/controllers/api/ichat.php
+-'  1  0  ~/beartech/project-k/bearos/application/controllers/api/ichat.php
+-'  590  14  ~/beartech/project-k/bearos/application/controllers/ichat.php
+-'  584  12  ~/beartech/project-k/bearos/application/controllers/ichat.php
+-'  324  0  ~/beartech/project-k/bearos/application/controllers/ichat.php
+-'  1  0  ~/beartech/project-k/bearos/application/controllers/ichat.php
+-'  603  13  ~/beartech/project-k/bearos/application/controllers/ichat.php
+-'  67  1  ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
+-'  65  0  ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
+-'  66  0  ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
+-'  27  0  ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
+-'  44  34  ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
+-'  33  17  ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
+-'  646  10  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  636  10  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  634  19  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  645  18  ~/beartech/project-k/bearos/application/libraries/documentslib.php
+-'  24  19  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
+-'  23  31  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
+-'  21  45  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
+-'  19  31  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
+-'  18  25  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
+-'  26  43  ~/beartech/project-k/bearos/application/libraries/ichat_diglib.php
+-'  9  13  ~/beartech/project-k/bearos/application/models/ichat/ichat_model.php
+-'  110  7  ~/beartech/project-k/bearos/application/models/ichat/ichat_model.php
+-'  1  4  ~/beartech/project-k/bearos/application/models/ichat/ichat_model.php
+-'  2  0  ~/beartech/project-k/bearos/application/models/ichat/ichat_model.php
+
+# 缓冲区列表:
+%~/.vim/vimrc	22	0
+
+# 文件内的标记历史记录 (从新到旧):
+
+> ~/.vim/vimrc
+	"	22	0
+	^	24	0
+	.	24	0
+	+	160	0
+	+	1092	0
+	+	1092	15
+	+	1092	3
+	+	1089	31
+	+	1091	3
+	+	1089	27
+	+	1089	0
+	+	443	25
+	+	443	0
+	+	443	0
+	+	443	0
+	+	454	0
+	+	453	0
+	+	454	27
+	+	1092	0
+	+	1045	0
+	+	1045	2
+	+	1045	3
+	+	1045	2
+	+	1045	2
+	+	1045	3
+	+	1045	2
+	+	1045	1
+	+	1045	0
+	+	1045	37
+	+	1045	25
+	+	1045	42
+	+	1045	30
+	+	1045	0
+	+	1045	0
+	+	1045	0
+	+	1045	56
+	+	1045	58
+	+	1045	58
+	+	1045	0
+	+	1045	5
+	+	1045	0
+	+	1092	0
+	+	1092	0
+	+	1063	14
+	+	1065	3
+	+	1062	0
+	+	1082	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	46	4
+	+	46	0
+	+	46	0
+	+	46	0
+	+	28	42
+	+	46	43
+	+	28	0
+	+	46	0
+	+	160	0
+	+	46	0
+	+	44	4
+	+	39	0
+	+	46	0
+	+	1088	0
+	+	1082	18
+	+	1088	3
+	+	1092	0
+	+	1076	12
+	+	37	0
+	+	40	14
+	+	42	0
+	+	1076	0
+	+	41	16
+	+	42	0
+	+	1117	0
+	+	45	0
+	+	46	0
+	+	1116	19
+	+	204	0
+	+	196	0
+	+	197	0
+	+	46	0
+	+	46	0
+	+	46	0
+	+	46	0
+	+	46	0
+	+	46	0
+	+	46	0
+	+	39	0
+	+	46	0
+	+	46	0
+	+	47	0
+	+	46	0
+	+	46	0
+	+	130	0
+	+	129	0
+	+	46	0
+	+	46	0
+	+	46	0
+	+	48	20
+	+	24	0
+
+> ~/beartech/project-k/bearos/application/libraries/attendence/a
+	"	1	0
+
+> ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+	"	1	0
+	^	102	70
+	.	102	70
+	+	41	23
+	+	41	23
+	+	41	0
+	+	30	0
+	+	41	23
+	+	41	0
+	+	30	3
+	+	30	8
+	+	41	8
+	+	41	25
+	+	41	0
+	+	30	0
+	+	30	13
+	+	41	18
+	+	41	25
+	+	41	0
+	+	41	3
+	+	30	8
+	+	41	6
+	+	41	0
+	+	41	0
+	+	13	37
+	+	30	0
+	+	22	5
+	+	23	17
+	+	18	17
+	+	17	5
+	+	24	0
+	+	19	0
+	+	41	0
+	+	41	0
+	+	40	19
+	+	41	0
+	+	18	36
+	+	22	20
+	+	23	36
+	+	13	23
+	+	40	0
+	+	40	35
+	+	40	0
+	+	40	41
+	+	13	41
+	+	18	0
+	+	30	0
+	+	40	39
+	+	40	0
+	+	40	20
+	+	18	5
+	+	40	0
+	+	40	49
+	+	13	40
+	+	40	53
+	+	40	0
+	+	17	10
+	+	18	17
+	+	40	25
+	+	40	0
+	+	40	31
+	+	40	55
+	+	23	11
+	+	40	48
+	+	40	21
+	+	40	25
+	+	30	17
+	+	30	0
+	+	30	8
+	+	30	16
+	+	40	27
+	+	30	0
+	+	40	0
+	+	40	40
+	+	23	17
+	+	40	8
+	+	22	53
+	+	23	26
+	+	13	49
+	+	17	5
+	+	18	26
+	+	13	58
+	+	17	58
+	+	22	0
+	+	40	0
+	+	51	0
+	+	51	80
+	+	51	51
+	+	46	34
+	+	47	12
+	+	48	0
+	+	47	17
+	+	47	75
+	+	39	19
+	+	136	69
+	+	137	0
+	+	137	84
+	+	144	0
+	+	51	0
+	+	137	2
+	+	137	0
+	+	47	83
+	+	102	70
+	d	139	3
+
+> ~/beartech/project-k/bearos/application/libraries/attendence/NERD_tree_1
+	"	5	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/beartech/project-k/bearos/application/libraries/attendence/tcm/kemi.php
+	"	21	1
+	^	21	151
+	.	31	0
+	+	11	18
+	+	7	0
+	+	17	24
+	+	11	29
+	+	37	24
+	+	37	0
+	+	37	8
+	+	37	23
+	+	37	8
+	+	5	7
+	+	5	0
+	+	37	22
+	+	37	23
+	+	11	20
+	+	10	23
+	+	10	0
+	+	6	29
+	+	7	3
+	+	17	0
+	+	11	30
+	+	37	0
+	+	6	62
+	+	8	0
+	+	9	0
+	+	8	0
+	+	9	0
+	+	11	20
+	+	17	0
+	+	11	28
+	+	12	44
+	+	13	42
+	+	15	0
+	+	14	31
+	+	11	38
+	+	12	0
+	+	11	35
+	+	11	117
+	+	18	33
+	+	36	0
+	+	19	0
+	+	18	50
+	+	36	7
+	+	31	0
+	d	33	3
+
+> ~/beartech/project-k/bearos/deploy.sh
+	"	17	0
+
+> ~/beartech/project-k/bearos/application/libraries/mqlib.php
+	"	1	0
+	^	56	2
+	.	56	0
+	+	47	66
+	+	58	0
+	+	57	10
+	+	57	0
+	+	57	38
+	+	57	25
+	+	57	0
+	+	47	0
+	+	15	6
+	+	16	6
+	+	56	0
+	d	16	1
+
+> ~/beartech/project-k/bearos/application/libraries/ichat_diglib.php
+	"	25	16
+	.	25	0
+	+	24	0
+	+	24	0
+	+	24	0
+	+	24	0
+	+	24	0
+	+	21	59
+	+	22	22
+	+	24	0
+	+	24	19
+	+	24	0
+	+	22	0
+	+	24	74
+	+	24	0
+	+	26	4
+	+	23	82
+	+	24	16
+	+	24	5
+	+	25	43
+	+	23	53
+	+	25	46
+	+	24	17
+	+	23	12
+	+	24	15
+	+	23	49
+	+	24	7
+	+	25	34
+	+	23	0
+	+	22	0
+	+	23	18
+	+	24	27
+	+	24	0
+	+	25	0
+	+	24	0
+	+	25	0
+	+	24	22
+	+	23	0
+	+	24	0
+	+	25	0
+	+	24	0
+	+	25	0
+	+	25	0
+	d	25	5
+
+> ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
+	"	16	14
+	^	16	15
+	.	16	15
+	+	21	7
+	+	18	44
+	+	19	31
+	+	21	10
+	+	21	13
+	+	21	0
+	+	21	3
+	+	21	5
+	+	21	18
+	+	21	0
+	+	21	24
+	+	21	4
+	+	21	16
+	+	21	25
+	+	21	12
+	+	21	24
+	+	21	30
+	+	21	18
+	+	21	45
+	+	21	15
+	+	22	8
+	+	22	0
+	+	18	7
+	+	22	36
+	+	25	7
+	+	23	0
+	+	22	48
+	+	24	32
+	+	21	16
+	+	21	16
+	+	21	17
+	+	21	0
+	+	18	21
+	+	19	25
+	+	21	44
+	+	22	0
+	+	23	25
+	+	22	29
+	+	21	0
+	+	20	0
+	+	21	0
+	+	20	14
+	+	21	0
+	+	21	0
+	+	20	0
+	+	17	7
+	+	14	0
+	+	15	0
+	+	16	29
+	+	21	0
+	+	20	0
+	+	21	0
+	+	20	19
+	+	16	15
+	d	16	2
+
+> ~/beartech/project-k/bearos/doc/sql/attendence.sql
+	"	77	0
+
+> ~/beartech/project-k/bearos/doc/sql/a.sql
+	"	14	79
+	^	14	80
+	.	14	79
+	+	14	79
+
+> ~/beartech/project-k/bearos/application/libraries/attendence/configlib.php
+	"	236	7
+	^	236	8
+
+> ~/beartech/project-k/bearos/application/libraries/documentslib.php
+	"	624	3
+	^	624	4
+	.	624	3
+	+	648	0
+	+	639	0
+	+	639	0
+	+	623	0
+	+	623	0
+	+	623	0
+	+	639	0
+	+	649	32
+	+	648	0
+	+	627	93
+	+	627	0
+	+	627	0
+	+	625	0
+	+	649	0
+	+	648	32
+	+	638	61
+	+	626	0
+	+	626	0
+	+	647	0
+	+	625	0
+	+	647	3
+	+	626	0
+	+	625	0
+	+	624	38
+	+	626	102
+	+	646	0
+	+	624	3
+	d	624	2
+
+> ~/beartech/project-k/bearos/application/controllers/documents/documents.php
+	"	261	0
+
+> ~/beartech/project-k/bearos/application/models/ichat/ichat_model.php
+	"	44	5
+
+> ~/beartech/project-k/bearos/application/controllers/api/ichat.php
+	"	55	0
+
+> ~/beartech/project-k/bearos/application/controllers/ichat.php
+	"	590	14
+
+> ~/beartech/project-k/bearos/application/libraries/kpilib.php
+	"	1	0
+
+> ~/beartech/project-k/bearos/application/libraries/ichatlib.php
+	"	1	0
+
+> ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
+	"	67	1
+	^	74	64
+	.	74	86
+	+	40	3
+	+	45	0
+	+	45	87
+	+	34	41
+	+	34	6
+	+	57	7
+	+	34	0
+	+	57	0
+	+	57	4
+	+	57	5
+	+	57	0
+	+	34	0
+	+	38	12
+	+	29	0
+	+	29	0
+	+	38	6
+	+	39	61
+	+	40	23
+	+	43	0
+	+	44	6
+	+	43	0
+	+	45	0
+	+	46	32
+	+	50	0
+	+	46	49
+	+	50	7
+	+	47	10
+	+	46	24
+	+	47	15
+	+	49	21
+	+	49	6
+	+	46	0
+	+	48	63
+	+	49	0
+	+	11	37
+	+	11	0
+	+	11	0
+	+	12	0
+	+	12	0
+	+	12	7
+	+	12	0
+	+	51	33
+	+	56	0
+	+	52	43
+	+	56	8
+	+	54	0
+	+	56	0
+	+	55	6
+	+	54	56
+	+	51	79
+	+	56	7
+	+	53	41
+	+	48	2
+	+	49	0
+	+	48	6
+	+	78	38
+	+	84	7
+	+	80	28
+	+	82	2
+	+	83	18
+	+	80	0
+	+	78	35
+	+	80	17
+	+	79	34
+	+	82	13
+	+	82	24
+	+	80	0
+	+	81	39
+	+	81	15
+	+	82	0
+	+	82	37
+	+	83	16
+	+	83	7
+	+	83	0
+	+	83	0
+	+	81	0
+	+	80	0
+	+	83	13
+	+	67	33
+	+	68	31
+	+	38	31
+	+	39	0
+	+	37	33
+	+	45	3
+	+	45	0
+	+	81	39
+	+	80	18
+	+	35	15
+	+	35	7
+	+	36	30
+	+	40	16
+	+	44	87
+	+	27	11
+	+	27	0
+	+	66	0
+	+	66	0
+	+	66	0
+	+	65	0
+	+	70	0
+	+	74	86
+	d	63	1
+
+> /usr/bin/memused.sh
+	"	1	0
+
+> ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+	"	66	56
+	^	68	59
+	.	66	0
+	+	157	9
+	+	64	12
+	+	68	50
+	+	164	0
+	+	168	0
+	+	168	19
+	+	164	11
+	+	159	0
+	+	161	0
+	+	162	0
+	+	161	0
+	+	159	0
+	+	158	4
+	+	160	21
+	+	96	20
+	+	161	19
+	+	102	0
+	+	96	0
+	+	95	25
+	+	95	0
+	+	95	0
+	+	95	0
+	+	81	0
+	+	95	0
+	+	161	0
+	+	110	0
+	+	107	0
+	+	109	0
+	+	161	0
+	+	160	0
+	+	160	28
+	+	97	0
+	+	233	0
+	+	197	9
+	+	94	0
+	+	171	0
+	+	196	0
+	+	170	0
+	+	197	0
+	+	203	0
+	+	203	15
+	+	204	21
+	+	210	20
+	+	168	15
+	+	197	31
+	+	171	0
+	+	208	4
+	+	204	0
+	+	68	0
+	+	164	15
+	+	168	16
+	+	168	0
+	+	168	0
+	+	168	0
+	+	168	0
+	+	165	0
+	+	168	0
+	+	167	0
+	+	165	24
+	+	165	0
+	+	198	0
+	+	209	2
+	+	203	0
+	+	198	15
+	+	204	43
+	+	204	82
+	+	204	83
+	+	165	0
+	+	204	44
+	+	204	86
+	+	204	0
+	+	204	11
+	+	204	11
+	+	204	18
+	+	204	11
+	+	204	11
+	+	204	20
+	+	208	0
+	+	204	18
+	+	207	0
+	+	209	4
+	+	70	17
+	+	71	68
+	+	165	0
+	+	165	29
+	+	165	4
+	+	165	31
+	+	199	0
+	+	199	0
+	+	200	47
+	+	207	0
+	+	201	16
+	+	208	0
+	+	205	0
+	+	166	16
+	+	70	20
+	+	26	27
+	+	26	0
+	+	66	58
+	+	66	0
+	d	60	3
+	n	65	14
+
+> ~/beartech/project-k/bearos/application/config/options/zh_cn/user_level.inc.php
+	"	301	14
+	^	301	15
+	.	301	14
+	+	101	16
+	+	201	13
+	+	301	14
+	d	301	2
+
+> ~/beartech/project-k/bearos/application/config/options/zh_cn/learning_course_
+	"	1	0
+
+> ~/beartech/project-k/bearos/.git/COMMIT_EDITMSG
+	"	1	33
+	^	1	36
+	.	1	39
+	+	3	0
+	+	2	0
+	+	1	39
+
+> /usr/local/share/vim/vim74/doc/help.txt
+	"	1	0
+
+> ~/beartech/project-k/bearos/application/models/attendence/attendence_checking_record_model.php
+	"	5	14
+
+> ~/beartech/project-k/bearos/application/controllers/attendence/manage.php
+	"	469	0
+
+> /tmp/a.txt
+	"	72	0
+
+> ~/beartech/project-k/bearos/doc/sql/update_sql/041-create-table-attendence_member.sql
+	"	5	0
+	^	6	8
+	.	6	7
+	+	1	53
+	+	1	0
+	+	1	88
+	+	2	30
+	+	7	9
+	+	7	0
+	+	3	0
+	+	3	0
+	+	3	0
+	+	4	46
+	+	7	0
+	+	4	62
+	+	5	0
+	+	7	0
+	+	5	57
+	+	6	0
+	+	7	19
+	+	8	69
+	+	6	7
+
+> ~/beartech/project-k/bearos/doc/sql/update_sql/040-company_member_add_TCMID.sql
+	"	2	62
+	^	2	117
+	.	2	116
+	+	1	53
+	+	1	0
+	+	1	95
+	+	2	50
+	+	2	0
+	+	2	116
+
+> ~/beartech/project-k/bearos/doc/sql/update_sql/042-del-company_member-TCMID.sql
+	"	1	0
+	^	2	34
+	.	2	33
+	+	1	82
+	+	2	33
+
+> ~/beartech/project-k/bearos/doc/api/API错误代码.txt
+	"	170	23
+	^	170	26
+	.	170	23
+	+	170	0
+	+	170	0
+	+	170	0
+	+	170	0
+	+	170	23
+
+> ~/beartech/project-k/bearos/doc/框架开放文档.docx
+	"	25	0
+	.	1	0
+	+	1	0
+
+> ~/beartech/project-k/bearos/tmp/attendence/e9144fb42a7d8294db62ee718586eca0.txt
+	"	1	0
+
+> /etc/mysql/my.cnf
+	"	1	0
+	^	49	17
+	.	49	16
+	+	49	16
+
+> ~/beartech/project-k/bearos/.git/config
+	"	7	0
+
+> ~/beartech/project-k/bearos/application/libraries/learning_courseslib.php
+	"	408	1
+
+> ~/beartech/project-k/bearos/application/libraries/manage_companylib.php
+	"	13	0
+
+> ~/beartech/project-k/bearos/application/libraries/manage_settinglib.php
+	"	122	16
+
+> ~/beartech/project-k/bearos/application/models/attendence/attendence_member_model.php
+	"	5	0
+	^	7	40
+	.	5	0
+	+	9	0
+	+	5	4
+	+	3	22
+	+	5	39
+	+	8	10
+	+	7	39
+	+	5	0
+	d	5	4
+
+> ~/beartech/project-k/bearos/application/models/member/member_model.php
+	"	13	0
+	^	192	3
+	.	193	0
+	+	193	0
+	+	193	0
+
+> ~/beartech/project-k/bearos/application/models/attendence/attendence_action_audit_model.php
+	"	8	0
+
+> ~/beartech/project-k/bearos/doc/sql/update_sql/system_service_type_init.sql
+	"	5	0
+
+> ~/letou/clean_ci/index.php
+	"	205	0
+
+> ~/letou/page_model.php
+	"	66	1
+
+> ~/beartech/project-k/bearos/static/public/js/people.js
+	"	12	10
+
+> ~/beartech/project-k/bearos/doc/sql/update_sql/001-company_private_message_frequently_create.sql
+	"	5	0
+
+> ~/beartech/project-k/bearos/application/views/default/_static/_app_menu.html
+	"	52	19
+	.	55	101
+	+	55	101
+	d	55	20
+
+> ~/beartech/project-k/bearos/application/views/default/attendence/leave/libs/_menu_my.html
+	"	6	0
+
+> ~/beartech/project-k/bearos/application/views/default/attendence/manage/libs/_menu.html
+	"	5	66
+	.	5	66
+	+	5	66
+	d	5	2
+
+> /home/yjiang/beartech/project-k/bearos/tmp/attendence/e9144fb42a7d8294db62ee718586eca0.txt
+	"	1969	0
+
+> ~/beartech/project-k/bearos/application/third_party/linuxUpload/disposeFile.php
+	"	32	40
+	^	32	41
+	.	32	40
+	+	32	40
+	d	32	4
+
+> ~/beartech/project-k/bearos/tmp/attendence/63cbe952c9456bb64719f2168325c632.xls
+	"	3	1
+
+> ~/beartech/project-k/bearos/bash/deploy.sh
+	"	5	12
+	^	5	13
+	.	5	13
+	+	7	72
+	+	5	14
+	+	16	0
+	+	17	0
+	+	5	13
+
+> ~/beartech/project-k/bearos/bash/css_js_version.sh
+	"	3	6
+	^	3	7
+	.	3	7
+	+	3	7
+
+> ~/beartech/project-k/bearos/application/libraries/attendence/tcm/zhongkong.php
+	"	10	19
+	^	10	20
+	.	10	20
+	+	2	11
+	+	7	18
+	+	10	20
+	d	10	1
+
+> ~/beartech/project-k/bearos/application/libraries/attendence/tcm/kemilib.php
+	"	7	4
+	^	2	10
+	.	2	9
+	+	2	29
+	+	4	31
+	+	7	0
+	+	5	23
+	+	8	22
+	+	10	0
+	+	9	2
+	+	4	38
+	+	3	18
+	+	7	31
+	+	8	27
+	+	10	7
+	+	4	46
+	+	7	7
+	+	9	7
+	+	8	29
+	+	7	0
+	+	4	29
+	+	2	0
+	+	2	0
+	+	4	38
+	+	5	22
+	+	6	31
+	+	8	20
+	+	2	9
+	d	5	2
+
+> ~/beartech/project-k/bearos/application/views/default/attendence/settings/NERD_tree_1
+	"	6	0
+	.	1	0
+	+	1	0
+	+	1	0
+
+> ~/beartech/project-k/bearos/application/views/dev/manage_learning/course/detail.html
+	"	26	2
+	^	13	56
+	.	13	55
+	+	13	55
+	d	13	0
+
+> ~/beartech/project-k/bearos/application/libraries/attendence/managelib.php
+	"	3	0
+
+> ~/beartech/project-k/bearos/application/libraries/filelib.php
+	"	44	0
+
+> ~/beartech/project-k/bearos/application/libraries/oslib.php
+	"	7	0
+	.	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+
+> /etc/mysql/conf.d/mysqld_safe_syslog.cnf
+	"	2	0
+
+> /etc/mysql/debian
+	"	1	0
+
+> ~/beartech/project-k/bearos/application/config/options/mysql_config.inc.php
+	"	12	0
+
+> ~/beartech/project-k/bearos/static/public/js/jUpfile.js
+	"	38	8
+	.	39	0
+	+	39	0
+	+	54	0
+	+	50	0
+	+	39	0
+
+> ~/beartech/project-k/bearos/application/config/local.config.php
+	"	3	0
+
+> ~/.vimrc
+	"	1100	0
+	^	754	17
+	.	1100	0
+	+	239	0
+	+	229	23
+	+	238	48
+	+	230	28
+	+	230	0
+	+	232	24
+	+	620	22
+	+	627	0
+	+	624	0
+	+	625	0
+	+	622	36
+	+	623	37
+	+	622	37
+	+	623	36
+	+	623	17
+	+	623	18
+	+	624	0
+	+	623	18
+	+	1	0
+	+	624	0
+	+	619	36
+	+	1	0
+	+	1	0
+	+	1	0
+	+	632	30
+	+	633	16
+	+	642	30
+	+	638	35
+	+	639	36
+	+	1095	65
+	+	1100	0
+	+	1095	65
+	+	5	0
+	+	1095	65
+	+	1100	0
+	+	1095	100
+	+	5	0
+	+	1095	65
+	+	1098	51
+	+	5	0
+	+	1098	50
+	+	1095	44
+	+	1097	0
+	+	1097	0
+	+	40	20
+	+	1077	0
+	+	1074	10
+	+	1079	3
+	+	1074	0
+	+	40	0
+	+	1099	21
+	+	1071	14
+	+	42	0
+	+	48	0
+	+	42	0
+	+	47	0
+	+	48	0
+	+	1100	0
+	+	1100	0
+
+> ~/beartech/project-k/bearos/application/controllers/attendence/base_controller.php
+	"	10	1
+	.	79	0
+	+	21	0
+	+	28	0
+	+	45	0
+	+	47	0
+	+	49	0
+	+	48	0
+	+	48	0
+	+	1	0
+	+	63	0
+	+	79	0
+	d	10	1
+
+> ~/beartech/project-k/bearos/application/config/data/attendence/time_card_machines.inc.php
+	"	4	0
+	^	5	5
+	.	5	0
+	+	15	0
+	+	2	16
+	+	15	0
+	+	3	75
+	+	15	17
+	+	15	4
+	+	15	19
+	+	3	83
+	+	15	18
+	+	3	74
+	+	15	8
+	+	15	0
+	+	15	12
+	+	15	0
+	+	15	13
+	+	15	15
+	+	15	17
+	+	15	12
+	+	15	6
+	+	15	0
+	+	15	17
+	+	3	53
+	+	3	7
+	+	3	49
+	+	3	52
+	+	3	36
+	+	3	50
+	+	3	52
+	+	3	36
+	+	15	0
+	+	3	14
+	+	3	37
+	+	3	50
+	+	15	0
+	+	15	0
+	+	3	0
+	+	11	0
+	+	12	16
+	+	13	12
+	+	7	0
+	+	9	13
+	+	5	0
+	d	4	2
+
+> ~/beartech/project-k/bearos/application/views/default/attendence/settings/change_working_day.html
+	"	8	0
+	.	9	0
+	+	12	0
+	+	9	0
+	d	8	0
+
+> ~/beartech/project-k/bearos/application/controllers/statistics.php
+	"	66	1
+	.	58	0
+	+	63	0
+	+	58	84
+	+	58	0
+
+> ~/beartech/project-k/bearos/application/config/data/attendence/leave_except.inc.php
+	"	1	0
+
+> ~/beartech/project-k/bearos/doc/sql/update_sql/035-create-table-app_version.sql
+	"	4	0
+
+> ~/beartech/project-k/bearos/doc/sql/update_sql/034-company_score_rule-add_ichat_rules.txt
+	"	1	0
+	^	1	0
+
+> ~/beartech/project-k/bearos/application/controllers/attendence/import/zhongkong.php
+	"	10	7
+	^	12	8
+	.	10	0
+	+	10	18
+	+	11	28
+	+	12	7
+	+	9	0
+	+	10	0
+	d	10	1
+
+> ~/beartech/project-k/bearos/application/controllers/attendence/import/kemi.php
+	"	11	7
+	^	11	8
+	.	11	7
+	+	12	0
+	+	6	29
+	+	3	15
+	+	3	0
+	+	6	24
+	+	12	0
+	+	9	22
+	+	11	0
+	+	10	2
+	+	9	27
+	+	11	7
+	d	11	1
+
+> ~/beartech/project-k/bearos/application/controllers/attendence/mine.php
+	"	30	0
+
+> ~/beartech/project-k/bearos/application/views/default/attendence/leave/leave_from.html
+	"	1	0
+
+> ~/beartech/project-k/bearos/application/controllers/attendence/leave.php
+	"	155	13
+
+> ~/letou/magazine/api/application/core/MY_Controller.php
+	"	80	1
+
+> ~/tmp/libav/configure
+	"	4326	0
+
+> ~/.tmux.conf
+	"	35	17
+	^	46	37
+	.	40	0
+	+	33	30
+	+	26	5
+	+	23	0
+	+	24	16
+	+	23	7
+	+	24	6
+	+	26	5
+	+	16	24
+	+	17	20
+	+	18	38
+	+	19	38
+	+	18	0
+	+	23	7
+	+	24	5
+	+	23	0
+	+	24	0
+	+	40	20
+	+	46	0
+	+	40	0
+
+> ~/beartech/project-k/bearos/application/controllers/mq_task/sendmail.php
+	"	5	0
+	.	21	0
+	+	18	0
+	+	21	0
+	+	18	13
+	+	16	0
+	+	11	14
+	+	13	0
+	+	12	9
+	+	13	0
+	+	13	0
+	+	13	8
+	+	13	0
+	+	13	0
+	+	13	0
+	+	19	0
+	+	21	0
+	d	18	3
+
+> ~/beartech/project-k/bearos/bash/sendmail.sh
+	"	8	8
+	^	5	85
+	.	2	19
+	+	9	0
+	+	1	0
+	+	8	0
+	+	3	43
+	+	2	19
+
+> ~/beartech/project-k/bearos/bash/send_php_error.sh
+	"	8	0
+	^	13	4
+	.	11	0
+	+	13	0
+	+	1	0
+	+	11	0
+
+> ~/beartech/project-k/bearos/application/third_party/php-amqplib/README.md
+	"	116	0
+
+> ~/beartech/project-k/bearos/application/libraries/cnemaillib.php
+	"	56	53
+	^	56	54
+	.	56	53
+	+	57	0
+	+	52	25
+	+	55	3
+	+	55	3
+	+	52	26
+	+	53	0
+	+	55	0
+	+	57	0
+	+	56	53
+	d	56	5
+
+> ~/beartech/project-k/bearos/application/third_party/php-amqplib/demo/config.php
+	"	5	16
+	^	5	25
+	.	5	0
+	+	5	0
+	d	5	0
+
+> ~/beartech/project-k/bearos/application/controllers/api/settings.php
+	"	39	99
+	^	32	63
+	.	39	99
+	+	32	2
+	+	33	22
+	+	32	83
+	+	32	23
+	+	32	88
+	+	32	0
+	+	33	0
+	+	33	0
+	+	34	24
+	+	35	23
+	+	37	14
+	+	33	0
+	+	39	0
+	+	39	96
+	+	39	0
+	+	32	62
+	+	39	0
+	+	39	0
+	+	39	99
+	d	39	3
+
+> ~/beartech/project-k/bearos/application/controllers/profile/member.php
+	"	179	15
+	^	177	0
+	.	179	0
+	+	184	67
+	+	184	0
+	+	184	0
+	+	184	0
+	+	184	0
+	+	169	0
+	+	165	7
+	+	169	0
+	+	165	11
+	+	165	14
+	+	165	0
+	+	165	10
+	+	165	13
+	+	165	0
+	+	184	0
+	+	186	14
+	+	186	37
+	+	165	46
+	+	165	27
+	+	165	0
+	+	186	0
+	+	175	19
+	+	175	51
+	+	176	52
+	+	175	0
+	+	186	0
+	+	184	43
+	+	174	19
+	+	175	25
+	+	176	0
+	+	162	30
+	+	162	12
+	+	162	7
+	+	186	3
+	+	160	28
+	+	161	9
+	+	162	20
+	+	163	0
+	+	162	6
+	+	186	0
+	+	178	0
+	+	181	0
+	+	177	0
+	+	181	0
+	+	181	0
+	+	179	0
+	d	178	3
+
+> ~/beartech/project-k/bearos/application/libraries/imagelib.php
+	"	148	31
+	^	148	32
+	.	148	31
+	+	148	31
+	d	148	2
+
+> ~/beartech/project-k/bearos/application/controllers/manage/member.php
+	"	136	0
+	.	16	0
+	+	8	0
+	+	10	0
+	+	12	0
+	+	13	0
+	+	15	0
+	+	16	0
+
+> ~/.vim_bak/syntax/coffee.vim
+	"	18	19
+	.	19	0
+	+	19	0
+
+> ~/.vim_bak/syntax/smarty.vim
+	"	1	0
+
+> ~/.vim/bundle/a
+	"	1	0
+	^	1	0
+
+> ~/e
+	"	1	0
+
+> ~/.vim/[Vundle] Installer
+	"	13	0
+	.	1	0
+	+	38	0
+	+	33	0
+	+	26	0
+	+	13	0
+	+	1	0
+
+> ~/.vim/virmc
+	"	1	0
+
+> ~/.vim/.editorconfig
+	"	2	0
+	.	1	0
+	+	27	13
+	+	1	0
+	+	1	0
+
+> ~/.bashrc
+	"	124	3
+
+> ~/beartech/project-k/bearos/application/controllers/api/member.php
+	"	167	1
+
+> ~/python/a
+	"	1	0
+
+> ~/python/b
+	"	1	0
+
+> ~/python/weibo/analysis.py
+	"	181	4
+
+> ~/python/b.py
+	"	7	0
+
+> ~/.vim/bundle/a.md
+	"	1	0
+	.	1	0
+	+	1	1
+	+	1	0
+	+	1	0
+
+> ~/beartech/project-k/bearos/index.php
+	"	8	1
+	.	9	0
+	+	28	0
+	+	9	0
+
+> ~/.vim/bundle/[Vundle] Installer
+	"	12	0
+	.	1	0
+	+	46	0
+	+	41	0
+	+	36	0
+	+	31	0
+	+	26	0
+	+	12	0
+	+	1	0
+
+> /usr/lib/python2.7/config-x86_64-linux-gnu/a
+	"	1	0
+
+> ~/vim/a
+	"	1	0
+	^	4	80
+	.	4	79
+	+	6	60
+	+	4	79
+
+> /etc/apache2/sites-enabled/yjiang
+	"	118	11
+
+> /home/yjiang/vim74/README.txt
+	"	1	5
+
+> ~/[Vundle] Installer
+	"	15	0
+	.	1	0
+	+	1	0
+
+> /etc/profile
+	"	32	12
+	^	32	13
+	.	32	12
+	+	32	12
+
+> ~/beartech/project-k/bearos/application/controllers/manage/system_setting.php
+	"	1	0
+
+> ~/beartech/project-k/bearos/application/views/default/_footer.html
+	"	6	0
+
+> ~/beartech/project-k/bearos/application/controllers/manage/invite.php
+	"	47	2
+
+> ~/beartech/project-k/bearos/application/controllers/manage/__Tag_List__
+	"	19	3
+	.	88	0
+	+	88	0
+
+> ~/beartech/project-k/bearos/application/controllers/findpassword.php
+	"	42	0
+
+> /usr/share/vim/vim73/doc/help.txt
+	"	1	0
+
+> /usr/share/vim/vim73/doc/options.txt
+	"	3111	53
