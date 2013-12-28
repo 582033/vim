@@ -8,30 +8,56 @@
 # hlsearch on (H) or off (h):
 ~H
 # 上个 Search 图案：
-~MSle0~/2Arr
+~MSle0~/temp
 
 # 上个 替换 Search 图案：
-~MSle0&PN
+~MSle0&arr
 
 # 最后替换的字符串
-$mfrs
+$arrays
 
 # 命令行 历史记录 (从新到旧)：
 :q
-:sp tcm
-:sp 
+:w
 :q!
 :wq
+:ht
+:BundleInstall
+:BundleInstall!
+:Vundle install
+:'<,'>s/TCMIDUniq/file2Array/g
+:sp kemi.php
+:sp ../tcmlib.php
+:sp ../../importlib.php
+:vi ../tcmlib.php
+:vi ../../importlib.php
+:se fdm=indent
+:se indent
+:vi imp
+:sp ../../excellib.php
+:sp 
+:s
+:sp zhongkong.php
+:sp configlib.php
+:'<,'>s/arr/arrays/g
+://www.v2ex.com/t/94410#reply32http://www.v2ex.com/t/94410#reply32
+:sp tcm
+:sp member.php
+://www.zhihu.com/collection/19758414http://www.zhihu.com/collection/19758414q
+:wwq
+:'<,'>s/localhost/bearos.com/g
+:se paste
+:sp
+:sp ../third_party/elephant.io/example/client.php
+:se
 :!tail -f /tmp/dig_count.txt
 :sp ../models/ichat/ichat_dig_model.php
-:w
 :!tail -f /tmp/dig_
 :!
 :sp tcm/
 :asdfjsdaf 
 :!tail -f /tmp/json.txt
 :se nu
-:sp
 :!tail -f /tmp/json.t
 :sp ../
 :sp ichat_model.php
@@ -46,7 +72,6 @@ $mfrs
 :sp ../../controllers/attendence/TCM.php
 :sp tcm/kemi.php
 :'<,'>s/'/"/g
-:se fdm=indent
 :'<,'>s/time/date/g
 :%s/1000/500/g
 :'<,'>s/start_time/end_time/g
@@ -54,7 +79,6 @@ $mfrs
 :sp ../manage_companylib.php
 :sp ../learning_courseslib.php
 :'<,'>s/_this/_tmpObj/g
-:se paste
 :'<,'>s/"/'/g
 :set fdm=indent
 :sp 001-company_private_message_frequently_create.sql
@@ -70,11 +94,9 @@ $mfrs
 :w !sudo tee "%"
 :we
 :sp base_controller.php
-:s
 :sp ../../libraries/mqlib.php
 :sp ../../libraries/cnemaillib.php
 :sp ../profile/member.php
-:BundleInstall
 :set 
 :'<,'>q
 :set fdm=maker
@@ -135,7 +157,6 @@ $mfrs
 :'<,'>s/公告/帮助/g
 :'<,'>s
 :sp 006-create-table-system_help.sql
-:sp member.php
 :sp test.php
 :'<,'>s/accept/refuse/g
 :%s/\n//g
@@ -697,14 +718,51 @@ $mfrs
 :h fdm
 
 # 查找字符串 历史记录 (从新到旧)：
+?/temp
 ? ^\([ 	]*Last modified: \)
+?/post(
+?/post\(
+?/false
+? \<ignore_btn\>
+? \<completeTCMID\>
+? \<checkAndPost\>
+?/dispose_file
+? \<H1_file2Array\>
+? TCMIDUniq
+? \<counts\>
+?/A
+?/location
+?/configlib
+? \<newArray\>
+?/Aarray
+? arr
+?/tmp
+?/file
+?/Uniq
+?/file2A
+? \<bearos\>
+? localhost
+?/jUp
+?/_mfrs
+? \<PN\>
+?/insert
+?/jUpfile
+? \<disposeUpfile\>
+?/PN
+?/mfrs
+?/tmpFile
+?/endTime
+?/startTime
+?/tcmData
+?/startT
+?/tcmDa
+?/dispose
 ?/2Arr
 ?/checking
 ?/kaljsdfldjasf
 ?/publis
 ? \<FielConvert\>
 ?/tmp\/json
-?/tmp
 ?/exec
 ?/json_decode
 ? \<json_encode\>
@@ -721,7 +779,6 @@ $mfrs
 ? mfrs
 ? end_time
 ?/import
-?/dispose
 ?/TCMIDU
 ?/T
 ?/shunt
@@ -762,8 +819,6 @@ $mfrs
 ? 1000
 ?/1000
 ? \<tab_complist\>
-? \<checkAndPost\>
-? \<completeTCMID\>
 ?/neo
 ?/link_btn
 ?/hide
@@ -800,7 +855,6 @@ $mfrs
 ?/un
 ? \<mediumint\>
 ?/tcm
-?/PN
 ? \r
 ? \<upload_file\>
 ?/vmware
@@ -811,7 +865,6 @@ $mfrs
 ?/files
 ?/form
 ? \<courseware\>
-?/file
 ?/attendent
 ?/leave_lib
 ? \<_upload_attchment\>
@@ -1386,7 +1439,6 @@ $mfrs
 ? \<logo\>
 ?/defined
 ?/bearos
-? \<bearos\>
 ? \<tip\>
 ? \<status_one\>
 ? \<save_sub_domain\>
@@ -1603,14 +1655,12 @@ $mfrs
 ?/js
 ?/SWFFile
 ?/FlexP
-?/false
 ? \<_SWFFile\>
 ?/format_
 ?/group_id
 ?/as\ a
 ?/is_fo
 ? \<sessio\>
-?/jUpfile
 ?/vimrc
 ?/Bundle
 ?/patho
@@ -1632,32 +1682,44 @@ $mfrs
 
 # 寄存器:
 "0	LINE	0
-						exec("echo '+{$mark_dig}' >> /tmp/dig_count.txt");
+	Bundle 'vim-scripts/taglist.vim'
 ""1	LINE	0
-						exec("echo '{$mark_dig}' >> /tmp/dig_count.txt");
+	
 "2	LINE	0
-						exec("echo '+{$mark_dig}' >> /tmp/dig_count.txt");
+	" UGLY hack - preload templatefile.vim. This is needed for loading templates
+	" for all buffers (when opening all windows for buffers)
+	call Source("~/.vim/plugin/templatefile.vim")
+	augroup TemplateSystem
+		autocmd!
+		au BufNewFile * call LoadTemplateFile()
+	augroup END
 "3	LINE	0
-					var_dump($mark_dig);exit;
-"4	LINE	0
-					exec("echo '-{$statu}' >> /tmp/dig_count.txt");
+	
+"4	BLOCK	1
+	//
+	//
 "5	LINE	0
-					exec("echo '+{$mark_dig}' >> /tmp/dig_count.txt");
+			print_r($records);
+			exit;
 "6	LINE	0
-				exec("echo " . $mark_dig . ">> /tmp/dig_count.txt");
+						'time' => self::bubbling($time),
 "7	LINE	0
-			//exec("echo ". $msg . " >> /tmp/json.txt");
+		}
 "8	LINE	0
-			exec("echo {$msg} >> /tmp/json.txt");
+						else{
+							$newArray[$i]['checking_time_end'] = $time_end;
+						}
 "9	LINE	0
-			exec("echo ".json_encode($documents_read_type_arr)." >> /tmp/json.txt");
+						else{
+							$newArray[$i]['checking_time_start'] = $time_start;
+						}
 "k	CHAR	0
 	kk
 "q	CHAR	0
 	841
 <jkhhhh kkkkkkkkkkkkkkkjjjjjjjjjjjoiujkouV++ypuko$thetype = $this->p('type');//类型        $offset = $this->p('offset');        $per_page = $this->p('per_page');        $order = $this->p('order');//order=1 表示参加人数 order=2 表示热度（赞人数）        $company_id = $this->member['company_id'];        $order_by = !empty($order)?$order:'0';        $data = $this->learning_courseslib->getCoursesList($company_id,$thetype,$offset,$per_page,$order_by);Vkkkkkk=jjjIkkki=2uVjjjj:lsVjjy:bVkkyopppuuuu:help lskkkkjjjjjjkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj:db:bduuuuu::help lsjjjjkkkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj :q
 "-	CHAR	0
-	'
+	taglist.vim
 
 # 全局变量:
 !VIMPRESS	LIS	[{'username': 'yjiang', 'blog_url': 'http://yjiang.blog/'}]
@@ -1665,366 +1727,491 @@ $mfrs
 !GVIMRC_EXTRA	STR	~/.vim/local/gvimrc
 
 # 文件标记:
-'0  22  0  ~/.vim/vimrc
-'1  1  0  ~/beartech/project-k/bearos/application/libraries/attendence/a
-'2  1  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
-'3  162  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
-'4  3  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
-'5  33  2  ~/beartech/project-k/bearos/application/libraries/attendence/tcm/kemi.php
-'6  1  0  ~/beartech/project-k/bearos/application/libraries/mqlib.php
-'7  16  14  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
-'8  139  59  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
-'9  144  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+'0  2  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+'1  1  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/a.php
+'2  1  0  ~/beartech/project-k/bearos/application/controllers/attendence/a.html
+'3  1  0  ~/beartech/project-k/bearos/application/controllers/attendence/a.php
+'4  1  0  ~/beartech/project-k/bearos/application/controllers/attendence/a
+'5  1  0  ~/.vim/vimrc
+'6  922  0  ~/.vim/vimrc
+'7  1  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/a
+'8  1  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+'9  1  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/a.html
 
 # 跳转列表 (从新到旧):
--'  22  0  ~/.vim/vimrc
+-'  2  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  1  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  267  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  1  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/a.php
+-'  1  0  ~/beartech/project-k/bearos/application/controllers/attendence/a.html
+-'  1  0  ~/beartech/project-k/bearos/application/controllers/attendence/a.php
+-'  1  0  ~/beartech/project-k/bearos/application/controllers/attendence/a
 -'  1  0  ~/.vim/vimrc
--'  1  0  ~/beartech/project-k/bearos/application/libraries/attendence/a
--'  1  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
--'  162  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
--'  3  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
--'  33  2  ~/beartech/project-k/bearos/application/libraries/attendence/tcm/kemi.php
--'  15  0  ~/beartech/project-k/bearos/application/libraries/attendence/NERD_tree_1
--'  16  2  ~/beartech/project-k/bearos/application/libraries/attendence/NERD_tree_1
--'  1  0  ~/beartech/project-k/bearos/application/libraries/attendence/NERD_tree_1
--'  2  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
--'  1  0  ~/beartech/project-k/bearos/application/libraries/mqlib.php
--'  16  14  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
--'  23  23  ~/beartech/project-k/bearos/application/libraries/ichat_diglib.php
--'  25  25  ~/beartech/project-k/bearos/application/libraries/ichat_diglib.php
--'  24  4  ~/beartech/project-k/bearos/application/libraries/ichat_diglib.php
--'  1  0  ~/beartech/project-k/bearos/application/libraries/ichat_diglib.php
--'  139  59  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
--'  137  79  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
--'  144  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
--'  154  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
--'  236  7  ~/beartech/project-k/bearos/application/libraries/attendence/configlib.php
--'  21  0  ~/beartech/project-k/bearos/application/libraries/attendence/configlib.php
+-'  922  0  ~/.vim/vimrc
+-'  1  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/a
+-'  1  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/a.html
+-'  12  9  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  67  27  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  68  77  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  11  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  265  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  10  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  25  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  42  3  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  46  13  ~/.vim/vimrc
+-'  8  0  ~/beartech/project-k/bearos/application/third_party/index.html
+-'  1  0  ~/beartech/project-k/bearos/application/third_party/index.html
+-'  3  0  ~/beartech/project-k/bearos/application/third_party/index.html
+-'  2  0  ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
+-'  1  0  ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
+-'  30  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  31  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  264  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  41  36  ~/.vim/vimrc
+-'  269  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  80  1  ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
+-'  78  4  ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
+-'  79  7  ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
+-'  47  2  ~/.vim/vimrc
+-'  160  3  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  235  5  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  212  4  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  191  5  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  159  5  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  16  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  246  13  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  233  11  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  223  13  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  210  10  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  206  10  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  168  12  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  137  11  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  130  17  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  222  8  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  129  17  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  236  3  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  86  82  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  196  9  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  224  13  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  203  10  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  193  8  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  69  71  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  27  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  239  0  ~/beartech/project-k/bearos/application/libraries/attendence/configlib.php
 -'  1  0  ~/beartech/project-k/bearos/application/libraries/attendence/configlib.php
--'  624  3  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  641  2  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  629  106  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  625  0  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  626  76  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  623  49  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  647  7  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  638  61  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  562  32  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  649  30  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  1  0  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  591  4  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  650  12  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  627  118  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  648  10  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  613  34  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  121  101  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  120  5  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  116  3  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  284  50  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  241  48  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  233  100  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  639  10  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  342  40  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  637  10  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  602  3  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  618  2  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  635  19  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  633  0  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  387  4  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  8  0  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  261  0  ~/beartech/project-k/bearos/application/controllers/documents/documents.php
--'  255  0  ~/beartech/project-k/bearos/application/controllers/documents/documents.php
--'  40  0  ~/beartech/project-k/bearos/application/controllers/documents/documents.php
--'  1  0  ~/beartech/project-k/bearos/application/controllers/documents/documents.php
--'  115  8  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
--'  31  2  ~/beartech/project-k/bearos/application/libraries/attendence/NERD_tree_1
--'  62  0  ~/beartech/project-k/bearos/application/libraries/ichat_diglib.php
--'  22  16  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
--'  30  2  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
--'  27  18  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
--'  29  16  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
--'  1  0  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
--'  9  13  ~/beartech/project-k/bearos/application/models/ichat/ichat_model.php
--'  110  7  ~/beartech/project-k/bearos/application/models/ichat/ichat_model.php
--'  1  4  ~/beartech/project-k/bearos/application/models/ichat/ichat_model.php
--'  2  0  ~/beartech/project-k/bearos/application/models/ichat/ichat_model.php
--'  4  0  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
--'  55  0  ~/beartech/project-k/bearos/application/controllers/api/ichat.php
--'  1  0  ~/beartech/project-k/bearos/application/controllers/api/ichat.php
--'  590  14  ~/beartech/project-k/bearos/application/controllers/ichat.php
--'  584  12  ~/beartech/project-k/bearos/application/controllers/ichat.php
--'  324  0  ~/beartech/project-k/bearos/application/controllers/ichat.php
--'  1  0  ~/beartech/project-k/bearos/application/controllers/ichat.php
--'  603  13  ~/beartech/project-k/bearos/application/controllers/ichat.php
--'  67  1  ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
--'  65  0  ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
--'  66  0  ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
--'  27  0  ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
--'  44  34  ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
--'  33  17  ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
--'  646  10  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  636  10  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  634  19  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  645  18  ~/beartech/project-k/bearos/application/libraries/documentslib.php
--'  24  19  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
--'  23  31  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
--'  21  45  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
--'  19  31  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
--'  18  25  ~/beartech/project-k/bearos/application/models/ichat/ichat_dig_model.php
--'  26  43  ~/beartech/project-k/bearos/application/libraries/ichat_diglib.php
--'  9  13  ~/beartech/project-k/bearos/application/models/ichat/ichat_model.php
--'  110  7  ~/beartech/project-k/bearos/application/models/ichat/ichat_model.php
--'  1  4  ~/beartech/project-k/bearos/application/models/ichat/ichat_model.php
--'  2  0  ~/beartech/project-k/bearos/application/models/ichat/ichat_model.php
+-'  115  9  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  137  2  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  166  36  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  51  42  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  252  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  172  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  195  6  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  192  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  193  18  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  197  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  189  6  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  171  21  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  159  3  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  185  11  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  167  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  162  12  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  175  32  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  174  38  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  202  40  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  186  14  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  173  0  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  169  12  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  9  31  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  153  15  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  247  7  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  223  6  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  225  3  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  201  18  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  221  58  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  163  4  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  199  16  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  1  4  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  161  10  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+-'  239  0  ~/beartech/project-k/bearos/application/libraries/attendence/configlib.php
 
 # 缓冲区列表:
-%~/.vim/vimrc	22	0
+%~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html	2	0
 
 # 文件内的标记历史记录 (从新到旧):
 
+> ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+	"	2	0
+	^	1	6
+	.	2	0
+	+	166	15
+	+	170	16
+	+	170	0
+	+	170	0
+	+	170	0
+	+	170	0
+	+	167	0
+	+	170	0
+	+	169	0
+	+	167	24
+	+	167	0
+	+	200	0
+	+	211	2
+	+	205	0
+	+	200	15
+	+	206	43
+	+	206	82
+	+	206	83
+	+	167	0
+	+	206	44
+	+	206	86
+	+	206	0
+	+	206	11
+	+	206	11
+	+	206	18
+	+	206	11
+	+	206	11
+	+	206	20
+	+	210	0
+	+	206	18
+	+	209	0
+	+	211	4
+	+	70	17
+	+	71	68
+	+	167	0
+	+	167	29
+	+	167	4
+	+	167	31
+	+	201	0
+	+	201	0
+	+	202	47
+	+	209	0
+	+	203	16
+	+	210	0
+	+	207	0
+	+	168	16
+	+	70	20
+	+	26	27
+	+	26	0
+	+	66	58
+	+	66	0
+	+	267	3
+	+	212	35
+	+	111	6
+	+	106	5
+	+	107	5
+	+	108	5
+	+	109	5
+	+	110	5
+	+	111	5
+	+	114	11
+	+	204	5
+	+	208	19
+	+	212	118
+	+	231	47
+	+	235	0
+	+	272	3
+	+	128	3
+	+	129	3
+	+	274	0
+	+	267	0
+	+	265	38
+	+	266	26
+	+	265	10
+	+	266	30
+	+	114	0
+	+	236	23
+	+	237	5
+	+	236	5
+	+	237	5
+	+	236	0
+	+	130	19
+	+	223	0
+	+	130	0
+	+	269	0
+	+	265	0
+	+	266	0
+	+	267	0
+	+	268	0
+	+	269	0
+	+	271	0
+	+	265	0
+	+	1	0
+	+	2	0
+	+	11	0
+	+	31	0
+	+	25	0
+	+	260	0
+	+	11	0
+	+	2	0
+	d	1	0
+	n	65	14
+
+> ~/beartech/project-k/bearos/application/views/default/attendence/settings/a.php
+	"	1	0
+
+> ~/beartech/project-k/bearos/application/controllers/attendence/a.html
+	"	1	0
+
+> ~/beartech/project-k/bearos/application/controllers/attendence/a.php
+	"	1	0
+
+> ~/beartech/project-k/bearos/application/controllers/attendence/a
+	"	1	0
+
 > ~/.vim/vimrc
-	"	22	0
-	^	24	0
-	.	24	0
-	+	160	0
-	+	1092	0
-	+	1092	15
-	+	1092	3
-	+	1089	31
-	+	1091	3
-	+	1089	27
-	+	1089	0
-	+	443	25
-	+	443	0
-	+	443	0
-	+	443	0
-	+	454	0
-	+	453	0
-	+	454	27
-	+	1092	0
-	+	1045	0
-	+	1045	2
-	+	1045	3
-	+	1045	2
-	+	1045	2
-	+	1045	3
-	+	1045	2
-	+	1045	1
-	+	1045	0
-	+	1045	37
-	+	1045	25
-	+	1045	42
-	+	1045	30
-	+	1045	0
-	+	1045	0
-	+	1045	0
-	+	1045	56
-	+	1045	58
-	+	1045	58
-	+	1045	0
-	+	1045	5
-	+	1045	0
-	+	1092	0
-	+	1092	0
-	+	1063	14
-	+	1065	3
-	+	1062	0
+	"	1	0
+	^	46	14
+	.	922	0
+	+	1085	15
+	+	1085	3
+	+	1082	31
+	+	1084	3
+	+	1082	27
 	+	1082	0
+	+	444	25
+	+	444	0
+	+	444	0
+	+	444	0
+	+	455	0
+	+	454	0
+	+	455	27
+	+	1085	0
+	+	1038	0
+	+	1038	2
+	+	1038	3
+	+	1038	2
+	+	1038	2
+	+	1038	3
+	+	1038	2
+	+	1038	1
+	+	1038	0
+	+	1038	37
+	+	1038	25
+	+	1038	42
+	+	1038	30
+	+	1038	0
+	+	1038	0
+	+	1038	0
+	+	1038	56
+	+	1038	58
+	+	1038	58
+	+	1038	0
+	+	1038	5
+	+	1038	0
+	+	1085	0
+	+	1085	0
+	+	1056	14
+	+	1058	3
+	+	1055	0
+	+	1075	0
 	+	1	0
 	+	1	0
 	+	1	0
-	+	46	4
-	+	46	0
-	+	46	0
-	+	46	0
+	+	48	4
+	+	48	0
+	+	48	0
+	+	48	0
 	+	28	42
-	+	46	43
+	+	48	43
 	+	28	0
-	+	46	0
-	+	160	0
-	+	46	0
-	+	44	4
+	+	48	0
+	+	161	0
+	+	48	0
+	+	45	4
 	+	39	0
-	+	46	0
-	+	1088	0
-	+	1082	18
-	+	1088	3
-	+	1092	0
-	+	1076	12
+	+	48	0
+	+	1081	0
+	+	1075	18
+	+	1081	3
+	+	1085	0
+	+	1069	12
 	+	37	0
 	+	40	14
-	+	42	0
-	+	1076	0
-	+	41	16
-	+	42	0
-	+	1117	0
-	+	45	0
-	+	46	0
-	+	1116	19
-	+	204	0
-	+	196	0
-	+	197	0
-	+	46	0
-	+	46	0
-	+	46	0
-	+	46	0
-	+	46	0
-	+	46	0
-	+	46	0
-	+	39	0
-	+	46	0
-	+	46	0
+	+	43	0
+	+	1069	0
+	+	42	16
+	+	43	0
+	+	1110	0
 	+	47	0
-	+	46	0
-	+	46	0
-	+	130	0
-	+	129	0
-	+	46	0
-	+	46	0
-	+	46	0
-	+	48	20
-	+	24	0
-
-> ~/beartech/project-k/bearos/application/libraries/attendence/a
-	"	1	0
-
-> ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
-	"	1	0
-	^	102	70
-	.	102	70
-	+	41	23
-	+	41	23
-	+	41	0
-	+	30	0
-	+	41	23
-	+	41	0
-	+	30	3
-	+	30	8
-	+	41	8
-	+	41	25
-	+	41	0
-	+	30	0
-	+	30	13
-	+	41	18
-	+	41	25
-	+	41	0
-	+	41	3
-	+	30	8
-	+	41	6
-	+	41	0
-	+	41	0
-	+	13	37
-	+	30	0
-	+	22	5
-	+	23	17
-	+	18	17
-	+	17	5
-	+	24	0
-	+	19	0
-	+	41	0
-	+	41	0
-	+	40	19
-	+	41	0
-	+	18	36
-	+	22	20
-	+	23	36
-	+	13	23
-	+	40	0
-	+	40	35
-	+	40	0
-	+	40	41
-	+	13	41
-	+	18	0
-	+	30	0
-	+	40	39
-	+	40	0
-	+	40	20
-	+	18	5
-	+	40	0
-	+	40	49
-	+	13	40
-	+	40	53
-	+	40	0
-	+	17	10
-	+	18	17
-	+	40	25
-	+	40	0
-	+	40	31
-	+	40	55
-	+	23	11
-	+	40	48
-	+	40	21
-	+	40	25
-	+	30	17
-	+	30	0
-	+	30	8
-	+	30	16
-	+	40	27
-	+	30	0
-	+	40	0
-	+	40	40
-	+	23	17
-	+	40	8
-	+	22	53
-	+	23	26
-	+	13	49
-	+	17	5
-	+	18	26
-	+	13	58
-	+	17	58
-	+	22	0
-	+	40	0
-	+	51	0
-	+	51	80
-	+	51	51
-	+	46	34
-	+	47	12
 	+	48	0
-	+	47	17
-	+	47	75
-	+	39	19
-	+	136	69
-	+	137	0
-	+	137	84
-	+	144	0
-	+	51	0
-	+	137	2
-	+	137	0
-	+	47	83
-	+	102	70
-	d	139	3
+	+	1109	19
+	+	205	0
+	+	197	0
+	+	198	0
+	+	48	0
+	+	48	0
+	+	48	0
+	+	48	0
+	+	48	0
+	+	48	0
+	+	48	0
+	+	39	0
+	+	48	0
+	+	48	0
+	+	49	0
+	+	48	0
+	+	48	0
+	+	131	0
+	+	130	0
+	+	48	0
+	+	48	0
+	+	48	0
+	+	50	20
+	+	24	0
+	+	54	0
+	+	41	36
+	+	46	13
+	+	922	0
 
-> ~/beartech/project-k/bearos/application/libraries/attendence/NERD_tree_1
-	"	5	0
+> ~/beartech/project-k/bearos/application/views/default/attendence/settings/a
+	"	1	0
+
+> ~/beartech/project-k/bearos/application/views/default/attendence/settings/a.html
+	"	1	0
+	^	1	0
 	.	1	0
 	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
+
+> ~/.vim/[Vundle] Installer
+	"	13	0
+	.	1	0
+	+	71	0
+	+	66	0
+	+	59	0
+	+	46	0
+	+	34	0
+	+	24	0
+	+	13	0
 	+	1	0
 
+> ~/beartech/project-k/bearos/application/third_party/index.html
+	"	8	0
+
+> ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
+	"	2	0
+	.	80	0
+	+	11	0
+	+	11	0
+	+	45	67
+	+	45	22
+	+	33	26
+	+	45	72
+	+	38	45
+	+	45	6
+	+	38	46
+	+	39	0
+	+	41	2
+	+	40	0
+	+	39	3
+	+	45	0
+	+	45	87
+	+	35	41
+	+	35	6
+	+	74	7
+	+	35	0
+	+	74	0
+	+	74	4
+	+	74	5
+	+	74	0
+	+	35	0
+	+	37	12
+	+	29	0
+	+	29	0
+	+	37	6
+	+	38	61
+	+	39	23
+	+	42	0
+	+	43	6
+	+	42	0
+	+	45	0
+	+	46	32
+	+	52	0
+	+	46	49
+	+	52	7
+	+	48	10
+	+	46	24
+	+	48	15
+	+	50	21
+	+	50	6
+	+	46	0
+	+	49	63
+	+	50	0
+	+	11	37
+	+	11	0
+	+	11	0
+	+	12	0
+	+	12	0
+	+	12	7
+	+	12	0
+	+	53	33
+	+	60	0
+	+	55	43
+	+	60	8
+	+	57	0
+	+	60	0
+	+	58	6
+	+	57	56
+	+	53	79
+	+	60	7
+	+	56	41
+	+	49	2
+	+	50	0
+	+	49	6
+	+	61	44
+	+	73	7
+	+	71	6
+	+	70	2
+	+	34	0
+	+	35	0
+	+	44	2
+	+	47	0
+	+	48	0
+	+	51	2
+	+	54	0
+	+	55	0
+	+	59	2
+	+	62	0
+	+	70	0
+	+	72	2
+	+	70	0
+	+	63	0
+	+	70	9
+	+	70	3
+	+	71	0
+	+	70	29
+	+	20	24
+	+	61	0
+	+	70	0
+	+	11	0
+	+	80	0
+	+	78	0
+	+	80	0
+	+	80	14
+	+	80	0
+	+	80	0
+	+	80	0
+	d	6	1
+
+> /usr/local/share/vim/vim74/doc/help.txt
+	"	1	0
+
 > ~/beartech/project-k/bearos/application/libraries/attendence/tcm/kemi.php
-	"	21	1
-	^	21	151
-	.	31	0
+	"	24	5
+	^	22	102
+	.	24	0
 	+	11	18
 	+	7	0
 	+	17	24
 	+	11	29
-	+	37	24
-	+	37	0
-	+	37	8
-	+	37	23
-	+	37	8
+	+	35	24
+	+	35	0
+	+	35	8
+	+	35	23
+	+	35	8
 	+	5	7
 	+	5	0
-	+	37	22
-	+	37	23
+	+	35	22
+	+	35	23
 	+	11	20
 	+	10	23
 	+	10	0
@@ -2032,7 +2219,7 @@ $mfrs
 	+	7	3
 	+	17	0
 	+	11	30
-	+	37	0
+	+	35	0
 	+	6	62
 	+	8	0
 	+	9	0
@@ -2050,12 +2237,538 @@ $mfrs
 	+	11	35
 	+	11	117
 	+	18	33
-	+	36	0
+	+	34	0
 	+	19	0
 	+	18	50
-	+	36	7
+	+	34	7
+	+	32	0
+	+	12	0
+	+	19	44
+	+	20	42
+	+	21	0
+	+	12	0
+	+	27	16
+	+	27	0
+	+	29	28
+	+	30	28
+	+	28	20
+	+	32	0
+	+	24	16
+	+	22	101
+	+	24	0
+	d	34	1
+
+> ~/beartech/project-k/bearos/application/libraries/attendence/tcm/zhongkong.php
+	"	45	14
+	.	47	0
+	+	16	0
+	+	17	0
+	+	13	0
+	+	21	32
+	+	17	3
+	+	16	0
+	+	17	11
+	+	21	50
+	+	26	2
+	+	20	21
+	+	27	17
+	+	24	13
+	+	27	31
+	+	13	0
+	+	20	20
+	+	20	6
+	+	14	17
+	+	14	6
+	+	10	0
+	+	10	0
+	+	2	0
+	+	10	0
+	+	2	0
+	+	14	0
+	+	18	0
+	+	13	0
+	+	17	44
+	+	17	2
+	+	13	56
+	+	17	0
+	+	14	20
+	+	9	0
+	+	13	0
+	+	14	0
+	+	19	3
+	+	18	3
+	+	18	24
+	+	16	0
+	+	18	6
+	+	24	0
+	+	22	33
+	+	23	58
+	+	23	58
+	+	24	0
+	+	23	113
+	+	24	0
+	+	25	3
+	+	18	0
+	+	23	0
+	+	18	27
+	+	18	6
+	+	18	0
+	+	23	26
+	+	23	115
+	+	23	4
+	+	25	4
+	+	23	0
+	+	25	0
+	+	24	21
+	+	25	20
+	+	21	0
+	+	24	17
+	+	25	6
+	+	25	28
+	+	22	4
+	+	25	0
+	+	27	0
+	+	25	6
+	+	22	22
+	+	25	0
+	+	22	0
+	+	23	76
+	+	25	0
+	+	27	0
+	+	24	15
+	+	43	0
+	+	30	0
+	+	43	0
+	+	42	18
+	+	36	5
+	+	39	5
 	+	31	0
-	d	33	3
+	+	36	15
+	+	33	14
+	+	39	0
+	+	37	39
+	+	38	24
+	+	43	0
+	+	42	11
+	+	42	6
+	+	42	18
+	+	37	29
+	+	38	29
+	+	42	0
+	+	44	38
+	+	15	38
+	+	46	7
+	+	45	29
+	+	50	0
+	+	47	0
+	d	45	2
+
+> ~/beartech/project-k/bearos/application/libraries/excellib.php
+	"	24	2
+
+> ~/beartech/project-k/bearos/application/libraries/importlib.php
+	"	62	23
+
+> ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
+	"	38	0
+	^	30	66
+	.	30	0
+	+	171	24
+	+	171	12
+	+	186	32
+	+	186	0
+	+	186	47
+	+	186	0
+	+	176	0
+	+	182	40
+	+	183	40
+	+	174	42
+	+	179	11
+	+	180	15
+	+	185	11
+	+	179	6
+	+	180	9
+	+	173	69
+	+	174	36
+	+	185	9
+	+	185	6
+	+	186	10
+	+	171	0
+	+	171	14
+	+	171	54
+	+	171	70
+	+	171	82
+	+	171	85
+	+	170	74
+	+	171	0
+	+	170	98
+	+	170	42
+	+	197	0
+	+	197	0
+	+	172	0
+	+	174	0
+	+	197	0
+	+	189	37
+	+	192	0
+	+	197	10
+	+	197	0
+	+	197	0
+	+	188	0
+	+	189	9
+	+	189	0
+	+	190	0
+	+	189	0
+	+	197	0
+	+	197	0
+	+	193	18
+	+	196	5
+	+	197	0
+	+	194	0
+	+	193	19
+	+	193	10
+	+	193	0
+	+	193	37
+	+	197	10
+	+	197	0
+	+	197	0
+	+	189	49
+	+	197	0
+	+	193	47
+	+	189	74
+	+	193	75
+	+	192	0
+	+	191	68
+	+	195	39
+	+	191	74
+	+	191	32
+	+	192	0
+	+	191	74
+	+	195	71
+	+	187	14
+	+	197	10
+	+	202	0
+	+	149	50
+	+	202	7
+	+	149	84
+	+	170	68
+	+	166	36
+	+	269	19
+	+	166	0
+	+	144	0
+	+	141	65
+	+	144	0
+	+	143	30
+	+	145	2
+	+	144	59
+	+	143	31
+	+	142	3
+	+	137	0
+	+	4	0
+	+	4	58
+	+	11	29
+	+	4	0
+	+	11	0
+	+	4	0
+	+	11	0
+	+	4	0
+	+	4	0
+	+	30	0
+	d	3	0
+
+> ~/beartech/project-k/bearos/.git/COMMIT_EDITMSG
+	"	2	0
+	^	1	60
+	.	1	57
+	+	3	0
+	+	2	0
+	+	1	57
+
+> ~/beartech/project-k/bearos/system/libraries/PHPExcel.php
+	"	31	53
+	^	31	68
+	.	31	0
+	+	31	53
+	+	32	0
+	+	31	0
+	d	31	4
+
+> ~/beartech/project-k/bearos/application/third_party/PHPExcel/Examples/01simple.php
+	"	1	0
+
+> ~/beartech/project-k/bearos/application/third_party/PHPExcel/Classes/PHPExcel.php
+	"	323	0
+
+> ~/beartech/project-k/bearos/application/third_party/PHPExcel/Classes/NERD_tree_1
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/beartech/project-k/bearos/application/third_party/PHPExcel/Worksheet.php
+	"	2863	38
+	^	2862	39
+
+> ~/beartech/project-k/bearos/application/third_party/PHPExcel/Reader/CSV.php
+	"	147	10
+	^	147	17
+	.	147	0
+	+	147	0
+	d	147	2
+
+> ~/beartech/project-k/bearos/application/libraries/attendence/NERD_tree_1
+	"	5	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/beartech/project-k/bearos/application/libraries/attendence/configlib.php
+	"	239	0
+	^	237	67
+	.	237	66
+	+	237	66
+	d	235	0
+
+> ~/beartech/project-k/bearos/application/libraries/memberlib.php
+	"	143	27
+	^	140	33
+	.	140	32
+	+	136	63
+	+	140	32
+	d	143	5
+
+> ~/beartech/project-k/bearos/application/controllers/api/member.php
+	"	162	1
+
+> ~/beartech/project-k/bearos/application/controllers/test.php
+	"	10	15
+	^	10	16
+	.	10	16
+	+	91	19
+	+	98	0
+	+	91	30
+	+	98	3
+	+	98	2
+	+	98	0
+	+	98	0
+	+	98	27
+	+	98	59
+	+	98	0
+	+	98	0
+	+	98	22
+	+	98	0
+	+	2	0
+	+	98	4
+	+	98	4
+	+	98	0
+	+	98	42
+	+	98	0
+	+	98	2
+	+	111	0
+	+	98	7
+	+	98	0
+	+	98	0
+	+	92	38
+	+	96	0
+	+	97	0
+	+	96	38
+	+	92	28
+	+	98	28
+	+	98	53
+	+	99	22
+	+	110	0
+	+	98	0
+	+	100	0
+	+	101	0
+	+	103	49
+	+	108	4
+	+	103	79
+	+	106	0
+	+	104	20
+	+	105	39
+	+	106	5
+	+	107	4
+	+	92	0
+	+	96	0
+	+	93	17
+	+	95	0
+	+	94	13
+	+	1	4
+	+	1	0
+	+	95	0
+	+	94	45
+	+	96	46
+	+	6	20
+	+	94	25
+	+	101	55
+	+	1	4
+	+	6	4
+	+	10	16
+	d	10	2
+
+> ~/beartech/project-k/bearos/application/views/default/test/socket.html
+	"	33	0
+	^	13	32
+	.	13	0
+	+	1	6
+	+	1	6
+	+	31	6
+	+	13	42
+	+	7	0
+	+	7	0
+	+	6	31
+	+	6	0
+	+	6	0
+	+	25	0
+	+	27	5
+	+	28	26
+	+	28	0
+	+	28	52
+	+	27	0
+	+	27	4
+	+	16	43
+	+	27	0
+	+	26	0
+	+	19	0
+	+	18	17
+	+	27	0
+	+	6	26
+	+	13	0
+	d	33	0
+
+> ~/beartech/project-k/bearos/npm-debug.log
+	"	2315	0
+
+> /tmp/node-v0.10.24-linux-x64/npm-debug.log
+	"	40	5
+
+> /home/yjiang/beartech/project-k/bearos/server.js
+	"	26	0
+	^	1	0
+
+> /tmp/node-v0.10.24-linux-x64/server.js
+	"	23	0
+	^	21	2
+	.	21	2
+	+	1	47
+	+	1	2
+	+	1	47
+	+	25	0
+	+	5	11
+	+	21	22
+	+	21	16
+	+	21	18
+	+	22	0
+	+	23	24
+	+	21	11
+	+	21	0
+	+	23	10
+	+	21	2
+
+> ~/beartech/project-k/bearos/server.js
+	"	1	24
+	^	1	25
+	.	1	24
+	+	1	22
+	+	7	0
+	+	1	24
+
+> /etc/hosts
+	"	3	22
+	^	3	28
+	.	3	0
+	+	3	28
+	+	3	0
+
+> ~/beartech/project-k/bearos/application/third_party/elephant.io/example/client.php
+	"	8	0
+
+> ~/.bashrc
+	"	135	12
+	^	135	13
+	.	135	12
+	+	135	12
+
+> ~/.vimrc
+	"	1126	0
+	^	754	17
+	.	1100	0
+	+	239	0
+	+	229	23
+	+	238	48
+	+	230	28
+	+	230	0
+	+	232	24
+	+	620	22
+	+	627	0
+	+	624	0
+	+	625	0
+	+	622	36
+	+	623	37
+	+	622	37
+	+	623	36
+	+	623	17
+	+	623	18
+	+	624	0
+	+	623	18
+	+	1	0
+	+	624	0
+	+	619	36
+	+	1	0
+	+	1	0
+	+	1	0
+	+	632	30
+	+	633	16
+	+	642	30
+	+	638	35
+	+	639	36
+	+	1095	65
+	+	1100	0
+	+	1095	65
+	+	5	0
+	+	1095	65
+	+	1100	0
+	+	1095	100
+	+	5	0
+	+	1095	65
+	+	1098	51
+	+	5	0
+	+	1098	50
+	+	1095	44
+	+	1097	0
+	+	1097	0
+	+	40	20
+	+	1077	0
+	+	1074	10
+	+	1079	3
+	+	1074	0
+	+	40	0
+	+	1099	21
+	+	1071	14
+	+	42	0
+	+	48	0
+	+	42	0
+	+	47	0
+	+	48	0
+	+	1100	0
+	+	1100	0
+
+> /tmp/node-v0.10.24-linux-x64/README.md
+	"	22	0
+
+> ~/.gitconfig
+	"	12	0
+
+> ~/beartech/project-k/bearos/application/libraries/attendence/a
+	"	1	0
 
 > ~/beartech/project-k/bearos/deploy.sh
 	"	17	0
@@ -2192,10 +2905,6 @@ $mfrs
 	.	14	79
 	+	14	79
 
-> ~/beartech/project-k/bearos/application/libraries/attendence/configlib.php
-	"	236	7
-	^	236	8
-
 > ~/beartech/project-k/bearos/application/libraries/documentslib.php
 	"	624	3
 	^	624	4
@@ -2247,221 +2956,8 @@ $mfrs
 > ~/beartech/project-k/bearos/application/libraries/ichatlib.php
 	"	1	0
 
-> ~/beartech/project-k/bearos/application/controllers/attendence/TCM.php
-	"	67	1
-	^	74	64
-	.	74	86
-	+	40	3
-	+	45	0
-	+	45	87
-	+	34	41
-	+	34	6
-	+	57	7
-	+	34	0
-	+	57	0
-	+	57	4
-	+	57	5
-	+	57	0
-	+	34	0
-	+	38	12
-	+	29	0
-	+	29	0
-	+	38	6
-	+	39	61
-	+	40	23
-	+	43	0
-	+	44	6
-	+	43	0
-	+	45	0
-	+	46	32
-	+	50	0
-	+	46	49
-	+	50	7
-	+	47	10
-	+	46	24
-	+	47	15
-	+	49	21
-	+	49	6
-	+	46	0
-	+	48	63
-	+	49	0
-	+	11	37
-	+	11	0
-	+	11	0
-	+	12	0
-	+	12	0
-	+	12	7
-	+	12	0
-	+	51	33
-	+	56	0
-	+	52	43
-	+	56	8
-	+	54	0
-	+	56	0
-	+	55	6
-	+	54	56
-	+	51	79
-	+	56	7
-	+	53	41
-	+	48	2
-	+	49	0
-	+	48	6
-	+	78	38
-	+	84	7
-	+	80	28
-	+	82	2
-	+	83	18
-	+	80	0
-	+	78	35
-	+	80	17
-	+	79	34
-	+	82	13
-	+	82	24
-	+	80	0
-	+	81	39
-	+	81	15
-	+	82	0
-	+	82	37
-	+	83	16
-	+	83	7
-	+	83	0
-	+	83	0
-	+	81	0
-	+	80	0
-	+	83	13
-	+	67	33
-	+	68	31
-	+	38	31
-	+	39	0
-	+	37	33
-	+	45	3
-	+	45	0
-	+	81	39
-	+	80	18
-	+	35	15
-	+	35	7
-	+	36	30
-	+	40	16
-	+	44	87
-	+	27	11
-	+	27	0
-	+	66	0
-	+	66	0
-	+	66	0
-	+	65	0
-	+	70	0
-	+	74	86
-	d	63	1
-
 > /usr/bin/memused.sh
 	"	1	0
-
-> ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
-	"	66	56
-	^	68	59
-	.	66	0
-	+	157	9
-	+	64	12
-	+	68	50
-	+	164	0
-	+	168	0
-	+	168	19
-	+	164	11
-	+	159	0
-	+	161	0
-	+	162	0
-	+	161	0
-	+	159	0
-	+	158	4
-	+	160	21
-	+	96	20
-	+	161	19
-	+	102	0
-	+	96	0
-	+	95	25
-	+	95	0
-	+	95	0
-	+	95	0
-	+	81	0
-	+	95	0
-	+	161	0
-	+	110	0
-	+	107	0
-	+	109	0
-	+	161	0
-	+	160	0
-	+	160	28
-	+	97	0
-	+	233	0
-	+	197	9
-	+	94	0
-	+	171	0
-	+	196	0
-	+	170	0
-	+	197	0
-	+	203	0
-	+	203	15
-	+	204	21
-	+	210	20
-	+	168	15
-	+	197	31
-	+	171	0
-	+	208	4
-	+	204	0
-	+	68	0
-	+	164	15
-	+	168	16
-	+	168	0
-	+	168	0
-	+	168	0
-	+	168	0
-	+	165	0
-	+	168	0
-	+	167	0
-	+	165	24
-	+	165	0
-	+	198	0
-	+	209	2
-	+	203	0
-	+	198	15
-	+	204	43
-	+	204	82
-	+	204	83
-	+	165	0
-	+	204	44
-	+	204	86
-	+	204	0
-	+	204	11
-	+	204	11
-	+	204	18
-	+	204	11
-	+	204	11
-	+	204	20
-	+	208	0
-	+	204	18
-	+	207	0
-	+	209	4
-	+	70	17
-	+	71	68
-	+	165	0
-	+	165	29
-	+	165	4
-	+	165	31
-	+	199	0
-	+	199	0
-	+	200	47
-	+	207	0
-	+	201	16
-	+	208	0
-	+	205	0
-	+	166	16
-	+	70	20
-	+	26	27
-	+	26	0
-	+	66	58
-	+	66	0
-	d	60	3
-	n	65	14
 
 > ~/beartech/project-k/bearos/application/config/options/zh_cn/user_level.inc.php
 	"	301	14
@@ -2473,17 +2969,6 @@ $mfrs
 	d	301	2
 
 > ~/beartech/project-k/bearos/application/config/options/zh_cn/learning_course_
-	"	1	0
-
-> ~/beartech/project-k/bearos/.git/COMMIT_EDITMSG
-	"	1	33
-	^	1	36
-	.	1	39
-	+	3	0
-	+	2	0
-	+	1	39
-
-> /usr/local/share/vim/vim74/doc/help.txt
 	"	1	0
 
 > ~/beartech/project-k/bearos/application/models/attendence/attendence_checking_record_model.php
@@ -2655,15 +3140,6 @@ $mfrs
 	.	3	7
 	+	3	7
 
-> ~/beartech/project-k/bearos/application/libraries/attendence/tcm/zhongkong.php
-	"	10	19
-	^	10	20
-	.	10	20
-	+	2	11
-	+	7	18
-	+	10	20
-	d	10	1
-
 > ~/beartech/project-k/bearos/application/libraries/attendence/tcm/kemilib.php
 	"	7	4
 	^	2	10
@@ -2741,70 +3217,6 @@ $mfrs
 
 > ~/beartech/project-k/bearos/application/config/local.config.php
 	"	3	0
-
-> ~/.vimrc
-	"	1100	0
-	^	754	17
-	.	1100	0
-	+	239	0
-	+	229	23
-	+	238	48
-	+	230	28
-	+	230	0
-	+	232	24
-	+	620	22
-	+	627	0
-	+	624	0
-	+	625	0
-	+	622	36
-	+	623	37
-	+	622	37
-	+	623	36
-	+	623	17
-	+	623	18
-	+	624	0
-	+	623	18
-	+	1	0
-	+	624	0
-	+	619	36
-	+	1	0
-	+	1	0
-	+	1	0
-	+	632	30
-	+	633	16
-	+	642	30
-	+	638	35
-	+	639	36
-	+	1095	65
-	+	1100	0
-	+	1095	65
-	+	5	0
-	+	1095	65
-	+	1100	0
-	+	1095	100
-	+	5	0
-	+	1095	65
-	+	1098	51
-	+	5	0
-	+	1098	50
-	+	1095	44
-	+	1097	0
-	+	1097	0
-	+	40	20
-	+	1077	0
-	+	1074	10
-	+	1079	3
-	+	1074	0
-	+	40	0
-	+	1099	21
-	+	1071	14
-	+	42	0
-	+	48	0
-	+	42	0
-	+	47	0
-	+	48	0
-	+	1100	0
-	+	1100	0
 
 > ~/beartech/project-k/bearos/application/controllers/attendence/base_controller.php
 	"	10	1
@@ -3132,15 +3544,6 @@ $mfrs
 > ~/e
 	"	1	0
 
-> ~/.vim/[Vundle] Installer
-	"	13	0
-	.	1	0
-	+	38	0
-	+	33	0
-	+	26	0
-	+	13	0
-	+	1	0
-
 > ~/.vim/virmc
 	"	1	0
 
@@ -3150,12 +3553,6 @@ $mfrs
 	+	27	13
 	+	1	0
 	+	1	0
-
-> ~/.bashrc
-	"	124	3
-
-> ~/beartech/project-k/bearos/application/controllers/api/member.php
-	"	167	1
 
 > ~/python/a
 	"	1	0

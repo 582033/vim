@@ -38,10 +38,12 @@ Bundle 'gmarik/vundle'
 " my bundles {{{
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'vim-scripts/taglist.vim'
+Bundle 'vim-scripts/JavaScript-Indent'
 Bundle 'scrooloose/nerdtree'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'tpope/vim-haml'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'mattn/emmet-vim'
 "php SDK
 Bundle 'spf13/PIV'
 "Bundle 'Valloric/YouCompleteMe'
@@ -49,7 +51,6 @@ Bundle 'spf13/PIV'
 " }}}
 
 " }}}
-
 
 " Settings {{{
 " Basic settings {{{
@@ -917,14 +918,6 @@ if has("autocmd")
 	autocmd CmdwinEnter * silent! call RemoveAutogroup("PlatonCopyright")
 	augroup END
 	" }}}
-
-" UGLY hack - preload templatefile.vim. This is needed for loading templates
-" for all buffers (when opening all windows for buffers)
-call Source("~/.vim/plugin/templatefile.vim")
-augroup TemplateSystem
-	autocmd!
-	au BufNewFile * call LoadTemplateFile()
-augroup END
 
 	" Autocomands for GUIEnter {{{
 	augroup GUIEnter
