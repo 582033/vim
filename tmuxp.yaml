@@ -1,0 +1,30 @@
+session_name : yjiang
+windows:
+  - window_name : ''
+    panes :
+      - shell_command :
+        - 
+  - window_name : 'controller'
+    panes :
+      - shell_command :
+        - cd ~/beartech/project-k/bearos/application/controllers/
+  - window_name : 'libs'
+    panes :
+      - shell_command :
+        - cd ~/beartech/project-k/bearos/application/libraries/
+  - window_name : 'model'
+    panes :
+      - shell_command :
+        - cd ~/beartech/project-k/bearos/application/models/
+  - window_name : 'view'
+    panes :
+      - shell_command :
+        - cd ~/beartech/project-k/bearos/application/views/
+  - window_name : 'db'
+    panes :
+      - shell_command :
+        - cd ~/beartech/project-k/bearos/doc/sql/update_sql/
+  - window_name : ''
+    panes :
+      - shell_command :
+        - cd ~

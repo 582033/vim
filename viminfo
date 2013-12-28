@@ -18,9 +18,10 @@ $arrays
 
 # 命令行 历史记录 (从新到旧)：
 :q
+:wq
+:help split
 :w
 :q!
-:wq
 :ht
 :BundleInstall
 :BundleInstall!
@@ -1683,7 +1684,7 @@ $arrays
 # 寄存器:
 "0	LINE	0
 	Bundle 'vim-scripts/taglist.vim'
-""1	LINE	0
+"1	LINE	0
 	
 "2	LINE	0
 	" UGLY hack - preload templatefile.vim. This is needed for loading templates
@@ -1718,8 +1719,8 @@ $arrays
 "q	CHAR	0
 	841
 <jkhhhh kkkkkkkkkkkkkkkjjjjjjjjjjjoiujkouV++ypuko$thetype = $this->p('type');//类型        $offset = $this->p('offset');        $per_page = $this->p('per_page');        $order = $this->p('order');//order=1 表示参加人数 order=2 表示热度（赞人数）        $company_id = $this->member['company_id'];        $order_by = !empty($order)?$order:'0';        $data = $this->learning_courseslib->getCoursesList($company_id,$thetype,$offset,$per_page,$order_by);Vkkkkkk=jjjIkkki=2uVjjjj:lsVjjy:bVkkyopppuuuu:help lskkkkjjjjjjkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj:db:bduuuuu::help lsjjjjkkkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj :q
-"-	CHAR	0
-	taglist.vim
+""-	CHAR	0
+	及
 
 # 全局变量:
 !VIMPRESS	LIS	[{'username': 'yjiang', 'blog_url': 'http://yjiang.blog/'}]
@@ -1727,20 +1728,29 @@ $arrays
 !GVIMRC_EXTRA	STR	~/.vim/local/gvimrc
 
 # 文件标记:
-'0  2  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
-'1  1  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/a.php
-'2  1  0  ~/beartech/project-k/bearos/application/controllers/attendence/a.html
-'3  1  0  ~/beartech/project-k/bearos/application/controllers/attendence/a.php
-'4  1  0  ~/beartech/project-k/bearos/application/controllers/attendence/a
-'5  1  0  ~/.vim/vimrc
-'6  922  0  ~/.vim/vimrc
-'7  1  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/a
-'8  1  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
-'9  1  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/a.html
+'0  1  0  ~/.bashrc
+'1  160  0  ~/.bashrc
+'2  17  19  ~/.tmux.conf
+'3  32  20  ~/.tmux.conf
+'4  1  0  ~/.tmuxp/tmuxp.yaml
+'5  54  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+'6  1  16  ~/.vim/.git/COMMIT_EDITMSG
+'7  2  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+'8  1  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/a.php
+'9  1  0  ~/beartech/project-k/bearos/application/controllers/attendence/a.html
 
 # 跳转列表 (从新到旧):
--'  2  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  1  0  ~/.bashrc
+-'  160  0  ~/.bashrc
+-'  17  19  ~/.tmux.conf
+-'  1  0  ~/.tmux.conf
+-'  32  20  ~/.tmux.conf
+-'  1  0  ~/.tmuxp/tmuxp.yaml
+-'  54  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
 -'  1  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
+-'  30  0  ~/.tmuxp/tmuxp.yaml
+-'  1  16  ~/.vim/.git/COMMIT_EDITMSG
+-'  2  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
 -'  267  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
 -'  1  0  ~/beartech/project-k/bearos/application/views/default/attendence/settings/a.php
 -'  1  0  ~/beartech/project-k/bearos/application/controllers/attendence/a.html
@@ -1828,19 +1838,53 @@ $arrays
 -'  225  3  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
 -'  201  18  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
 -'  221  58  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
--'  163  4  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
--'  199  16  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
--'  1  4  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
--'  161  10  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
--'  239  0  ~/beartech/project-k/bearos/application/libraries/attendence/configlib.php
 
 # 缓冲区列表:
-%~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html	2	0
+%~/.bashrc	1	0
 
 # 文件内的标记历史记录 (从新到旧):
 
+> ~/.bashrc
+	"	1	0
+	^	135	13
+	.	135	12
+	+	135	12
+
+> ~/.tmux.conf
+	"	17	19
+	^	17	20
+	.	17	20
+	+	33	30
+	+	26	5
+	+	23	0
+	+	24	16
+	+	23	7
+	+	24	6
+	+	26	5
+	+	16	24
+	+	17	20
+	+	18	38
+	+	19	38
+	+	18	0
+	+	23	7
+	+	24	5
+	+	23	0
+	+	24	0
+	+	40	20
+	+	46	0
+	+	40	0
+	+	17	21
+	+	16	27
+	+	17	20
+
+> ~/.vim/bundle/PIV/doc/split.txt
+	"	37	0
+
+> ~/.tmuxp/tmuxp.yaml
+	"	1	0
+
 > ~/beartech/project-k/bearos/application/views/default/attendence/settings/time_card_machines.html
-	"	2	0
+	"	54	0
 	^	1	6
 	.	2	0
 	+	166	15
@@ -1945,6 +1989,12 @@ $arrays
 	+	2	0
 	d	1	0
 	n	65	14
+
+> ~/.vim/.git/COMMIT_EDITMSG
+	"	1	16
+	^	1	17
+	.	1	16
+	+	1	16
 
 > ~/beartech/project-k/bearos/application/views/default/attendence/settings/a.php
 	"	1	0
@@ -2691,12 +2741,6 @@ $arrays
 > ~/beartech/project-k/bearos/application/third_party/elephant.io/example/client.php
 	"	8	0
 
-> ~/.bashrc
-	"	135	12
-	^	135	13
-	.	135	12
-	+	135	12
-
 > ~/.vimrc
 	"	1126	0
 	^	754	17
@@ -3347,30 +3391,6 @@ $arrays
 
 > ~/tmp/libav/configure
 	"	4326	0
-
-> ~/.tmux.conf
-	"	35	17
-	^	46	37
-	.	40	0
-	+	33	30
-	+	26	5
-	+	23	0
-	+	24	16
-	+	23	7
-	+	24	6
-	+	26	5
-	+	16	24
-	+	17	20
-	+	18	38
-	+	19	38
-	+	18	0
-	+	23	7
-	+	24	5
-	+	23	0
-	+	24	0
-	+	40	20
-	+	46	0
-	+	40	0
 
 > ~/beartech/project-k/bearos/application/controllers/mq_task/sendmail.php
 	"	5	0
