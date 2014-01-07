@@ -45,7 +45,7 @@ Bundle 'tpope/vim-haml'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mattn/emmet-vim'
 "php SDK
-Bundle 'spf13/PIV'
+"Bundle 'spf13/PIV'
 "Bundle 'Valloric/YouCompleteMe'
 
 " }}}
@@ -650,19 +650,22 @@ function! InserMdHeader()
 		call setline(1,'<link rel="stylesheet" href="markdown.css">')    
 	endif  
 endfunction    
-au FileType markdown call InserMdHeader() 
+autocmd bufnewfile *.md call InserMdHeader() 
 "
 "python文件自动增加Header
 function! InserPyHeader()      
-	let l1 = getline(1)      
-	if  match('\<l', l1) == 0         
-		exec 1        
-		normal O       
-		call append(0,'#!/user/bin/python')    
-		call append(1,'#-*-coding:utf8-*- ')    
-	endif  
+	call setline(1, '#!/user/bin/python')    
+	call append(1, '#-*-coding:utf8-*-')    
+	call append(2, '')    
 endfunction    
-au FileType python call InserPyHeader() 
+autocmd bufnewfile *.py call InserPyHeader() 
+"
+"shell自动增加Header
+function! ShellHeader()      
+	call setline(1, '#!/bin/sh')
+	call append(1, '')    
+endfunction    
+autocmd bufnewfile *.sh call ShellHeader() 
 "
 " Function CallProg() {{{
 function! CallProg() abort
