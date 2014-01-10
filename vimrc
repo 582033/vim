@@ -1077,12 +1077,12 @@ nmap <F12> :set cursorcolumn!<BAR>set nocursorcolumn?<CR>
 
 " php setting {{{
 	autocmd filetype php set fdm=marker
-	"php-doc{{{
-	"source ~/.vim/bundle/php-doc/php-doc.vim
-	"inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
-	"nnoremap <C-P> :call PhpDocSingle()<CR> 
-	"vnoremap <C-P> :call PhpDocRange()<CR> 
-	"}}}
+
+	function! AddPHPFuncList()
+		set dictionary-=~/.vim/php_func.txt dictionary+=~/.vim/php_func.txt
+		set complete-=k complete+=k
+	endfunction
+	au filetype php call AddPHPFuncList()
 " }}}
 " python setting{{{
 filetype plugin indent on
@@ -1111,9 +1111,8 @@ hi MatchParen   term=bold         cterm=bold,reverse ctermfg=DarkBlue  ctermbg=B
 hi TabLine 		term=underline 	  cterm=bold 		 ctermfg=9		   ctermbg=4
 hi TabLineSel 	term=bold 		  cterm=bold 		 ctermbg=Red 	   ctermfg=yellow
 "Pmenu
-hi Pmenu 		guibg=cyan		  gui=bold 			 guifg=cyan
-"hi Pmenu 		ctermbg=4 		  guibg=cyan
-hi PmenuSel 	ctermbg=8 		  guibg=yellow 		 guifg=red
+hi Pmenu 		ctermbg=cyan	  	  gui=bold 			 guifg=cyan
+hi PmenuSel 	ctermbg=8 		  guibg=Black 		 guifg=red
 "hi PmenuSbar ctermbg=7 guibg=DarkGray
 hi PmenuThumb 	guibg=yellow 	  guifg=red
 

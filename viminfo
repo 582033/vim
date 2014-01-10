@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~H
 # 上个 Search 图案：
-~MSle0~/shell
+~MSle0~/funct
 
 # 上个 替换 Search 图案：
 ~MSle0&,
@@ -21,6 +21,30 @@ $;
 :wq
 :w
 :q!
+:highlight PmenuSel  gui=bold guibg=4 guifg=red
+:highlight Pmenu ctermbg=cyan gui=bold guibg=4 guifg=red
+:highlight Pmenu ctermbg=cyan gui=bold guibg=4
+:highlight Pmenu ctermbg=yellow gui=bold guibg=4
+:hi Pmenu        guibg=cyan        gui=bold           guifg=cyan
+:highlight Pmenu ctermbg=yellow gui=bold guibg=3
+:highlight Pmenu ctermbg=8 gui=bold guibg=3
+:highlight Pmenu ctermbg=8 gui=bold bgui=3
+:highlight Pmenu ctermbg=8 gui=bold bgui=white
+:highlight Pmenu ctermbg=8 gui=bold
+:highlight Pmenu ctermbg=238 gui=bold
+::highlight Pmenu ctermbg=238 gui=bold
+:sp ../../controllers/
+:BundleClean
+:BundleInstall
+:help runtimepath
+:qll
+:sp exam.php
+:sp ~/.vimrc
+:sp 
+:sp ../
+:sp uploads.ph
+:! tail -f /tmp/a.txt
+:Q
 :vi ../../libraries/learning_courseslib.php
 :sp ../../libraries/pagelib.php
 :sp ../../config/routes.php
@@ -33,7 +57,6 @@ $;
 :'<,'>s/item/record/g
 :'<,'>s/'/"/g
 :sp ../test.php
-:sp 
 :'<,'>s/message/data/g
 :'<,'>s/cover/images
 :'<,'>s/images/cover/g
@@ -47,7 +70,6 @@ $;
 :'<,'>s/course_id/title/g
 :'<,'>s/i/j/g
 :sp learning_attachment_tmp_model.php
-:sp ../
 :tag learning_courselib
 :sp ../../_header.html
 :sp ../_header_menu.html
@@ -61,10 +83,8 @@ $;
 :tag statistics_export
 :tag 
 :sp ../third_party/php-amqplib/
-:BundleClean
 :BundleUnstall
 :BundleUninstall
-:BundleInstall
 :e ++enc=gb2312
 :sp kpiconfiglib.php
 :sp ../config/options/zh_cn/operate_description.inc.php
@@ -158,7 +178,6 @@ $;
 :w!!
 :sp learning_coursesfeedbacklib.php
 :sp admin_accountlib.php
-:Q
 :vs application/views/default/manage/setting/company_level.html
 :vs application/views/default/manage/se
 :vi application/libraries/manage_settinglib.php
@@ -672,7 +691,6 @@ $;
 :sp libs/sub_menus.html
 :'<,'>s/score/rule/g
 :'<,'>s/level/score/g
-:sp ../../controllers/
 :sp ../../
 :'<,'>s/level/result/g
 :sp ../../../default/manage/setting/
@@ -757,13 +775,39 @@ $;
 :h fdm
 
 # 查找字符串 历史记录 (从新到旧)：
+? \<upload_path\>
+? \<_uploadBackground\>
+? \<_createFolder\>
+? \<php_func\>
+? \<dictionary\>
+? \<omnifunc\>
+?/omnif
+?/omif
+?/增加
+?/funct
+?/Add
+?/call
+? ^\([ 	]*Last modified: \)
+?/增加积分
+?/KPI_AC
+?/update_
+?/cache
+?/update_mem
+? \<ChangeFoldMethod\>
+?/func
+?/courses_detail
+?/course_detail
+?/exit
+?/this
+? \<getMessageChannel\>
+?/set
+?/jjjj
 ?/shell
 ?/Shell
 ?/python
 ? \<ShellHeader\>
 ?/sh
 ?/markdown
-? ^\([ 	]*Last modified: \)
 ?/mv
 ?/exec
 ?/rm
@@ -803,13 +847,11 @@ $;
 ?/mode
 ? \<add_user_checking_record\>
 ?/_success
-?/update_
 ?/update
 ?/click
 ?/：
 ?/print
 ?/detail
-?/course_detail
 ?/course_
 ? \<update_learning_training_course_info\>
 ?/attachment
@@ -942,7 +984,6 @@ $;
 ? \<json_encode\>
 ?//array_encode
 ? \<setDocumentConvert\>
-?/cache
 ? \<ichat_dig_model\>
 ?/incDigCount
 ?/dig
@@ -1332,7 +1373,6 @@ $;
 ?/send
 ? \<\$topic\>
 ?/rsync
-?/exit
 ? \<_get_instruction\>
 ?/skdljf
 ? \<_RecommandIsExists\>
@@ -1424,7 +1464,6 @@ $;
 ? \<setex\>
 ? \<_redis\>
 ?/function\ set
-?/set
 ? \<model\>
 ?/load_class
 ? \<initialize\>
@@ -1541,7 +1580,6 @@ $;
 ? \<disposePhoto\>
 ?/upload)path
 ? company_id
-? \<_createFolder\>
 ?/ex
 ? 6
 ? WEB
@@ -1818,43 +1856,40 @@ $;
 
 # 寄存器:
 "0	LINE	0
-		call append(1,'#-*-coding:utf8-*-')    
+	app.listen(3000);
 "1	LINE	0
-		endif  
+	"hi Pmenu 		ctermbg=4 		  guibg=cyan
 "2	LINE	0
-		let l1 = getline(1)      
-		if  match('\<l', l1) == 0         
-			exec 1        
-			normal O       
+	app.listen(3001);
+	app.listen(3002);
 "3	LINE	0
-			call append(1,'#-*-coding:utf8-*- ')    
+	*/
 "4	LINE	0
-	function! InserMdHeader()      
-		let l1 = getline(1)      
-		if  match('\<l', l1) == 0         
-			exec 1        
-			normal O       
-			call setline(1,'<link rel="stylesheet" href="markdown.css">')    
-		endif  
-	endfunction    
-	au FileType markdown call InserMdHeader() 
+	/*
 "5	LINE	0
-	echo FCPATH;
+	//for example:
 "6	LINE	0
-				'status' => 0,
+		filegroup
 "7	LINE	0
-			echo $this->db->last_query();
+		array_udiff_assoc
 "8	LINE	0
-				'member_id' => $this->
+		
+		
+	
+		
 "9	LINE	0
-			$total = $this->learning_training_course_model->get_count($this->company_id);
+	var app = require('http').createServer(handler)
+	  , io = require('socket.io').listen(app)
+	  , fs = require('fs')
+	
+	app.listen(3000);
 "k	CHAR	0
 	kk
 "q	CHAR	0
 	841
 <jkhhhh kkkkkkkkkkkkkkkjjjjjjjjjjjoiujkouV++ypuko$thetype = $this->p('type');//类型        $offset = $this->p('offset');        $per_page = $this->p('per_page');        $order = $this->p('order');//order=1 表示参加人数 order=2 表示热度（赞人数）        $company_id = $this->member['company_id'];        $order_by = !empty($order)?$order:'0';        $data = $this->learning_courseslib->getCoursesList($company_id,$thetype,$offset,$per_page,$order_by);Vkkkkkk=jjjIkkki=2uVjjjj:lsVjjy:bVkkyopppuuuu:help lskkkkjjjjjjkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj:db:bduuuuu::help lsjjjjkkkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj :q
 ""-	CHAR	0
-	FileType
+	8
 
 # 全局变量:
 !VIMPRESS	LIS	[{'username': 'yjiang', 'blog_url': 'http://yjiang.blog/'}]
@@ -1862,312 +1897,286 @@ $;
 !GVIMRC_EXTRA	STR	~/.vim/local/gvimrc
 
 # 文件标记:
-'0  1  6  ~/.vim/a.md
-'1  1  0  ~/.vim/a.py
-'2  653  20  ~/.vim/vimrc
-'3  1  0  ~/.vim/a.sh
-'4  666  16  ~/.vim/vimrc
-'5  3  6  ~/.vim/a.py
-'6  1  0  ~/.vim/a.python
-'7  3  0  ~/.vim/a.sh
-'8  4  6  ~/.vim/a.py
-'9  2  0  ~/.vim/a.md
+'0  63  0  ~/beartech/project-k/bearos/application/controllers/api/settings.php
+'1  1114  22  ~/.vim/vimrc
+'2  17  14  ~/beartech/project-k/bearos/server2.js
+'3  18  0  ~/beartech/project-k/bearos/server.js
+'4  13  1  ~/beartech/project-k/bearos/server.js
+'5  7  22  ~/beartech/project-k/bearos/server.js
+'6  14  0  ~/beartech/project-k/bearos/server.js
+'7  2  0  ~/beartech/project-k/bearos/server.js
+'8  9  0  ~/beartech/project-k/bearos/server.js
+'9  12  1  ~/beartech/project-k/bearos/application/controllers/manage_learning/exam.php
 
 # 跳转列表 (从新到旧):
--'  1  6  ~/.vim/a.md
--'  1  0  ~/.vim/a.py
--'  2  0  ~/.vim/a.py
--'  653  20  ~/.vim/vimrc
--'  663  1  ~/.vim/vimrc
+-'  63  0  ~/beartech/project-k/bearos/application/controllers/api/settings.php
+-'  66  6  ~/beartech/project-k/bearos/application/controllers/api/settings.php
+-'  4  10  ~/beartech/project-k/bearos/application/controllers/api/settings.php
+-'  1  0  ~/beartech/project-k/bearos/application/controllers/api/settings.php
+-'  1114  22  ~/.vim/vimrc
+-'  1115  25  ~/.vim/vimrc
+-'  1081  11  ~/.vim/vimrc
 -'  1  0  ~/.vim/vimrc
--'  1  0  ~/.vim/a.sh
--'  2  0  ~/.vim/a.sh
--'  666  16  ~/.vim/vimrc
--'  1098  1  ~/.vim/vimrc
--'  3  6  ~/.vim/a.py
--'  1  0  ~/.vim/a.python
--'  3  0  ~/.vim/a.sh
--'  250  4  ~/.vim/vimrc
--'  241  76  ~/.vim/vimrc
--'  2  0  ~/.vim/vimrc
--'  4  6  ~/.vim/a.py
--'  6  6  ~/.vim/a.py
--'  2  0  ~/.vim/a.md
--'  670  7  ~/.vim/vimrc
--'  651  7  ~/.vim/vimrc
--'  481  0  ~/.vim/vimrc
--'  644  1  ~/.vim/vimrc
--'  43  23  ~/.vim/vimrc
--'  1083  1  ~/.vim/vimrc
--'  11  71  ~/beartech/project-k/bearos/application/third_party/Smarty/plugins/function.format_bytes.php
--'  1  0  ~/beartech/project-k/bearos/application/third_party/Smarty/plugins/function.format_bytes.php
--'  5  0  ~/beartech/project-k/bearos/bash/doc_convert.sh
--'  1  0  ~/beartech/project-k/bearos/bash/doc_convert.sh
--'  241  0  ~/beartech/project-k/bearos/index.php
--'  242  11  ~/beartech/project-k/bearos/index.php
--'  240  0  ~/beartech/project-k/bearos/index.php
--'  1  0  ~/beartech/project-k/bearos/index.php
--'  302  0  ~/beartech/project-k/bearos/index.php
--'  2  0  ~/beartech/project-k/bearos/index.php
--'  2  0  ~/beartech/project-k/bearos/robots.txt
--'  1  0  ~/beartech/project-k/bearos/robots.txt
--'  2  0  ~/boinc.sh
--'  1  0  ~/boinc.sh
--'  3  102  ~/boinc.sh
--'  88  64  ~/beartech/project-k/bearos/system/libraries/Cloud/drivers/Cloud_local.php
--'  2  0  ~/beartech/project-k/bearos/system/libraries/Cloud/drivers/Cloud_local.php
--'  1  0  ~/beartech/project-k/bearos/system/libraries/Cloud/drivers/Cloud_local.php
--'  162  36  ~/beartech/project-k/bearos/application/controllers/profile/member.php
--'  93  12  ~/beartech/project-k/bearos/application/controllers/profile/member.php
--'  76  42  ~/beartech/project-k/bearos/application/controllers/profile/member.php
--'  75  12  ~/beartech/project-k/bearos/application/controllers/profile/member.php
--'  35  42  ~/beartech/project-k/bearos/application/controllers/profile/member.php
--'  34  12  ~/beartech/project-k/bearos/application/controllers/profile/member.php
--'  154  44  ~/beartech/project-k/bearos/application/controllers/profile/member.php
--'  152  6  ~/beartech/project-k/bearos/application/controllers/profile/member.php
--'  94  42  ~/beartech/project-k/bearos/application/controllers/profile/member.php
--'  38  8  ~/beartech/project-k/bearos/application/controllers/profile/member.php
--'  14  0  ~/beartech/project-k/bearos/application/controllers/profile/member.php
--'  1  0  ~/beartech/project-k/bearos/application/controllers/profile/member.php
--'  280  26  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
--'  1  1  ~/beartech/project-k/bearos/application/libraries/attendence/tcmlib.php
--'  1  0  ~/beartech/project-k/bearos/.git/config
--'  22  9  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
--'  21  4  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
--'  24  3  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
--'  18  12  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
+-'  17  14  ~/beartech/project-k/bearos/server2.js
+-'  1  0  ~/beartech/project-k/bearos/server2.js
+-'  18  0  ~/beartech/project-k/bearos/server.js
+-'  1  0  ~/beartech/project-k/bearos/server.js
+-'  66  0  ~/beartech/project-k/bearos/server.js
+-'  24  0  ~/beartech/project-k/bearos/server.js
+-'  13  1  ~/beartech/project-k/bearos/server.js
+-'  7  22  ~/beartech/project-k/bearos/server.js
+-'  14  0  ~/beartech/project-k/bearos/server.js
+-'  2  0  ~/beartech/project-k/bearos/server.js
+-'  9  0  ~/beartech/project-k/bearos/server.js
+-'  5  0  ~/beartech/project-k/bearos/server.js
+-'  12  0  ~/beartech/project-k/bearos/server.js
+-'  60  0  ~/beartech/project-k/bearos/server.js
+-'  12  1  ~/beartech/project-k/bearos/application/controllers/manage_learning/exam.php
+-'  1  0  ~/beartech/project-k/bearos/application/controllers/manage_learning/exam.php
+-'  106  0  ~/beartech/project-k/bearos/application/libraries/manage_companylib.php
+-'  1  0  ~/beartech/project-k/bearos/application/libraries/manage_companylib.php
+-'  3  1  ~/beartech/project-k/bearos/application/libraries/manage_companylib.php
+-'  7  0  ~/beartech/project-k/bearos/application/libraries/manage_announcelib.php
+-'  8  6  ~/beartech/project-k/bearos/application/libraries/manage_announcelib.php
+-'  1  0  ~/beartech/project-k/bearos/application/libraries/manage_announcelib.php
+-'  13  1  ~/beartech/project-k/bearos/application/controllers/manage_learning/exam.php
+-'  14  4  ~/beartech/project-k/bearos/application/controllers/manage_learning/exam.php
+-'  1083  0  ~/.vim/vimrc
+-'  1084  0  ~/.vim/vimrc
+-'  20  0  ~/.vim/vimrc
+-'  18  1  ~/beartech/project-k/bearos/application/controllers/manage_learning/exam.php
+-'  19  3  ~/beartech/project-k/bearos/application/controllers/manage_learning/exam.php
+-'  38  0  ~/beartech/project-k/bearos/application/controllers/manage_learning/exam.php
+-'  39  0  ~/beartech/project-k/bearos/application/controllers/manage_learning/exam.php
+-'  42  7  ~/beartech/project-k/bearos/application/controllers/manage_learning/exam.php
+-'  36  66  ~/beartech/project-k/bearos/application/controllers/manage_learning/feedback.php
+-'  33  41  ~/beartech/project-k/bearos/application/controllers/manage_learning/feedback.php
+-'  34  11  ~/beartech/project-k/bearos/application/controllers/manage_learning/feedback.php
+-'  1  0  ~/beartech/project-k/bearos/application/controllers/manage_learning/feedback.php
+-'  82  0  ~/beartech/project-k/bearos/application/controllers/manage_learning/questions.php
+-'  1  0  ~/beartech/project-k/bearos/application/controllers/manage_learning/questions.php
+-'  44  1  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
+-'  45  21  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
+-'  2  0  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
 -'  1  0  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
--'  1  0  ~/beartech/project-k/bearos/application/libraries/learning_courses
--'  1  0  ~/beartech/project-k/bearos/a.sh
--'  65  0  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
--'  25  2  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
--'  64  1  ~/beartech/project-k/bearos/application/libraries/learning_courseslib.php
--'  1  0  ~/beartech/project-k/bearos/application/libraries/learning_courseslib.php
--'  18  1  ~/beartech/project-k/bearos/application/libraries/pagelib.php
--'  53  74  ~/beartech/project-k/bearos/application/config/routes.php
--'  1  0  ~/beartech/project-k/bearos/application/config/routes.php
--'  17  43  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
--'  26  18  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
--'  28  98  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
--'  94  0  ~/beartech/project-k/bearos/application/models/attendence/attendence_checking_record_model.php
--'  67  126  ~/beartech/project-k/bearos/application/models/attendence/attendence_checking_record_model.php
--'  105  17  ~/beartech/project-k/bearos/application/models/attendence/attendence_checking_record_model.php
--'  91  55  ~/beartech/project-k/bearos/application/models/attendence/attendence_checking_record_model.php
--'  87  33  ~/beartech/project-k/bearos/application/models/attendence/attendence_checking_record_model.php
--'  100  37  ~/beartech/project-k/bearos/application/models/attendence/attendence_checking_record_model.php
--'  90  22  ~/beartech/project-k/bearos/application/models/attendence/attendence_checking_record_model.php
--'  92  19  ~/beartech/project-k/bearos/application/models/attendence/attendence_checking_record_model.php
--'  51  0  ~/beartech/project-k/bearos/application/models/attendence/attendence_checking_record_model.php
--'  20  0  ~/beartech/project-k/bearos/application/models/attendence/attendence_checking_record_model.php
--'  1  0  ~/beartech/project-k/bearos/application/models/attendence/attendence_checking_record_model.php
--'  31  125  ~/beartech/project-k/bearos/application/models/learning/learning_training_course_model.php
--'  1  0  ~/beartech/project-k/bearos/application/models/learning/learning_training_course_model.php
--'  60  0  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
--'  33  1  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
--'  14  67  ~/beartech/project-k/bearos/application/third_party/Smarty/plugins/function.format_bytes.php
--'  11  1  ~/beartech/project-k/bearos/application/models/learning/learning_attachment_tmp_model.php
--'  1  0  ~/beartech/project-k/bearos/application/models/learning/learning_attachment_tmp_model.php
--'  55  12  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
--'  57  9  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
--'  56  129  ~/beartech/project-k/bearos/application/config/routes.php
--'  47  22  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
--'  62  2  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
--'  6  0  ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
+-'  26  1  ~/beartech/project-k/bearos/application/controllers/manage_learning/exam.php
+-'  27  13  ~/beartech/project-k/bearos/application/controllers/manage_learning/exam.php
+-'  33  1  ~/beartech/project-k/bearos/application/controllers/manage_learning/exam.php
+-'  34  5  ~/beartech/project-k/bearos/application/controllers/manage_learning/exam.php
+-'  1122  37  ~/.vimrc
+-'  1090  9  ~/.vimrc
+-'  1086  10  ~/.vimrc
+-'  71  0  ~/.vimrc
+-'  1089  4  ~/.vimrc
+-'  86  0  ~/.vimrc
+-'  85  0  ~/.vimrc
+-'  32  0  ~/.vimrc
+-'  1091  0  ~/.vimrc
+-'  1084  18  ~/.vimrc
+-'  1083  18  ~/.vimrc
+-'  1082  23  ~/.vimrc
+-'  1063  4  ~/.vimrc
+-'  2  0  ~/.vimrc
+-'  40  0  ~/beartech/project-k/bearos/application/controllers/manage_learning/exam.php
+-'  41  0  ~/beartech/project-k/bearos/application/controllers/manage_learning/exam.php
+-'  20  6  ~/beartech/project-k/bearos/application/controllers/manage_learning/exam.php
+-'  1  0  ~/beartech/project-k/bearos/application/libraries/learning/a.sh
+-'  1  0  ~/beartech/project-k/bearos/application/libraries/learning/vi
+-'  24  0  ~/beartech/project-k/bearos/application/libraries/learning/userinfolib.php
+-'  28  0  ~/beartech/project-k/bearos/application/libraries/learning/userinfolib.php
+-'  4  0  ~/beartech/project-k/bearos/application/libraries/learning/userinfolib.php
+-'  1  0  ~/beartech/project-k/bearos/application/libraries/learning/userinfolib.php
+-'  359  0  ~/beartech/project-k/bearos/application/libraries/learning/questionslib.php
+-'  1  0  ~/beartech/project-k/bearos/application/libraries/learning/questionslib.php
+-'  37  0  ~/beartech/project-k/bearos/application/libraries/learning/examlib.php
+-'  93  41  ~/beartech/project-k/bearos/application/libraries/learning/examlib.php
+-'  25  0  ~/beartech/project-k/bearos/application/libraries/learning/examlib.php
+-'  1  0  ~/beartech/project-k/bearos/application/libraries/learning/examlib.php
+-'  30  0  ~/beartech/project-k/bearos/application/controllers/data.php
+-'  1  0  ~/beartech/project-k/bearos/application/controllers/data.php
+-'  4  0  ~/beartech/project-k/bearos/application/controllers/publics.php
+-'  1  0  ~/beartech/project-k/bearos/application/controllers/publics.php
+-'  37  0  ~/beartech/project-k/bearos/application/controllers/api/version.php
+-'  1114  22  ~/.vim/vimrc
+-'  1115  25  ~/.vim/vimrc
+-'  1081  11  ~/.vim/vimrc
+-'  1  0  ~/.vim/vimrc
+-'  17  14  ~/beartech/project-k/bearos/server2.js
+-'  1  0  ~/beartech/project-k/bearos/server2.js
+-'  18  0  ~/beartech/project-k/bearos/server.js
+-'  1  0  ~/beartech/project-k/bearos/server.js
+-'  66  0  ~/beartech/project-k/bearos/server.js
+-'  24  0  ~/beartech/project-k/bearos/server.js
+-'  13  1  ~/beartech/project-k/bearos/server.js
+-'  7  22  ~/beartech/project-k/bearos/server.js
 
 # 缓冲区列表:
-%~/.vim/a.md	1	6
+%~/beartech/project-k/bearos/application/controllers/api/settings.php	63	0
 
 # 文件内的标记历史记录 (从新到旧):
 
-> ~/.vim/a.md
-	"	1	6
-	^	1	7
-	.	1	0
+> ~/beartech/project-k/bearos/application/controllers/api/settings.php
+	"	63	0
+	.	66	0
+	+	32	2
+	+	33	22
+	+	32	83
+	+	32	23
+	+	32	88
+	+	32	0
+	+	33	0
+	+	33	0
+	+	34	24
+	+	35	23
+	+	37	14
+	+	33	0
+	+	39	0
+	+	39	96
+	+	39	0
+	+	32	62
+	+	39	0
+	+	39	0
+	+	39	99
+	+	25	19
+	+	26	42
+	+	22	44
+	+	21	19
+	+	87	0
+	+	86	0
+	+	88	0
+	+	88	0
+	+	11	0
 	+	1	0
-
-> ~/.vim/a.py
-	"	1	0
-	.	1	0
+	+	11	0
+	+	10	0
+	+	31	0
+	+	29	0
+	+	29	0
+	+	29	0
+	+	28	0
+	+	28	0
+	+	28	0
 	+	5	0
-	+	2	0
-	+	2	0
-	+	1	0
+	+	4	0
+	+	66	0
+	d	86	3
 
 > ~/.vim/vimrc
-	"	653	20
-	^	653	21
-	.	653	20
-	+	1045	0
-	+	1045	0
-	+	1045	0
-	+	1045	56
-	+	1045	58
-	+	1045	58
-	+	1045	0
-	+	1045	5
-	+	1045	0
-	+	1092	0
-	+	1092	0
-	+	1063	14
-	+	1065	3
-	+	1062	0
-	+	1082	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	48	4
-	+	48	0
-	+	48	0
-	+	48	0
-	+	28	42
-	+	48	43
-	+	28	0
-	+	48	0
-	+	161	0
-	+	48	0
-	+	45	4
-	+	39	0
-	+	48	0
-	+	1088	0
-	+	1082	18
-	+	1088	3
-	+	1092	0
-	+	1076	12
-	+	37	0
-	+	40	14
-	+	43	0
-	+	1076	0
-	+	42	16
-	+	43	0
-	+	1117	0
-	+	47	0
-	+	48	0
-	+	1116	19
-	+	205	0
-	+	197	0
-	+	198	0
-	+	48	0
-	+	48	0
-	+	48	0
-	+	48	0
-	+	48	0
-	+	48	0
-	+	48	0
-	+	39	0
-	+	48	0
+	"	1114	22
+	^	1114	23
+	.	1114	22
 	+	48	0
 	+	49	0
 	+	48	0
 	+	48	0
-	+	131	0
-	+	130	0
+	+	129	0
+	+	128	0
 	+	48	0
 	+	48	0
 	+	48	0
 	+	50	20
 	+	24	0
-	+	54	0
+	+	52	0
 	+	41	36
 	+	46	13
-	+	929	0
+	+	927	0
 	+	48	0
-	+	1083	0
-	+	663	23
-	+	664	0
-	+	673	0
-	+	664	14
-	+	672	0
-	+	669	20
+	+	1086	0
+	+	661	23
+	+	662	0
+	+	671	0
+	+	662	14
 	+	670	0
-	+	669	25
-	+	670	0
-	+	672	14
-	+	653	13
-	+	665	27
-	+	666	17
-	+	657	0
-	+	660	0
-	+	657	0
-	+	661	18
-	+	657	14
-	+	659	15
-	+	658	15
-	+	657	16
-	+	659	17
-	+	653	6
-	+	661	6
-	+	653	20
-
-> ~/.vim/a.sh
-	"	1	0
-	.	2	0
-	+	1	0
-	+	5	0
-	+	4	0
-	+	3	0
-	+	2	0
-	+	2	0
-
-> ~/.vim/a.python
-	"	1	0
-
-> ~/.vim/a.vimrc
-	"	1	0
-
-> ~/beartech/project-k/bearos/application/third_party/Smarty/plugins/function.format_bytes.php
-	"	11	71
-	^	14	69
-	.	14	67
-	+	14	67
-	d	14	1
-
-> ~/beartech/project-k/bearos/bash/doc_convert.sh
-	"	5	0
-	.	7	0
-	+	5	59
-	+	4	28
-	+	3	58
-	+	2	11
-	+	5	0
-	+	5	0
-	+	5	0
-	+	8	0
-	+	8	0
-	+	8	0
-	+	5	85
-	+	7	0
-
-> ~/beartech/project-k/bearos/index.php
-	"	241	0
-	^	240	0
-	.	242	0
-	+	28	0
+	+	667	20
+	+	668	0
+	+	667	25
+	+	668	0
+	+	670	14
+	+	651	13
+	+	663	27
+	+	664	17
+	+	655	0
+	+	658	0
+	+	655	0
+	+	659	18
+	+	655	14
+	+	657	15
+	+	656	15
+	+	655	16
+	+	657	17
+	+	651	6
+	+	659	6
+	+	651	20
+	+	1077	0
+	+	668	0
+	+	1088	0
+	+	1087	0
+	+	1087	0
+	+	1087	0
+	+	1087	0
+	+	1087	0
+	+	1087	0
+	+	1087	0
+	+	1087	0
+	+	1087	0
+	+	1087	68
+	+	50	35
+	+	1086	0
+	+	1078	69
+	+	1079	45
+	+	1086	1
+	+	1086	0
+	+	1086	0
+	+	1086	0
+	+	1080	73
+	+	1086	50
+	+	1086	0
+	+	1086	0
+	+	1086	0
 	+	9	0
-	+	2	0
-	+	242	0
-	+	242	0
-	d	241	0
+	+	1080	0
+	+	1081	13
+	+	1081	0
+	+	1081	21
+	+	1081	33
+	+	1081	29
+	+	1081	9
+	+	1080	0
+	+	50	0
+	+	1086	0
+	+	1081	0
+	+	1081	0
+	+	1081	0
+	+	1084	0
+	+	1083	0
+	+	1082	0
+	+	1081	0
+	+	1081	0
+	+	1082	0
+	+	1081	0
+	+	1081	9
+	+	1082	32
+	+	1082	52
+	+	1081	0
+	+	1085	4
+	+	1083	0
+	+	1115	0
+	+	1115	0
+	+	1114	25
+	+	1115	0
+	+	1114	22
 
-> ~/beartech/project-k/bearos/robots.txt
-	"	2	0
+> /usr/local/share/vim/vim74/doc/help.txt
+	"	1	0
 
-> ~/boinc.sh
-	"	2	0
-	^	2	100
-	.	2	100
-	+	1	8
-	+	2	0
-	+	2	100
-
-> ~/beartech/project-k/bearos/system/libraries/Cloud/drivers/Cloud_local.php
-	"	88	64
-	^	88	65
-	.	88	64
-	+	88	64
-	d	88	2
+> ~/beartech/project-k/bearos/application/controllers/api/NERD_tree_1
+	"	18	0
+	.	1	0
+	+	1	0
+	+	1	0
 
 > ~/beartech/project-k/bearos/application/controllers/profile/member.php
-	"	162	36
+	"	15	79
 	^	162	46
 	.	162	45
 	+	184	0
@@ -2271,6 +2280,756 @@ $;
 	+	189	0
 	+	162	45
 	d	162	3
+
+> ~/test/food/c.sh
+	"	16	29
+	^	16	26
+	.	16	25
+	+	16	179
+	+	18	0
+	+	16	179
+	+	16	182
+	+	16	25
+
+> ~/beartech/project-k/bearos/application/libraries/imagelib.php
+	"	43	12
+	^	148	32
+	.	148	31
+	+	148	31
+	d	148	2
+
+> ~/beartech/project-k/bearos/application/controllers/manage_learning/exam.php
+	"	8	0
+	.	9	0
+	+	3	6
+	+	4	6
+	+	9	9
+	+	25	59
+	+	28	65
+	+	30	46
+	+	27	7
+	+	25	44
+	+	32	31
+	+	36	47
+	+	25	0
+	+	38	0
+	+	38	0
+	+	38	0
+	+	42	0
+	+	42	0
+	+	42	0
+	+	42	0
+	+	40	0
+	+	40	0
+	+	34	0
+	+	27	0
+	+	42	0
+	+	39	0
+	+	19	0
+	+	14	0
+	+	26	0
+	+	26	0
+	+	26	0
+	+	26	0
+	+	26	0
+	+	26	0
+	+	26	0
+	+	26	0
+	+	26	0
+	+	26	0
+	+	26	0
+	+	26	0
+	+	26	0
+	+	26	0
+	+	2	0
+	+	20	0
+	+	12	0
+	+	9	0
+	d	25	2
+
+> ~/beartech/project-k/bearos/server2.js
+	"	17	14
+	^	17	15
+	.	17	14
+	+	17	14
+
+> ~/beartech/project-k/bearos/server.js
+	"	18	0
+	.	18	0
+	+	1	22
+	+	18	0
+	+	1	24
+	+	51	0
+	+	51	2
+	+	51	0
+	+	51	0
+	+	51	0
+	+	51	2
+	+	51	0
+	+	35	0
+	+	33	14
+	+	35	0
+	+	47	0
+	+	47	0
+	+	51	18
+	+	51	39
+	+	47	0
+	+	51	0
+	+	35	17
+	+	51	0
+	+	47	0
+	+	35	0
+	+	36	32
+	+	35	0
+	+	51	31
+	+	51	21
+	+	51	0
+	+	51	12
+	+	51	2
+	+	36	0
+	+	48	6
+	+	49	57
+	+	51	0
+	+	39	0
+	+	47	0
+	+	39	5
+	+	47	0
+	+	39	35
+	+	48	39
+	+	35	0
+	+	35	0
+	+	34	4
+	+	35	0
+	+	39	1
+	+	41	10
+	+	42	27
+	+	39	3
+	+	34	11
+	+	39	3
+	+	34	12
+	+	34	14
+	+	39	0
+	+	39	0
+	+	36	42
+	+	38	0
+	+	39	0
+	+	39	2
+	+	38	18
+	+	37	0
+	+	38	0
+	+	37	39
+	+	34	0
+	+	35	0
+	+	44	9
+	+	45	28
+	+	47	0
+	+	40	24
+	+	2	0
+	+	65	26
+	+	5	0
+	+	7	33
+	+	12	0
+	+	8	10
+	+	9	4
+	+	12	0
+	+	11	8
+	+	8	17
+	+	9	12
+	+	10	13
+	+	11	18
+	+	10	2
+	+	15	13
+	+	15	0
+	+	12	0
+	+	14	44
+	+	7	0
+	+	14	0
+	+	7	1
+	+	14	1
+	+	7	0
+	+	14	0
+	+	7	22
+	+	6	1
+	+	13	1
+	+	18	0
+	+	18	0
+	+	18	14
+	+	18	0
+
+> ~/beartech/project-k/bearos/application/libraries/manage_companylib.php
+	"	106	0
+	^	3	3
+	.	3	0
+	+	3	0
+
+> ~/.vim/php_func.txt
+	"	1	0
+
+> ~/.vim/[Vundle] clean
+	"	5	0
+	.	1	0
+	+	5	0
+	+	1	0
+
+> ~/.vim/[Vundle] Installer
+	"	15	0
+	.	1	0
+	+	122	0
+	+	117	0
+	+	110	0
+	+	97	0
+	+	85	0
+	+	75	0
+	+	64	0
+	+	52	0
+	+	41	0
+	+	29	0
+	+	15	0
+	+	1	0
+
+> ~/beartech/project-k/bearos/application/libraries/manage_announcelib.php
+	"	7	0
+	.	8	0
+	+	8	0
+	+	8	0
+
+> ~/beartech/project-k/bearos/application/controllers/manage_learning/feedback.php
+	"	36	66
+	.	36	0
+	+	36	67
+	+	36	0
+
+> ~/.vim/bundle/vimproc/a
+	"	1	0
+	^	1	2
+	.	1	0
+	+	1	0
+
+> /usr/local/share/vim/vim74/doc/options.txt
+	"	5737	4
+
+> ~/.vim/bundle/vimr
+	"	1	0
+
+> ~/beartech/project-k/bearos/application/libraries/taglib.php
+	"	64	0
+	.	56	0
+	+	56	0
+
+> ~/beartech/project-k/bearos/application/libraries/pmlib.php
+	"	194	0
+
+> ~/beartech/project-k/bearos/dev2.txt
+	"	1	0
+
+> ~/beartech/project-k/bearos/application/libraries/ichatlib.php
+	"	714	21
+	^	1025	63
+	.	1027	0
+	+	1027	0
+
+> ~/beartech/project-k/bearos/application/controllers/manage_learning/questions.php
+	"	82	0
+
+> ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
+	"	44	1
+	.	45	0
+	+	63	0
+	+	63	0
+	+	62	8
+	+	63	0
+	+	62	0
+	+	62	12
+	+	62	0
+	+	57	16
+	+	57	7
+	+	54	36
+	+	57	17
+	+	55	53
+	+	57	18
+	+	55	76
+	+	54	12
+	+	57	20
+	+	57	0
+	+	57	17
+	+	60	50
+	+	61	80
+	+	55	3
+	+	57	0
+	+	57	0
+	+	56	10
+	+	55	12
+	+	51	0
+	+	51	0
+	+	28	125
+	+	28	26
+	+	28	25
+	+	29	0
+	+	28	80
+	+	17	33
+	+	28	98
+	+	17	35
+	+	25	78
+	+	26	0
+	+	26	0
+	+	18	13
+	+	28	0
+	+	28	104
+	+	30	0
+	+	30	0
+	+	18	11
+	+	28	80
+	+	30	0
+	+	27	87
+	+	27	0
+	+	27	80
+	+	30	0
+	+	18	11
+	+	18	0
+	+	65	0
+	+	27	59
+	+	26	0
+	+	27	84
+	+	25	0
+	+	27	22
+	+	19	19
+	+	24	0
+	+	24	0
+	+	20	36
+	+	21	23
+	+	22	16
+	+	24	9
+	+	25	97
+	+	18	11
+	+	26	0
+	+	24	0
+	+	23	0
+	+	22	4
+	+	22	0
+	+	21	10
+	+	51	0
+	+	45	72
+	+	51	0
+	+	51	0
+	+	45	0
+	+	45	0
+	d	45	3
+
+> ~/.vimrc
+	"	1122	37
+	^	1122	38
+	.	1122	37
+	+	239	0
+	+	229	23
+	+	238	48
+	+	230	28
+	+	230	0
+	+	232	24
+	+	620	22
+	+	627	0
+	+	624	0
+	+	625	0
+	+	622	36
+	+	623	37
+	+	622	37
+	+	623	36
+	+	623	17
+	+	623	18
+	+	624	0
+	+	623	18
+	+	1	0
+	+	624	0
+	+	619	36
+	+	1	0
+	+	1	0
+	+	1	0
+	+	632	30
+	+	633	16
+	+	642	30
+	+	638	35
+	+	639	36
+	+	1095	65
+	+	1100	0
+	+	1095	65
+	+	5	0
+	+	1095	65
+	+	1100	0
+	+	1095	100
+	+	5	0
+	+	1095	65
+	+	1098	51
+	+	5	0
+	+	1098	50
+	+	1095	44
+	+	1097	0
+	+	1097	0
+	+	40	20
+	+	1077	0
+	+	1074	10
+	+	1079	3
+	+	1074	0
+	+	40	0
+	+	1099	21
+	+	1071	14
+	+	42	0
+	+	48	0
+	+	42	0
+	+	47	0
+	+	48	0
+	+	1100	0
+	+	1100	0
+	+	48	0
+	+	1099	0
+	+	1122	0
+	+	1086	23
+	+	1090	35
+	+	1086	10
+	+	1090	22
+	+	1086	9
+	+	1122	37
+
+> ~/beartech/project-k/bearos/application/libraries/kpilib.php
+	"	38	11
+
+> ~/beartech/project-k/bearos/application/libraries/ichat
+	"	1	0
+
+> ~/beartech/project-k/bearos/index.php
+	"	304	0
+	^	240	0
+	.	242	0
+	+	28	0
+	+	9	0
+	+	2	0
+	+	242	0
+	+	242	0
+	d	241	0
+
+> ~/beartech/project-k/bearos/application/controllers/manage_learning/__Tag_List__
+	"	3	0
+	.	1	0
+	+	195	0
+	+	98	0
+	+	2	0
+	+	1	0
+
+> ~/beartech/project-k/bearos/application/views/default/manage_learning/exam/detail.html
+	"	10	98
+	^	10	104
+	.	10	0
+	+	11	0
+	+	10	0
+
+> ~/beartech/project-k/bearos/application/libraries/learning/vi
+	"	1	0
+
+> ~/beartech/project-k/bearos/application/libraries/learning/a.sh
+	"	1	0
+	^	6	4
+	.	6	3
+	+	7	0
+	+	2	12
+	+	7	0
+	+	3	0
+	+	4	36
+	+	5	10
+	+	6	3
+
+> ~/beartech/project-k/bearos/application/libraries/learning/userinfolib.php
+	"	24	0
+	.	24	0
+	+	24	0
+
+> ~/beartech/project-k/bearos/application/libraries/learning/questionslib.php
+	"	359	0
+
+> ~/beartech/project-k/bearos/application/libraries/learning/examlib.php
+	"	37	0
+	^	93	41
+	.	93	0
+	+	93	0
+
+> ~/beartech/project-k/bearos/application/controllers/data.php
+	"	30	0
+
+> ~/beartech/project-k/bearos/application/controllers/publics.php
+	"	4	0
+
+> ~/beartech/project-k/bearos/application/controllers/api/version.php
+	"	37	0
+
+> ~/beartech/project-k/bearos/application/models/emotion_model.php
+	"	1	0
+
+> ~/beartech/project-k/bearos/application/models/member/member_model.php
+	"	149	13
+	^	139	14
+	.	139	0
+	+	197	0
+	+	197	0
+	+	187	0
+	+	183	23
+	+	174	43
+	+	174	0
+	+	175	50
+	+	174	33
+	+	175	51
+	+	183	26
+	+	184	31
+	+	185	40
+	+	174	0
+	+	139	0
+	d	185	20
+
+> ~/beartech/project-k/bearos/application/libraries/learning/courseslib.php
+	"	156	7
+
+> ~/beartech/project-k/bearos/application/controllers/api/uploads.php
+	"	3	0
+
+> ~/beartech/project-k/bearos/application/views/default/manage_learning/course/detail.html
+	"	46	0
+	^	8	56
+	.	9	0
+	+	122	0
+	+	122	24
+	+	136	0
+	+	122	0
+	+	122	9
+	+	127	0
+	+	126	45
+	+	135	0
+	+	136	0
+	+	126	14
+	+	135	0
+	+	126	19
+	+	127	0
+	+	120	8
+	+	120	0
+	+	120	1
+	+	120	32
+	+	120	0
+	+	120	0
+	+	110	23
+	+	111	17
+	+	119	15
+	+	111	19
+	+	114	0
+	+	112	15
+	+	113	14
+	+	120	0
+	+	115	0
+	+	119	0
+	+	114	3
+	+	115	16
+	+	122	0
+	+	92	0
+	+	92	0
+	+	125	0
+	+	124	0
+	+	91	0
+	+	104	27
+	+	108	0
+	+	132	0
+	+	131	0
+	+	108	0
+	+	104	0
+	+	105	9
+	+	104	24
+	+	105	25
+	+	107	4
+	+	106	50
+	+	105	25
+	+	106	70
+	+	106	49
+	+	107	0
+	+	106	71
+	+	123	0
+	+	123	6
+	+	130	0
+	+	106	35
+	+	139	23
+	+	138	43
+	+	139	0
+	+	139	24
+	+	138	0
+	+	135	0
+	+	138	74
+	+	139	49
+	+	139	0
+	+	139	0
+	+	138	75
+	+	139	35
+	+	140	21
+	+	139	0
+	+	122	122
+	+	122	0
+	+	122	126
+	+	129	130
+	+	106	0
+	+	78	0
+	+	77	0
+	+	77	0
+	+	79	0
+	+	77	28
+	+	78	0
+	+	89	2
+	+	77	0
+	+	143	0
+	+	142	0
+	+	141	24
+	+	79	246
+	+	21	0
+	+	22	0
+	+	22	89
+	+	9	77
+	+	22	41
+	+	22	110
+	+	22	133
+	+	9	0
+	+	9	0
+	+	9	0
+	+	8	0
+	+	9	0
+	d	9	0
+
+> ~/beartech/project-k/bearos/application/libraries/learning/courses
+	"	1	0
+
+> ~/beartech/project-k/bearos/application/controllers/im/im.php
+	"	33	59
+	^	33	60
+	.	33	59
+	+	33	59
+	d	33	3
+
+> ~/beartech/project-k/bearos/application/libraries/mqlib.php
+	"	65	0
+	^	20	74
+	.	20	73
+	+	47	66
+	+	58	0
+	+	57	10
+	+	57	0
+	+	57	38
+	+	57	25
+	+	57	0
+	+	47	0
+	+	15	6
+	+	16	6
+	+	56	0
+	+	35	0
+	+	20	0
+	+	21	0
+	+	22	0
+	+	21	0
+	+	20	0
+	+	21	0
+	+	22	0
+	+	20	73
+	d	20	2
+
+> ~/beartech/project-k/bearos/application/libraries/socket_iolib.php
+	"	22	5
+	^	19	40
+	.	19	0
+	+	11	13
+	+	11	15
+	+	11	12
+	+	39	21
+	+	39	6
+	+	11	0
+	+	39	0
+	+	19	6
+	+	15	14
+	+	19	16
+	+	19	0
+	d	22	4
+
+> ~/beartech/project-k/bearos/application/views/default/manage_learning/course/list.html
+	"	1	0
+	^	1	2
+	.	1	0
+	+	31	5
+	+	32	14
+	+	34	6
+	+	33	14
+	+	32	8
+	+	3	0
+	+	32	8
+	+	1	0
+	d	37	0
+
+> ~/.vim/a.md
+	"	1	6
+	^	1	7
+	.	1	0
+	+	1	0
+
+> ~/.vim/a.py
+	"	1	0
+	.	1	0
+	+	5	0
+	+	2	0
+	+	2	0
+	+	1	0
+
+> ~/.vim/a.sh
+	"	1	0
+	.	2	0
+	+	1	0
+	+	5	0
+	+	4	0
+	+	3	0
+	+	2	0
+	+	2	0
+
+> ~/.vim/a.python
+	"	1	0
+
+> ~/.vim/a.vimrc
+	"	1	0
+
+> ~/beartech/project-k/bearos/application/third_party/Smarty/plugins/function.format_bytes.php
+	"	11	71
+	^	14	69
+	.	14	67
+	+	14	67
+	d	14	1
+
+> ~/beartech/project-k/bearos/bash/doc_convert.sh
+	"	5	0
+	.	7	0
+	+	5	59
+	+	4	28
+	+	3	58
+	+	2	11
+	+	5	0
+	+	5	0
+	+	5	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	5	85
+	+	7	0
+
+> ~/beartech/project-k/bearos/robots.txt
+	"	2	0
+
+> ~/boinc.sh
+	"	2	0
+	^	2	100
+	.	2	100
+	+	1	8
+	+	2	0
+	+	2	100
+
+> ~/beartech/project-k/bearos/system/libraries/Cloud/drivers/Cloud_local.php
+	"	88	64
+	^	88	65
+	.	88	64
+	+	88	64
+	d	88	2
 
 > ~/beartech/project-k/bearos/application/controllers/test.php
 	"	1	0
@@ -2466,85 +3225,6 @@ $;
 > ~/beartech/project-k/bearos/.git/config
 	"	1	0
 
-> ~/beartech/project-k/bearos/application/controllers/manage_learning/course.php
-	"	22	9
-	^	21	10
-	.	21	10
-	+	63	0
-	+	63	0
-	+	62	8
-	+	63	0
-	+	62	0
-	+	62	12
-	+	62	0
-	+	57	16
-	+	57	7
-	+	54	36
-	+	57	17
-	+	55	53
-	+	57	18
-	+	55	76
-	+	54	12
-	+	57	20
-	+	57	0
-	+	57	17
-	+	60	50
-	+	61	80
-	+	55	3
-	+	57	0
-	+	57	0
-	+	56	10
-	+	55	12
-	+	51	0
-	+	51	0
-	+	28	125
-	+	28	26
-	+	28	25
-	+	29	0
-	+	28	80
-	+	17	33
-	+	28	98
-	+	17	35
-	+	25	78
-	+	26	0
-	+	26	0
-	+	18	13
-	+	28	0
-	+	28	104
-	+	30	0
-	+	30	0
-	+	18	11
-	+	28	80
-	+	30	0
-	+	27	87
-	+	27	0
-	+	27	80
-	+	30	0
-	+	18	11
-	+	18	0
-	+	65	0
-	+	27	59
-	+	26	0
-	+	27	84
-	+	25	0
-	+	27	22
-	+	19	19
-	+	24	0
-	+	24	0
-	+	20	36
-	+	21	23
-	+	22	16
-	+	24	9
-	+	25	97
-	+	18	11
-	+	26	0
-	+	24	0
-	+	23	0
-	+	22	4
-	+	22	0
-	+	21	10
-	d	22	3
-
 > ~/beartech/project-k/bearos/application/libraries/learning_courses
 	"	1	0
 
@@ -2671,19 +3351,6 @@ $;
 	+	433	0
 	+	439	0
 	d	439	4
-
-> ~/beartech/project-k/bearos/application/views/default/manage_learning/course/list.html
-	"	37	20
-	^	32	9
-	.	32	8
-	+	31	5
-	+	32	14
-	+	34	6
-	+	33	14
-	+	32	8
-	+	3	0
-	+	32	8
-	d	37	0
 
 > ~/beartech/project-k/bearos/application/models/attendence/attendence_checking_record_model.php
 	"	94	0
@@ -2910,81 +3577,6 @@ $;
 	+	28	0
 	+	31	19
 	d	31	5
-
-> ~/beartech/project-k/bearos/server.js
-	"	35	4
-	^	33	29
-	.	35	0
-	+	1	22
-	+	7	0
-	+	1	24
-	+	39	0
-	+	39	2
-	+	39	0
-	+	39	0
-	+	39	0
-	+	39	2
-	+	39	0
-	+	24	0
-	+	22	14
-	+	24	0
-	+	35	0
-	+	35	0
-	+	39	18
-	+	39	39
-	+	35	0
-	+	39	0
-	+	24	17
-	+	39	0
-	+	35	0
-	+	24	0
-	+	25	32
-	+	24	0
-	+	39	31
-	+	39	21
-	+	39	0
-	+	39	12
-	+	39	2
-	+	25	0
-	+	36	6
-	+	37	57
-	+	39	0
-	+	28	0
-	+	35	0
-	+	28	5
-	+	35	0
-	+	28	35
-	+	36	39
-	+	24	0
-	+	24	0
-	+	23	4
-	+	24	0
-	+	28	1
-	+	29	10
-	+	30	27
-	+	28	3
-	+	23	11
-	+	28	3
-	+	23	12
-	+	23	14
-	+	28	0
-	+	28	0
-	+	25	42
-	+	27	0
-	+	28	0
-	+	28	2
-	+	27	18
-	+	26	0
-	+	27	0
-	+	26	39
-	+	23	0
-	+	24	0
-	+	32	9
-	+	33	28
-	+	35	0
-
-> /usr/local/share/vim/vim74/doc/help.txt
-	"	1	0
 
 > ~/beartech/project-k/bearos/application/libraries/attendence/NERD_tree_1
 	"	5	0
@@ -3214,112 +3806,6 @@ $;
 	+	34	0
 	d	6	1
 
-> ~/beartech/project-k/bearos/application/views/default/manage_learning/course/detail.html
-	"	8	56
-	^	8	56
-	.	8	0
-	+	123	0
-	+	123	0
-	+	123	24
-	+	137	0
-	+	123	0
-	+	123	9
-	+	128	0
-	+	127	45
-	+	136	0
-	+	137	0
-	+	127	14
-	+	136	0
-	+	127	19
-	+	128	0
-	+	121	8
-	+	121	0
-	+	121	1
-	+	121	32
-	+	121	0
-	+	121	0
-	+	111	23
-	+	112	17
-	+	120	15
-	+	112	19
-	+	115	0
-	+	113	15
-	+	114	14
-	+	121	0
-	+	116	0
-	+	120	0
-	+	115	3
-	+	116	16
-	+	123	0
-	+	93	0
-	+	93	0
-	+	126	0
-	+	125	0
-	+	92	0
-	+	105	27
-	+	109	0
-	+	133	0
-	+	132	0
-	+	109	0
-	+	105	0
-	+	106	9
-	+	105	24
-	+	106	25
-	+	108	4
-	+	107	50
-	+	106	25
-	+	107	70
-	+	107	49
-	+	108	0
-	+	107	71
-	+	124	0
-	+	124	6
-	+	131	0
-	+	107	35
-	+	140	23
-	+	139	43
-	+	140	0
-	+	140	24
-	+	139	0
-	+	136	0
-	+	139	74
-	+	140	49
-	+	140	0
-	+	140	0
-	+	139	75
-	+	140	35
-	+	141	21
-	+	140	0
-	+	123	122
-	+	123	0
-	+	123	126
-	+	130	130
-	+	107	0
-	+	79	0
-	+	78	0
-	+	78	0
-	+	80	0
-	+	78	28
-	+	79	0
-	+	90	2
-	+	78	0
-	+	144	0
-	+	143	0
-	+	142	24
-	+	80	246
-	+	22	0
-	+	23	0
-	+	23	89
-	+	10	77
-	+	23	41
-	+	23	110
-	+	23	133
-	+	10	0
-	+	10	0
-	+	10	0
-	+	8	0
-	d	8	0
-
 > ~/beartech/project-k/bearos/application/models/learning/learning_training_course_model.php
 	"	31	125
 	^	31	126
@@ -3384,32 +3870,6 @@ $;
 
 > ~/beartech/project-k/bearos/application/views/default/_header.html
 	"	9	1
-
-> ~/beartech/project-k/bearos/application/libraries/mqlib.php
-	"	20	60
-	^	20	74
-	.	20	73
-	+	47	66
-	+	58	0
-	+	57	10
-	+	57	0
-	+	57	38
-	+	57	25
-	+	57	0
-	+	47	0
-	+	15	6
-	+	16	6
-	+	56	0
-	+	35	0
-	+	20	0
-	+	21	0
-	+	22	0
-	+	21	0
-	+	20	0
-	+	21	0
-	+	22	0
-	+	20	73
-	d	20	2
 
 > ~/beartech/project-k/bearos/tags
 	"	1	0
@@ -3599,89 +4059,6 @@ $;
 	.	38	0
 	+	38	0
 
-> ~/.vim/[Vundle] Installer
-	"	10	0
-	.	1	0
-	+	82	0
-	+	77	0
-	+	70	0
-	+	57	0
-	+	45	0
-	+	35	0
-	+	24	0
-	+	12	0
-	+	1	0
-
-> ~/.vim/[Vundle] clean
-	"	3	0
-	.	1	0
-	+	1	0
-
-> ~/.vimrc
-	"	53	0
-	^	48	1
-	.	48	0
-	+	239	0
-	+	229	23
-	+	238	48
-	+	230	28
-	+	230	0
-	+	232	24
-	+	620	22
-	+	627	0
-	+	624	0
-	+	625	0
-	+	622	36
-	+	623	37
-	+	622	37
-	+	623	36
-	+	623	17
-	+	623	18
-	+	624	0
-	+	623	18
-	+	1	0
-	+	624	0
-	+	619	36
-	+	1	0
-	+	1	0
-	+	1	0
-	+	632	30
-	+	633	16
-	+	642	30
-	+	638	35
-	+	639	36
-	+	1095	65
-	+	1100	0
-	+	1095	65
-	+	5	0
-	+	1095	65
-	+	1100	0
-	+	1095	100
-	+	5	0
-	+	1095	65
-	+	1098	51
-	+	5	0
-	+	1098	50
-	+	1095	44
-	+	1097	0
-	+	1097	0
-	+	40	20
-	+	1077	0
-	+	1074	10
-	+	1079	3
-	+	1074	0
-	+	40	0
-	+	1099	21
-	+	1071	14
-	+	42	0
-	+	48	0
-	+	42	0
-	+	47	0
-	+	48	0
-	+	1100	0
-	+	1100	0
-	+	48	0
-
 > ~/[Vundle] Installer
 	"	13	0
 	.	1	0
@@ -3695,9 +4072,6 @@ $;
 
 > ~/beartech/project-k/bearos/application/controllers/register.php
 	"	193	3
-
-> ~/beartech/project-k/bearos/application/controllers/publics.php
-	"	7	0
 
 > ~/beartech/project-k/bearos/application/controllers/message.php
 	"	159	2
@@ -3735,11 +4109,6 @@ $;
 
 > ~/share/1.txt
 	"	1	0
-
-> ~/beartech/project-k/bearos/application/libraries/taglib.php
-	"	4	0
-	.	56	0
-	+	56	0
 
 > ~/beartech/project-k/bearos/application/libraries/__Tag_List__
 	"	34	5
@@ -3794,9 +4163,6 @@ $;
 
 > ~/beartech/project-k/bearos/application/libraries/documents
 	"	1	0
-
-> ~/beartech/project-k/bearos/application/libraries/pmlib.php
-	"	194	0
 
 > ~/beartech/project-k/bearos/application/views/default/profile/member/avatar.html
 	"	40	74
@@ -3892,12 +4258,6 @@ $;
 	+	86	0
 	d	102	2
 
-> ~/beartech/project-k/bearos/application/libraries/ichatlib.php
-	"	1012	19
-	^	1025	63
-	.	1027	0
-	+	1027	0
-
 > ~/beartech/project-k/bearos/application/controllers/mq_task/documents.php
 	"	16	24
 
@@ -3926,9 +4286,6 @@ $;
 	^	1	0
 	.	1	0
 	+	1	0
-
-> ~/beartech/project-k/bearos/application/libraries/kpilib.php
-	"	212	0
 
 > ~/beartech/project-k/bearos/application/libraries/manage_memberlib.php
 	"	441	33
@@ -3982,9 +4339,6 @@ $;
 	+	97	52
 	+	87	20
 	d	87	7
-
-> ~/beartech/project-k/bearos/application/libraries/manage_companylib.php
-	"	106	0
 
 > ~/beartech/project-k/bearos/application/core/MY_Controller.php
 	"	184	1
@@ -4046,13 +4400,6 @@ $;
 > ~/beartech/project-k/bearos/application/models/company/company_member_
 	"	1	0
 
-> ~/beartech/project-k/bearos/application/libraries/imagelib.php
-	"	41	1
-	^	148	32
-	.	148	31
-	+	148	31
-	d	148	2
-
 > ~/beartech/project-k/bearos/application/libraries/memberlib.php
 	"	108	70
 	^	108	71
@@ -4065,59 +4412,11 @@ $;
 	+	108	70
 	d	108	2
 
-> ~/beartech/project-k/bearos/application/controllers/api/settings.php
-	"	22	12
-	^	21	22
-	.	21	19
-	+	32	2
-	+	33	22
-	+	32	83
-	+	32	23
-	+	32	88
-	+	32	0
-	+	33	0
-	+	33	0
-	+	34	24
-	+	35	23
-	+	37	14
-	+	33	0
-	+	39	0
-	+	39	96
-	+	39	0
-	+	32	62
-	+	39	0
-	+	39	0
-	+	39	99
-	+	25	19
-	+	26	42
-	+	22	44
-	+	21	19
-	d	19	2
-
 > ~/beartech/project-k/bearos/application/controllers/api/member.php
 	"	159	0
 	^	166	3
 	.	166	0
 	+	166	0
-
-> ~/beartech/project-k/bearos/application/models/member/member_model.php
-	"	185	20
-	^	185	41
-	.	174	0
-	+	197	0
-	+	197	0
-	+	187	0
-	+	183	23
-	+	174	43
-	+	174	0
-	+	175	50
-	+	174	33
-	+	175	51
-	+	183	26
-	+	184	31
-	+	185	40
-	+	174	0
-	d	185	20
 
 > ~/beartech/project-k/bearos/application/models/member/member_
 	"	1	0
