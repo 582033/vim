@@ -7,23 +7,23 @@ windows:
   - window_name : 'controller'
     panes :
       - shell_command :
-        - cd ~/beartech/project-k/bearos/application/controllers/
+        - cd ~/joyo/boss/application/controllers/
   - window_name : 'libs'
     panes :
       - shell_command :
-        - cd ~/beartech/project-k/bearos/application/libraries/
+        - cd ~/joyo/boss/application/libraries/
   - window_name : 'model'
     panes :
       - shell_command :
-        - cd ~/beartech/project-k/bearos/application/models/
+        - cd ~/joyo/boss/application/models/
   - window_name : 'view'
     panes :
       - shell_command :
-        - cd ~/beartech/project-k/bearos/application/views/
+        - cd ~/joyo/boss/application/views/
   - window_name : 'db'
     panes :
       - shell_command :
-        - cd ~/beartech/project-k/bearos/doc/sql/update_sql/
+        - cd ~/joyo/boss/
   - window_name : ''
     panes :
       - shell_command :

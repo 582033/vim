@@ -44,6 +44,7 @@ Bundle 'plasticboy/vim-markdown'
 Bundle 'tpope/vim-haml'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mattn/emmet-vim'
+Bundle 'groenewege/vim-less'
 "php SDK
 "Bundle 'spf13/PIV'
 "Bundle 'Valloric/YouCompleteMe'
