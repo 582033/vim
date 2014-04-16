@@ -1120,3 +1120,11 @@ hi PmenuThumb 	guibg=yellow 	  guifg=red
 " }}}
 autocmd FileType vim set fdm=marker
 
+" 支持文件关闭回退
+let $VIMTEMP = $VIMFILES.'/tmp'
+if v:version >= 703
+    set undofile
+    set undodir=$VIMTEMP
+    set undolevels=1000 "maximum number of changes that can be undone
+    set undoreload=10000 "maximum number lines to save for undo on a buffer
+endif

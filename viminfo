@@ -18,16 +18,19 @@ $boss
 
 # 命令行 历史记录 (从新到旧)：
 :q
+:wq
+:BundleInstall
+:w
+:NERDTree
+:sp ~/.s
+:sp .screenrc
 :Tlist
 :TList
 :sp models/
-:w
-:wq
 :'<,'>s/xclub/boss/g
 :'<,'>s/beartech\/project-k\/bearos/joyo\/boss/g
 :'<,'>s/beartech\/project-k\/bearos/joyo/g
 :s
-:BundleInstall
 :BundleIntall
 :sp sendmail.sh
 :vi kemi.php
@@ -1890,11 +1893,19 @@ $boss
 
 # 寄存器:
 "0	LINE	0
-	alias bear='cd ~/beartech/'
-""1	LINE	0
+	Bundle "python.vim"
+"1	BLOCK	1
+	. 
+	. 
+	. 
+	. 
+"2	LINE	0
+	Bundle "python.vim"
+	Bundle "python.vim"
+"3	LINE	0
 		   print_r($userLoginInfo);
 		   exit;
-"2	LINE	0
+"4	LINE	0
 	
 	<VirtualHost *:80>
 	    ServerName blueocean.cn
@@ -2008,32 +2019,27 @@ $boss
 	            Allow from all
 	    </Directory>
 	</VirtualHost>
-"3	LINE	0
+"5	LINE	0
 	alias bear='cd ~/beartech/'
-"4	LINE	0
+"6	LINE	0
 		sleep 1
 		sudo service memcached restart
 		echo "更新完毕,请重新设置自定义积分规则."
-"5	LINE	0
+"7	LINE	0
 	sleep 1
 	sudo service memcached restart
 	echo "更新完毕,请重新设置自定义积分规则."
-"6	LINE	0
-	
-"7	LINE	0
-	sudo service mem
 "8	LINE	0
-				print_r($default_rule);
-				exit;
+	
 "9	LINE	0
-					}
+	sudo service mem
 "k	CHAR	0
 	kk
 "q	CHAR	0
 	841
 <jkhhhh kkkkkkkkkkkkkkkjjjjjjjjjjjoiujkouV++ypuko$thetype = $this->p('type');//类型        $offset = $this->p('offset');        $per_page = $this->p('per_page');        $order = $this->p('order');//order=1 表示参加人数 order=2 表示热度（赞人数）        $company_id = $this->member['company_id'];        $order_by = !empty($order)?$order:'0';        $data = $this->learning_courseslib->getCoursesList($company_id,$thetype,$offset,$per_page,$order_by);Vkkkkkk=jjjIkkki=2uVjjjj:lsVjjy:bVkkyopppuuuu:help lskkkkjjjjjjkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj:db:bduuuuu::help lsjjjjkkkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj :q
-"-	CHAR	0
-	beartech/xuserclub
+""-	CHAR	0
+	"
 
 # 全局变量:
 !VIMPRESS	LIS	[{'username': 'yjiang', 'blog_url': 'http://yjiang.blog/'}]
@@ -2041,18 +2047,29 @@ $boss
 !GVIMRC_EXTRA	STR	~/.vim/local/gvimrc
 
 # 文件标记:
-'0  1  0  ~/spf13-vim/bootstrap.sh
-'1  515  0  ~/.vim/vimrc
-'2  175  0  ~/joyo/boss/application/core/MY_Controller.php
-'3  169  0  ~/joyo/boss/resource/js/models/MenuConfig.js
-'4  1  0  ~/joyo/boss/resource/js/models/MenuConfig
-'5  1  0  ~/joyo/boss/resource/js/router.js
-'6  4  223  ~/joyo/boss/resource/js/router.js
-'7  42  21  ~/joyo/boss/resource/js/main.js
-'8  354  1  ~/joyo/boss/application/controllers/manage/advertise.php
-'9  26  41  ~/joyo/boss/application/controllers/visit.php
+'0  10  3  ~/python/push/list.py
+'1  30  0  ~/.vim/tmuxp.yaml
+'2  55  0  ~/.vimrc
+'3  52  0  ~/.vimrc
+'4  14  32  ~/joyo/boss/application/controllers/visit.php
+'5  1  0  ~/spf13-vim/bootstrap.sh
+'6  515  0  ~/.vim/vimrc
+'7  175  0  ~/joyo/boss/application/core/MY_Controller.php
+'8  169  0  ~/joyo/boss/resource/js/models/MenuConfig.js
+'9  1  0  ~/joyo/boss/resource/js/models/MenuConfig
 
 # 跳转列表 (从新到旧):
+-'  10  3  ~/python/push/list.py
+-'  1  0  ~/python/push/list.py
+-'  30  0  ~/.vim/tmuxp.yaml
+-'  1  0  ~/.vim/tmuxp.yaml
+-'  55  0  ~/.vimrc
+-'  1  0  ~/.vimrc
+-'  52  0  ~/.vimrc
+-'  1127  0  ~/.vimrc
+-'  1059  0  ~/.vimrc
+-'  14  32  ~/joyo/boss/application/controllers/visit.php
+-'  1  0  ~/joyo/boss/application/controllers/visit.php
 -'  1  0  ~/spf13-vim/bootstrap.sh
 -'  515  0  ~/.vim/vimrc
 -'  48  1  ~/.vim/vimrc
@@ -2077,7 +2094,6 @@ $boss
 -'  73  35  ~/joyo/boss/application/controllers/manage/advertise.php
 -'  1  0  ~/joyo/boss/application/controllers/manage/advertise.php
 -'  26  41  ~/joyo/boss/application/controllers/visit.php
--'  1  0  ~/joyo/boss/application/controllers/visit.php
 -'  10  25  ~/joyo/boss/application/controllers/menu.php
 -'  1  0  ~/joyo/boss/application/controllers/menu.php
 -'  29  170  ~/joyo/boss/application/controllers/main.php
@@ -2116,7 +2132,6 @@ $boss
 -'  1  0  ~/joyo/boss/boss.sql
 -'  1  0  ~/.subversion/config
 -'  147  0  ~/.subversion/config
--'  1  0  ~/.vim/tmuxp.yaml
 -'  4  0  ~/NERD_tree_1
 -'  1  0  ~/NERD_tree_1
 -'  5  2  ~/NERD_tree_1
@@ -2144,19 +2159,139 @@ $boss
 -'  190  14  ~/beartech/project-k/bearos/application/libraries/manage_settinglib.php
 -'  164  8  ~/beartech/project-k/bearos/application/libraries/manage_settinglib.php
 -'  165  9  ~/beartech/project-k/bearos/application/libraries/manage_settinglib.php
--'  1  0  ~/beartech/project-k/bearos/application/libraries/manage_settinglib.php
--'  63  1  ~/beartech/project-k/bearos/application/libraries/system_settinglib.php
--'  1  0  ~/beartech/project-k/bearos/application/libraries/system_settinglib.php
--'  1  0  ~/beartech/project-k/bearos/application/libraries/system_companylib.php
--'  25  0  ~/beartech/project-k/bearos/application/libraries/manage_companylib.php
--'  1  0  ~/beartech/project-k/bearos/application/libraries/manage_companylib.php
--'  47  7  ~/beartech/project-k/bearos/application/libraries/manage_companylib.php
--'  41  48  ~/beartech/project-k/bearos/application/libraries/manage_companylib.php
 
 # 缓冲区列表:
-%~/spf13-vim/bootstrap.sh	1	0
+%~/python/push/list.py	10	3
 
 # 文件内的标记历史记录 (从新到旧):
+
+> ~/python/push/list.py
+	"	10	3
+	.	3	0
+	+	3	0
+
+> ~/.vim/tmuxp.yaml
+	"	30	0
+
+> ~/.vimrc
+	"	55	0
+	^	55	1
+	.	55	0
+	+	244	0
+	+	234	23
+	+	243	48
+	+	235	28
+	+	235	0
+	+	237	24
+	+	625	22
+	+	632	0
+	+	629	0
+	+	630	0
+	+	627	36
+	+	628	37
+	+	627	37
+	+	628	36
+	+	628	17
+	+	628	18
+	+	629	0
+	+	628	18
+	+	1	0
+	+	629	0
+	+	624	36
+	+	1	0
+	+	1	0
+	+	1	0
+	+	637	30
+	+	638	16
+	+	647	30
+	+	643	35
+	+	644	36
+	+	1100	65
+	+	1105	0
+	+	1100	65
+	+	5	0
+	+	1100	65
+	+	1105	0
+	+	1100	100
+	+	5	0
+	+	1100	65
+	+	1103	51
+	+	5	0
+	+	1103	50
+	+	1100	44
+	+	1102	0
+	+	1102	0
+	+	40	20
+	+	1082	0
+	+	1079	10
+	+	1084	3
+	+	1079	0
+	+	40	0
+	+	1104	21
+	+	1076	14
+	+	42	0
+	+	53	0
+	+	42	0
+	+	47	0
+	+	53	0
+	+	1105	0
+	+	1105	0
+	+	53	0
+	+	1104	0
+	+	1127	0
+	+	1091	23
+	+	1095	35
+	+	1091	10
+	+	1095	22
+	+	1091	9
+	+	1127	37
+	+	48	6
+	+	53	17
+	+	53	0
+	+	52	29
+	+	53	0
+	+	49	0
+	+	54	0
+	+	55	0
+
+> ~/[Vundle] Installer
+	"	17	0
+	.	1	0
+	+	47	0
+	+	35	0
+	+	19	0
+	+	1	0
+
+> ~/joyo/boss/application/controllers/visit.php
+	"	17	26
+	.	18	0
+	+	10	0
+	+	15	0
+	+	18	0
+
+> ~/joyo/boss/application/controllers/NERD_tree_1
+	"	10	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/joyo/boss/application/controllers/NERD_tree_2
+	"	4	0
+	.	1	0
+	+	1	0
+
+> ~/joyo/boss/application/controllers/NERD_tree_3
+	"	10	0
+	.	1	0
+	+	1	0
+	+	1	0
+
+> ~/python/push/a.py
+	"	1	2
+	.	3	0
+	+	1	0
+	+	3	0
 
 > ~/spf13-vim/bootstrap.sh
 	"	1	0
@@ -2296,10 +2431,6 @@ $boss
 	"	354	1
 	^	308	46
 
-> ~/joyo/boss/application/controllers/visit.php
-	"	26	41
-	^	26	42
-
 > ~/joyo/boss/application/controllers/menu.php
 	"	10	25
 	^	19	26
@@ -2410,9 +2541,6 @@ $boss
 	"	814	0
 
 > ~/.subversion/config
-	"	1	0
-
-> ~/.vim/tmuxp.yaml
 	"	1	0
 
 > ~/NERD_tree_1
@@ -3885,79 +4013,6 @@ $boss
 	+	45	0
 	d	45	3
 
-> ~/.vimrc
-	"	1122	37
-	^	1122	38
-	.	1122	37
-	+	239	0
-	+	229	23
-	+	238	48
-	+	230	28
-	+	230	0
-	+	232	24
-	+	620	22
-	+	627	0
-	+	624	0
-	+	625	0
-	+	622	36
-	+	623	37
-	+	622	37
-	+	623	36
-	+	623	17
-	+	623	18
-	+	624	0
-	+	623	18
-	+	1	0
-	+	624	0
-	+	619	36
-	+	1	0
-	+	1	0
-	+	1	0
-	+	632	30
-	+	633	16
-	+	642	30
-	+	638	35
-	+	639	36
-	+	1095	65
-	+	1100	0
-	+	1095	65
-	+	5	0
-	+	1095	65
-	+	1100	0
-	+	1095	100
-	+	5	0
-	+	1095	65
-	+	1098	51
-	+	5	0
-	+	1098	50
-	+	1095	44
-	+	1097	0
-	+	1097	0
-	+	40	20
-	+	1077	0
-	+	1074	10
-	+	1079	3
-	+	1074	0
-	+	40	0
-	+	1099	21
-	+	1071	14
-	+	42	0
-	+	48	0
-	+	42	0
-	+	47	0
-	+	48	0
-	+	1100	0
-	+	1100	0
-	+	48	0
-	+	1099	0
-	+	1122	0
-	+	1086	23
-	+	1090	35
-	+	1086	10
-	+	1090	22
-	+	1086	9
-	+	1122	37
-
 > ~/beartech/project-k/bearos/application/libraries/kpilib.php
 	"	38	11
 
@@ -4882,12 +4937,6 @@ $boss
 
 > ~/beartech/project-k/bearos/application/helpers/str_helper.php
 	"	9	17
-
-> ~/[Vundle] Installer
-	"	13	0
-	.	1	0
-	+	13	0
-	+	1	0
 
 > ~/[Vundle] clean
 	"	1	0
