@@ -1,29 +1,3 @@
-"
-" vimconfig - project of powerful ViM 6.3 configuration files
-" 
-" vimrc - main configuration file
-" ____________________________________________________________
-"
-" Developed by Lubomir Host 'rajo' <rajo AT platon.sk>
-" Copyright (c) 2000-2005 Platon SDG, http://platon.sk/
-" All rights reserved.
-"
-" See README file for more information about this software.
-" See COPYING file for license information.
-"
-" Download the latest version from
-" http://platon.sk/projects/vimconfig/
-"
-
-" Please don't hesitate to correct my english :)
-" Send corrections to
-"
-"        Lubomir Host 'rajo' <rajo AT platon.sk>
-
-" Version: $Platon: vimconfig/vimrc,v 1.114 2007-09-28 22:36:15 rajo Exp $
-
-" Debian uses compressed helpfiles. We must inform vim that the main
-" helpfiles is compressed. Other helpfiles are stated in the tags-file.
 " Vundle{{{
 set nocompatible              " be iMproved
 filetype off                  " required!
@@ -35,7 +9,7 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
-" my bundles {{{
+" My bundles {{{
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/JavaScript-Indent'
@@ -45,473 +19,15 @@ Bundle 'tpope/vim-haml'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mattn/emmet-vim'
 Bundle 'groenewege/vim-less'
+Bundle 'kien/ctrlp.vim'
+Bundle 'altercation/vim-colors-solarized'
 "php SDK
-"Bundle 'spf13/PIV'
+Bundle 'spf13/PIV'
 "Bundle 'Valloric/YouCompleteMe'
 
 " }}}
 
 " }}}
-
-" Settings {{{
-" Basic settings {{{
-" To be secure & Vi nocompatible
-:set secure nocompatible
-:if version < 600
-:	echo "Please update your vim to 6.x version (version 6.3 is available, version 7.0 vill be soon!)"
-:	finish
-:endif
-
-:if version >= 600 
-syntax enable
-filetype on
-filetype plugin on
-filetype indent on
-:endif
-
-function! Source(File)
-	silent! execute "source " . a:File
-endfunction
-
-let VIMRC_EXTRA="~/.vim/local/vimrc"
-let GVIMRC_EXTRA="~/.vim/local/gvimrc"
-if executable("uname") && executable("awk")
-	let machine = system("uname -n | awk 'BEGIN {ORS=\"\"} {print; }'")
-else
-	let machine = $HOSTNAME
-endif
-let machine = tolower(machine)
-let user = $USER
-
-call Source(VIMRC_EXTRA.".pre")
-call Source(VIMRC_EXTRA."-".user.".pre")
-call Source(VIMRC_EXTRA."-".machine.".pre")
-call Source(VIMRC_EXTRA."-".machine."-".user.".pre")
-call Source(VIMRC_EXTRA."")
-call Source(VIMRC_EXTRA."-".user)
-call Source(VIMRC_EXTRA."-".machine)
-call Source(VIMRC_EXTRA."-".machine."-".user)
-
-" used for searching documentation (~/.vim/doc/FEATURES.txt) etc.
-set runtimepath+=~/.vim
-" }}}
-
-" Settings for C language {{{
-let c_gnu=1
-let c_comment_strings=1
-let c_space_errors=1
-" }}}
-
-" History and viminfo settings {{{
-if has("cmdline_hist") 
-	set history=10000
-endif
-if has("viminfo")
-	if filewritable(expand("$HOME/.vim/viminfo")) == 1 || 
-				\ filewritable(expand("$HOME/.vim/")) == 2
-		set viminfo=!,%,'5000,\"10000,:10000,/10000,n~/.vim/viminfo
-	else
-		set viminfo=
-	endif
-endif
-" Don't save backups of files.
-set nobackup
-set backupcopy=yes
-" }}}
-
-" Status line settings {{{
-":set ruler
-" Display a status-bar.
-set laststatus=2
-if has("statusline")
-	set statusline=%5*%{GetID()}%0*#%{winnr()}\ %<%f\ %3*%m%1*%r%0*\ %2*%y%4*%w%0*%=[%b\ 0x%B]\ \ %8l,%10([%c%V/%{strlen(getline(line('.')))}]%)\ %P
-endif
-" }}}
-
-" Settings for Calendar plugin {{{
-if !exists("g:calendar_diary")
-	let g:calendar_diary = "~/.vim/diary"
-endif
-" }}} 
-" Settings for Explorer script {{{
-if !exists("g:explDetailedHelp")
-	let g:explDetailedHelp=1
-endif
-if !exists("g:explDetailedList")
-	let g:explDetailedList=1
-endif
-if !exists("g:explDateFormat")
-	let g:explDateFormat="%d %b %Y %H:%M"
-endif
-" }}}
-" Settings for gcc & make {{{
-let g:cflags="-Wall -pedantic"
-let g:c_debug_flags="-ggdb -DDEBUG"
-let g:makeflags=""
-" }}}
-" Settings for AutoLastMod {{{
-" Set this to 1 if you will automaticaly change date of modification of file.
-let g:autolastmod=1
-" Modification is made on line like this variable (regular expression!):
-let g:autolastmodtext="^\\([ 	]*Last modified: \\)"
-" }}}
-" Settings for Tlist {{{
-let g:Tlist_Use_Right_Window = 0
-" }}}
-" Settings for NERD Commenter {{{
-" Prevent NERD Commenter from complaining about unknown file types
-  let NERDShutUp=1
-" }}}
-" Haskell {{{
-let g:haddock_browser = "firefox"
-" }}}
-" vim-coffee-script {{{
-" see https://github.com/kchmck/vim-coffee-script
-au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
-au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
-au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
-" }}}
-" smarty {{{
-au BufRead,BufNewFile *.tpl set filetype=smarty 
-au Filetype smarty exec('set dictionary=~/.vim/syntax/smarty.vim') 
-au Filetype smarty set complete+=k
-" }}}
-" hammer.vim {{{
-" see https://github.com/robgleeson/hammer.vim
-if has('unix')
-	let g:HammerBrowser = 'w3m'
-end
-map <leader>p :Hammer<CR>
-" }}}
-
-" VimRepress {{{
-" see https://github.com/vim-scripts/VimRepress
-let VIMPRESS = [{'username':'yjiang',
-                \'blog_url':'http://yjiang.blog/'
-                \}]
-map <leader>P :BlogPreview<CR>
-" }}}
-
-" vim-jsbeautify {{{
-" https://github.com/maksimr/vim-jsbeautify
-" set path to js-beautify file
-let s:rootDir = expand("$HOME/.vim")
-let g:jsbeautify_file = fnameescape(s:rootDir."/bundle/js-beautify/beautify.js")
-let g:htmlbeautify_file = fnameescape(s:rootDir."/bundle/js-beautify/beautify-html.js")
-let g:cssbeautify_file = fnameescape(s:rootDir."/bundle/js-beautify/beautify-css.js")
-
-let g:jsbeautify = {'indent_size': 1, 'indent_char': '\t'}
-let g:htmlbeautify = {'indent_size': 4, 'indent_char': ' ', 'max_char': 120, 'brace_style': 'expand', 'unformatted': ['a', 'sub', 'sup', 'b', 'i', 'u']}
-let g:cssbeautify = {'indent_size': 4, 'indent_char': ' '}
-
-" for js
-autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
-" for html
-autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
-" for css or scss
-autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
-" }}}
-
-
-" Priority between files for file name completion (suffixes) {{{
-" Do not give .h low priority in command-line filename completion.
-set suffixes-=.h
-set suffixes+=.aux
-set suffixes+=.bbl
-set suffixes+=.blg
-set suffixes+=.log
-set suffixes+=.eps
-set suffixes+=.ps
-set suffixes+=.pdf
-
-set wildignore+=*.dvi
-set wildignore+=*.pdf
-set wildignore+=*.o
-set wildignore+=*.ko
-set wildignore+=*.swp
-set wildignore+=*.aux
-set wildignore+=*.bbl
-set wildignore+=*.blg
-" }}}
-
-" Tip #935 hightlight space errors {{{
-
-" To highlight spaces at the end of a line and spaces in front of tabs you can simply add the following command to your vimrc:
-" let <language>_space_errors=1
-" supported languages are:
-" ada, c, chill, csc, icon, java, lpc, mel, nqc, nroff, ora, plm, plsql and python. So if you want to highlight space errors in lpc-files you have to write:
-" let lpc_space_errors=1
-"
-" If you don't want to see the errors at the end of the line set:
-" let <language>_no_trail_space_error=1
-" and if you only use spaces to indent and don't want to see the space errors in front of tabs set:
-" let <language>_no_tab_space_error=1
-let java_space_errors=1
-let c_space_errors=1
-let python_space_errors=1
-" }}}
-" Basic2 {{{
-
-" The cursor is kept in the same column (if possible).  This applies to the
-" commands: CTRL-D, CTRL-U, CTRL-B, CTRL-F, "G", "H", "M", "L", , and to the
-" commands "d", "<<" and ">>" with a linewise operator, with "%" with a count
-" and to buffer changing commands (CTRL-^, :bnext, :bNext, etc.).  Also for an
-" Ex command that only has a line number, e.g., ":25" or ":+".
-set nostartofline
-
-" Automatically setting options in various files
-" WARNINNG: disable modeline if you are running vim version < 6.1.265 !!
-"           These are security problems. See http://www.guninski.com/vim1.html
-"                                                (reported by Georgi Guninski)
-" TODO: there is no way how to test vim patchlevel version, therefore we are
-"       not able determine vim version < 6.1.265
-set modeline
-
-" Available TAGS files
-set tags=./TAGS,./tags,tags
-
-" Don't add EOF at end of file
-set noendofline
-
-" Do case sensitive matching
-set noignorecase
-
-set showfulltag 
-
-set cmdheight=2
-set backspace=2
-set incsearch
-set report=0
-set showcmd showmatch showmode
-
-" Set title of the window to Platon's copyright
-" set titleold=
-" set titlestring=ViMconfig\ (c)\ 2000-2005\ Platon\ SDG
-" set title
-
-" Indent of 1 tab with size of 4 spaces
-set tabstop=4 
-set shiftwidth=4 
-
-" Need more undolevels ??
-" (default 100, 1000 for Unix, VMS, Win32 and OS/2)
-set undolevels=10000
-
-" Use an indent of 4 spaces, with no tabs. This setting is recommended by PEAR
-" (PHP Extension and Application Repository) Conding Standarts. If you want
-" this setting uncomment the expandtab setting below.
-":set expandtab 
-
-" Settings for mouse (gvim under Xwindows)
-set nomousefocus
-set mousehide
-set mousemodel=popup
-
-" The screen will not be redrawn while executing macros, registers
-" and other commands that have not been typed. To force an updates use |:redraw|.
-set lazyredraw
-
-" time out on mapping after one second, time out on key codes after
-" a tenth of a second
-set timeout timeoutlen=1000 ttimeoutlen=100
-
-" command completition
-set wildchar=<Tab>
-set wildmenu
-set wildmode=longest:full,full
-
-"set clipboard=unnamed
-
-" Allow specified keys that move the cursor left/right to wrap to the
-" previous/next line when the cursor is on the first/last character in the
-" line. Allowed keys are 'h' and 'l', arrow keys are not allowed to wrap.
-set whichwrap=h,l
-
-set hlsearch
-set nonu
-
-set ambiwidth=double
-
-" Customize display {{{
-" lastline	When included, as much as possible of the last line
-"			in a window will be displayed.  When not included, a
-"			last line that doesn't fit is replaced with "@" lines.
-"uhex		Show unprintable characters hexadecimal as <xx>
-"			instead of using ^C and ~C.
-set display+=lastline
-set display+=uhex
-" }}}
-
-" Vim beeping go to the hell... {{{
-" With very little patch Vim(gvim) doesn't beep! To dissable beeping patch
-" source and set ':set noerrorbells' (default).
-" Here is patch for version 6.0.193:
-" Note: file src/misc1.c was modified with theses patches:
-"       6.0.024 6.0.089 6.0.113 6.0.178 6.0.180
-"       but patch (probably) also work!
-" Patch:
-"*** vim60.193/src/misc1.c.orig	Sat Feb  9 01:49:54 2002
-"--- vim60.193/src/misc1.c	Sat Feb  9 02:17:16 2002
-"***************
-"*** 2721,2727 ****
-"      void
-"  vim_beep()
-"  {
-"!     if (emsg_silent == 0)
-"      {
-"  	if (p_vb)
-"  	{
-"--- 2721,2727 ----
-"      void
-"  vim_beep()
-"  {
-"!     if (emsg_silent == 0 && p_eb)
-"      {
-"  	if (p_vb)
-"  	{
-set noerrorbells
-set visualbell
-set t_vb=
-" }}}
-
-" Set this, if you will open all windows for files specified
-" on the commandline at vim startup.
-if !exists("g:open_all_win")
-	let g:open_all_win=1
-endif
-
-" Settings for folding long lines
-if !exists("g:fold_long_lines")
-	let g:fold_long_lines=300
-endif
-"}}}
-
-" }}}
-
-" Keybord mappings {{{
-"
-" backspace fix
-noremap 	
-inoremap 	
-cnoremap 	
-" start of line
-"noremap <C-A>		i<Home>
-inoremap <C-A>		<Home>
-cnoremap <C-A>		<Home>
-" end of line
-noremap <C-E>		i<End>
-inoremap <C-E>		<End>
-" back one word
-inoremap <C-B>	<S-Left>
-" forward one word
-"inoremap <C-F>	<S-Right>
-
-" Switching between windows by pressing one time CTRL-X keys.
-noremap <C-X> <C-W><C-W>
-
-" Tip from http://vim.sourceforge.net/tips/tip.php?tip_id=173
-noremap <C-J> <C-W>j<C-W>_
-noremap <C-K> <C-W>k<C-W>_
-
-" Make Insert-mode completion more convenient:
-imap <C-L> <C-X><C-L>
-
-set remap
-map <C-O><C-O> :split 
-imap <C-O><C-O> <Esc>:split 
-
-
-" Open new window with file ~/.vimrc (ViM configuration file)
-map <C-O><C-K> :split ~/.vimrc<CR>
-imap <C-O><C-K> <Esc>:split ~/.vimrc<CR>
-" Open new window with dir ~/.vim (ViM configuration dir)
-map <C-O><C-V> :split ~/.vim<CR>
-imap <C-O><C-V> <Esc>:split ~/.vim<CR>
-
-" Safe delete line (don't add line to registers)
-":imap <C-D> <Esc>"_ddi
-imap <C-D> <Esc>:call SafeLineDelete()<CR>i
-
-" Search for the current Visual selection.
-vmap S y/<C-R>=escape(@",'/\')<CR>
-" replace selected text with text in register
-vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
-
-nnoremap <C-S> :w<CR>
-inoremap <C-S> <C-O>:w<CR>
-nnoremap <SPACE> <C-F>
-nnoremap <S-SPACE> <C-B>
-inoremap <C-F> <C-O><C-F>
-inoremap <C-B> <C-O><C-B>
-inoremap <C-J> <C-O>j
-inoremap <C-K> <C-O>k
-"inoremap <C-H> <C-O>h
-inoremap <C-L> <C-O>l
-noremap <C-N> :browse e<CR>
-" Good pasting toggle {{{
-" From  Christopher Swingley <cswingle AT iarc.uaf.edu>
-" Whenever I want to paste something, I do:
-" ,f
-" i
-" <paste>
-" <esc>
-" ,f
-map ,f :set paste!<CR>:set paste?<CR>
-" }}}
-"
-"映射F6为打开taglist{{{
-map <F6> :TlistToggle<CR>
-"}}}
-
-" Mappings for folding {{{
-" Open one foldlevel of folds in whole file
-" Note: 'Z' works like 'z' but for all lines in file
-noremap Zo mzggvGzo'z
-noremap ZO zR
-noremap Zc mzggvGzc'z
-noremap ZC zM
-noremap Zd mzggvGzd'z
-noremap ZD mzggvGzD'z
-noremap Za mzggvGza'z
-noremap ZA mzggvGzA'z
-noremap Zx mzggvGzx'z
-noremap ZX mzggvGzX'z
-" }}}
-
-" }}}
-
-" Settings for IMAP input method (IMAP plugin) {{{
-
-" detect iso-8859-2 encoding before latin1
-set fileencodings=ucs-bom,utf-8,iso-8859-2,windows-1250,latin1
-
-" set variable "b:input_method" to change input method
-" let b:input_method = "latin2"
-let b:input_method = &encoding
-
-" you may disable actions of IMAP plugin with variable b:disable_imap
-" 0 - enabled
-" 1 - disabled
-let b:disable_imap = 0
-
-call Source("~/.vim/plugin/imaps.vim")
-
-" }}}
-
-" New commands {{{
-command! -nargs=0 -range Indent          <line1>,<line2>call Indent()
-command! -nargs=0 -range FoldLongLines   <line1>,<line2>call FoldLongLines()
-command! -nargs=0 -range UnquoteMailBody <line1>,<line2>call UnquoteMailBody()
-command! -nargs=0 CallProg				call CallProg()
-command! -nargs=0 OpenAllWin			call OpenAllWin()
-command! -nargs=* ReadFileAboveCursor	call ReadFileAboveCursor(<f-args>)
-command! -nargs=* R						call ReadFileAboveCursor(<f-args>)
-command! -nargs=0 DiacriticsOn			call ChooseInputMethod(0)
-command! -nargs=0 DiacriticsOff			let b:disable_imap=1
-" cd to whatever directory the current buffer is using
-command! CD cd %:p:h
-" }}}
-
 " Functions {{{
 " Function ChangeFoldMethod() {{{
 " Function for changing folding method.
@@ -534,6 +50,34 @@ if version >= 600
 	endfunction
 endif
 " ChangeFoldMethod() }}}
+"
+" Initialize NERDTree as needed {{{
+    function! NERDTreeInitAsNeeded()
+        redir => bufoutput
+        buffers!
+        redir END
+        let idx = stridx(bufoutput, "NERD_tree")
+        if idx > -1
+            NERDTreeMirror
+            NERDTreeFind
+            wincmd l
+        endif
+    endfunction
+" }}}
+
+" Strip whitespace {{{}}
+    function! StripTrailingWhitespace()
+        " Preparation: save last search, and cursor position.
+        let _s=@/
+        let l = line(".")
+        let c = col(".")
+        " do the business:
+        %s/\s\+$//e
+        " clean up: restore previous search history, and cursor position
+        let @/=_s
+        call cursor(l, c)
+    endfunction
+" }}}
 
 " Function FoldLongLines() {{{
 "
@@ -905,7 +449,6 @@ endfunction
 " }}}
 
 " }}}
-
 " Autocomands {{{
 if has("autocmd")
 
@@ -1044,39 +587,113 @@ if has("autocmd")
 
 endif " if has("autocmd")
 " }}} Autocomands
-
-
-call Source(VIMRC_EXTRA.".post")
-call Source(VIMRC_EXTRA."-".user.".post")
-call Source(VIMRC_EXTRA."-".machine.".post")
-call Source(VIMRC_EXTRA."-".machine."-".user.".post")
-
-if exists("g:open_all_win")
-	if g:open_all_win == 1
-		" Open all windows only if we are not running (g)vimdiff
-		if match(v:progname, "diff") < 0
-			call OpenAllWin()
-		endif
-	endif
-	" turn g:open_all_win off after opening all windows
-	" it prevents reopen windows after 2nd sourcing .vimrc
-	let g:open_all_win = 0
-endif
-
-" quick sudoer{{{
+" Quick sudoer{{{
 ca w!! w !sudo tee "%"
 "}}}
-
-hi CursorColumn ctermbg=4
+"{{{ 对齐线
+"hi CursorColumn ctermbg=4
 nmap <F11> :set cursorline!<BAR>set nocursorline?<CR>
 nmap <F12> :set cursorcolumn!<BAR>set nocursorcolumn?<CR>
-
-" Modeline {{{
-" vim:set ts=4:
-" vim600:fdm=marker fdl=0 fdc=3
+"}}}
+" Ctrlp 设置{{{
+    let g:ctrlp_map = '<c-p>'
+    let g:ctrlp_working_path_mode = 'ra'
+    set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux 忽略文件
+    set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows 忽略文件
+    let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 " }}}
+" Formatting {{{
 
-" php setting {{{
+    set nowrap                      " Do not wrap long lines
+    set autoindent                  " Indent at the same level of the previous line
+    set shiftwidth=4                " Use indents of 4 spaces
+    set expandtab                   " Tabs are spaces, not tabs
+    set tabstop=4                   " An indentation every four columns
+    set softtabstop=4               " Let backspace delete indent
+    set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
+    set splitright                  " Puts new vsplit windows to the right of the current
+    set splitbelow                  " Puts new split windows to the bottom of the current
+    "set matchpairs+=<:>             " Match, to be used with %
+    set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
+    "set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
+    " Remove trailing whitespaces and ^M chars
+    " To disable the stripping of whitespace, add the following to your
+    " .vimrc.before.local file:
+    "   let g:spf13_keep_trailing_whitespace = 1
+    autocmd FileType c,cpp,java,go,php,javascript,python,twig,xml,yml autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
+    autocmd FileType go autocmd BufWritePre <buffer> Fmt
+    autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
+    autocmd FileType haskell setlocal expandtab shiftwidth=2 softtabstop=2
+    " preceding line best in a plugin but here for now.
+
+    autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+
+    " Workaround vim-commentary for Haskell
+    autocmd FileType haskell setlocal commentstring=--\ %s
+    " Workaround broken colour highlighting in Haskell
+    autocmd FileType haskell setlocal nospell
+
+" }}}}
+" NerdTree {{{
+    map <C-e> <plug>NERDTreeTabsToggle<CR>
+    map <leader>e :NERDTreeFind<CR>
+    nmap <leader>nt :NERDTreeFind<CR>
+
+    let NERDTreeShowBookmarks=1
+    let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+    let NERDTreeChDirMode=0
+    let NERDTreeQuitOnOpen=1
+    let NERDTreeMouseMode=2
+    let NERDTreeShowHidden=1
+    let NERDTreeKeepTreeInNewTab=1
+    let g:nerdtree_tabs_open_on_gui_startup=0
+" }}}
+" Vim UI {{{
+    syntax enable
+    set background=dark
+    let g:solarized_termcolors=256
+    set t_Co=256
+    colorscheme solarized
+
+
+    set tabpagemax=15               " Only show 15 tabs
+    set showmode                    " Display the current mode
+
+    set cursorline                  " Highlight current line
+
+    highlight clear SignColumn      " SignColumn should match background
+    highlight clear LineNr          " Current line number row will have same background color in relative mode
+    let g:CSApprox_hook_post = ['hi clear SignColumn']
+    highlight clear CursorLineNr    " Remove highlight color from current line number
+
+    set backspace=indent,eol,start  " Backspace for dummies
+    set linespace=0                 " No extra spaces between rows
+    "set nu                          " Line numbers on
+    set showmatch                   " Show matching brackets/parenthesis
+    set incsearch                   " Find as you type search
+    set hlsearch                    " Highlight search terms
+    set winminheight=0              " Windows can be 0 line high
+    set ignorecase                  " Case insensitive search
+    set smartcase                   " Case sensitive when uc present
+    set wildmenu                    " Show list instead of just completing
+    set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
+    set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
+    set scrolljump=5                " Lines to scroll when cursor leaves screen
+    set scrolloff=3                 " Minimum lines to keep above and below cursor
+    set foldenable                  " Auto fold code
+    set list
+    set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+" }}}
+" 支持文件关闭回退 {{{
+let $VIMTEMP = $VIMFILES.'/tmp'
+if v:version >= 703
+    set undofile
+    set undodir=$VIMTEMP
+    set undolevels=1000
+    set undoreload=10000
+endif
+" }}}
+" Php Setting {{{
 	autocmd filetype php set fdm=marker
 
 	function! AddPHPFuncList()
@@ -1085,7 +702,7 @@ nmap <F12> :set cursorcolumn!<BAR>set nocursorcolumn?<CR>
 	endfunction
 	au filetype php call AddPHPFuncList()
 " }}}
-" python setting{{{
+" Python Setting{{{
 filetype plugin indent on
 set completeopt+=longest
 set completeopt+=menu
@@ -1094,37 +711,6 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType vim 	set fdm=marker
 "}}}
 " 支持gbk文件直接打开{{{
-set fencs=utf-8,gbk
+    set fencs=utf-8,gbk
 "}}}
-" Colors {{{
-set background=dark
-hi StatusLine   term=bold,reverse cterm=bold,reverse
-hi StatusLineNC term=reverse      cterm=reverse
-hi User1        term=inverse,bold cterm=inverse,bold ctermfg=Red
-hi User2        term=bold         cterm=bold         ctermfg=Yellow
-hi User3        term=inverse,bold cterm=inverse,bold ctermfg=Blue
-hi User4        term=inverse,bold cterm=inverse,bold ctermfg=LightBlue
-hi User5        term=inverse,bold cterm=inverse,bold ctermfg=Red       ctermbg=Green
-hi Folded       term=standout     cterm=bold         ctermfg=Blue      ctermbg=Black
-hi FoldColumn   term=standout                        ctermfg=DarkBlue  ctermbg=Black 
-hi Comment      term=bold                            ctermfg=DarkCyan
-hi MatchParen   term=bold         cterm=bold,reverse ctermfg=DarkBlue  ctermbg=Black
-hi TabLine 		term=underline 	  cterm=bold 		 ctermfg=9		   ctermbg=4
-hi TabLineSel 	term=bold 		  cterm=bold 		 ctermbg=Red 	   ctermfg=yellow
-"Pmenu
-hi Pmenu 		ctermbg=cyan	  	  gui=bold 			 guifg=cyan
-hi PmenuSel 	ctermbg=8 		  guibg=Black 		 guifg=red
-"hi PmenuSbar ctermbg=7 guibg=DarkGray
-hi PmenuThumb 	guibg=yellow 	  guifg=red
-
-" }}}
 autocmd FileType vim set fdm=marker
-
-" 支持文件关闭回退
-let $VIMTEMP = $VIMFILES.'/tmp'
-if v:version >= 703
-    set undofile
-    set undodir=$VIMTEMP
-    set undolevels=1000 "maximum number of changes that can be undone
-    set undoreload=10000 "maximum number lines to save for undo on a buffer
-endif
