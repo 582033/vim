@@ -16,8 +16,6 @@ do_backup() {
 }
 
 upgrade_repo() {
-      msg "trying to update $1"
-
       if [ "$1" = "$app_name" ]; then
           cd "$app_dir" &&
           git pull origin "$git_branch"
@@ -54,6 +52,7 @@ create_symlinks() {
     lnif "$endpath/bashrc"             "$HOME/.bashrc"
     lnif "$endpath/tmux.conf"          "$HOME/.tmux.conf"
     lnif "$endpath/tmuxp.yaml"         "$HOME/.tmuxp.yaml"
+    lnif "$endpath/gitconfig"         "$HOME/.gitconfig"
 }
 
 setup_vundle() {

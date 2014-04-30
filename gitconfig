@@ -1,0 +1,47 @@
+[core]
+	autocrlf = false
+	excludesfile=~/.gitignore
+[user]
+	name = "Yan Jiang"
+	email = j582033@163.com
+[merge]
+	summary = true
+	tool = vimdiff
+[diff]
+	renames = copy
+	wordregex = "[[:alnum:]_]+|[^[:space:]]"
+[i18n]
+	logoutputencoding = UTF-8
+[color]
+	diff = auto
+	status = true
+	branch = auto
+	interactive = auto
+	ui = auto
+	log = auto
+[showbranch]
+    default = --topo-order
+    default = heads/*
+[status]
+	submodulesummary = -1
+[format]
+	numbered = auto
+[push]
+	default = tracking
+[mailmap]
+	file = ~/.mailmap
+
+#[sendemail]
+#	smtpencryption = tls
+#	smtpserver = smtp.gmail.com
+#	smtpuser = j582033@gmail.com
+#	smtpserverport = 587
+
+[alias]
+	sed = !git ls-files --stage | grep ^100 | awk '{print $4}' | xargs sed -s
+	slg = shortlog --pretty='format:%h %s'
+	locate = !sh -c 'git ls-files | grep --color=auto "$1"' -
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+
+[url "bearr:android/"]
+	insteadOf = "git://android.git.kernel.org/"
