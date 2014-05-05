@@ -19,6 +19,8 @@
         Bundle 'kien/ctrlp.vim'
         Bundle 'altercation/vim-colors-solarized'
         Bundle 'nathanaelkane/vim-indent-guides'
+        "syntax checking plugin
+        Bundle 'scrooloose/syntastic'
 
         "php SDK
         Bundle 'spf13/PIV'
@@ -706,6 +708,10 @@
 " }}}
 " Php Setting {{{
     autocmd filetype php set fdm=marker
+    " PIV {
+    let g:DisableAutoPHPFolding = 0
+    let g:PIVAutoClose = 0
+    " }
 " }}}
 " Python Setting{{{
     filetype plugin indent on
@@ -758,5 +764,12 @@
     let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
     let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+"}}}
+"语法检查{{{
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_loc_list_height = 5
+    let g:syntastic_enable_highlighting = 0
+    let g:syntastic_mode_map = { 'passive_filetypes': ['scss', 'slim'] }
 "}}}
 autocmd FileType vim set fdm=marker
