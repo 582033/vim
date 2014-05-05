@@ -91,8 +91,8 @@ alias la='ls -A'
 alias l='ls -CF'
 
 #mv & cp
-alias cp='cp -g'
-alias mv='mv -g'
+#alias cp='cp -g'
+#alias mv='mv -g'
 
 #	proxy
 alias sshchina='ssh -CfNg -D 9999 yjiang@v21.sshchina.com'
@@ -124,7 +124,7 @@ alias boss='cd ~/joyo/boss/'
 #alias bearos='cd ~/beartech/project-k/bearos/'
 
 #iftop
-alias iftop='sudo iftop -i eth1'
+alias iftop='sudo iftop -i eth0'
 
 #rsync
 alias rsync='rsync -avz'
@@ -146,7 +146,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+    . ~/.bash_local
 fi
 
 # enable programmable completion features (you don't need to enable
