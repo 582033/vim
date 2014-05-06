@@ -160,3 +160,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
+#set bash to vim mode
+set -o vi
