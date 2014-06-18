@@ -201,7 +201,7 @@
     "
     "python文件自动增加Header
     function! InserPyHeader()      
-        call setline(1, '#!/user/bin/python')    
+        call setline(1, '#!/usr/bin/python')    
         call append(1, '#-*-coding:utf8-*-')    
         call append(2, '')    
     endfunction    

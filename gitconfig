@@ -2,7 +2,8 @@
 	autocrlf = false
 	excludesfile=~/.gitignore
 [user]
-	name = "Yan Jiang"
+    name = "Yan Jiang"
+    #name = "yjiang"
 	email = j582033@163.com
 [merge]
 	summary = true
