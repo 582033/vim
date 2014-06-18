@@ -209,7 +209,7 @@
     "
     "shell自动增加Header
     function! ShellHeader()      
-        call setline(1, '#!/bin/sh')
+        call setline(1, '#!/bin/bash')
         call append(1, '')    
     endfunction    
     autocmd bufnewfile *.sh call ShellHeader() 
