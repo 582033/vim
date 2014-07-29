@@ -7,23 +7,23 @@ windows:
   - window_name : 'controller'
     panes :
       - shell_command :
-        - cd ~/joyo/operation/application/controllers/
+        - cd ~/joyo/weixin/api/application/controllers/
   - window_name : 'libs'
     panes :
       - shell_command :
-        - cd ~/joyo/operation/application/libraries/
+        - cd ~/joyo/weixin/api/application/libraries/
   - window_name : 'model'
     panes :
       - shell_command :
-        - cd ~/joyo/operation/application/models/
+        - cd ~/joyo/weixin/api/application/models/
   - window_name : 'view'
     panes :
       - shell_command :
-        - cd ~/joyo/operation/application/views/
+        - cd ~/joyo/weixin/api/application/views/
   - window_name : 'db'
     panes :
       - shell_command :
-        - cd ~/joyo/operation/
+        - cd ~/joyo/weixin/api/
   - window_name : ''
     panes :
       - shell_command :

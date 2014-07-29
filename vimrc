@@ -26,6 +26,7 @@
         Bundle 'spf13/PIV'
         "Bundle 'Valloric/YouCompleteMe'
         Bundle 'Shougo/neocomplcache.vim'
+        Bundle 'joshtronic/php.vim'
 
     " }}}
 
@@ -654,14 +655,16 @@
     map <C-t> :TlistToggle<CR>
 "}}}
 " Vim UI {{{
+    "vim-colors-solarized{{{
     syntax enable
     set background=dark
     let g:solarized_termtrans=1
     let g:solarized_contrast="normal"
     let g:solarized_visibility="normal"
     let g:solarized_termcolors=256
-    set t_Co=256
     colorscheme solarized
+    set t_Co=256
+    "}}}
 
     set tabpagemax=15               " Only show 15 tabs
     set showmode                    " Display the current mode

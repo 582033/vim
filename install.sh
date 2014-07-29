@@ -62,8 +62,16 @@ setup_vundle() {
     export SHELL="$system_shell"
 }
 
+create_vim_tmp_dir(){
+    tmp_dir="/tmp/vim_tmp"
+
+    if [ ! -d "$tmp_dir" ]; then
+        mkdir -p "$tmp_dir"
+    fi
+}
+
 #do_backup   "原有vim配置已备份至 .vim.`date +%Y%m%d%S`" "$HOME/.vim" "$HOME/.vimrc"
 clone_vundle
 create_symlinks
 setup_vundle
-
+create_vim_tmp_dir
