@@ -70,8 +70,15 @@ create_vim_tmp_dir(){
     fi
 }
 
-#do_backup   "原有vim配置已备份至 .vim.`date +%Y%m%d%S`" "$HOME/.vim" "$HOME/.vimrc"
-clone_vundle
-create_symlinks
-setup_vundle
-create_vim_tmp_dir
+
+vim_version=$(vim --version | grep Vi | awk '{print $5}')
+r=$(echo "$vim_version >= 7.3" | bc)
+if [ $r != 1 ];then
+    echo "Vim version must be 7.3+."
+else
+    #do_backup   "原有vim配置已备份至 .vim.`date +%Y%m%d%S`" "$HOME/.vim" "$HOME/.vimrc"
+    clone_vundle        #安装vundle
+    create_symlinks     #创建配置软链接
+    setup_vundle        #克隆预置插件
+    create_vim_tmp_dir  #创建vim缓存目录
+fi
