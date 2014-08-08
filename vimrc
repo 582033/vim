@@ -202,15 +202,15 @@
     "
     "python文件自动增加Header
     function! InserPyHeader()      
-        call setline(1, '#!/usr/bin/python')    
-        call append(1, '#-*-coding:utf8-*-')    
+        call setline(1, '#!/usr/bin/env python')    
+        call append(1, '# -*- coding: utf-8 -*-')    
         call append(2, '')    
     endfunction    
     autocmd bufnewfile *.py call InserPyHeader() 
     "
     "shell自动增加Header
     function! ShellHeader()      
-        call setline(1, '#!/bin/bash')
+        call setline(1, '#!/usr/bin/env bash')
         call append(1, '')    
     endfunction    
     autocmd bufnewfile *.sh call ShellHeader() 
