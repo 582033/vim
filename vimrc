@@ -28,6 +28,8 @@
         Bundle 'Shougo/neocomplcache.vim'
         Bundle 'joshtronic/php.vim'
 
+        "python
+        Bundle 'hynek/vim-python-pep8-indent'
     " }}}
 
 " }}}
@@ -731,7 +733,9 @@
     set completeopt+=menu
     set wildmenu
     autocmd FileType python set omnifunc=pythoncomplete#Complete
-    autocmd FileType vim 	set fdm=marker
+    set foldmethod=indent
+    "set foldlevel=99
+    let g:pymode_indent = 0
 "}}}
 " 支持gbk文件直接打开{{{
     set fencs=utf-8,gbk
