@@ -19,6 +19,7 @@
         Bundle 'kien/ctrlp.vim'
         Bundle 'altercation/vim-colors-solarized'
         Bundle 'nathanaelkane/vim-indent-guides'
+        Bundle 'evanmiller/nginx-vim-syntax'
         "syntax checking plugin
         Bundle 'scrooloose/syntastic'
 
@@ -793,6 +794,6 @@
     let g:syntastic_auto_loc_list = 1
     let g:syntastic_loc_list_height = 5
     let g:syntastic_enable_highlighting = 0
-    let g:syntastic_mode_map = { 'passive_filetypes': ['scss', 'slim'] }
+    let g:syntastic_mode_map = { 'passive_filetypes': ['scss', 'slim', 'html'] }
 "}}}
 autocmd FileType vim set fdm=marker

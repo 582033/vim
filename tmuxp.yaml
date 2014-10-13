@@ -7,23 +7,23 @@ windows:
   - window_name : 'controller'
     panes :
       - shell_command :
-        - cd ~/joyo/weixin/api/application/controllers/
-  - window_name : 'libs'
+        - cd ~/leju/wanyuanhui/quanmin/
+  - window_name : 'component'
     panes :
       - shell_command :
-        - cd ~/joyo/weixin/api/application/libraries/
-  - window_name : 'model'
+        - cd ~/leju/wanyuanhui/include/quanmin/Component/
+  - window_name : 'config'
     panes :
       - shell_command :
-        - cd ~/joyo/weixin/api/application/models/
-  - window_name : 'view'
-    panes :
-      - shell_command :
-        - cd ~/joyo/weixin/api/application/views/
+        - cd ~/leju/wanyuanhui/include/quanmin/Config/
   - window_name : 'db'
     panes :
       - shell_command :
-        - cd ~/joyo/weixin/api/
+        - cd ~/leju/wanyuanhui/include/quanmin/DataDriver/db/
+  - window_name : 'view'
+    panes :
+      - shell_command :
+        - cd ~/leju/wanyuanhui/smarty_place/quanmin/template
   - window_name : ''
     panes :
       - shell_command :
