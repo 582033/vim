@@ -8,7 +8,8 @@
     Bundle 'gmarik/vundle'
     " My bundles {{{
         Bundle 'vim-scripts/matchit.zip'
-        Bundle 'vim-scripts/taglist.vim'
+        "Bundle 'vim-scripts/taglist.vim'
+        Bundle 'majutsushi/tagbar'
         Bundle 'vim-scripts/JavaScript-Indent'
         Bundle 'scrooloose/nerdtree'
         Bundle 'plasticboy/vim-markdown'
@@ -659,10 +660,14 @@
     set tags=./tags;/,~/.vimtags
 "}}}
 " TagList{{{
-    let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的
-    let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口，则退出vim
-    let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口 
-    map <C-t> :TlistToggle<CR>
+    "let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的
+    "let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口，则退出vim
+    "let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口 
+    "map <C-t> :TlistToggle<CR>
+"}}}
+" TagBar{{{
+    let g:tagbar_width=20
+    nmap <C-t> :TagbarToggle<CR>
 "}}}
 " Vim UI {{{
     "vim-colors-solarized{{{
