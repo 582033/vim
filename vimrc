@@ -1,6 +1,6 @@
 " Vundle{{{
     set nocompatible              " be iMproved
-    filetype off                  " required!
+    "filetype off                  " required!
 
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
@@ -734,7 +734,11 @@
     endif
 " }}}
 " Php Setting {{{
-    autocmd filetype php set fdm=marker
+    autocmd filetype php set fdm=syntax
+    "设置行内容过长自动折行
+    autocmd filetype php set wrap
+    "设置文件内容过长语法高亮失效关闭(默认>3000行时高亮失效)
+    autocmd filetype php set synmaxcol=0
     " PIV {
     let g:DisableAutoPHPFolding = 0
     let g:PIVAutoClose = 0
