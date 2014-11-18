@@ -63,7 +63,7 @@ setup_vundle() {
 }
 
 create_vim_tmp_dir(){
-    tmp_dir="/tmp/vim_tmp"
+    tmp_dir="$app_dir/.vim_tmp"
 
     if [ ! -d "$tmp_dir" ]; then
         mkdir -p "$tmp_dir"

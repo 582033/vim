@@ -725,7 +725,7 @@
     let g:indent_guides_enable_on_vim_startup = 1
 "}}}
 " 支持文件关闭回退 {{{
-    let $VIMTEMP = $VIMFILES.'/tmp/vim_tmp/'
+    let $VIMTEMP = $HOME.'/.vim/.vim_tmp/'
     if v:version >= 703
         set undofile
         set undodir=$VIMTEMP
