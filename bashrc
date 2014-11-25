@@ -131,7 +131,7 @@ alias rsync='rsync -avz'
 
 #tmux
 alias tmux='tmux -2'
-alias tmuxp='tmuxp load ~/.tmuxp/tmuxp.yaml -2'
+alias tmuxp='tmuxp load ~/.tmuxp.yaml -2'
 
 
 alias vi='vim'

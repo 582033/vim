@@ -4,26 +4,30 @@ windows:
     panes :
       - shell_command :
         - 
-  - window_name : 'controller'
+  - window_name : 'bbs'
     panes :
       - shell_command :
-        - cd ~/leju/wanyuanhui/quanmin/
-  - window_name : 'component'
+        - cd ~/leju/bbs.house.sina.com.cn/app/bbs/
+  - window_name : 'bbs_model'
     panes :
       - shell_command :
-        - cd ~/leju/wanyuanhui/include/quanmin/Component/
-  - window_name : 'config'
+        - cd ~/leju/bbs.house.sina.com.cn/app/bbs/model/
+  - window_name : 'bbs_template'
     panes :
       - shell_command :
-        - cd ~/leju/wanyuanhui/include/quanmin/Config/
-  - window_name : 'db'
+        - cd ~/leju/bbs.house.sina.com.cn/app/bbs/template/
+  - window_name : 'admin'
     panes :
       - shell_command :
-        - cd ~/leju/wanyuanhui/include/quanmin/DataDriver/db/
-  - window_name : 'view'
+        - cd ~/leju/bbs.house.sina.com.cn/app/admin/
+  - window_name : 'admin_model'
     panes :
       - shell_command :
-        - cd ~/leju/wanyuanhui/smarty_place/quanmin/template
+        - cd ~/leju/bbs.house.sina.com.cn/app/_model/
+  - window_name : 'admin_template'
+    panes :
+      - shell_command :
+        - cd ~/leju/bbs.house.sina.com.cn/app/admin/template/
   - window_name : ''
     panes :
       - shell_command :
