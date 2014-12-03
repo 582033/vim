@@ -11,23 +11,15 @@ windows:
   - window_name : 'bbs_model'
     panes :
       - shell_command :
-        - cd ~/leju/bbs.house.sina.com.cn/app/bbs/model/
+        - cd ~/leju/bbs.house.sina.com.cn/app/_model/
   - window_name : 'bbs_template'
     panes :
       - shell_command :
-        - cd ~/leju/bbs.house.sina.com.cn/app/bbs/template/
+        - cd ~/leju/bbs.house.sina.com.cn/app/_template/
   - window_name : 'admin'
     panes :
       - shell_command :
         - cd ~/leju/bbs.house.sina.com.cn/app/admin/
-  - window_name : 'admin_model'
-    panes :
-      - shell_command :
-        - cd ~/leju/bbs.house.sina.com.cn/app/_model/
-  - window_name : 'admin_template'
-    panes :
-      - shell_command :
-        - cd ~/leju/bbs.house.sina.com.cn/app/admin/template/
   - window_name : ''
     panes :
       - shell_command :
