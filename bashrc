@@ -111,6 +111,9 @@ alias gtco='git commit'
 alias gtdi='git diff'
 alias gv='git svn'
 
+#osx flushdns
+alias flushdns='dscacheutil -flushcache'
+
 #	php project
 alias joyo='cd ~/joyo/'
 alias boss='cd ~/joyo/boss/'
