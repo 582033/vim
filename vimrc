@@ -754,6 +754,10 @@
     "set foldlevel=99
     let g:pymode_indent = 0
 "}}}
+" Html Setting{{{
+    filetype plugin indent on
+    set ts=4 noet
+"}}}
 " 支持gbk文件直接打开{{{
     set fencs=utf-8,gbk
 "}}}

@@ -114,17 +114,8 @@ alias gv='git svn'
 #osx flushdns
 alias flushdns='dscacheutil -flushcache'
 
-#	php project
-alias joyo='cd ~/joyo/'
-alias boss='cd ~/joyo/boss/'
-#alias bear='cd ~/beartech/'
-#alias xclub='cd ~/beartech/xuserclub/system/application/'
-#alias blue='cd ~/beartech/bluesea/blueocean/system/application/'
-#alias food='cd ~/beartech/chinese_food/'
-#alias fb='cd ~/beartech/food_backend/'
-#alias ctd='cd ~/beartech/cuantudou/'
-#alias k='cd ~/beartech/project-k/'
-#alias bearos='cd ~/beartech/project-k/bearos/'
+#htop
+alias htop='sudo htop'
 
 #iftop
 alias iftop='sudo iftop -i eth0'
@@ -136,6 +127,7 @@ alias rsync='rsync -avz'
 alias tmux='tmux -2'
 alias tmuxp='tmuxp load ~/.tmuxp.yaml -2'
 
+alias lsusb='system_profiler SPUSBDataType'
 
 alias vi='vim'
 
