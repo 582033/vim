@@ -9,6 +9,7 @@
     " My bundles {{{
         Bundle 'vim-scripts/matchit.zip'
         "Bundle 'vim-scripts/taglist.vim'
+        Bundle 'yonchu/accelerated-smooth-scroll'
         Bundle 'majutsushi/tagbar'
         Bundle 'vim-scripts/JavaScript-Indent'
         Bundle 'scrooloose/nerdtree'
@@ -756,7 +757,10 @@
 "}}}
 " Html Setting{{{
     filetype plugin indent on
-    set ts=4 noet
+    autocmd filetype html set ts=4 noet
+"}}}
+" Markdown Setting{{{
+    autocmd FileType md set ts=4 noet
 "}}}
 " 支持gbk文件直接打开{{{
     set fencs=utf-8,gbk
@@ -809,4 +813,11 @@
     let g:syntastic_enable_highlighting = 0
     let g:syntastic_mode_map = { 'passive_filetypes': ['scss', 'slim', 'html'] }
 "}}}
-autocmd FileType vim set fdm=marker
+"vimrc折叠{{{
+    autocmd FileType vim set fdm=marker
+"}}}
+"私有配置请写入vim_local{{{
+if !empty(glob("vim_local"))
+   source vim_local
+endif
+"}}}
