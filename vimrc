@@ -9,7 +9,6 @@
     " My bundles {{{
         Bundle 'vim-scripts/matchit.zip'
         "Bundle 'vim-scripts/taglist.vim'
-        Bundle 'yonchu/accelerated-smooth-scroll'
         Bundle 'majutsushi/tagbar'
         Bundle 'vim-scripts/JavaScript-Indent'
         Bundle 'scrooloose/nerdtree'
