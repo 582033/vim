@@ -128,6 +128,7 @@ alias tmux='tmux -2'
 alias tmuxp='tmuxp load ~/.tmuxp.yaml -2'
 
 alias lsusb='system_profiler SPUSBDataType'
+alias cal='cal | grep --before-context 6 --after-context 6 --color -e " $(date +%e)" -e "^$(date +%e)"'
 
 alias vi='vim'
 

@@ -4,35 +4,35 @@ windows:
     panes :
       - shell_command :
         - 
-#  - window_name : 'bbs'
-#    panes :
-#      - shell_command :
-#        - cd ~/leju/bbs.house.sina.com.cn/app/bbs/
-#  - window_name : 'bbs_model'
-#    panes :
-#      - shell_command :
-#        - cd ~/leju/bbs.house.sina.com.cn/app/_model/
-#  - window_name : 'bbs_template'
-#    panes :
-#      - shell_command :
-#        - cd ~/leju/bbs.house.sina.com.cn/app/_template/
-#  - window_name : 'admin'
-#    panes :
-#      - shell_command :
-#        - cd ~/leju/bbs.house.sina.com.cn/app/admin/
-#  - window_name : ''
-#    panes :
-#      - shell_command :
-#        - cd ~
-  - window_name : 'controller'
+  - window_name : 'bbs'
     panes :
       - shell_command :
-        - cd ~/leju/gendan.99.leju.com/controller/
-  - window_name : 'model'
+        - cd ~/leju/bbs.house.sina.com.cn/app/bbs/
+  - window_name : 'bbs_model'
     panes :
       - shell_command :
-        -  cd ~/leju/gendan.99.leju.com/module/
-  - window_name : 'template'
+        - cd ~/leju/bbs.house.sina.com.cn/app/_model/
+  - window_name : 'bbs_template'
     panes :
       - shell_command :
-        -  cd ~/leju/gendan.99.leju.com/templates/
+        - cd ~/leju/bbs.house.sina.com.cn/app/_template/
+  - window_name : 'admin'
+    panes :
+      - shell_command :
+        - cd ~/leju/bbs.house.sina.com.cn/app/admin/
+  - window_name : ''
+    panes :
+      - shell_command :
+        - cd ~
+#  - window_name : 'controller'
+#    panes :
+#      - shell_command :
+#        - cd ~/leju/gendan.99.leju.com/controller/
+#  - window_name : 'model'
+#    panes :
+#      - shell_command :
+#        -  cd ~/leju/gendan.99.leju.com/module/
+#  - window_name : 'template'
+#    panes :
+#      - shell_command :
+#        -  cd ~/leju/gendan.99.leju.com/templates/
