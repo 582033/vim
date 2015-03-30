@@ -334,5 +334,6 @@
 "私有配置请写入vim_local{{{
 if !empty(glob("vim_local"))
    source vim_local
+   autocmd BufNewFile,BufRead vim_local set filetype=vim
 endif
 "}}}
