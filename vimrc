@@ -167,7 +167,7 @@
     let NERDTreeChDirMode=0
     let NERDTreeQuitOnOpen=1
     let NERDTreeMouseMode=2
-    let NERDTreeShowHidden=1                                                                      
+    let NERDTreeShowHidden=1
     let NERDTreeKeepTreeInNewTab=1
     let g:nerdtree_tabs_open_on_gui_startup=0
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
@@ -332,8 +332,8 @@
     autocmd FileType vim set fdm=marker
 "}}}
 "私有配置请写入vim_local{{{
-if !empty(glob("vim_local"))
-   source vim_local
+if !empty(glob("~/.vim/vim_local"))
+   source ~/.vim/vim_local
    autocmd BufNewFile,BufRead vim_local set filetype=vim
 endif
 "}}}
