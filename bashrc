@@ -27,6 +27,20 @@ shopt -s checkwinsize
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
 
+############################################################
+# check OS
+_uname=$(uname);
+
+if [ $_uname = 'Linux' ];then 
+    _os='linux'
+elif [ $_uname = 'Darwin' ]; then
+    _os='osx'
+else
+    echo "No support for your OS.";
+    exit;
+fi
+############################################################
+
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -111,9 +125,6 @@ alias gtco='git commit'
 alias gtdi='git diff'
 alias gv='git svn'
 
-#osx flushdns
-alias flushdns='dscacheutil -flushcache'
-
 #htop
 alias htop='sudo htop'
 
@@ -127,14 +138,12 @@ alias rsync='rsync -avz'
 alias tmux='tmux -2'
 alias tmuxp='tmuxp load ~/.tmuxp.yaml -2'
 
-alias lsusb='system_profiler SPUSBDataType'
 alias cal='cal | grep --before-context 6 --after-context 6 --color -e " $(date +%e)" -e "^$(date +%e)"'
 
 alias vi='vim'
 
 #ctags
 alias ctags='ctags -R *'
-
 
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local
@@ -156,8 +165,10 @@ if ! shopt -oq posix; then
     . /usr/share/bash-completion/bash_completion
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
-  elif [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+  elif [ $_os = 'osx' ];then 
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        . $(brew --prefix)/etc/bash_completion
+    fi
   fi
 fi
 
@@ -165,23 +176,38 @@ fi
 #set bash to vim mode
 set -o vi
 
-#osx colors
-if brew list | grep coreutils > /dev/null ; then
-    PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-    eval `gdircolors -b $HOME/.vim/dircolors`
+
+if [ $_os = 'osx' ];then
+    ###################
+    # osx alias
+    alias flushdns='dscacheutil -flushcache'
+    alias lsusb='system_profiler SPUSBDataType'
+    ###################
+
+    ###################
+    #osx colors
+    if brew list | grep coreutils > /dev/null ; then
+        PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+        alias ls='ls --color=auto'
+        alias grep='grep --color=auto'
+        alias fgrep='fgrep --color=auto'
+        alias egrep='egrep --color=auto'
+        eval `gdircolors -b $HOME/.vim/dircolors`
+    fi
+    ###################
+
+
+    ###################
+    PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+    ##
+    # Your previous /Users/yjiang/.bash_profile file was backed up as /Users/yjiang/.bash_profile.macports-saved_2014-12-01_at_16:13:58
+    ##
+
+    # MacPorts Installer addition on 2014-12-01_at_16:13:58: adding an appropriate PATH variable for use with MacPorts.
+    export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+    # Finished adapting your PATH environment variable for use with MacPorts.
+    ###################
+
 fi
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-
-##
-# Your previous /Users/yjiang/.bash_profile file was backed up as /Users/yjiang/.bash_profile.macports-saved_2014-12-01_at_16:13:58
-##
-
-# MacPorts Installer addition on 2014-12-01_at_16:13:58: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
 
