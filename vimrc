@@ -16,7 +16,7 @@
         Bundle 'tpope/vim-haml'
         Bundle 'kchmck/vim-coffee-script'
         Bundle 'mattn/emmet-vim'
-        Bundle 'groenewege/vim-less'
+        "Bundle 'groenewege/vim-less'
         Bundle 'kien/ctrlp.vim'
         Bundle 'altercation/vim-colors-solarized'
         Bundle 'nathanaelkane/vim-indent-guides'
@@ -255,27 +255,27 @@
     autocmd filetype php set wrap
     "设置文件内容过长语法高亮失效关闭(默认>3000行时高亮失效)
     autocmd filetype php set synmaxcol=0
+    autocmd filetype php set syntax=php
     " PIV {
-    let g:DisableAutoPHPFolding = 0
-    let g:PIVAutoClose = 0
+    autocmd filetype php let g:DisableAutoPHPFolding = 0
+    autocmd filetype php let g:PIVAutoClose = 0
     " }
 " }}}
 " Python Setting{{{
     filetype plugin indent on
-    set completeopt+=longest
-    set completeopt+=menu
-    set wildmenu
-    autocmd FileType python set omnifunc=pythoncomplete#Complete
-    set foldmethod=indent
+    autocmd filetype python set completeopt+=longest
+    autocmd filetype python set completeopt+=menu
+    autocmd filetype python set wildmenu
+    autocmd filetype python set foldmethod=indent
     "set foldlevel=99
-    let g:pymode_indent = 0
+    autocmd filetype python let g:pymode_indent = 0
 "}}}
 " Html Setting{{{
     filetype plugin indent on
     autocmd filetype html set ts=4 noet
 "}}}
 " Markdown Setting{{{
-    autocmd FileType md set ts=4 noet
+    autocmd filetype md set ts=4 noet
 "}}}
 " 支持gbk文件直接打开{{{
     set fencs=utf-8,gbk
