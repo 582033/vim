@@ -114,7 +114,7 @@ alias dropbox='python /home/yjiang/.dropbox-dist/dropbox.py'
 # some more git aliases
 alias gf='git-ftp'
 alias gtst='git status'
-alias gtlg='git log --stat'
+alias gtlg='git log --stat --graph'
 alias gtlg1='git log --pretty=format:"%h %an %s" --color=auto'
 alias gtlg2='git log --pretty=oneline'
 alias gtbr='git branch'
