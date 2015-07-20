@@ -50,6 +50,7 @@ create_symlinks() {
 
     lnif "$endpath/vimrc"              "$HOME/.vimrc"
     lnif "$endpath/bashrc"             "$HOME/.bashrc"
+    lnif "$endpath/editrc"             "$HOME/.editrc"
     lnif "$endpath/tmux.conf"          "$HOME/.tmux.conf"
     lnif "$endpath/tmuxp.yaml"         "$HOME/.tmuxp.yaml"
     lnif "$endpath/gitconfig"         "$HOME/.gitconfig"
