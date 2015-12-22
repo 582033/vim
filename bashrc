@@ -201,7 +201,8 @@ set -o vi
 #set unicode
 export LANG="zh_CN.UTF-8"
 export LANG_ALL="zh_CN.UTF-8"
-
+#set archlinux aur editor
+export VISUAL="vim"
 #include private settings
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local
