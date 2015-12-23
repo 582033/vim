@@ -23,6 +23,8 @@
         Bundle 'evanmiller/nginx-vim-syntax'
         "syntax checking plugin
         Bundle 'scrooloose/syntastic'
+        "systemd server file highlight
+        Bundle 'Matt-Deacalion/vim-systemd-syntax'
 
         "php SDK
         Bundle 'spf13/PIV'
