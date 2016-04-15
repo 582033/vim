@@ -9,7 +9,7 @@
         "Plug 'vim-scripts/taglist.vim'
         Plug 'majutsushi/tagbar'
         Plug 'vim-scripts/JavaScript-Indent'
-        Plug 'scrooloose/nerdtree'
+        Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
         Plug 'plasticboy/vim-markdown'
         Plug 'tpope/vim-haml'
         Plug 'kchmck/vim-coffee-script'
