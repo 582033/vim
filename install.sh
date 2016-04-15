@@ -17,7 +17,7 @@ do_backup() {
 
 install_plug() {
     if [ ! -e "$HOME/.vim/autoload" ]; then
-        curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     fi
 }
 
@@ -64,4 +64,5 @@ else
     install_plug        #安装vim-plug
     setup_plug        #克隆预置插件
     create_vim_tmp_dir  #创建vim缓存目录
+    echo "Done."
 fi

@@ -7,14 +7,14 @@
     " My plug {{{
         Plug 'vim-scripts/matchit.zip'
         "Plug 'vim-scripts/taglist.vim'
-        Plug 'majutsushi/tagbar'
-        Plug 'vim-scripts/JavaScript-Indent'
+        Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+        Plug 'vim-scripts/JavaScript-Indent', { 'for':['php', 'html', 'javascript'] }
         Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-        Plug 'plasticboy/vim-markdown'
+        Plug 'plasticboy/vim-markdown', { 'for' : 'markdown' }
         Plug 'tpope/vim-haml'
-        Plug 'kchmck/vim-coffee-script'
+        Plug 'kchmck/vim-coffee-script', { 'for' : 'javascript' }
         Plug 'mattn/emmet-vim'
-        "Plug 'groenewege/vim-less'
+        "Plug 'groenewege/vim-less', { 'for': 'scss'}
         Plug 'kien/ctrlp.vim'
         Plug 'altercation/vim-colors-solarized'
         Plug 'https://github.com/nathanaelkane/vim-indent-guides'
@@ -25,14 +25,15 @@
         Plug 'Matt-Deacalion/vim-systemd-syntax'
 
         "php SDK
-        Plug 'spf13/PIV'
+        Plug 'spf13/PIV', { 'for': 'php' }
         "Plug 'Valloric/YouCompleteMe'
         Plug 'Shougo/neocomplcache.vim'
-        Plug 'joshtronic/php.vim'
+        Plug 'joshtronic/php.vim', { 'for': 'php' }
 
         "python
-        Plug 'hynek/vim-python-pep8-indent'
+        Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
     " }}}
+    call plug#end()
 
 " }}}
 " Functions {{{
