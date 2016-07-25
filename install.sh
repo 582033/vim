@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 ##############################
 app_dir="$HOME/.vim"
@@ -57,10 +57,7 @@ create_symlinks() {
 }
 
 setup_vundle() {
-    system_shell="$SHELL"
-    export SHELL='/bin/sh'
     vim -u "$HOME/.vimrc" +BundleInstall! +BundleClean +qall
-    export SHELL="$system_shell"
 }
 
 create_vim_tmp_dir(){
@@ -71,15 +68,18 @@ create_vim_tmp_dir(){
     fi
 }
 
+version_ge(){
+    test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" == "$1";
+}
 
 vim_version=$(vim --version | grep Vi | awk '{print $5}')
-r=$(echo "$vim_version >= 7.3" | bc)
-if [ $r != 1 ];then
-    echo "Vim version must be 7.3+."
-else
+
+if version_ge $vim_version 7.3;then
     #do_backup   "原有vim配置已备份至 .vim.`date +%Y%m%d%S`" "$HOME/.vim" "$HOME/.vimrc"
     clone_vundle        #安装vundle
     create_symlinks     #创建配置软链接
     setup_vundle        #克隆预置插件
     create_vim_tmp_dir  #创建vim缓存目录
+else
+    echo "Vim version must be 7.3+."
 fi
