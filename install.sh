@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 ##############################
 app_dir="$HOME/.vim"
@@ -33,8 +33,6 @@ create_symlinks() {
 }
 
 setup_vim_plug() {
-    system_shell="$SHELL"
-    export SHELL='/bin/sh'
     if [ ! -e "$HOME/.vim/autoload" ]; then
         curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
         install_arguments="+PlugInstall +PlugClean +qall"
@@ -42,7 +40,6 @@ setup_vim_plug() {
         install_arguments="+PlugUpgrade +PlugInstall +PlugClean +qall"
     fi
     vim -u "$HOME/.vimrc" $install_arguments
-    export SHELL="$system_shell"
 }
 
 create_vim_tmp_dir(){
