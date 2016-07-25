@@ -2,7 +2,7 @@
 
 ##############################
 app_dir="$HOME/.vim"
-VUNDLE_URI="https://github.com/gmarik/vundle.git"
+#VUNDLE_URI="https://github.com/gmarik/vundle.git"
 ###############################
 
 do_backup() {
@@ -15,26 +15,6 @@ do_backup() {
    echo $1
 }
 
-upgrade_repo() {
-      if [ "$1" = "$app_name" ]; then
-          cd "$app_dir" &&
-          git pull origin "$git_branch"
-      fi
-
-      if [ "$1" = "vundle" ]; then
-          cd "$HOME/.vim/bundle/vundle" &&
-          git pull origin master
-      fi
-}
-
-clone_vundle() {
-    if [ ! -e "$HOME/.vim/bundle/vundle" ]; then
-        git clone $VUNDLE_URI "$HOME/.vim/bundle/vundle"
-    else
-        upgrade_repo "vundle"   "Successfully updated vundle"
-    fi
-}
-
 lnif() {
     if [ -e "$1" ]; then
         ln -sf "$1" "$2"
@@ -44,10 +24,6 @@ lnif() {
 create_symlinks() {
     endpath="$app_dir"
 
-    if [ ! -d "$endpath/.vim/bundle" ]; then
-        mkdir -p "$endpath/.vim/bundle"
-    fi
-
     lnif "$endpath/vimrc"              "$HOME/.vimrc"
     lnif "$endpath/bashrc"             "$HOME/.bashrc"
     lnif "$endpath/editrc"             "$HOME/.editrc"
@@ -56,8 +32,14 @@ create_symlinks() {
     lnif "$endpath/gitconfig"         "$HOME/.gitconfig"
 }
 
-setup_vundle() {
-    vim -u "$HOME/.vimrc" +BundleInstall! +BundleClean +qall
+setup_vim_plug() {
+    if [ ! -e "$HOME/.vim/autoload" ]; then
+        curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        install_arguments="+PlugInstall +PlugClean +qall"
+    else
+        install_arguments="+PlugUpgrade +PlugInstall +PlugClean +qall"
+    fi
+    vim -u "$HOME/.vimrc" $install_arguments
 }
 
 create_vim_tmp_dir(){
@@ -76,10 +58,10 @@ vim_version=$(vim --version | grep Vi | awk '{print $5}')
 
 if version_ge $vim_version 7.3;then
     #do_backup   "原有vim配置已备份至 .vim.`date +%Y%m%d%S`" "$HOME/.vim" "$HOME/.vimrc"
-    clone_vundle        #安装vundle
     create_symlinks     #创建配置软链接
-    setup_vundle        #克隆预置插件
+    setup_vim_plug      #安装vim-plug,并克隆预置插件
     create_vim_tmp_dir  #创建vim缓存目录
+    echo "Done."
 else
     echo "Vim version must be 7.3+."
 fi

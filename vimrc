@@ -1,40 +1,39 @@
-" Vundle{{{
+" Plug{{{
     set nocompatible              " be iMproved
     "filetype off                  " required!
 
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#rc()
+    call plug#begin('~/.vim/plugged')
 
-    Bundle 'gmarik/vundle'
-    " My bundles {{{
-        Bundle 'vim-scripts/matchit.zip'
-        "Bundle 'vim-scripts/taglist.vim'
-        Bundle 'majutsushi/tagbar'
-        Bundle 'vim-scripts/JavaScript-Indent'
-        Bundle 'scrooloose/nerdtree'
-        Bundle 'plasticboy/vim-markdown'
-        Bundle 'tpope/vim-haml'
-        Bundle 'kchmck/vim-coffee-script'
-        Bundle 'mattn/emmet-vim'
-        "Bundle 'groenewege/vim-less'
-        Bundle 'kien/ctrlp.vim'
-        Bundle 'altercation/vim-colors-solarized'
-        Bundle 'nathanaelkane/vim-indent-guides'
-        Bundle 'evanmiller/nginx-vim-syntax'
+    " My plug {{{
+        Plug 'vim-scripts/matchit.zip'
+        "Plug 'vim-scripts/taglist.vim'
+        Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+        Plug 'vim-scripts/JavaScript-Indent', { 'for':['php', 'html', 'javascript'] }
+        Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+        Plug 'plasticboy/vim-markdown', { 'for' : 'markdown' }
+        Plug 'tpope/vim-haml'
+        Plug 'kchmck/vim-coffee-script', { 'for' : 'javascript' }
+        Plug 'mattn/emmet-vim'
+        "Plug 'groenewege/vim-less', { 'for': 'scss'}
+        Plug 'kien/ctrlp.vim'
+        Plug 'altercation/vim-colors-solarized'
+        Plug 'https://github.com/nathanaelkane/vim-indent-guides'
+        Plug 'evanmiller/nginx-vim-syntax'
         "syntax checking plugin
-        Bundle 'scrooloose/syntastic'
+        Plug 'scrooloose/syntastic'
         "systemd server file highlight
-        Bundle 'Matt-Deacalion/vim-systemd-syntax'
+        Plug 'Matt-Deacalion/vim-systemd-syntax'
 
         "php SDK
-        Bundle 'spf13/PIV'
-        "Bundle 'Valloric/YouCompleteMe'
-        Bundle 'Shougo/neocomplcache.vim'
-        Bundle 'joshtronic/php.vim'
+        Plug 'spf13/PIV', { 'for': 'php' }
+        "Plug 'Valloric/YouCompleteMe'
+        Plug 'Shougo/neocomplcache.vim'
+        Plug 'joshtronic/php.vim', { 'for': 'php' }
 
         "python
-        Bundle 'hynek/vim-python-pep8-indent'
+        Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
     " }}}
+    call plug#end()
 
 " }}}
 " Functions {{{

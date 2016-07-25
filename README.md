@@ -4,7 +4,7 @@ Vim 自动化配置
 
 ### 初始支持
 
-* 使用Vundle对插件进行管理
+* 使用[vim-plug](https://github.com/junegunn/vim-plug)对插件进行管理
 * 默认支持PHP/Python/JS/CSS/HTML/NGINX语法高亮
 * 更多配置详情请看vimrc
 
