@@ -15,12 +15,6 @@ do_backup() {
    echo $1
 }
 
-install_plug() {
-    if [ ! -e "$HOME/.vim/autoload" ]; then
-        curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    fi
-}
-
 lnif() {
     if [ -e "$1" ]; then
         ln -sf "$1" "$2"
@@ -38,10 +32,16 @@ create_symlinks() {
     lnif "$endpath/gitconfig"         "$HOME/.gitconfig"
 }
 
-setup_plug() {
+setup_vim_plug() {
     system_shell="$SHELL"
     export SHELL='/bin/sh'
-    vim -u "$HOME/.vimrc" +PlugInstall +PlugClean +qall
+    if [ ! -e "$HOME/.vim/autoload" ]; then
+        curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        install_arguments="+PlugInstall +PlugClean +qall"
+    else
+        install_arguments="+PlugUpgrade +PlugInstall +PlugClean +qall"
+    fi
+    vim -u "$HOME/.vimrc" $install_arguments
     export SHELL="$system_shell"
 }
 
@@ -61,8 +61,7 @@ if [ $r != 1 ];then
 else
     #do_backup   "原有vim配置已备份至 .vim.`date +%Y%m%d%S`" "$HOME/.vim" "$HOME/.vimrc"
     create_symlinks     #创建配置软链接
-    install_plug        #安装vim-plug
-    setup_plug        #克隆预置插件
+    setup_vim_plug      #安装vim-plug,并克隆预置插件
     create_vim_tmp_dir  #创建vim缓存目录
     echo "Done."
 fi
