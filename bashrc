@@ -185,11 +185,6 @@ if [ $_os = 'osx' ];then
     ###################
     PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-    ##
-    # Your previous /Users/yjiang/.bash_profile file was backed up as /Users/yjiang/.bash_profile.macports-saved_2014-12-01_at_16:13:58
-    ##
-
-    # MacPorts Installer addition on 2014-12-01_at_16:13:58: adding an appropriate PATH variable for use with MacPorts.
     export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
     # Finished adapting your PATH environment variable for use with MacPorts.
     ###################
