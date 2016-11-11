@@ -32,6 +32,8 @@
 
         "python
         Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
+        "代码片段工具
+        "Plug 'garbas/vim-snipmate'
     " }}}
     call plug#end()
 

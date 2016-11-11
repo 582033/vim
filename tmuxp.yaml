@@ -4,41 +4,28 @@ windows:
     panes :
       - shell_command :
         - 
-#  - window_name : 'bbs'
-#    panes :
-#      - shell_command :
-#        - cd ~/leju/bbs.house.sina.com.cn/app/bbs/
-#  - window_name : 'bbs_model'
-#    panes :
-#      - shell_command :
-#        - cd ~/leju/bbs.house.sina.com.cn/app/_model/
-#  - window_name : 'bbs_template'
-#    panes :
-#      - shell_command :
-#        - cd ~/leju/bbs.house.sina.com.cn/app/_template/
-#  - window_name : 'admin'
-#    panes :
-#      - shell_command :
-#        - cd ~/leju/bbs.house.sina.com.cn/app/admin/
-#  - window_name : 'documents'
-#    panes :
-#      - shell_command :
-#        - cd ~/leju/bbs.house.sina.com.cn/documents/
 ###############################################################
+  - window_name : 'admin'
+    panes :
+      - shell_command :
+        - cd ~/leju/admin.lm.leju.com/trunk/app/
+  - window_name : 'lm'
+    panes :
+      - shell_command :
+        - cd ~/leju/lm.pc.leju.com/trunk/app/
   - window_name : 'controller'
     panes :
       - shell_command :
-        - cd ~/leju/test.gendan.99.leju.com/controller/
+        - cd ~/leju/lm.pc.leju.com/trunk/app/article/
   - window_name : 'model'
     panes :
       - shell_command :
-        -  cd ~/leju/test.gendan.99.leju.com/module/
+        - cd ~/leju/lm.pc.leju.com/trunk/app/article/model/
   - window_name : 'template'
     panes :
       - shell_command :
-        -  cd ~/leju/test.gendan.99.leju.com/templates/
-###############################################################
-  - window_name : ''
+        - cd ~/leju/lm.pc.leju.com/trunk/app/article/template/
+  - window_name : 'release-lm'
     panes :
       - shell_command :
-        - cd ~
+        - cd ~/Downloads/lm.pc.leju.com/trunk/
