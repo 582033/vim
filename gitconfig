@@ -1,6 +1,6 @@
 [core]
 	autocrlf = false
-	excludesfile=~/.gitignore
+	excludesfile = /Users/yjiang/.gitignore
 	editor = /usr/bin/vim
 [user]
     name = "Yan Jiang"

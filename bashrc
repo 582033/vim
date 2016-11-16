@@ -1,8 +1,5 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
-# If not running interactively, don't do anything
 case $- in
     *i*) ;;
       *) return;;
@@ -22,11 +19,8 @@ HISTFILESIZE=2000
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-#shopt -s globstar
-
 ############################################################
 # check OS
 _uname=$(uname);
@@ -101,16 +95,6 @@ alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
 
-#mv & cp
-#alias cp='cp -g'
-#alias mv='mv -g'
-
-#	proxy
-alias sshchina='ssh -CfNg -D 9999 yjiang@v21.sshchina.com'
-
-#	dropbox
-alias dropbox='python /home/yjiang/.dropbox-dist/dropbox.py'
-
 # some more git aliases
 alias gf='git-ftp'
 alias gtst='git status'
@@ -142,11 +126,9 @@ alias vi='vim'
 #ctags
 alias ctags='ctags -R *'
 
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 
 # bash-completion
 if ! shopt -oq posix; then
@@ -180,11 +162,6 @@ if [ $_os = 'osx' ];then
         eval `gdircolors -b $HOME/.vim/dircolors`
     fi
     ###################
-
-
-    ###################
-    PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-    MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
     export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
     # Finished adapting your PATH environment variable for use with MacPorts.
     ###################
