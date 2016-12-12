@@ -25,3 +25,6 @@ Vim 自动化配置
 * gitconfig
 
 
+### 已知问题
+
+* spf13/piv插件会导致偶尔php语法高亮失效,解决方法参见[VIM PIV插件导致的PHP文件偶尔丢失语法高亮问题](https://yjiang.cn/index.php/archives/1674/)
