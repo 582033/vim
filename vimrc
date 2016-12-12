@@ -26,7 +26,7 @@
 
         "php SDK
         Plug 'spf13/PIV', { 'for': 'php' }
-        "Plug 'Valloric/YouCompleteMe'
+        "Plug 'Valloric/YouCompleteMe', { 'do' : './install.py' }
         Plug 'Shougo/neocomplcache.vim'
         Plug 'joshtronic/php.vim', { 'for': 'php' }
 
