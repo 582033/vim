@@ -35,6 +35,8 @@
         "代码片段工具
         "Plug 'garbas/vim-snipmate'
         Plug 'drmingdrmer/xptemplate'
+        "括号自动匹配
+        Plug 'jiangmiao/auto-pairs'
     " }}}
     call plug#end()
 
@@ -257,9 +259,9 @@
     autocmd filetype php set fdm=syntax
     "设置行内容过长自动折行
     autocmd filetype php set wrap
-    "设置文件内容过长语法高亮失效关闭(默认>3000行时高亮失效)
-    autocmd filetype php set synmaxcol=0
-    autocmd filetype php set syntax=php
+    "设置文件内容过长语法高亮失效关闭(默认>3000行时高亮失效) -- 已发现问题出在PIV插件
+    "autocmd filetype php set synmaxcol=0
+    "autocmd filetype php set syntax=php
     " PIV {
     autocmd filetype php let g:DisableAutoPHPFolding = 0
     autocmd filetype php let g:PIVAutoClose = 0
