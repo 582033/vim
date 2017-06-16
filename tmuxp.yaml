@@ -8,24 +8,12 @@ windows:
   - window_name : 'admin'
     panes :
       - shell_command :
-        - cd ~/leju/admin.lm.leju.com/trunk/app/
-  - window_name : 'lm'
-    panes :
-      - shell_command :
-        - cd ~/leju/lm.pc.leju.com/trunk/app/
-  - window_name : 'controller'
-    panes :
-      - shell_command :
-        - cd ~/leju/lm.pc.leju.com/trunk/app/article/
+        - cd ~/xcar/test/
   - window_name : 'model'
     panes :
       - shell_command :
-        - cd ~/leju/lm.pc.leju.com/trunk/app/article/model/
-  - window_name : 'template'
+        - cd ~/xcar/test/model/
+  - window_name : 'down'
     panes :
       - shell_command :
-        - cd ~/leju/lm.pc.leju.com/trunk/app/article/template/
-  - window_name : 'release-lm'
-    panes :
-      - shell_command :
-        - cd ~/Downloads/lm.pc.leju.com/trunk/
+        - cd ~/xcar/test/down/

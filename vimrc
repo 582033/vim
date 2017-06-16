@@ -36,7 +36,7 @@
         "Plug 'garbas/vim-snipmate'
         Plug 'drmingdrmer/xptemplate'
         "括号自动匹配
-        Plug 'jiangmiao/auto-pairs'
+        "Plug 'jiangmiao/auto-pairs'
     " }}}
     call plug#end()
 

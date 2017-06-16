@@ -1,1 +1,6 @@
 bundle/*
+.netrwhist
+.vim_tmp/
+plugged/
+xpt_dir
+tmuxp.yaml
