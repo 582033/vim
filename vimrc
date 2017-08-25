@@ -73,36 +73,36 @@
 
     "
     "markdown文件自动增加样式
-    function! InserMdHeader()      
-        let l1 = getline(1)      
-        if  match('\<l', l1) == 0         
-            exec 1        
-            normal O       
-            call setline(1,'<link rel="stylesheet" href="markdown.css">')    
-        endif  
-    endfunction    
-    autocmd bufnewfile *.md call InserMdHeader() 
+    function! InserMdHeader()
+        let l1 = getline(1)
+        if  match('\<l', l1) == 0
+            exec 1
+            normal O
+            call setline(1,'<link rel="stylesheet" href="markdown.css">')
+        endif
+    endfunction
+    "autocmd bufnewfile *.md call InserMdHeader()
     "
     "python文件自动增加Header
-    function! InserPyHeader()      
-        call setline(1, '#!/usr/bin/env python')    
-        call append(1, '# -*- coding: utf-8 -*-')    
-        call append(2, '')    
-    endfunction    
-    autocmd bufnewfile *.py call InserPyHeader() 
+    function! InserPyHeader()
+        call setline(1, '#!/usr/bin/env python')
+        call append(1, '# -*- coding: utf-8 -*-')
+        call append(2, '')
+    endfunction
+    autocmd bufnewfile *.py call InserPyHeader()
     "
     "php文件自动增加Header
-    function! PhpHeader()      
-        call setline(1, '<?php')    
-        call append(1, '')    
-    endfunction    
+    function! PhpHeader()
+        call setline(1, '<?php'
+        call append(1, '')
+    endfunction
     autocmd bufnewfile *.php call PhpHeader() 
     "
     "shell自动增加Header
-    function! ShellHeader()      
+    function! ShellHeader()
         call setline(1, '#!/usr/bin/env bash')
-        call append(1, '')    
-    endfunction    
+        call append(1, '')
+    endfunction
     autocmd bufnewfile *.sh call ShellHeader() 
     "
     " Function Indent() {{{
