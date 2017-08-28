@@ -93,7 +93,7 @@
     "
     "php文件自动增加Header
     function! PhpHeader()
-        call setline(1, '<?php'
+        call setline(1, '<?php')
         call append(1, '')
     endfunction
     autocmd bufnewfile *.php call PhpHeader() 
