@@ -6,6 +6,7 @@
 
     " My plug {{{
         Plug 'vim-scripts/matchit.zip'
+        Plug 'robbles/logstash.vim'
         "Plug 'vim-scripts/taglist.vim'
         Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
         Plug 'vim-scripts/JavaScript-Indent', { 'for':['php', 'html', 'javascript'] }
