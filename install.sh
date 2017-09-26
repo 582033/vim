@@ -32,6 +32,11 @@ create_symlinks() {
     lnif "$endpath/gitconfig"         "$HOME/.gitconfig"
 }
 
+yjiang_symlinks() {
+    endpath="$app_dir"
+    lnif "$endpath/bash_local"              "$HOME/.bash_local"
+}
+
 setup_vim_plug() {
     if [ ! -e "$HOME/.vim/autoload" ]; then
         curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -61,6 +66,7 @@ if version_ge $vim_version 7.3;then
     create_symlinks     #创建配置软链接
     setup_vim_plug      #安装vim-plug,并克隆预置插件
     create_vim_tmp_dir  #创建vim缓存目录
+    #yjiang_symlinks     #自用习惯
     echo "Done."
 else
     echo "Vim version must be 7.3+."

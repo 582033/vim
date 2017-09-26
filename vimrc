@@ -345,5 +345,5 @@ if !empty(glob("~/.vim/vim_local"))
 endif
 "}}}
 "bash_local语法高亮{{{
-   autocmd BufNewFile,BufRead .bash_local set filetype=sh
+   autocmd BufNewFile,BufRead .bash_local,bash_local set filetype=sh
 "}}}
