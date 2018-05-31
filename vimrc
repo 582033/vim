@@ -26,7 +26,7 @@
         Plug 'Matt-Deacalion/vim-systemd-syntax'
 
         "php SDK
-        Plug 'spf13/PIV', { 'for': 'php' }
+        "Plug 'spf13/PIV', { 'for': 'php' }
         "Plug 'Valloric/YouCompleteMe', { 'do' : './install.py' }
         Plug 'Shougo/neocomplcache.vim'
         Plug 'joshtronic/php.vim', { 'for': 'php' }
@@ -133,6 +133,8 @@
     set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux 忽略文件
     set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows 忽略文件
     let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+    let g:ctrlp_user_command = 'cd %s && find .'
+    let g:ctrlp_use_caching = 0
 " }}}
 " Formatting {{{
 

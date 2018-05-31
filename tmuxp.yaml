@@ -5,15 +5,15 @@ windows:
       - shell_command :
         - 
 ###############################################################
-  - window_name : 'admin'
+  - window_name : 'controllers'
     panes :
       - shell_command :
-        - cd ~/xcar/test/
+        - cd ~/xcar/xcms/apps/seo_aggregation/controller/
   - window_name : 'model'
     panes :
       - shell_command :
-        - cd ~/xcar/test/model/
-  - window_name : 'down'
+        - cd ~/xcar/xcms/apps/seo_aggregation/model/
+  - window_name : 'views'
     panes :
       - shell_command :
-        - cd ~/xcar/test/down/
+        - cd ~/xcar/xcms/apps/seo_aggregation/views/

@@ -8,6 +8,9 @@ alias rsync='rsync -avz'
 alias tmux='tmux -2'
 alias tmuxp='tmuxp load ~/.tmuxp.yaml -2'
 
+#brew
+export HOMEBREW_GITHUB_API_TOKEN="507938d9c7b756d86dccbf7842a466824a0a9730"
+export PATH="/usr/local/sbin:$PATH"
 #mongo
 #alias mongo='mongo 172.19.0.10/test -u test -p 1111'
 #nginx
@@ -43,11 +46,21 @@ alias iftop='sudo iftop -i en0'
 alias proxychains4='proxychains4 -f /etc/proxychains.conf'
 alias purge='sudo purge'
 
-cd ~/Downloads/
+alias dl='cd ~/Downloads'
+dl
+alias dt='cd ~/Desktop'
 
 alias ap='adb -s e1e2f328 push'
 
-#laravel
-#export PATH="~/.composer/vendor/bin/:$PATH"
+#防止输php少输个p
+alias hp='php'
+
 #brew php
-export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+#export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
+export PATH="/usr/local/opt/php@5.6/bin:$PATH"
+
+#laravel
+export PATH="$PATH:~/.composer/vendor/bin"
+
+#python
+alias python='python2.7'
