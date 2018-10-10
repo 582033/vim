@@ -1,3 +1,7 @@
+" env init {{{
+    scriptencoding utf-8
+    set encoding=utf-8
+" }}}
 " Plug{{{
     set nocompatible              " be iMproved
     "filetype off                  " required!
@@ -240,7 +244,11 @@
 "缩进线{{{
     "空格缩进
     set list
-    set listchars=tab:\¦\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace ¦, ┆ or │
+    if has("patch-7.4.710")
+        set listchars=tab:\¦\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace ¦, ┆ or │
+    else
+        set listchars=tab:>\ ,trail:\·,extends:#,nbsp:.
+    endif
 
     "tab缩进
     filetype plugin indent on
