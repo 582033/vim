@@ -1,4 +1,0 @@
-#编辑器使用绑定的快捷键,主要用于mysql-client使用vi-mode
-set editing-mode v
-set keymap vi
-bind -v

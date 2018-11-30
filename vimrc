@@ -2,50 +2,6 @@
     scriptencoding utf-8
     set encoding=utf-8
 " }}}
-" Plug{{{
-    set nocompatible              " be iMproved
-    "filetype off                  " required!
-
-    call plug#begin('~/.vim/plugged')
-
-    " My plug {{{
-        Plug 'vim-scripts/matchit.zip'
-        Plug 'robbles/logstash.vim'
-        "Plug 'vim-scripts/taglist.vim'
-        Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
-        Plug 'vim-scripts/JavaScript-Indent', { 'for':['php', 'html', 'javascript'] }
-        Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-        Plug 'plasticboy/vim-markdown', { 'for' : 'markdown' }
-        Plug 'tpope/vim-haml'
-        Plug 'kchmck/vim-coffee-script', { 'for' : 'javascript' }
-        Plug 'mattn/emmet-vim'
-        "Plug 'groenewege/vim-less', { 'for': 'scss'}
-        Plug 'kien/ctrlp.vim'
-        Plug 'altercation/vim-colors-solarized'
-        Plug 'https://github.com/nathanaelkane/vim-indent-guides'
-        Plug 'evanmiller/nginx-vim-syntax'
-        "syntax checking plugin
-        Plug 'scrooloose/syntastic'
-        "systemd server file highlight
-        Plug 'Matt-Deacalion/vim-systemd-syntax'
-
-        "php SDK
-        "Plug 'spf13/PIV', { 'for': 'php' }
-        "Plug 'Valloric/YouCompleteMe', { 'do' : './install.py' }
-        Plug 'Shougo/neocomplcache.vim'
-        Plug 'joshtronic/php.vim', { 'for': 'php' }
-
-        "python
-        Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
-        "代码片段工具
-        "Plug 'garbas/vim-snipmate'
-        Plug 'drmingdrmer/xptemplate'
-        "括号自动匹配
-        "Plug 'jiangmiao/auto-pairs'
-    " }}}
-    call plug#end()
-
-" }}}
 " Functions {{{
     "
     " Initialize NERDTree as needed {{{
@@ -131,15 +87,6 @@
 " Quick sudoer{{{
     ca w!! w !sudo tee "%"
 "}}}
-" Ctrlp 设置{{{
-    let g:ctrlp_map = '<c-p>'
-    let g:ctrlp_working_path_mode = 'ra'
-    set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux 忽略文件
-    set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows 忽略文件
-    let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-    let g:ctrlp_user_command = 'cd %s && find .'
-    let g:ctrlp_use_caching = 0
-" }}}
 " Formatting {{{
 
     "set nowrap                      " Do not wrap long lines
@@ -172,22 +119,6 @@
     autocmd FileType haskell setlocal nospell
 
 " }}}}
-" NerdTree {{{
-    map <c-e> :NERDTreeToggle<CR>
-
-    let NERDTreeShowBookmarks=1
-    let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
-    let NERDTreeChDirMode=0
-    let NERDTreeQuitOnOpen=1
-    let NERDTreeMouseMode=2
-    let NERDTreeShowHidden=1
-    let NERDTreeKeepTreeInNewTab=1
-    let g:nerdtree_tabs_open_on_gui_startup=0
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
-" }}}
-" Ctags{{{
-    set tags=./tags;/,~/.vimtags
-"}}}
 " TagList{{{
     "let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的
     "let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口，则退出vim
@@ -296,47 +227,6 @@
 "}}}
 " 支持gbk文件直接打开{{{
     set fencs=utf-8,gbk
-"}}}
-" 自动补全neocomplcache{{{
-    " Use neocomplcache.
-    let g:neocomplcache_enable_at_startup = 1
-    " Use smartcase.
-    let g:neocomplcache_enable_smart_case = 1
-    " Set minimum syntax keyword length.
-    " audo pop
-    let g:neocomplcache_enable_auto_select = 1
-
-    let g:neocomplcache_min_syntax_length = 3
-    let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
-    let g:neocomplcache_dictionary_filetype_lists = {
-        \ 'default' : '',
-        \ 'vimshell' : $HOME.'/.vimshell_hist',
-        \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
-
-    " Define keyword.
-    if !exists('g:neocomplcache_keyword_patterns')
-        let g:neocomplcache_keyword_patterns = {}
-    endif
-    let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-
-    " Enable omni completion.
-    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-    " Enable heavy omni completion.
-    if !exists('g:neocomplcache_omni_patterns')
-      let g:neocomplcache_omni_patterns = {}
-    endif
-    let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-    let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-    let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
-    let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "}}}
 "语法检查{{{
     let g:syntastic_check_on_open = 1
