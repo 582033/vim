@@ -91,8 +91,9 @@ if [ $_os = 'osx' ];then
 
     ###################
     #osx colors
+    brew_prefix=$(brew --prefix)
     if brew list | grep coreutils > /dev/null ; then
-        PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+        PATH="$brew_prefix/opt/coreutils/libexec/gnubin:$PATH"
         alias ls='ls --color=auto'
         alias grep='grep --color=auto'
         alias fgrep='fgrep --color=auto'
@@ -100,8 +101,8 @@ if [ $_os = 'osx' ];then
         eval `gdircolors -b $HOME/.vim/dircolors`
     fi
     #osx bash_completion
-    if [ -f $(brew --prefix)/etc/bash_completion ]; then
-        . $(brew --prefix)/etc/bash_completion
+    if [ -f $brew_prefix/etc/bash_completion ]; then
+        . $brew_prefix/etc/bash_completion
     fi
 fi
 
