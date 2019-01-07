@@ -38,7 +38,7 @@ create_vim_tmp_dir(){
 }
 
 version_ge(){
-    test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" == "$1";
+    test "$(echo "$@" | tr " " "\n" | sort -r | head -n 1)" == "$1";
 }
 
 vim_version=$(vim --version | grep Vi | awk '{print $5}')
