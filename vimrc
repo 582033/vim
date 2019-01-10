@@ -23,7 +23,7 @@
         Plug 'kien/ctrlp.vim'
         Plug 'altercation/vim-colors-solarized'
         Plug 'https://github.com/nathanaelkane/vim-indent-guides'
-        Plug 'evanmiller/nginx-vim-syntax'
+        Plug 'chr4/nginx.vim'
         "syntax checking plugin
         Plug 'scrooloose/syntastic'
         "systemd server file highlight
