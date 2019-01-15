@@ -135,7 +135,7 @@ alias gtdi='git diff'
 alias gv='git svn'
 
 #htop
-alias htop='sudo htop'
+#alias htop='sudo htop'
 
 #iftop
 alias iftop='sudo iftop -i eth0'
