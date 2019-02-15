@@ -1,37 +1,37 @@
 [core]
-	autocrlf = false
-	excludesfile = /Users/yjiang/.gitignore
-	editor = /usr/bin/vim
+    autocrlf = false
+    excludesfile = /Users/yjiang/.gitignore
+    editor = /usr/bin/vim
 [user]
     name = "Yan Jiang"
     #name = "yjiang"
-	email = j582033@163.com
+    email = j582033@163.com
 [merge]
-	summary = true
-	tool = vimdiff
+    summary = true
+    tool = vimdiff
 [diff]
-	renames = copy
-	wordregex = "[[:alnum:]_]+|[^[:space:]]"
+    renames = copy
+    wordregex = "[[:alnum:]_]+|[^[:space:]]"
 [i18n]
-	logoutputencoding = UTF-8
+    logoutputencoding = UTF-8
 [color]
-	diff = auto
-	status = true
-	branch = auto
-	interactive = auto
-	ui = auto
-	log = auto
+    diff = auto
+    status = true
+    branch = auto
+    interactive = auto
+    ui = auto
+    log = auto
 [showbranch]
     default = --topo-order
     default = heads/*
 [status]
-	submodulesummary = -1
+    submodulesummary = -1
 [format]
-	numbered = auto
+    numbered = auto
 [push]
-	default = tracking
+    default = tracking
 [mailmap]
-	file = ~/.mailmap
+    file = ~/.mailmap
 
 #[sendemail]
 #	smtpencryption = tls
@@ -40,10 +40,10 @@
 #	smtpserverport = 587
 
 [alias]
-	sed = !git ls-files --stage | grep ^100 | awk '{print $4}' | xargs sed -s
-	slg = shortlog --pretty='format:%h %s'
-	locate = !sh -c 'git ls-files | grep --color=auto "$1"' -
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    sed = !git ls-files --stage | grep ^100 | awk '{print $4}' | xargs sed -s
+    slg = shortlog --pretty='format:%h %s'
+    locate = !sh -c 'git ls-files | grep --color=auto "$1"' -
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 
 [url "bearr:android/"]
-	insteadOf = "git://android.git.kernel.org/"
+    insteadOf = "git://android.git.kernel.org/"
