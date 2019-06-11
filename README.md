@@ -20,7 +20,7 @@ Vim 自动化配置
 ### 除vim外其他个人习惯的配置
 
 * bashrc
-* tmux
+* tmux >= 2.9
 * tmuxp
 * gitconfig
 

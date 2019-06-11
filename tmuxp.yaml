@@ -8,12 +8,12 @@ windows:
   - window_name : 'controllers'
     panes :
       - shell_command :
-        - cd ~/xcar/xcms/apps/seo_aggregation/controller/
+        - cd ~/xcar/xmedia-api/modules/xmediaapi/controllers/
   - window_name : 'model'
     panes :
       - shell_command :
-        - cd ~/xcar/xcms/apps/seo_aggregation/model/
-  - window_name : 'views'
+        - cd ~/xcar/xmedia-api/modules/xmediaapi/models/
+  - window_name : 'Common'
     panes :
       - shell_command :
-        - cd ~/xcar/xcms/apps/seo_aggregation/views/
+        - cd ~/xcar/xmedia-api/modules/xmediaapi/common/
