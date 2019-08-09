@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 ##############################
 app_dir="$HOME/.vim"

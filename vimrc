@@ -131,7 +131,7 @@
 "}}}
 " Vim UI {{{
     "vim-colors-solarized{{{
-    syntax enable
+    "syntax enable
     set background=dark
     let g:solarized_termtrans=1
     "let g:solarized_contrast="normal"
