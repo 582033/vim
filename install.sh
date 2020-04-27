@@ -11,8 +11,8 @@ do_backup() {
         for i in "$2" "$3" "$4"; do
             [ -e "$i" ] && [ ! -L "$i" ] && mv "$i" "$i.$today";
         done
-   fi
-   echo $1
+    fi
+    echo $1
 }
 
 lnif() {

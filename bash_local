@@ -4,21 +4,24 @@ alias iftop='sudo iftop -i eth0'
 #rsync
 alias rsync='rsync -avz'
 
+#go
+export GOPATH="/Users/yjiang/go/"
+export PATH="$GOPATH:$PATH"
+
 #tmux
 alias tmux='tmux -2'
 alias tmuxp='tmuxp load ~/.tmuxp.yaml -2'
 
 #brew
-export HOMEBREW_GITHUB_API_TOKEN="507938d9c7b756d86dccbf7842a466824a0a9730"
-export PATH="/usr/local/sbin:$PATH"
-#mongo
-#alias mongo='mongo 172.19.0.10/test -u test -p 1111'
+export HOMEBREW_GITHUB_API_TOKEN="55696f815cc401a7d90957e9938ba9efdf973c94"
+export PATH="/usr/local/sbin:/usr/local/opt/mysql-client/bin:$PATH"
+
 #nginx
 nginx_restart(){
     sudo nginx -s stop
     sudo nginx
     sudo /etc/nginx/spawn-fcgi.sh
-    mysql.server restart
+    #mysql.server restart
 }
 alias renginx=nginx_restart
 
@@ -47,7 +50,7 @@ alias proxychains4='proxychains4 -f /etc/proxychains.conf'
 alias purge='sudo purge'
 
 alias dl='cd ~/Downloads'
-dl
+#dl
 alias dt='cd ~/Desktop'
 
 alias ap='adb -s e1e2f328 push'
@@ -59,8 +62,35 @@ alias hp='php'
 #export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 export PATH="/usr/local/opt/php@5.6/bin:$PATH"
 
+alias php7='/usr/local/Cellar/php/7.3.0/bin/php'
+
 #laravel
 export PATH="$PATH:~/.composer/vendor/bin"
 
 #python
 alias python='python2.7'
+
+#swtich
+switch_reboot_func(){
+    path='/Users/yjiang/Desktop/switch/fusee-launcher/'
+    cd $path && ./fusee-launcher.py payload.bin
+}
+alias sr=switch_reboot_func
+
+export PATH="/usr/local/opt/php@7.1/bin:$PATH"
+export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+alias yii="~/xcar/xmedia-api/yii"
+
+export PATH="/usr/local/Cellar/python3/3.7.3/bin:$PATH"
+
+alias mysql.jumpserver='ssh -vv -NL 2222:localhost:22 128'
+
+alias checkra1n='cd /Applications/checkra1n.app/Contents/MacOS && ./checkra1n -c'
+alias red='rm ~/xcar/microserver/Myxcar.Auth/Idlgen/Myxcar/Auth.php && cd ~/Downloads/ && unzip service_Myxcar.Auth.zip && cp service/Idlgen/Myxcar/Auth.php ~/xcar/microserver/Myxcar.Auth/Idlgen/Myxcar/ && rm ~/Downloads/service_Myxcar.Auth.zip ~/Downloads/service -r && cd -'
+
+alias trojan='nohup trojan -c /etc/trojan/config.json > /dev/null 2>&1 &'
+
+#sudo mount -uw /
+
+alias dep='cd ~/xcar/newcar/ && git commit -am"test" && git pull origin feature_zhuge && git push origin feature_zhuge'

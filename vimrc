@@ -5,21 +5,16 @@
 " Plug{{{
     set nocompatible              " be iMproved
     "filetype off                  " required!
+    filetype plugin indent on
 
     call plug#begin('~/.vim/plugged')
-
     " My plug {{{
         Plug 'vim-scripts/matchit.zip'
-        Plug 'robbles/logstash.vim'
         "Plug 'vim-scripts/taglist.vim'
         Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
         Plug 'vim-scripts/JavaScript-Indent', { 'for':['php', 'html', 'javascript'] }
-        Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+        Plug 'preservim/nerdtree'
         Plug 'plasticboy/vim-markdown', { 'for' : 'markdown' }
-        Plug 'tpope/vim-haml'
-        Plug 'kchmck/vim-coffee-script', { 'for' : 'javascript' }
-        Plug 'mattn/emmet-vim'
-        "Plug 'groenewege/vim-less', { 'for': 'scss'}
         Plug 'kien/ctrlp.vim'
         Plug 'altercation/vim-colors-solarized'
         Plug 'https://github.com/nathanaelkane/vim-indent-guides'
@@ -47,21 +42,6 @@
 
 " }}}
 " Functions {{{
-    "
-    " Initialize NERDTree as needed {{{
-        function! NERDTreeInitAsNeeded()
-            redir => bufoutput
-            buffers!
-            redir END
-            let idx = stridx(bufoutput, "NERD_tree")
-            if idx > -1
-                NERDTreeMirror
-                NERDTreeFind
-                wincmd l
-            endif
-        endfunction
-    " }}}
-
     " Strip whitespace {{{}}
         function! StripTrailingWhitespace()
             " Preparation: save last search, and cursor position.
@@ -109,24 +89,6 @@
         call append(1, '')
     endfunction
     autocmd bufnewfile *.sh call ShellHeader() 
-    "
-    " Function Indent() {{{
-    " Indents source code.
-    function! Indent() range abort
-        let savelnum = line(".")
-        let lnum = a:firstline
-        let lend = a:lastline
-        if lnum == lend
-            " No visual area choosen --> whole file
-            let lnum = line(".")
-            let lend = line("$")
-            " Go to the begin of the file
-            exec "1go"
-        endif
-        exec "normal " . lnum . "Gv" . lend . "G="
-        exec "normal " . savelnum . "G"
-    endfunction
-    " Indent() }}}
 " }}}
 " Quick sudoer{{{
     ca w!! w !sudo tee "%"
@@ -174,25 +136,9 @@
 " }}}}
 " NerdTree {{{
     map <c-e> :NERDTreeToggle<CR>
-
-    let NERDTreeShowBookmarks=1
-    let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
-    let NERDTreeChDirMode=0
-    let NERDTreeQuitOnOpen=1
-    let NERDTreeMouseMode=2
-    let NERDTreeShowHidden=1
-    let NERDTreeKeepTreeInNewTab=1
-    let g:nerdtree_tabs_open_on_gui_startup=0
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
 " }}}
 " Ctags{{{
     set tags=./tags;/,~/.vimtags
-"}}}
-" TagList{{{
-    "let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的
-    "let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口，则退出vim
-    "let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口 
-    "map <C-t> :TlistToggle<CR>
 "}}}
 " TagBar{{{
     let g:tagbar_width=20
@@ -251,7 +197,6 @@
     endif
 
     "tab缩进
-    filetype plugin indent on
     set ts=4 sw=4 et
     let g:indent_guides_start_level = 2
     let g:indent_guides_guide_size = 1
@@ -279,7 +224,6 @@
     " }
 " }}}
 " Python Setting{{{
-    filetype plugin indent on
     autocmd filetype python set completeopt+=longest
     autocmd filetype python set completeopt+=menu
     autocmd filetype python set wildmenu
@@ -288,7 +232,6 @@
     autocmd filetype python let g:pymode_indent = 0
 "}}}
 " Html Setting{{{
-    filetype plugin indent on
     autocmd filetype html set ts=4 noet
 "}}}
 " Markdown Setting{{{
@@ -338,22 +281,30 @@
 
     let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "}}}
-"语法检查{{{
+"语法检查scrooloose/syntastic{{{
+    "设置错误符号
+    let g:syntastic_error_symbol = '✗'
+    "设置警告符号
+    let g:syntastic_warning_symbol = '⚠'
+    "是否在打开文件时检查
     let g:syntastic_check_on_open = 1
+    "是否在保存文件后检查
+    "let g:syntastic_check_on_wq=1
     let g:syntastic_auto_loc_list = 1
     let g:syntastic_loc_list_height = 5
     let g:syntastic_enable_highlighting = 0
-    let g:syntastic_mode_map = { 'passive_filetypes': ['scss', 'slim', 'html'] }
+    "被动检查的文件类型
+    let g:syntastic_mode_map = { 'passive_filetypes': ['html'] }
 "}}}
 "vimrc折叠{{{
     autocmd FileType vim set fdm=marker
+"}}}
+"bash_local语法高亮{{{
+   autocmd BufNewFile,BufRead .bash_local,bash_local set filetype=sh
 "}}}
 "私有配置请写入vim_local{{{
 if !empty(glob("~/.vim/vim_local"))
    source ~/.vim/vim_local
    autocmd BufNewFile,BufRead vim_local set filetype=vim
 endif
-"}}}
-"bash_local语法高亮{{{
-   autocmd BufNewFile,BufRead .bash_local,bash_local set filetype=sh
 "}}}
