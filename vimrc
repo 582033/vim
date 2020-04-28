@@ -1,45 +1,48 @@
 " env init {{{
     scriptencoding utf-8
     set encoding=utf-8
+    "不适用vi键盘模式,而使用vim的
+    set nocompatible
+    "filetype off                  " required!
+    "插件缩进
+    filetype plugin indent on
 " }}}
 " Plug{{{
-    set nocompatible              " be iMproved
-    "filetype off                  " required!
-    filetype plugin indent on
-
     call plug#begin('~/.vim/plugged')
-    " My plug {{{
-        Plug 'vim-scripts/matchit.zip'
-        "Plug 'vim-scripts/taglist.vim'
-        Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
-        Plug 'vim-scripts/JavaScript-Indent', { 'for':['php', 'html', 'javascript'] }
-        Plug 'preservim/nerdtree'
-        Plug 'plasticboy/vim-markdown', { 'for' : 'markdown' }
-        Plug 'kien/ctrlp.vim'
-        Plug 'altercation/vim-colors-solarized'
-        Plug 'https://github.com/nathanaelkane/vim-indent-guides'
-        Plug 'chr4/nginx.vim'
-        "syntax checking plugin
-        Plug 'scrooloose/syntastic'
-        "systemd server file highlight
-        Plug 'Matt-Deacalion/vim-systemd-syntax'
+    Plug 'vim-scripts/matchit.zip'
+    "Plug 'vim-scripts/taglist.vim'
+    Plug 'majutsushi/tagbar', { 'on':'TagbarToggle' }
+    Plug 'vim-scripts/JavaScript-Indent', { 'for':['php', 'html', 'javascript'] }
+    Plug 'preservim/nerdtree'
+    Plug 'plasticboy/vim-markdown', { 'for':'markdown' }
+    Plug 'kien/ctrlp.vim'
+    Plug 'altercation/vim-colors-solarized'
+    "可视化缩进
+    Plug 'nathanaelkane/vim-indent-guides'
+    Plug 'chr4/nginx.vim'
+    "语法检查
+    Plug 'scrooloose/syntastic'
+    "systemd 系统文件高亮
+    Plug 'Matt-Deacalion/vim-systemd-syntax'
+    Plug 'Shougo/neocomplete.vim'
+    Plug 'Valloric/YouCompleteMe', { 'do':'./install.py --go-completer' }
 
-        "php SDK
-        "Plug 'spf13/PIV', { 'for': 'php' }
-        "Plug 'Valloric/YouCompleteMe', { 'do' : './install.py' }
-        Plug 'Shougo/neocomplcache.vim'
-        Plug 'joshtronic/php.vim', { 'for': 'php' }
+    "php
+    "Plug 'spf13/PIV', { 'for': 'php' }
+    Plug 'StanAngeloff/php.vim', { 'for':'php' }
 
-        "python
-        Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
-        "代码片段工具
-        "Plug 'garbas/vim-snipmate'
-        Plug 'drmingdrmer/xptemplate'
-        "括号自动匹配
-        "Plug 'jiangmiao/auto-pairs'
-    " }}}
+    "python
+    Plug 'hynek/vim-python-pep8-indent', { 'for':'python' }
+
+    "go
+    Plug 'fatih/vim-go', { 'do':':GoUpdateBinaries', 'for':'go' }
+    "Plug 'fatih/vim-go', { 'tag':'*', 'do':':GoUpdateBinaries', 'for':'go' }
+
+    "代码片段工具
+    Plug 'drmingdrmer/xptemplate'
+    "括号自动匹配
+    "Plug 'jiangmiao/auto-pairs'
     call plug#end()
-
 " }}}
 " Functions {{{
     " Strip whitespace {{{}}
@@ -120,8 +123,8 @@
     " To disable the stripping of whitespace, add the following to your
     " .vimrc.before.local file:
     "   let g:spf13_keep_trailing_whitespace = 1
-    autocmd FileType c,cpp,java,go,php,javascript,python,twig,xml,yml autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
-    autocmd FileType go autocmd BufWritePre <buffer> Fmt
+    "autocmd FileType c,cpp,java,go,php,javascript,python,twig,xml,yml autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
+    "autocmd FileType go autocmd BufWritePre <buffer> Fmt
     autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
     autocmd FileType haskell setlocal expandtab shiftwidth=2 softtabstop=2
     " preceding line best in a plugin but here for now.
@@ -157,9 +160,18 @@
     "}}}
 
     set tabpagemax=15               " Only show 15 tabs
-    set showmode                    " Display the current mode
-
+    "显示当前模式 - 插入/可视等
+    set showmode
+    "突出显示当前行
     set cursorline                  " Highlight current line
+    "显示行号
+    set nu
+    "显示括号匹配
+    set showmatch
+    "开启实时搜索
+    set incsearch
+    "开启高亮
+    set hlsearch
 
     highlight clear SignColumn      " SignColumn should match background
     highlight clear LineNr          " Current line number row will have same background color in relative mode
@@ -168,10 +180,6 @@
 
     set backspace=indent,eol,start  " Backspace for dummies
     set linespace=0                 " No extra spaces between rows
-    set nu                          " Line numbers on
-    set showmatch                   " Show matching brackets/parenthesis
-    set incsearch                   " Find as you type search
-    set hlsearch                    " Highlight search terms
     set winminheight=0              " Windows can be 0 line high
     set ignorecase                  " Case insensitive search
     set smartcase                   " Case sensitive when uc present
@@ -198,9 +206,9 @@
 
     "tab缩进
     set ts=4 sw=4 et
+    let g:indent_guides_enable_on_vim_startup = 1
     let g:indent_guides_start_level = 2
     let g:indent_guides_guide_size = 1
-    let g:indent_guides_enable_on_vim_startup = 1
 "}}}
 " 支持文件关闭回退 {{{
     let $VIMTEMP = $HOME.'/.vim/.vim_tmp/'
@@ -231,8 +239,21 @@
     "set foldlevel=99
     autocmd filetype python let g:pymode_indent = 0
 "}}}
-" Html Setting{{{
+" Go Setting{{{
+    let mapleader = "~"
+    "let g:go_version_warning = 0
+    let g:go_highlight_types = 1
+    let g:go_highlight_fields = 1
+    let g:go_highlight_extra_types = 1
+    "au filetype go nmap <leader>r :GoRun<CR>
+    au FileType go nmap <leader>r <Plug>(go-run)
+    au FileType go nmap <leader>b <Plug>(go-build)
+    au FileType go nmap <leader>t <Plug>(go-test)
+    au FileType go nmap <leader>c <Plug>(go-coverage)
+" }}}
+" Html && Tpl Setting{{{
     autocmd filetype html set ts=4 noet
+    autocmd filetype tpl set ts=4 noet
 "}}}
 " Markdown Setting{{{
     autocmd filetype md set ts=4 noet
@@ -240,46 +261,46 @@
 " 支持gbk文件直接打开{{{
     set fencs=utf-8,gbk
 "}}}
-" 自动补全neocomplcache{{{
-    " Use neocomplcache.
-    let g:neocomplcache_enable_at_startup = 1
+" 自动补全neocomplete{{{
+    " " Use neocomplete.
+    let g:neocomplete#enable_at_startup = 1
     " Use smartcase.
-    let g:neocomplcache_enable_smart_case = 1
+    let g:neocomplete#enable_smart_case = 1
     " Set minimum syntax keyword length.
-    " audo pop
-    let g:neocomplcache_enable_auto_select = 1
+    let g:neocomplete#sources#syntax#min_keyword_length = 3
 
-    let g:neocomplcache_min_syntax_length = 3
-    let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
-    let g:neocomplcache_dictionary_filetype_lists = {
-        \ 'default' : '',
-        \ 'vimshell' : $HOME.'/.vimshell_hist',
-        \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+    " Define dictionary.
+    let g:neocomplete#sources#dictionary#dictionaries = {
+                \ 'default' : '',
+                \ 'vimshell' : $HOME.'/.vimshell_hist',
+                \ 'scheme' : $HOME.'/.gosh_completions'
+                \ }
 
     " Define keyword.
-    if !exists('g:neocomplcache_keyword_patterns')
-        let g:neocomplcache_keyword_patterns = {}
+    if !exists('g:neocomplete#keyword_patterns')
+        let g:neocomplete#keyword_patterns = {}
     endif
-    let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
     " Enable omni completion.
     autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
     autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType tpl setlocal omnifunc=htmlcomplete#CompleteTags
     autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
     autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
     " Enable heavy omni completion.
-    if !exists('g:neocomplcache_omni_patterns')
-      let g:neocomplcache_omni_patterns = {}
+    if !exists('g:neocomplete#sources#omni#input_patterns')
+        let g:neocomplete#sources#omni#input_patterns = {}
     endif
-    let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-    let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-    let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+    let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+    "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+    "let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
-    let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+    " For perlomni.vim setting.
+    " https://github.com/c9s/perlomni.vim
+    let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "}}}
 "语法检查scrooloose/syntastic{{{
     "设置错误符号

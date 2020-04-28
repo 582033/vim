@@ -29,7 +29,7 @@ create_symlinks() {
     lnif "$endpath/editrc"             "$HOME/.editrc"
     lnif "$endpath/tmux.conf"          "$HOME/.tmux.conf"
     lnif "$endpath/tmuxp.yaml"         "$HOME/.tmuxp.yaml"
-    lnif "$endpath/gitconfig"         "$HOME/.gitconfig"
+    #lnif "$endpath/gitconfig"         "$HOME/.gitconfig"
 }
 
 yjiang_symlinks() {
