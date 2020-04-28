@@ -105,38 +105,6 @@
     let g:ctrlp_user_command = 'cd %s && find .'
     let g:ctrlp_use_caching = 0
 " }}}
-" Formatting {{{
-
-    "set nowrap                      " Do not wrap long lines
-    set autoindent                  " Indent at the same level of the previous line
-    set shiftwidth=4                " Use indents of 4 spaces
-    set expandtab                   " Tabs are spaces, not tabs
-    set tabstop=4                   " An indentation every four columns
-    set softtabstop=4               " Let backspace delete indent
-    set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
-    set splitright                  " Puts new vsplit windows to the right of the current
-    set splitbelow                  " Puts new split windows to the bottom of the current
-    "set matchpairs+=<:>             " Match, to be used with %
-    set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
-    "set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
-    " Remove trailing whitespaces and ^M chars
-    " To disable the stripping of whitespace, add the following to your
-    " .vimrc.before.local file:
-    "   let g:spf13_keep_trailing_whitespace = 1
-    "autocmd FileType c,cpp,java,go,php,javascript,python,twig,xml,yml autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
-    "autocmd FileType go autocmd BufWritePre <buffer> Fmt
-    autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
-    autocmd FileType haskell setlocal expandtab shiftwidth=2 softtabstop=2
-    " preceding line best in a plugin but here for now.
-
-    autocmd BufNewFile,BufRead *.coffee set filetype=coffee
-
-    " Workaround vim-commentary for Haskell
-    autocmd FileType haskell setlocal commentstring=--\ %s
-    " Workaround broken colour highlighting in Haskell
-    autocmd FileType haskell setlocal nospell
-
-" }}}}
 " NerdTree {{{
     map <c-e> :NERDTreeToggle<CR>
 " }}}
@@ -146,6 +114,62 @@
 " TagBar{{{
     let g:tagbar_width=20
     nmap <C-t> :TagbarToggle<CR>
+"}}}
+" 自动补全neocomplete{{{
+    " " Use neocomplete.
+    let g:neocomplete#enable_at_startup = 1
+    " Use smartcase.
+    let g:neocomplete#enable_smart_case = 1
+    " Set minimum syntax keyword length.
+    let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+    " Define dictionary.
+    let g:neocomplete#sources#dictionary#dictionaries = {
+                \ 'default' : '',
+                \ 'vimshell' : $HOME.'/.vimshell_hist',
+                \ 'scheme' : $HOME.'/.gosh_completions'
+                \ }
+
+    " Define keyword.
+    if !exists('g:neocomplete#keyword_patterns')
+        let g:neocomplete#keyword_patterns = {}
+    endif
+    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+    " Enable omni completion.
+    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType tpl setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+    " Enable heavy omni completion.
+    if !exists('g:neocomplete#sources#omni#input_patterns')
+        let g:neocomplete#sources#omni#input_patterns = {}
+    endif
+    let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+    "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+    "let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+    " For perlomni.vim setting.
+    " https://github.com/c9s/perlomni.vim
+    let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+"}}}
+"语法检查scrooloose/syntastic{{{
+    "设置错误符号
+    let g:syntastic_error_symbol = '✗'
+    "设置警告符号
+    let g:syntastic_warning_symbol = '⚠'
+    "是否在打开文件时检查
+    let g:syntastic_check_on_open = 1
+    "是否在保存文件后检查
+    "let g:syntastic_check_on_wq=1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_loc_list_height = 5
+    let g:syntastic_enable_highlighting = 0
+    "被动检查的文件类型
+    let g:syntastic_mode_map = { 'passive_filetypes': ['html'] }
 "}}}
 " Vim UI {{{
     "vim-colors-solarized{{{
@@ -191,7 +215,7 @@
     set foldenable                  " Auto fold code
 " }}}
 "{{{ 对齐线
-"hi CursorColumn ctermbg=4
+    "hi CursorColumn ctermbg=4
     nmap <F11> :set cursorline!<BAR>set nocursorline?<CR>
     nmap <F12> :set cursorcolumn!<BAR>set nocursorcolumn?<CR>
 "}}}
@@ -261,71 +285,15 @@
 " 支持gbk文件直接打开{{{
     set fencs=utf-8,gbk
 "}}}
-" 自动补全neocomplete{{{
-    " " Use neocomplete.
-    let g:neocomplete#enable_at_startup = 1
-    " Use smartcase.
-    let g:neocomplete#enable_smart_case = 1
-    " Set minimum syntax keyword length.
-    let g:neocomplete#sources#syntax#min_keyword_length = 3
-
-    " Define dictionary.
-    let g:neocomplete#sources#dictionary#dictionaries = {
-                \ 'default' : '',
-                \ 'vimshell' : $HOME.'/.vimshell_hist',
-                \ 'scheme' : $HOME.'/.gosh_completions'
-                \ }
-
-    " Define keyword.
-    if !exists('g:neocomplete#keyword_patterns')
-        let g:neocomplete#keyword_patterns = {}
-    endif
-    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-    " Enable omni completion.
-    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType tpl setlocal omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-    " Enable heavy omni completion.
-    if !exists('g:neocomplete#sources#omni#input_patterns')
-        let g:neocomplete#sources#omni#input_patterns = {}
-    endif
-    let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-    "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-    "let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
-    " For perlomni.vim setting.
-    " https://github.com/c9s/perlomni.vim
-    let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-"}}}
-"语法检查scrooloose/syntastic{{{
-    "设置错误符号
-    let g:syntastic_error_symbol = '✗'
-    "设置警告符号
-    let g:syntastic_warning_symbol = '⚠'
-    "是否在打开文件时检查
-    let g:syntastic_check_on_open = 1
-    "是否在保存文件后检查
-    "let g:syntastic_check_on_wq=1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_loc_list_height = 5
-    let g:syntastic_enable_highlighting = 0
-    "被动检查的文件类型
-    let g:syntastic_mode_map = { 'passive_filetypes': ['html'] }
-"}}}
 "vimrc折叠{{{
     autocmd FileType vim set fdm=marker
 "}}}
 "bash_local语法高亮{{{
    autocmd BufNewFile,BufRead .bash_local,bash_local set filetype=sh
 "}}}
-"私有配置请写入vim_local{{{
-if !empty(glob("~/.vim/vim_local"))
-   source ~/.vim/vim_local
-   autocmd BufNewFile,BufRead vim_local set filetype=vim
-endif
+" 加载详细配置 {{{
+"私有配置请写入`conf/local.vimrc
+for f in split(glob('~/.vim/conf/*.vimrc'), '\n')
+    exe 'source' f
+endfor
 "}}}

@@ -2,7 +2,7 @@
 
 ##############################
 app_dir="$HOME/.vim"
-#VUNDLE_URI="https://github.com/gmarik/vundle.git"
+yjiang_dir="$app_dir/habit"
 ###############################
 
 do_backup() {
@@ -22,19 +22,17 @@ lnif() {
 }
 
 create_symlinks() {
-    endpath="$app_dir"
-
-    lnif "$endpath/vimrc"              "$HOME/.vimrc"
-    lnif "$endpath/bashrc"             "$HOME/.bashrc"
-    lnif "$endpath/editrc"             "$HOME/.editrc"
-    lnif "$endpath/tmux.conf"          "$HOME/.tmux.conf"
-    lnif "$endpath/tmuxp.yaml"         "$HOME/.tmuxp.yaml"
-    #lnif "$endpath/gitconfig"         "$HOME/.gitconfig"
+    lnif "$app_dir/vimrc"              "$HOME/.vimrc"
 }
 
 yjiang_symlinks() {
-    endpath="$app_dir"
-    lnif "$endpath/bash_local"              "$HOME/.bash_local"
+    lnif "$yjiang_dir/bash_local"         "$HOME/.bash_local"
+    lnif "$yjiang_dir/bashrc"             "$HOME/.bashrc"
+    lnif "$yjiang_dir/editrc"             "$HOME/.editrc"
+    lnif "$yjiang_dir/tmux.conf"          "$HOME/.tmux.conf"
+    lnif "$yjiang_dir/tmuxp.yaml"         "$HOME/.tmuxp.yaml"
+    lnif "$yjiang_dir/gitconfig"          "$HOME/.gitconfig"
+    lnif "$yjiang_dir/dircolors"          "$HOME/.dircolors"
 }
 
 setup_vim_plug() {

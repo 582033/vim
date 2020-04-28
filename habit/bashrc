@@ -98,7 +98,7 @@ if [ $_os = 'osx' ];then
         alias grep='grep --color=auto'
         alias fgrep='fgrep --color=auto'
         alias egrep='egrep --color=auto'
-        eval `gdircolors -b $HOME/.vim/dircolors`
+        eval `gdircolors -b ~/.dircolors`
     fi
     #osx bash_completion
     if [ -f $brew_prefix/etc/bash_completion ]; then
