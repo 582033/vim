@@ -5,7 +5,7 @@
     set nocompatible
     "filetype off                  " required!
     "插件缩进
-    filetype plugin indent on
+    "filetype plugin indent on
 " }}}
 " Plug{{{
     call plug#begin('~/.vim/plugged')
@@ -19,6 +19,7 @@
     Plug 'altercation/vim-colors-solarized'
     "可视化缩进
     Plug 'nathanaelkane/vim-indent-guides'
+    "Plug 'Yggdroot/indentLine'
     Plug 'chr4/nginx.vim'
     "语法检查
     Plug 'scrooloose/syntastic'
@@ -219,17 +220,18 @@
     nmap <F11> :set cursorline!<BAR>set nocursorline?<CR>
     nmap <F12> :set cursorcolumn!<BAR>set nocursorcolumn?<CR>
 "}}}
+"不可见字符设置{{{
+    " Highlight problematic whitespace ¦, ┆ or │
+    "set list
+    "if has("patch-7.4.710")
+    "    set listchars=tab:\¦\ ,trail:•,extends:#,nbsp:.
+    "else
+    "    set listchars=tab:>\ ,trail:\·,extends:#,nbsp:.
+    "endif
+"}}}
 "缩进线{{{
-    "空格缩进
-    set list
-    if has("patch-7.4.710")
-        set listchars=tab:\¦\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace ¦, ┆ or │
-    else
-        set listchars=tab:>\ ,trail:\·,extends:#,nbsp:.
-    endif
-
-    "tab缩进
     set ts=4 sw=4 et
+    "let g:indentLine_char='┆'
     let g:indent_guides_enable_on_vim_startup = 1
     let g:indent_guides_start_level = 2
     let g:indent_guides_guide_size = 1
