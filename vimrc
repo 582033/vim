@@ -274,6 +274,7 @@
     au FileType go nmap <leader>b <Plug>(go-build)
     au FileType go nmap <leader>t <Plug>(go-test)
     au FileType go nmap <leader>c <Plug>(go-coverage)
+    au FileType go set completeopt-=preview
 " }}}
 " Html && Tpl Setting{{{
     autocmd filetype html set ts=4 noet
