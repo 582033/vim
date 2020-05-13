@@ -1,4 +1,9 @@
 " env init {{{
+    " 定义快捷键的前缀
+    let mapleader = ","
+    " 设置<leader>n为切换行号显示隐藏
+    map <Leader>n :set invnumber<CR>
+
     scriptencoding utf-8
     set encoding=utf-8
     "不适用vi键盘模式,而使用vim的
@@ -230,11 +235,14 @@
     "endif
 "}}}
 "缩进线{{{
-    set ts=4 sw=4 et
+    set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
     "let g:indentLine_char='┆'
     let g:indent_guides_enable_on_vim_startup = 1
     let g:indent_guides_start_level = 2
     let g:indent_guides_guide_size = 1
+    "自定义缩进线颜色
+    let g:indent_guides_auto_colors = 0
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  guibg=darkgray   ctermbg=234
 "}}}
 " 支持文件关闭回退 {{{
     let $VIMTEMP = $HOME.'/.vim/.vim_tmp/'
@@ -266,7 +274,6 @@
     autocmd filetype python let g:pymode_indent = 0
 "}}}
 " Go Setting{{{
-    let mapleader = "~"
     "let g:go_version_warning = 0
     let g:go_highlight_types = 1
     let g:go_highlight_fields = 1
