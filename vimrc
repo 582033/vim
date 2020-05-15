@@ -113,6 +113,7 @@
 " }}}
 " NerdTree {{{
     map <c-e> :NERDTreeToggle<CR>
+    map <leader>f :NERDTreeFind<cr>
 " }}}
 " Ctags{{{
     set tags=./tags;/,~/.vimtags
