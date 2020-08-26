@@ -48,6 +48,9 @@
     Plug 'drmingdrmer/xptemplate'
     "括号自动匹配
     "Plug 'jiangmiao/auto-pairs'
+    
+    "plist
+    Plug 'darfink/vim-plist'
     call plug#end()
 " }}}
 " Functions {{{
