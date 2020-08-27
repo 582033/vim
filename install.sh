@@ -43,11 +43,11 @@ version_ge(){
 
 vim_version=$(vim --version | grep Vi | awk '{print $5}')
 
-if version_ge $vim_version 7.3;then
+#if version_ge $vim_version 7.3;then
     #do_backup   "原有vim配置已备份至 .vim.`date +%Y%m%d%S`" "$HOME/.vim" "$HOME/.vimrc"
     create_symlinks     #创建配置软链接
     create_vim_tmp_dir  #创建vim缓存目录
     echo "Done."
-else
-    echo "Vim version must be 7.3+."
-fi
+#else
+#    echo "Vim version must be 7.3+."
+#fi
