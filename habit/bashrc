@@ -92,7 +92,7 @@ fi
 if [ $_os = 'osx' ];then
     ###################
     # osx alias
-    alias flushdns='dscacheutil -flushcache'
+    alias flushdns='sudo pkill mDNSResponder'
     alias lsusb='system_profiler SPUSBDataType'
     ###################
 
