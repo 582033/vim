@@ -99,7 +99,7 @@ if [ $_os = 'osx' ];then
     ###################
     #osx colors
     brew_prefix=$(brew --prefix)
-    if brew list | grep coreutils > /dev/null ; then
+    if brew list --formula | grep coreutils > /dev/null ; then
         PATH="$brew_prefix/opt/coreutils/libexec/gnubin:$PATH"
         alias ls='ls --color=auto'
         alias grep='grep --color=auto'

@@ -31,7 +31,7 @@
     "systemd 系统文件高亮
     Plug 'Matt-Deacalion/vim-systemd-syntax'
     Plug 'Shougo/neocomplete.vim'
-    Plug 'Valloric/YouCompleteMe', { 'do':'./install.py --go-completer' }
+    "Plug 'Valloric/YouCompleteMe', { 'do':'./install.py --go-completer' }
 
     "php
     "Plug 'spf13/PIV', { 'for': 'php' }

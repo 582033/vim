@@ -49,3 +49,5 @@
     insteadOf = "git://android.git.kernel.org/"
 [pull]
 	rebase = true
+[credential]
+	helper = cache
