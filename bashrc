@@ -58,7 +58,7 @@ if [ -n "$force_color_prompt" ]; then
         # a case would tend to support setf rather than setaf.)
         color_prompt=yes
     else
-^       color_prompt=
+        color_prompt=
     fi
 fi
 
