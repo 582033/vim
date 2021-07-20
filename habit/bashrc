@@ -180,3 +180,4 @@ export VISUAL="vim"
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
+export BASH_SILENCE_DEPRECATION_WARNING=1
