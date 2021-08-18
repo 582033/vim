@@ -11,6 +11,9 @@
     "filetype off                  " required!
     "插件缩进
     "filetype plugin indent on
+    set pyxversion=2
+    " Python3的可执行文件位置
+    let g:python3_host_prog = "/usr/local/bin/python3"
 " }}}
 " Plug{{{
     call plug#begin('~/.vim/plugged')
@@ -24,14 +27,11 @@
     Plug 'altercation/vim-colors-solarized'
     "可视化缩进
     Plug 'nathanaelkane/vim-indent-guides'
-    "Plug 'Yggdroot/indentLine'
     Plug 'chr4/nginx.vim'
     "语法检查
     Plug 'scrooloose/syntastic'
     "systemd 系统文件高亮
     Plug 'Matt-Deacalion/vim-systemd-syntax'
-    "Plug 'Shougo/neocomplete.vim'
-    Plug 'Valloric/YouCompleteMe', { 'do':'./install.py --go-completer' }
 
     "php
     "Plug 'spf13/PIV', { 'for': 'php' }
@@ -43,6 +43,8 @@
     "go
     Plug 'fatih/vim-go', { 'do':':GoUpdateBinaries', 'for':'go' }
     "Plug 'fatih/vim-go', { 'tag':'*', 'do':':GoUpdateBinaries', 'for':'go' }
+    Plug 'buoto/gotests-vim'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     "代码片段工具
     Plug 'drmingdrmer/xptemplate'
@@ -278,15 +280,29 @@
     autocmd filetype python let g:pymode_indent = 0
 "}}}
 " Go Setting{{{
+    let g:deoplete#enable_at_startup = 1
+    "deoplete-go settings
+    let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+    let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+    "打开此选项会从-source中检索完成localpackage的补全但是会变得很慢 不建议
+    "let g:deoplete#sources#go#source_importer = 1
+    let g:deoplete#sources#go#use_cache = 1
+    let g:deoplete#sources#go#json_directory = '~/.cache/deoplete/go/'
     "let g:go_version_warning = 0
     let g:go_highlight_types = 1
     let g:go_highlight_fields = 1
+
+    let g:go_fmt_command = "goimports"
+
     let g:go_highlight_extra_types = 1
     "au filetype go nmap <leader>r :GoRun<CR>
     au FileType go nmap <leader>r <Plug>(go-run)
     au FileType go nmap <leader>b <Plug>(go-build)
     au FileType go nmap <leader>t <Plug>(go-test)
     au FileType go nmap <leader>c <Plug>(go-coverage)
+    au FileType go nmap <leader>i :GoImports<CR>
+    au FileType go nmap <leader>ts :GoTests<CR>
+    au FileType go nmap <leader>tf :GoTestFunc<CR>
     au FileType go set completeopt-=preview
 " }}}
 " Html && Tpl Setting{{{
