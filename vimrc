@@ -51,8 +51,11 @@
     "括号自动匹配
     "Plug 'jiangmiao/auto-pairs'
     
-    "plist
+    "plist文件支持
     Plug 'darfink/vim-plist'
+
+    "启动界面快速打开最近的文件
+    Plug 'mhinz/vim-startify'
     call plug#end()
 " }}}
 " Functions {{{
@@ -295,6 +298,8 @@
     let g:go_fmt_command = "goimports"
 
     let g:go_highlight_extra_types = 1
+    "回车映射，防止补全提示重复
+    inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
     "au filetype go nmap <leader>r :GoRun<CR>
     au FileType go nmap <leader>r <Plug>(go-run)
     au FileType go nmap <leader>b <Plug>(go-build)
