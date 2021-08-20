@@ -56,9 +56,9 @@
     "Plug 'jiangmiao/auto-pairs'
 
     " vim状态栏美化
-    Plug 'vim-airline/vim-airline'
+    "Plug 'vim-airline/vim-airline'
     " vim状态栏美化主题
-    Plug 'vim-airline/vim-airline-themes'
+    "Plug 'vim-airline/vim-airline-themes'
     
     "plist文件支持
     Plug 'darfink/vim-plist', {'for':'plist'}
@@ -202,13 +202,17 @@
 "}}}
 "缩进线{{{
     set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-    "let g:indentLine_char='┆'
+    "vim启动时启用vim_indent_guides
     let g:indent_guides_enable_on_vim_startup = 1
+    "开始画缩进线的缩进等级
     let g:indent_guides_start_level = 2
+    "缩进线宽度
     let g:indent_guides_guide_size = 1
     "自定义缩进线颜色
     let g:indent_guides_auto_colors = 0
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  guibg=darkgray   ctermbg=234
+    "设定奇数列和偶数列的缩进线颜色
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=magenta ctermbg=magenta
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  guibg=black   ctermbg=black
 "}}}
 " 支持文件关闭回退 {{{
     let $VIMTEMP = $HOME.'/.vim/.vim_tmp/'
