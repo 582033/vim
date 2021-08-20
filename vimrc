@@ -12,8 +12,6 @@
     "插件缩进
     "filetype plugin indent on
     set pyxversion=2
-    " Python3的可执行文件位置
-    let g:python3_host_prog = "/usr/local/bin/python3"
 " }}}
 " Plug{{{
     call plug#begin('~/.vim/plugged')
@@ -24,7 +22,11 @@
     Plug 'preservim/nerdtree'
     Plug 'plasticboy/vim-markdown', { 'for':'markdown' }
     Plug 'kien/ctrlp.vim'
-    Plug 'altercation/vim-colors-solarized'
+    "主题
+    "Plug 'altercation/vim-colors-solarized'
+    "Plug 'fatih/molokai'
+    "Plug 'morhetz/gruvbox'
+    Plug 'lifepillar/vim-solarized8'
     "可视化缩进
     Plug 'nathanaelkane/vim-indent-guides'
     Plug 'chr4/nginx.vim'
@@ -43,16 +45,23 @@
     "go
     Plug 'fatih/vim-go', { 'do':':GoUpdateBinaries', 'for':'go' }
     "Plug 'fatih/vim-go', { 'tag':'*', 'do':':GoUpdateBinaries', 'for':'go' }
-    Plug 'buoto/gotests-vim'
+    Plug 'buoto/gotests-vim', { 'for' : 'go' }
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'dense-analysis/ale'
+
 
     "代码片段工具
     Plug 'drmingdrmer/xptemplate'
     "括号自动匹配
     "Plug 'jiangmiao/auto-pairs'
+
+    " vim状态栏美化
+    Plug 'vim-airline/vim-airline'
+    " vim状态栏美化主题
+    Plug 'vim-airline/vim-airline-themes'
     
     "plist文件支持
-    Plug 'darfink/vim-plist'
+    Plug 'darfink/vim-plist', {'for':'plist'}
 
     "启动界面快速打开最近的文件
     Plug 'mhinz/vim-startify'
@@ -146,14 +155,12 @@
     let g:syntastic_mode_map = { 'passive_filetypes': ['html'] }
 "}}}
 " Vim UI {{{
-    "vim-colors-solarized{{{
+    "vim-colors-schema{{{
     syntax enable
     set background=dark
     let g:solarized_termtrans=1
-    "let g:solarized_contrast="normal"
-    "let g:solarized_visibility="normal"
     let g:solarized_termcolors=256
-    colorscheme solarized
+    colorscheme solarized8
     set t_Co=256
     "}}}
 
@@ -192,15 +199,6 @@
     "hi CursorColumn ctermbg=4
     nmap <F11> :set cursorline!<BAR>set nocursorline?<CR>
     nmap <F12> :set cursorcolumn!<BAR>set nocursorcolumn?<CR>
-"}}}
-"不可见字符设置{{{
-    " Highlight problematic whitespace ¦, ┆ or │
-    "set list
-    "if has("patch-7.4.710")
-    "    set listchars=tab:\¦\ ,trail:•,extends:#,nbsp:.
-    "else
-    "    set listchars=tab:>\ ,trail:\·,extends:#,nbsp:.
-    "endif
 "}}}
 "缩进线{{{
     set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
@@ -242,15 +240,18 @@
     autocmd filetype python let g:pymode_indent = 0
 "}}}
 " Go Setting{{{
-    "let g:go_version_warning = 0
+    let g:coc_global_extensions = ['coc-json', 'coc-go']
+    let g:go_fmt_command = 'goimports'
+    let g:go_autodetect_gopath = 1
+    "let g:go_bin_path = '$GOBIN'
     let g:go_highlight_types = 1
     let g:go_highlight_fields = 1
-
-    let g:go_fmt_command = "goimports"
-
+    let g:go_highlight_functions = 1
+    let g:go_highlight_function_calls = 1
     let g:go_highlight_extra_types = 1
+    let g:go_highlight_generate_tags = 1
     "回车映射，防止补全提示重复
-    inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+    "inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
     "au filetype go nmap <leader>r :GoRun<CR>
     au FileType go nmap <leader>r <Plug>(go-run)
     au FileType go nmap <leader>b <Plug>(go-build)
@@ -260,6 +261,51 @@
     au FileType go nmap <leader>ts :GoTests<CR>
     au FileType go nmap <leader>tf :GoTestFunc<CR>
     au FileType go set completeopt-=preview
+
+    if exists('*complete_info')
+        inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+    else           
+        inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>" 
+    endif
+    
+	"使用`K`显示function浮窗
+	function! s:show_documentation()
+	  if (index(['vim','help'], &filetype) >= 0)
+		execute 'h '.expand('<cword>')
+	  else
+		call CocAction('doHover')
+	  endif
+	endfunction
+	nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+
+    " ale-setting
+    let g:ale_set_highlights = 1
+    let g:ale_set_quickfix = 1
+    "自定义error和warning图标
+    let g:ale_sign_error = '✗'
+    let g:ale_sign_warning = '⚠'
+    "在vim自带的状态栏中整合ale
+    let g:ale_statusline_format = ['✗ %d', '⚠ %d', '✔ OK']
+    "显示Linter名称,出错或警告等相关信息
+    let g:ale_echo_msg_error_str = 'E'
+    let g:ale_echo_msg_warning_str = 'W'
+    let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+    "打开文件时不进行检查
+    let g:ale_lint_on_enter = 1
+
+    "普通模式下，sp前往上一个错误或警告，sn前往下一个错误或警告
+    nmap sp <Plug>(ale_previous_wrap)
+    nmap sn <Plug>(ale_next_wrap)
+    "<Leader>s触发/关闭语法检查
+    " nmap <Leader>l :ALEToggle<CR>
+    "<Leader>d查看错误或警告的详细信息
+    nmap <Leader>d :ALEDetail<CR>
+    "指定ale调用gopls
+    let g:ale_linters = {
+        \ 'go': ['gopls'],
+        \ }
+
 " }}}
 " Html && Tpl Setting{{{
     autocmd filetype html set ts=4 noet
