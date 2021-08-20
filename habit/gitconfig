@@ -51,4 +51,8 @@
 [pull]
 	rebase = true
 [credential]
-	helper = cache
+	helper = store
+    #临时记住
+    #helper = cache
+    #记住1小时
+    #helper = cache -timeout=3600
