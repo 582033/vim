@@ -28,7 +28,7 @@
     "Plug 'morhetz/gruvbox'
     Plug 'lifepillar/vim-solarized8'
     "可视化缩进
-    Plug 'nathanaelkane/vim-indent-guides'
+    "Plug 'nathanaelkane/vim-indent-guides'
     Plug 'chr4/nginx.vim'
     "语法检查
     Plug 'scrooloose/syntastic'
@@ -201,18 +201,18 @@
     nmap <F12> :set cursorcolumn!<BAR>set nocursorcolumn?<CR>
 "}}}
 "缩进线{{{
-    set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-    "vim启动时启用vim_indent_guides
-    let g:indent_guides_enable_on_vim_startup = 1
-    "开始画缩进线的缩进等级
-    let g:indent_guides_start_level = 2
-    "缩进线宽度
-    let g:indent_guides_guide_size = 1
-    "自定义缩进线颜色
-    let g:indent_guides_auto_colors = 0
-    "设定奇数列和偶数列的缩进线颜色
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=magenta ctermbg=magenta
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  guibg=black   ctermbg=black
+    "set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+    ""vim启动时启用vim_indent_guides
+    "let g:indent_guides_enable_on_vim_startup = 1
+    ""开始画缩进线的缩进等级
+    "let g:indent_guides_start_level = 2
+    ""缩进线宽度
+    "let g:indent_guides_guide_size = 1
+    ""自定义缩进线颜色
+    "let g:indent_guides_auto_colors = 0
+    ""设定奇数列和偶数列的缩进线颜色
+    "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=magenta ctermbg=magenta
+    "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  guibg=black   ctermbg=black
 "}}}
 " 支持文件关闭回退 {{{
     let $VIMTEMP = $HOME.'/.vim/.vim_tmp/'
