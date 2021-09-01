@@ -51,7 +51,7 @@
 
 
     "代码片段工具
-    Plug 'drmingdrmer/xptemplate'
+    Plug 'honza/vim-snippets'
     "括号自动匹配
     "Plug 'jiangmiao/auto-pairs'
 
@@ -244,7 +244,7 @@
     autocmd filetype python let g:pymode_indent = 0
 "}}}
 " Go Setting{{{
-    let g:coc_global_extensions = ['coc-json', 'coc-go']
+    let g:coc_global_extensions = ['coc-go', 'coc-snippets']
     let g:go_fmt_command = 'goimports'
     let g:go_autodetect_gopath = 1
     "let g:go_bin_path = '$GOBIN'
