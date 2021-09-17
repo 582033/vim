@@ -35,7 +35,7 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 if [ -z "${ip_addr:-}" ] && [ -r /sbin/ip ];then 
-	ip_addr=$(ip addr|grep inet|grep -v 127.0.0.1|grep -v inet6|awk '{print $2}'|sed 's/\/.*$//')
+	ip_addr=$(ip addr|grep inet|grep -v 127.0.0.1|grep -v inet6 | grep -v docker |awk '{print $2}'|sed 's/\/.*$//')
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
