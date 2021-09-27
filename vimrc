@@ -303,8 +303,8 @@
     nmap sn <Plug>(ale_next_wrap)
     "<Leader>s触发/关闭语法检查
     " nmap <Leader>l :ALEToggle<CR>
-    "<Leader>d查看错误或警告的详细信息
-    nmap <Leader>d :ALEDetail<CR>
+    "<Leader>d查看错误或警告的详细信息(已有浮窗显示,不需要开启)
+    "nmap <Leader>d :ALEDetail<CR>
     "指定ale调用gopls
     let g:ale_linters = {
         \ 'go': ['gopls'],
