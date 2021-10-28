@@ -1,5 +1,9 @@
-snippet jsono "json orm" b
+snippet jsonorm "json orm" b
 ${1:filedName}  ${2:type}       \`json:"${3:displayName}" orm:"${3:displayName}"\`
+endsnippet
+
+snippet jsonom "json omitempty" b
+${1:filedName}  ${2:type}       \`json:"${3:displayName},omitempty"\`
 endsnippet
 
 snippet jsonf "json form bind" b
@@ -8,4 +12,9 @@ endsnippet
 
 snippet print "fmt.println" b
 fmt.Println($1)
+endsnippet
+
+snippet debug "log.Debug" b
+debugBytes, _ := json.Marshal(${1:Value})
+log.Debugf("RequestID:%v DebugMessage:%s Value:%s", c.GetRequestID(), "${1:Value}", string(debugBytes))
 endsnippet
