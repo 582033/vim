@@ -57,6 +57,7 @@ version_ge(){
     test "$(echo "$@" | tr " " "\n" | sort -r | head -n 1)" == "$1";
 }
 
+vim_version=$(vim --version | grep Vi | awk '{print $5}')
 
 #do_backup   "原有vim配置已备份至 .vim.`date +%Y%m%d%S`" "$HOME/.vim" "$HOME/.vimrc"
 create_symlinks     #创建配置软链接
@@ -66,4 +67,7 @@ if [ "$1" = 'yjiang' ];then
 	yjiang_symlinks     #自用习惯
 fi
 
+if version_ge $vim_version 8.1;then
+	echo "The vim version is less than 8, and coc-vim is disabled."
+fi
 echo "Done."
