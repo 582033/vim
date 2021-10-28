@@ -45,7 +45,7 @@
     Plug 'hynek/vim-python-pep8-indent', { 'for':'python' }
 
     "go
-    if v:version >= 801 && !executable('node')
+    if v:version >= 801 && executable('node')
 	    Plug 'fatih/vim-go', { 'do':':GoUpdateBinaries', 'for':'go' }
 	    "Plug 'fatih/vim-go', { 'tag':'*', 'do':':GoUpdateBinaries', 'for':'go' }
 	    Plug 'buoto/gotests-vim', { 'for' : 'go' }
