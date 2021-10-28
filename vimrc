@@ -45,11 +45,13 @@
     Plug 'hynek/vim-python-pep8-indent', { 'for':'python' }
 
     "go
-    Plug 'fatih/vim-go', { 'do':':GoUpdateBinaries', 'for':'go' }
-    "Plug 'fatih/vim-go', { 'tag':'*', 'do':':GoUpdateBinaries', 'for':'go' }
-    Plug 'buoto/gotests-vim', { 'for' : 'go' }
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'dense-analysis/ale', { 'for' : 'go' }
+    if v:version >= 801 && !executable('node')
+	    Plug 'fatih/vim-go', { 'do':':GoUpdateBinaries', 'for':'go' }
+	    "Plug 'fatih/vim-go', { 'tag':'*', 'do':':GoUpdateBinaries', 'for':'go' }
+	    Plug 'buoto/gotests-vim', { 'for' : 'go' }
+	    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	    Plug 'dense-analysis/ale', { 'for' : 'go' }
+    endif
 
 
     "代码片段工具
@@ -317,7 +319,7 @@
 		\ }
     endif
     " coc
-    if v:version >= 801
+    if v:version >= 801 && !executable('node')
 	    let g:coc_disable_startup_warning = 1
     endif
 
