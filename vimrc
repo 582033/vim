@@ -45,11 +45,13 @@
     Plug 'hynek/vim-python-pep8-indent', { 'for':'python' }
 
     "go
+    if v:version >= 703 && has('node')
     Plug 'fatih/vim-go', { 'do':':GoUpdateBinaries', 'for':'go' }
     "Plug 'fatih/vim-go', { 'tag':'*', 'do':':GoUpdateBinaries', 'for':'go' }
     Plug 'buoto/gotests-vim', { 'for' : 'go' }
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'dense-analysis/ale'
+    Plug 'dense-analysis/ale', { 'for' : 'go' }
+    endif
 
 
     "代码片段工具
@@ -315,6 +317,10 @@
 	    let g:ale_linters = {
 		\ 'go': ['gopls'],
 		\ }
+    endif
+    " coc
+    if v:version >= 801 && has('node')
+	    let g:coc_disable_startup_warning = 1
     endif
 
 " }}}
