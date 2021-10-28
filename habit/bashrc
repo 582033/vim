@@ -34,10 +34,12 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+
+# show ip 
 if [ -r /sbin/ip ];then 
-	ip_addr=$(ip addr|grep inet|grep -v 127.0.0.1|grep -v inet6 | grep -v docker |awk '{print $2}'|sed 's/\/.*$//')
+	local_alias=$(ip addr|grep inet|grep -v 127.0.0.1|grep -v inet6 | grep -v docker |awk '{print $2}'|sed 's/\/.*$//' | head -1)
 else
-	ip_addr=$(hostname -s)
+	local_alias=$(hostname -s)
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
@@ -70,9 +72,9 @@ fi
 
 if [ "$color_prompt" = yes ]; then
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    PS1='${debian_chroot:+($debian_chroot)}\u@$ip_addr:\[\e[35;1m\]\w\[\e[33;0m\]\[\e[35m\]$(parse_git_branch)\[\e[37;0m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@$local_alias:\[\e[35;1m\]\w\[\e[33;0m\]\[\e[35m\]$(parse_git_branch)\[\e[37;0m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@$ip_addr:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@$local_alias:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
