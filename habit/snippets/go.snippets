@@ -15,6 +15,7 @@ fmt.Println($1)
 endsnippet
 
 snippet debug "log.Debug" b
-debugBytes, _ := json.Marshal(${1:Value})
-log.Debugf("RequestID:%v DebugMessage:%s Value:%s", c.GetRequestID(), "${1:Value}", string(debugBytes))
+if debugBytes, _ := json.Marshal(${1:Value}); len(debugBytes) > 0 {
+	log.Debugf("RequestID:%v DebugMessage:%s Value:%s", c.GetRequestID(), "${1:Value}", string(debugBytes))
+}
 endsnippet
