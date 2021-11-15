@@ -220,8 +220,8 @@
     "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  guibg=black   ctermbg=black
 "}}}
 " 支持文件关闭回退 {{{
-    let $VIMTEMP = $HOME.'/.vim/.vim_tmp/'
-    if v:version >= 703
+    if has('persistent_undo')
+	silent !mkdir -p ~/.config/.vim_tmp > /dev/null 2>&1
         set undofile
         set undodir=$VIMTEMP
         set undolevels=1000
