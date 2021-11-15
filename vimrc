@@ -221,7 +221,8 @@
 "}}}
 " 支持文件关闭回退 {{{
     if has('persistent_undo')
-	silent !mkdir -p ~/.config/.vim_tmp > /dev/null 2>&1
+	let $VIMTEMP = $HOME.'/.config/.vim_tmp/'
+	silent !mkdir -p $VIMTEMP > /dev/null 2>&1
         set undofile
         set undodir=$VIMTEMP
         set undolevels=1000
