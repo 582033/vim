@@ -14,12 +14,14 @@ vim.g.showmatch = true
 vim.g.incsearch = true
 --开启高亮
 vim.g.hlsearch = true
+
 vim.cmd('highlight clear SignColumn')
 vim.cmd('highlight clear LineNr')
+vim.cmd('highlight clear CursorLineNr')
+
 vim.g.CSApprox_hook_post = {
 	'hi clear SignColumn'
 }
-vim.cmd('highlight clear CursorLineNr')
 
 vim.g.backspace = 'indent,eol,start'
 vim.g.linespace = 0             
@@ -37,3 +39,6 @@ vim.g.foldenable = true
 --vim.cmd('highlight CursorColumn ctermbg=4')
 vim.api.nvim_set_keymap('n', '<F11>', ':set cursorline!<BAR>set nocursorline?<CR>', {})
 vim.api.nvim_set_keymap('n', '<F12>', ':set cursorcolumn!<BAR>set nocursorcolumn?<CR>', {})
+
+--缩进线
+vim.cmd('autocmd VimEnter,Colorscheme * :hi IndentGuides  guibg=black   ctermbg=black')

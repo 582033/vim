@@ -11,6 +11,7 @@ vim.g.go_highlight_functions = 1
 vim.g.go_highlight_function_calls = 1
 vim.g.go_highlight_extra_types = 1
 vim.g.go_highlight_generate_tags = 1
+
 --回车映射，防止补全提示重复
 vim.cmd('au FileType go nmap <leader>r <Plug>(go-run)')
 vim.cmd('au FileType go nmap <leader>b <Plug>(go-build)')
@@ -50,3 +51,16 @@ vim.g.ale_linters = {
 }
 -- coc
 vim.g.coc_disable_startup_warning = 1
+
+-- 浮窗
+function show_documentation()
+	local filetype = vim.bo.filetype
+
+	if filetype == 'vim'  or filetype == 'help' then
+		vim.api.nvim_command('h ' .. filetype)
+	else
+		vim.fn.CocActionAsync('doHover')
+	end
+end
+vim.api.nvim_set_keymap( 'n', 'K', ':lua show_documentation()<CR>', { noremap = false, silent = false });
+vim.cmd("autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')")
