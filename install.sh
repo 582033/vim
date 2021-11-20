@@ -22,14 +22,11 @@ yjiang_symlinks() {
     lnif "$yjiang_dir/dircolors"          "$HOME/.dircolors"
 }
 
-setup_vim_plug() {
-    if [ ! -e "$app_dir/autoload" ]; then
-        curl -fLo "$app_dir/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-        install_arguments="+PlugInstall +PlugClean +qall"
-    else
-        install_arguments="+PlugUpgrade +PlugInstall +PlugClean +qall"
+setup_packer() {
+    if [ ! -e "$app_dir/plugin" ]; then
+	git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
     fi
-    nvim $install_arguments
+    nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 }
 
 create_vim_tmp_dir(){
@@ -46,7 +43,7 @@ version_ge(){
 
 vim_version=$(vim --version | grep Vi | awk '{print $5}')
 
-setup_vim_plug      #安装vim-plug,并克隆预置插件
+setup_packer      #安装packer,并克隆预置插件
 create_vim_tmp_dir  #创建vim缓存目录
 if [ "$1" = 'yjiang' ];then
 	yjiang_symlinks     #自用习惯

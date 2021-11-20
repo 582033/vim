@@ -1,4 +1,7 @@
-vim.g.coc_global_extensions = "['coc-go', 'coc-snippets']"
+vim.g.coc_global_extensions = {
+	'coc-go',
+	'coc-snippets'
+}
 vim.g.go_fmt_command = 'goimports'
 vim.g.go_autodetect_gopath = 1
 --vim.g.go_bin_path = '$GOBIN'
@@ -25,7 +28,11 @@ vim.g.ale_set_quickfix = 1
 vim.g.ale_sign_error = '✗'
 vim.g.ale_sign_warning = '⚠'
 -- 在vim自带的状态栏中整合ale
-vim.g.ale_statusline_format = "['✗ %d', '⚠ %d', '✔ OK']"
+vim.g.ale_statusline_format = {
+	'✗ %d',
+	'⚠ %d',
+	'✔ OK'
+}
 -- 显示Linter名称,出错或警告等相关信息
 vim.g.ale_echo_msg_error_str = 'E'
 vim.g.ale_echo_msg_warning_str = 'W'
@@ -38,6 +45,8 @@ vim.api.nvim_set_keymap('n', 'sp', '<Plug>(ale_previous_wrap)', {})
 vim.api.nvim_set_keymap('n', 'sn', '<Plug>(ale_next_wrap)', {})
 
 -- 指定ale调用gopls
-vim.g.ale_linters = "{'go':['gopls']}"
+vim.g.ale_linters = {
+	go = {'gopls'}
+}
 -- coc
 vim.g.coc_disable_startup_warning = 1

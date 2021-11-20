@@ -1,4 +1,4 @@
-require('options')
---require('plugins')
---require('layout')
---require('lang')
+require('option')
+require('plugin')
+require('layout')
+require('lang')

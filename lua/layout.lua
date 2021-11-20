@@ -1,12 +1,3 @@
---主题
-vim.g.synaxt = 'enable'
-vim.api.nvim_set_option('background', 'dark')
---if packer_plugins['vim-solarized8'] and packer_plugins['vim-solarized8'].loaded then
-	vim.g.solarized_termtrans = 1
-	vim.g.solarized_termcolors = 256
-	vim.g.colorscheme = 'solarized8'
---end
-
 --Vim UI
 vim.g.t_Co = 256
 --Only show 15 tabs
@@ -25,7 +16,9 @@ vim.g.incsearch = true
 vim.g.hlsearch = true
 vim.cmd('highlight clear SignColumn')
 vim.cmd('highlight clear LineNr')
-vim.g.CSApprox_hook_post = "['hi clear SignColumn']"
+vim.g.CSApprox_hook_post = {
+	'hi clear SignColumn'
+}
 vim.cmd('highlight clear CursorLineNr')
 
 vim.g.backspace = 'indent,eol,start'
