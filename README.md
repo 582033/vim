@@ -4,14 +4,14 @@ Vim 自动化配置
 
 ### 初始支持
 
-* 使用[vim-plug](https://github.com/junegunn/vim-plug)对插件进行管理
-* 默认支持PHP/Python/JS/CSS/HTML/NGINX语法高亮
-* 更多配置详情请看vimrc
+* 使用[packer](https://github.com/wbthomason/packer.nvim)对插件进行管理
+* 默认支持GO/PHP/Python/JS/CSS/HTML/NGINX语法高亮
+* 更多配置详情请看init.lua
 
 ### 依赖
 
 * git
-* vim >= v7.3
+* neovim
 
 ### 安装
     $ cd ~/ && git clone https://github.com/582033/vim.git .vim
@@ -27,4 +27,3 @@ Vim 自动化配置
 
 ### 已知问题
 
-* spf13/piv插件会导致偶尔php语法高亮失效,解决方法参见[VIM PIV插件导致的PHP文件偶尔丢失语法高亮问题](https://yjiang.cn/index.php/archives/1674/)
