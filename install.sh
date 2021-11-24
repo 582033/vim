@@ -23,8 +23,10 @@ yjiang_symlinks() {
 }
 
 setup_packer() {
-    if [ ! -e "$app_dir/plugin" ]; then
-	git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/opt/packer.nvim
+	if [ ! -e "$app_dir/plugin" ]; then
+		git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/opt/packer.nvim
+	else
+		rm -rf ~/.local/share/nvim/site/pack/packer/
     fi
     nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 }
