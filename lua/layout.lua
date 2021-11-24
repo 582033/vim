@@ -6,8 +6,6 @@ vim.g.tabpagemax = 15
 vim.g.showmode = true
 --突出显示当前行
 vim.g.cursorline = true
---显示行号
-vim.g.nu = true
 --显示括号匹配
 vim.g.showmatch = true
 --开启实时搜索
@@ -24,8 +22,8 @@ vim.g.CSApprox_hook_post = {
 }
 
 vim.g.backspace = 'indent,eol,start'
-vim.g.linespace = 0             
-vim.g.winminheight = 0          
+vim.g.linespace = 0
+vim.g.winminheight = 0
 vim.g.ignorecase = true
 vim.g.smartcase = true
 vim.g.wildmenu = true
