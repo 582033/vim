@@ -14,6 +14,23 @@ vim.api.nvim_command('autocmd BufNewFile,BufRead .bash_local,bash_local set file
 --bash_local语法高亮
 vim.api.nvim_command('autocmd FileType vim set fdm=marker')
 
+-- 自动缩进
+vim.o.autoindent = true
+vim.bo.autoindent = true
+vim.o.smartindent = true
+
+-- 命令行高为1
+vim.o.cmdheight = 1
+
+-- 搜索大小写不敏感，除非包含大写
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+function reload_conf()
+	vim.cmd('PackerCompile')
+	vim.cmd('so %')
+end
+vim.api.nvim_set_keymap('n', '<leader>pc', ':lua reload_conf()<CR>', {})
 
 -- 支持文件关闭回退
 if vim.fn.has('persistent_undo') == 1 then

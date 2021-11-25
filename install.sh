@@ -12,6 +12,16 @@ lnif() {
     fi  
 }
 
+#$1 command 
+#$2 comment
+cmd(){
+	echo "执行命令:$1"
+	$($1)
+	if [ -e "$2" ];then
+		echo $2
+	fi
+}
+
 yjiang_symlinks() {
     lnif "$yjiang_dir/bash_local"         "$HOME/.bash_local"
     lnif "$yjiang_dir/bashrc"             "$HOME/.bashrc"
@@ -23,19 +33,21 @@ yjiang_symlinks() {
 }
 
 setup_packer() {
-	if [ ! -e "$app_dir/plugin" ]; then
-		git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/opt/packer.nvim
-	else
-		rm -rf ~/.local/share/nvim/site/pack/packer/
-    fi
-    nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+	packer_patch="$HOME/.local/share/nvim/site/pack/packer"
+	date=$(date +%s)
+	nvim_backup="/tmp/nvim_$date"
+	if [ -d $packer_patch ]; then
+		cmd "mv $HOME/.local/share/nvim/ $nvim_backup" "Packer目录已存在,旧目录已备份至$nvim_backup"
+	fi
+	cmd "git clone --depth 1 https://github.com/wbthomason/packer.nvim $packer_patch/opt/packer.nvim"
+	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 }
 
 create_vim_tmp_dir(){
     tmp_dir="$base_dir/.vim_tmp"
 
     if [ ! -d "$tmp_dir" ]; then
-        mkdir -p "$tmp_dir"
+        cmd "mkdir -p $tmp_dir"
     fi
 }
 

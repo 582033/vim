@@ -4,6 +4,7 @@ vim.g.coc_global_extensions = {
 }
 vim.g.go_fmt_command = 'goimports'
 vim.g.go_autodetect_gopath = 1
+vim.g.go_doc_popup_window = 1
 --vim.g.go_bin_path = '$GOBIN'
 vim.g.go_highlight_types = 1
 vim.g.go_highlight_fields = 1
@@ -75,5 +76,5 @@ function show_documentation()
 		vim.fn.CocActionAsync('doHover')
 	end
 end
-vim.api.nvim_set_keymap( 'n', 'K', ':lua show_documentation()<CR>', { noremap = false, silent = false });
+vim.api.nvim_set_keymap( 'n', 'K', ':lua show_documentation()<CR>', { noremap = false, silent = false })
 vim.cmd("autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')")
