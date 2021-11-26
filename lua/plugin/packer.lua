@@ -18,6 +18,7 @@ return require('packer').startup(function()
 		'preservim/nerdtree',
 		setup = function()
 			vim.api.nvim_set_keymap('', '<c-e>', ':NERDTreeToggle<CR>', {})
+			vim.api.nvim_set_keymap('', '<c-f>', ':NERDTreeFind<CR>', {})
 		end
 	} 
 

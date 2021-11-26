@@ -4,7 +4,7 @@ vim.g.mapleader = ','
 vim.api.nvim_set_keymap('n', '<leader>n', ':set invnumber<cr>', {})
 
 -- 默认显示行号
-vim.api.nvim_set_option('number', true)
+vim.cmd('set number')
 
 -- 支持gbk文件直接打开
 vim.g.funcs = 'utf-8,gbk'
