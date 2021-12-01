@@ -1,6 +1,6 @@
 vim.g.coc_global_extensions = {
-	'coc-go',
-	'coc-snippets'
+	'coc-go'
+	--'coc-snippets'
 }
 vim.g.go_fmt_command = 'goimports'
 vim.g.go_autodetect_gopath = 1

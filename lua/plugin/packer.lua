@@ -1,6 +1,6 @@
 local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-	print("clone packer...")
+	print("clone packer...\n")
 	vim.fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
 	vim.cmd('packadd packer.nvim')
 end
@@ -18,7 +18,7 @@ return require('packer').startup(function()
 		'preservim/nerdtree',
 		setup = function()
 			vim.api.nvim_set_keymap('', '<c-e>', ':NERDTreeToggle<CR>', {})
-			vim.api.nvim_set_keymap('', '<c-f>', ':NERDTreeFind<CR>', {})
+			vim.api.nvim_set_keymap('', '<c-d>', ':NERDTreeFind<CR>', {})
 		end
 	} 
 
@@ -31,7 +31,7 @@ return require('packer').startup(function()
 	use {
 		'lifepillar/vim-solarized8',
 		-- 设置可选包(不会在启动时加载)
-		opt = false,
+		opt = true,
 		--'sainnhe/gruvbox-material',
 		config = function()
 			vim.g.solarized_termtrans = 1
@@ -99,11 +99,15 @@ return require('packer').startup(function()
 	}
 	use {
 		'dense-analysis/ale', 
-		ft = { 'go' }
+		cmd = 'ALEEnable',
+		ft = { 'go' },
+		config = 'vim.cmd[[ALEEnable]]'
 	}
 
 	--代码片段工具
-	use 'honza/vim-snippets'
+	use {
+		'honza/vim-snippets'
+	}
 
 	--plist文件支持
 	use {

@@ -39,8 +39,9 @@ setup_packer() {
 	if [ -d $packer_patch ]; then
 		cmd "mv $HOME/.local/share/nvim/ $nvim_backup" "Packer目录已存在,旧目录已备份至$nvim_backup"
 	fi
-	cmd "git clone --depth 1 https://github.com/wbthomason/packer.nvim $packer_patch/opt/packer.nvim"
-	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+	cmd "git clone --depth 1 https://github.com/wbthomason/packer.nvim $packer_patch/start/packer.nvim"
+	#nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+	nvim -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 }
 
 create_vim_tmp_dir(){
@@ -52,15 +53,17 @@ create_vim_tmp_dir(){
 }
 
 version_ge(){
-    test "$(echo "$@" | tr " " "\n" | sort -r | head -n 1)" == "$1";
+    #echo $@
+    test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" == "$1"
 }
 
-vim_version=$(vim --version | grep Vi | awk '{print $5}')
+vim_version=$(nvim --version | grep NVIM\ v | sed 's/v//g' | awk '{print $2}')
 
-setup_packer      #安装packer,并克隆预置插件
-create_vim_tmp_dir  #创建vim缓存目录
-if [ "$1" = 'yjiang' ];then
-	yjiang_symlinks     #自用习惯
+if version_ge $vim_version 0.5; then
+    setup_packer      #安装packer,并克隆预置插件
+    create_vim_tmp_dir  #创建vim缓存目录
+    if [ "$1" = 'yjiang' ];then
+        yjiang_symlinks     #自用习惯
+    fi
 fi
-
 echo "Done."
