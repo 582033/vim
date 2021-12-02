@@ -1,6 +1,14 @@
+function file_exists(path)
+    local file = io.open(path, "rb")
+    if file then file:close() end
+    return file ~= nil
+end
+
 local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-	print("clone packer...\n")
+
+if not file_exists(install_path) then
+	print(install_path.."目录不存在")
+	print("克隆Packer插件管理器...\n")
 	vim.fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
 	vim.cmd('packadd packer.nvim')
 end
@@ -10,8 +18,6 @@ vim.cmd('packadd packer.nvim')
 return require('packer').startup(function()
 	use {
 		'wbthomason/packer.nvim',
-		-- 设置可选包(不会在启动时加载)
-		opt = true
 	}
 
 	use {
@@ -30,8 +36,6 @@ return require('packer').startup(function()
 	--主题
 	use {
 		'lifepillar/vim-solarized8',
-		-- 设置可选包(不会在启动时加载)
-		opt = true,
 		--'sainnhe/gruvbox-material',
 		config = function()
 			vim.g.solarized_termtrans = 1
@@ -118,6 +122,7 @@ return require('packer').startup(function()
 	--启动界面快速打开最近的文件
 	use 'mhinz/vim-startify'
 
+    --[[
 	--term
 	use {
 		'akinsho/toggleterm.nvim',
@@ -125,5 +130,6 @@ return require('packer').startup(function()
 			require('plugin.toggleterm')
 		end
 	}
+    --]]
 end
 )

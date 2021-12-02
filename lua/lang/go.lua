@@ -1,7 +1,10 @@
 vim.g.coc_global_extensions = {
-	'coc-go'
-	--'coc-snippets'
+	'coc-go',
+	'coc-snippets'
 }
+--pyx
+vim.cmd('set pyxversion=3')
+
 vim.g.go_fmt_command = 'goimports'
 vim.g.go_autodetect_gopath = 1
 vim.g.go_doc_popup_window = 1
