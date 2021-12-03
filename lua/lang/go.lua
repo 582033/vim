@@ -1,10 +1,3 @@
-vim.g.coc_global_extensions = {
-	'coc-go',
-	'coc-snippets'
-}
---pyx
-vim.cmd('set pyxversion=3')
-
 vim.g.go_fmt_command = 'goimports'
 vim.g.go_autodetect_gopath = 1
 vim.g.go_doc_popup_window = 1
@@ -18,16 +11,16 @@ vim.g.go_highlight_extra_types = 1
 
 vim.g.go_highlight_array_whitespace_error = 1
 vim.g.go_highlight_chan_whitespace_error = 1
-vim.ggo_highlight_space_tab_error = 1
+vim.g.go_highlight_space_tab_error = 1
 vim.g.go_highlight_trailing_whitespace_error = 1
 vim.g.go_highlight_operators = 1
 vim.g.go_highlight_function_parameters = 1
-vim.ggo_highlight_build_constraints = 1
+vim.g.go_highlight_build_constraints = 1
 vim.g.go_highlight_string_spellcheck = 1
 vim.g.go_highlight_variable_declarations = 1
 vim.g.go_highlight_generate_tags = 1
 vim.g.go_highlight_variable_assignments = 1
-vim.g.go_highlight_diagnostic_warnings = 1
+--vim.g.go_highlight_diagnostic_warnings = 1
 
 --回车映射，防止补全提示重复
 vim.cmd('au FileType go nmap <leader>r <Plug>(go-run)')
@@ -39,7 +32,17 @@ vim.cmd('au FileType go nmap <leader>ts :GoTests<CR>')
 vim.cmd('au FileType go nmap <leader>tf :GoTestFunc<CR>')
 vim.cmd('au FileType go set completeopt-=preview')
 
+
+-- coc
+vim.g.coc_disable_startup_warning = 1
+vim.g.coc_global_extensions = {
+	'coc-go',
+	'coc-snippets'
+}
+
+--[[
 -- ale-setting
+vim.g.ale_disable_lsp = 1
 vim.g.ale_set_highlights = 1
 vim.g.ale_set_quickfix = 1
 -- 自定义error和warning图标
@@ -66,8 +69,7 @@ vim.api.nvim_set_keymap('n', 'sn', '<Plug>(ale_next_wrap)', {})
 vim.g.ale_linters = {
 	go = {'gopls'}
 }
--- coc
-vim.g.coc_disable_startup_warning = 1
+
 
 -- 浮窗
 function show_documentation()
@@ -81,3 +83,4 @@ function show_documentation()
 end
 vim.api.nvim_set_keymap( 'n', 'K', ':lua show_documentation()<CR>', { noremap = false, silent = false })
 vim.cmd("autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')")
+--]]

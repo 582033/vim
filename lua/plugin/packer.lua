@@ -101,16 +101,19 @@ return require('packer').startup(function()
 		'neoclide/coc.nvim', 
 		branch = 'release'
 	}
+	--[[
 	use {
-		'dense-analysis/ale', 
-		cmd = 'ALEEnable',
+		'dense-analysis/ale',
 		ft = { 'go' },
-		config = 'vim.cmd[[ALEEnable]]'
-	}
 
-	--代码片段工具
+	}
+	--]]
+
 	use {
-		'honza/vim-snippets'
+		'neovim/nvim-lspconfig',
+		config = function()
+			require('plugin.lspconfig')
+		end
 	}
 
 	--plist文件支持
@@ -123,6 +126,13 @@ return require('packer').startup(function()
 	use 'mhinz/vim-startify'
 
     --[[
+	--代码片段工具
+	use {
+		'honza/vim-snippets',
+		-- Lazy loading
+		opt = true
+	}
+
 	--term
 	use {
 		'akinsho/toggleterm.nvim',
