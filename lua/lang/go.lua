@@ -8,6 +8,8 @@ vim.g.go_highlight_functions = 1
 vim.g.go_highlight_function_calls = 1
 vim.g.go_highlight_extra_types = 1
 
+--禁止在保存的时候提示
+vim.g.go_fmt_fail_silently = 1
 
 vim.g.go_highlight_array_whitespace_error = 1
 vim.g.go_highlight_chan_whitespace_error = 1
