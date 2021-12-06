@@ -46,7 +46,7 @@ setup_packer() {
 	cmd "mkdir $packer_opt"
     cmd "cp -r $packer_start/packer.nvim $packer_opt"
 	#nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-	nvim -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+	nvim -c 'autocmd User PackerComplete quitall' -c 'PackerSync' -c 'TSInstall go lua vim'
     #todo 修复 coc-snippets报错
     #cmd "pip install pynvim"
 }
