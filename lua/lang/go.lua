@@ -41,6 +41,9 @@ vim.g.coc_global_extensions = {
 	'coc-go',
 	'coc-snippets'
 }
+-- 关闭coc diagnostic
+vim.cmd[[let b:coc_diagnostic_disable=1]]
+vim.cmd[[let b:coc_diagnostic_info={'information': 0, 'hint': 0, 'lnums': [0, 0, 0, 0], 'warning': 0, 'error': 0}]]
 
 --[[
 -- ale-setting

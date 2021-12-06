@@ -101,6 +101,29 @@ return require('packer').startup(function()
 		'neoclide/coc.nvim', 
 		branch = 'release'
 	}
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		config = function()
+			require'nvim-treesitter.configs'.setup{
+				-- 启用高亮
+				highlight = {
+					enable = true,
+					-- 禁用 vim 基于正则达式的语法高亮，太慢
+					additional_vim_regex_highlighting = false,
+				},
+				-- 启用缩进
+				indent = {
+					enable = true,
+				},
+			}
+		end
+	}
+	use {
+		'neovim/nvim-lspconfig',
+		config = function()
+			require('plugin.lspconfig')
+		end
+	}
 	--[[
 	use {
 		'dense-analysis/ale',
@@ -108,13 +131,6 @@ return require('packer').startup(function()
 
 	}
 	--]]
-
-	use {
-		'neovim/nvim-lspconfig',
-		config = function()
-			require('plugin.lspconfig')
-		end
-	}
 
 	--plist文件支持
 	use {
