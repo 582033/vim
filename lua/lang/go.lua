@@ -35,17 +35,19 @@ vim.cmd('au FileType go nmap <leader>tf :GoTestFunc<CR>')
 vim.cmd('au FileType go set completeopt-=preview')
 
 
+--[[
 -- coc
 vim.g.coc_disable_startup_warning = 1
 vim.g.coc_global_extensions = {
 	'coc-go',
 	'coc-snippets'
 }
+--]]
 -- 关闭coc diagnostic
-vim.cmd[[let b:coc_diagnostic_disable=1]]
-vim.cmd[[let b:coc_diagnostic_info={'information': 0, 'hint': 0, 'lnums': [0, 0, 0, 0], 'warning': 0, 'error': 0}]]
+--im.cmd[[let b:coc_diagnostic_disable=1]]
+--vim.cmd[[let b:coc_diagnostic_info={'information': 0, 'hint': 0, 'lnums': [0, 0, 0, 0], 'warning': 0, 'error': 0}]]
 -- 回车选中补全
-vim.cmd[[inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]]
+--vim.cmd[[inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]]
 
 --[[
 -- ale-setting

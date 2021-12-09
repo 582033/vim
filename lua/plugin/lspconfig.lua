@@ -1,3 +1,4 @@
+-- lsp diagnostic
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with( vim.lsp.diagnostic.on_publish_diagnostics, {
 	-- Enable underline, use default values
 	underline = true,
@@ -9,6 +10,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with( vim.lsp.diag
 	},
 	-- Use a function to dynamically turn signs off
 	-- and on, using buffer local variables
+	-- [[
 	signs = function(bufnr, client_id)
 		local ok, result = pcall(vim.api.nvim_buf_get_var, bufnr, 'show_signs')
 		-- No buffer local variable set, so just enable by default
@@ -18,13 +20,39 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with( vim.lsp.diag
 
 		return result
 	end,
+	--]]
 	signs = true,
 	-- Disable a feature
 	update_in_insert = false,
 })
 
-
-
+-- cmp 配置
+local cmp = require'cmp'
+cmp.setup {
+	-- 映射按键
+	mapping = {
+		['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+		['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+		['<C-j>'] = cmp.mapping.scroll_docs(-4),
+		['<C-k>'] = cmp.mapping.scroll_docs(4),
+		--["<C-Space>"] = cmp.mapping.complete({ reason = cmp.ContextReason.{Manual,Auto} })),
+		['<CR>'] = cmp.mapping.confirm {
+			behavior = cmp.ConfirmBehavior.Replace,
+			select = true
+		}
+	},
+	-- 配置补全内容来源
+	sources = cmp.config.sources {
+		-- 支持从打开的文件中补全内容
+		{ name = 'buffer', option = { get_bufnrs = vim.api.nvim_list_bufs } },
+		-- 支持从 lsp 服务补全
+		{ name = 'nvim_lsp' },
+		-- 支持补全文件路径
+		{ name = 'path' },
+	}
+}
+-- cmp 关联lsp
+capabilities = require'cmp_nvim_lsp'.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 require'lspconfig'.gopls.setup {
 	on_attach = function(client, bufnr)
