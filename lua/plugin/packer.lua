@@ -133,6 +133,8 @@ return require('packer').startup(function()
 			--"hrsh7th/cmp-emoji", --输入: 可以显示表情
 		}
 	}
+	use 'hrsh7th/cmp-vsnip'
+	use 'hrsh7th/cmp-vsnip-integ'
 	--[[
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-path'
