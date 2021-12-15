@@ -42,5 +42,11 @@ if vim.fn.has('persistent_undo') == 1 then
 	vim.cmd('set undoreload=10000')
 end
 
+-- 从粘贴板操作
+vim.api.nvim_set_keymap('n', '<leader><c-c>', '"+y', {})
+vim.api.nvim_set_keymap('n', '<leader><c-v>', '"+p', {})
+
 -- Quick sudoer
 vim.cmd("ca w!! w !sudo tee '%'")
+vim.g.vsnip_snippet_dir = '~/.config/nvim/habit/snippets/'
+

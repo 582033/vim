@@ -1,0 +1,39 @@
+{
+	"jsonorm": {
+		"prefix": ["json orm"],
+		"body": [
+			"${1:filedName}  ${2:type}       `json:\"${3:displayName}\" orm:\"${3:displayName}\"`"
+		],
+		"description": "输出json orm的结构体"
+	},
+	"jsonom": {
+		"prefix": ["json omitempty"],
+		"body": [
+			"${1:filedName}  ${2:type}       `json:\"${3:displayName},omitempty\"`"
+		],
+		"description": "输出json omitempty的结构体"
+	},
+	"jsonf": {
+		"prefix": ["json form bind"],
+		"body": [
+			"${1:filedName}  ${2:type}       `json:\"${3:displayName}\" form:\"${3:displayName}\" binding:\"${4:required}\"`"
+		],
+		"description": "输出json form bind的结构体"
+	},
+	"print": {
+		"prefix": ["fmt.println"],
+		"body": [
+			"fmt.Println($1)"
+		],
+		"description": "输出fmt.Println()方法"
+	},
+	"debug": {
+		"prefix": ["log.Debug"],
+		"body": [
+			"if debugBytes, _ := json.Marshal(${1:Value}); len(debugBytes) > 0 {",
+				"\tlog.Debugf(\"RequestID:%v DebugMessage:%s Value:%s\", c.GetRequestID(), \"${1:Value}\", string(debugBytes))",
+				"}"
+		],
+		"description": "Debug输出任意类型的对象"
+	}
+}
