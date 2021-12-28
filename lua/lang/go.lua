@@ -34,7 +34,6 @@ vim.cmd('au FileType go nmap <leader>ts :GoTests<CR>')
 vim.cmd('au FileType go nmap <leader>tf :GoTestFunc<CR>')
 vim.cmd('au FileType go set completeopt-=preview')
 
-
 --[[
 -- coc
 vim.g.coc_disable_startup_warning = 1

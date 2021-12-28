@@ -27,8 +27,8 @@
 		],
 		"description": "输出fmt.Println()方法"
 	},
-	"debug": {
-		"prefix": ["log.Debug"],
+	"log.debug": {
+		"prefix": ["log.Debugf"],
 		"body": [
 			"if debugBytes, _ := json.Marshal(${1:Value}); len(debugBytes) > 0 {",
 				"\tlog.Debugf(\"RequestID:%v DebugMessage:%s Value:%s\", c.GetRequestID(), \"${1:Value}\", string(debugBytes))",

@@ -131,6 +131,7 @@ return require('packer').startup(function()
 			--'hrsh7th/cmp-calc', --输入数学算式（如1+1=）自动计算
 			--'f3fora/cmp-spell', --nvim-cmp 的拼写源基于 vim 的拼写建议
 			--'hrsh7th/cmp-emoji', --输入: 可以显示表情
+			'hrsh7th/cmp-cmdline', --cmp-cmdline 命令行补全
 		}
 	}
 	use {
@@ -154,6 +155,13 @@ return require('packer').startup(function()
 
 	}
 	--]]
+	--gitlens
+	use {
+		'APZelos/blamer.nvim',
+		config = function()
+			require('plugin.blamer')
+		end
+	}
 
 	--plist文件支持
 	use {
@@ -180,5 +188,11 @@ return require('packer').startup(function()
 		end
 	}
     --]]
+    	use {
+		'onsails/lspkind-nvim', -- 补全菜单 nerd font 支持
+		config = function()
+			require('plugin.lspkind')
+		end
+	}
 end
 )

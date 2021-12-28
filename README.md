@@ -24,6 +24,9 @@ Vim 自动化配置
 * tmuxp
 * gitconfig
 
+#### Nerd Fonts
+```
+brew tap homebrew/cask-fonts && brew install --cask font-jetbrains-mono-nerd-font
+```
 
 ### 已知问题
-
