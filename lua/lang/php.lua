@@ -7,11 +7,13 @@ function PhpHeader()
 	--vim.o.synmaxcol = 0
 	--vim.o.syntax = php
 	
+	--[[
 	vim.o.fmd = 'syntax'
 	vim.o.wrap = true
 
 	--PIV
 	vim.g.DisableAutoPHPFolding = 0
 	vim.g.PIVAutoClose = 0
+	--]]
 end
---vim.api.nvim_command('autocmd bufnewfile *.php call PhpHeader()')
+vim.api.nvim_command('autocmd bufnewfile *.php lua PhpHeader()')
