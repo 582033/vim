@@ -16,6 +16,11 @@ endsnippet
 
 snippet debug "log.Debug" b
 if debugBytes, _ := json.Marshal(${1:Value}); len(debugBytes) > 0 {
-	log.Debugf("RequestID:%v DebugMessage:%s Value:%s", c.GetRequestID(), "${1:Value}", string(debugBytes))
+	log.Debugf("RequestID:%v DebugMessage:%s Value:%s", nil, "${1:Value}", string(debugBytes))
+}
+
+snippet debug "log.Fatalf" b
+if debugBytes, _ := json.Marshal(${1:Value}); len(debugBytes) > 0 {
+	log.Fatalf("RequestID:%v DebugMessage:%s Value:%s", nil, "${1:Value}", string(debugBytes))
 }
 endsnippet
