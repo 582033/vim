@@ -194,6 +194,5 @@ return require('packer').startup(function()
 			require('plugin.lspkind')
 		end
 	}
-	use 'uarun/vim-protobuf'
 end
 )
