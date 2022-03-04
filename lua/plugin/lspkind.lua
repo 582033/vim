@@ -2,7 +2,7 @@ require('lspkind').init({
 	-- enables text annotations
 	--
 	-- default: true
-	with_text = true,
+	-- with_text = true,
 
 	-- default symbol map
 	-- can be either 'default' (requires nerd-fonts font) or
