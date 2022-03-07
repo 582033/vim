@@ -33,11 +33,14 @@ vim.cmd('au FileType go nmap <leader>i :GoImports<CR>')
 vim.cmd('au FileType go nmap <leader>ts :GoTests<CR>')
 vim.cmd('au FileType go nmap <leader>tf :GoTestFunc<CR>')
 vim.cmd('au FileType go set completeopt-=preview')
+
 vim.cmd('au FileType go nmap <space>ds :GoDebugStart<CR>')
 vim.cmd('au FileType go nmap <space>dt :GoDebugStop<CR>')
 vim.cmd('au FileType go nmap <space>db :GoDebugBreakpoint<CR>')
+vim.cmd('au FileType go nmap <space>dc :GoDebugContinue<CR>')
 vim.cmd('au FileType go nmap <space>dn :GoDebugNext<CR>')
-vim.cmd('au FileType go nmap <space>dp :GoDebugPrint<CR>')
+-- GoDebugPrint {$variable} 需要输入变量, 所有不用快捷键
+-- vim.cmd('au FileType go nmap <space>dp :GoDebugPrint<CR>')
 
 --[[
 -- coc
