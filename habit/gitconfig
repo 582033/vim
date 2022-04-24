@@ -56,5 +56,5 @@
     #helper = cache
     #记住1小时
     #helper = cache -timeout=3600
-[url "ssh://git@gitlab.hi-walle.com/"]
-	insteadOf = https://gitlab.hi-walle.com/
+#[url "ssh://git@gitlab.hi-walle.com/"]
+	#insteadOf = https://gitlab.hi-walle.com/
