@@ -20,6 +20,7 @@ return require('packer').startup(function()
 		'wbthomason/packer.nvim',
 	}
 
+	--[[
 	use {
 		'preservim/nerdtree',
 		setup = function()
@@ -27,6 +28,21 @@ return require('packer').startup(function()
 			vim.api.nvim_set_keymap('', '<c-d>', ':NERDTreeFind<CR>', {})
 		end
 	} 
+	--]]
+	use {
+		'kyazdani42/nvim-tree.lua',
+		requires = {
+			'kyazdani42/nvim-web-devicons'
+		},
+		setup = function()
+			vim.api.nvim_set_keymap('n', '<c-e>', ':NvimTreeToggle<CR>', {})
+			vim.api.nvim_set_keymap('n', '<c-d>', ':NvimTreeFindFile<CR>', {})
+		end,
+		config = function()
+			require('plugin.nvimtree')
+		end
+
+	}
 
 	use {
 		'plasticboy/vim-markdown', 
@@ -79,6 +95,17 @@ return require('packer').startup(function()
 	use {
 		'StanAngeloff/php.vim',
 		ft = { 'php' }
+	}
+
+	--状态栏
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+		config = function()
+			require('lualine').setup({
+				theme = 'gruvbox'
+			})
+		end
 	}
 
 	--python

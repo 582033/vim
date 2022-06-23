@@ -156,7 +156,7 @@ alias gv='git svn'
 #alias iftop='sudo iftop -i eth0'
 
 #rsync
-alias rsync='rsync -avz'
+#alias rsync='rsync -avz'
 
 #tmux
 alias tmux='tmux -2'
