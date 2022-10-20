@@ -107,10 +107,10 @@ cmp.setup {
 	}
 }
 -- cmp 关联lsp
-capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 --capabilities.textDocument.completion.completionItem.snippetSupport = true
---capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+--capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 require'lspconfig'.gopls.setup {
 	on_attach = function(client, bufnr)

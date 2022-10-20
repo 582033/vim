@@ -58,3 +58,5 @@
     #helper = cache -timeout=3600
 #[url "ssh://git@gitlab.hi-walle.com/"]
 	#insteadOf = https://gitlab.hi-walle.com/
+[safe]
+	directory = /usr/local/Homebrew
