@@ -36,8 +36,10 @@ fi
 
 
 # show ip 
-if [ -r /sbin/ip ];then 
-	local_alias=$(ip addr|grep inet|grep -v 127.0.0.1|grep -v inet6 | grep -v docker |awk '{print $2}'|sed 's/\/.*$//' | head -1)
+if [ -x "$(command -v ifconfig)" ];then
+	local_alias=$(ifconfig -a|grep inet|grep -v 127.0.0.1|grep -v inet6|grep -v 172| grep -v 172 | grep -v docker | awk '{print $2}'|sed 's/\/.*$//' | head -1)
+elif [ -r /sbin/ip ];then 
+	local_alias=$(ip addr|grep inet|grep -v 127.0.0.1|grep -v inet6 | grep -v 127 | grep -v 172 | grep -v docker |awk '{print $2}'|sed 's/\/.*$//' | head -1)
 else
 	local_alias=$(hostname -s)
 fi
