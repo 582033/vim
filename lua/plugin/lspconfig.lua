@@ -136,8 +136,8 @@ require'lspconfig'.gopls.setup {
 		-- 查看所有引用当前对象的地方
 		buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
 		-- 跳转到下一个/上一个语法错误
-		buf_set_keymap('n', 'sp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', opts)
-		buf_set_keymap('n', 'sn', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', opts)
+		buf_set_keymap('n', 'sp', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
+		buf_set_keymap('n', 'sn', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
 		buf_set_keymap('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
 		-- 手工触发格式化
 		buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<cr>', opts)

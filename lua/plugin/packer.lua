@@ -225,5 +225,17 @@ return require('packer').startup(function()
 	use {
 		'github/copilot.vim'
 	}
+
+	use { 
+		'ibhagwan/fzf-lua',
+		run = './install --bin',
+		setup = function()
+			vim.api.nvim_set_keymap('n', '<c-p>f', "<cmd>lua require('fzf-lua').files()<CR>", { })
+			vim.api.nvim_set_keymap('n', '<c-p>g', "<cmd>lua require('fzf-lua').live_grep()<CR>", { })
+		end,
+		config = function()
+			require('plugin.fzf')
+		end
+	}
 end
 )
