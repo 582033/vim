@@ -6,5 +6,5 @@ vim.cmd[[smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'    
 
 -- help vsnip查看配置说明
 --配置一处来源
-vim.g.vsnip_snippet_dir = '~/.config/nvim/habit/snippets'
+vim.g.vsnip_snippet_dir = '~/.config/nvim/habit/vsnip/'
 --vim.cmd[[let g:vsnip_snippet_dir = '~/.config/nvim/habit/snippets']]

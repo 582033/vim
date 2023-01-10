@@ -234,7 +234,7 @@ return require('packer').startup(function()
 			vim.api.nvim_set_keymap('n', '<c-p>g', "<cmd>lua require('fzf-lua').live_grep()<CR>", { })
 		end,
 		config = function()
-			require('plugin.fzf')
+			require('plugin.fzf-lua')
 		end
 	}
 end

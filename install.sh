@@ -75,3 +75,12 @@ if version_ge $vim_version 0.5; then
     fi
 fi
 echo "Done."
+
+
+if [ ! -x "$(command -v rg)" ]; then
+    echo "某些插件依赖\`ripgrep\`, 请安装\`ripgrep\`"
+fi
+
+if [ ! -x "$(command -v fzf)" ]; then
+    echo "某些插件依赖\`fzf\`, 请安装\`fzf\`"
+fi

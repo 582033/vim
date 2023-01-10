@@ -45,6 +45,17 @@ cmp.setup {
 		documentation = cmp.config.window.bordered(),
 	},
 
+	-- 配置补全内容来源
+	sources = cmp.config.sources {
+		-- 支持从打开的文件中补全内容
+		{ name = 'buffer', option = { get_bufnrs = vim.api.nvim_list_bufs } },
+		-- 支持从 lsp 服务补全
+		{ name = 'nvim_lsp' },
+		-- 支持补全文件路径
+		{ name = 'path' },
+		{ name = 'vsnip' }
+	},
+
 	formatting = {
 		fields = {
 			cmp.ItemField.Kind,
@@ -54,6 +65,9 @@ cmp.setup {
 		format = lspkind.cmp_format({
 			with_text = false,
 			before = function(entry, vim_item)
+				-- 提示来源
+				-- vim_item.menu = "["..string.upper(entry.source.name).."]"
+				--
 				-- Get the full snippet (and only keep first line)
 				local word = entry:get_insert_text()
 				if entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet then
@@ -81,7 +95,9 @@ cmp.setup {
 		}),
 	},
 	snippet = {
-		expand = function(args) vim.fn['vsnip#anonymous'](args.body) end,
+		expand = function(args) 
+			vim.fn['vsnip#anonymous'](args.body) 
+		end,
 	},
 	-- 映射按键
 	mapping = {
@@ -95,16 +111,6 @@ cmp.setup {
 			select = true
 		},
 	},
-	-- 配置补全内容来源
-	sources = cmp.config.sources {
-		-- 支持从打开的文件中补全内容
-		{ name = 'buffer', option = { get_bufnrs = vim.api.nvim_list_bufs } },
-		-- 支持从 lsp 服务补全
-		{ name = 'nvim_lsp' },
-		-- 支持补全文件路径
-		{ name = 'path' },
-		{ name = 'vsnip' },
-	}
 }
 -- cmp 关联lsp
 capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -113,6 +119,7 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.mak
 --capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 require'lspconfig'.gopls.setup {
+	-- on_attach 表示当前缓冲加载服务端完成之后调用
 	on_attach = function(client, bufnr)
 		-- 为方便使用，定义了两个工具函数
 		local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -158,4 +165,4 @@ require'lspconfig'.gopls.setup {
 	},
 }
 
-require('plugin.snippets')
+--require('plugin.snippets')

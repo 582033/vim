@@ -1,4 +1,18 @@
 {
+	"Class": {
+		"prefix": ["class"],
+		"body": [
+			"/**",
+			" * @author ${VIM:\\$USER}",
+			" */",
+			"class $1 ${2:extends ${3:Parent} }{",
+				"\tconstructor() {",
+					"\t\t$0",
+					"\t}",
+					"}"
+		],
+		"description": "Class definition template."
+	},
 	"jsonorm": {
 		"prefix": ["json orm"],
 		"body": [
@@ -27,8 +41,8 @@
 		],
 		"description": "输出fmt.Println()方法"
 	},
-	"log.debug": {
-		"prefix": ["log.Debugf"],
+	"debug": {
+		"prefix": ["llllllog.Debugf"],
 		"body": [
 			"if debugBytes, _ := json.Marshal(${1:Value}); len(debugBytes) > 0 {",
 				"\tlog.Debugf(\"RequestID:%v DebugMessage:%s Value:%s\", ctx.GetRequestID(), \"${1:Value}\", string(debugBytes))",
