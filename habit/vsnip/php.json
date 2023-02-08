@@ -1,0 +1,9 @@
+{
+	"pprint": {
+		"prefix": ["echo <pre> & print"],
+		"body": [
+			"echo \"<pre>\"; print_r(${1});exit;",
+		],
+		"description": "格式化输出"
+	}
+}

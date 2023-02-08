@@ -16,10 +16,11 @@ vim.g.hlsearch = true
 vim.cmd('highlight clear SignColumn')
 vim.cmd('highlight clear LineNr')
 vim.cmd('highlight clear CursorLineNr')
-
 vim.g.CSApprox_hook_post = {
 	'hi clear SignColumn'
 }
+--[[
+--]]
 
 vim.g.backspace = 'indent,eol,start'
 vim.g.linespace = 0
@@ -39,4 +40,4 @@ vim.api.nvim_set_keymap('n', '<F11>', ':set cursorline!<BAR>set nocursorline?<CR
 vim.api.nvim_set_keymap('n', '<F12>', ':set cursorcolumn!<BAR>set nocursorcolumn?<CR>', {})
 
 --缩进线
-vim.cmd('autocmd VimEnter,Colorscheme * :hi IndentGuides  guibg=black   ctermbg=black')
+vim.cmd('autocmd VimEnter,Colorscheme * :hi IndentGuides  guibg=black ctermbg=black')

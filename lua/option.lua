@@ -48,5 +48,6 @@ vim.api.nvim_set_keymap('n', '<leader><c-v>', '"+p', {})
 
 -- Quick sudoer
 vim.cmd("ca w!! w !sudo tee '%'")
-vim.g.vsnip_snippet_dir = '~/.config/nvim/habit/snippets/'
 
+-- vsnip自定义目录，需要注意在自定义时，prefix字段不能太长及带有特殊字符
+vim.g.vsnip_snippet_dir = '~/.config/nvim/habit/vsnip/'

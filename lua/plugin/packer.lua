@@ -1,7 +1,9 @@
+-- 插件安装目录
+-- -- ~/.local/share/nvim/site/pack/packer/
 function file_exists(path)
-    local file = io.open(path, "rb")
-    if file then file:close() end
-    return file ~= nil
+	local file = io.open(path, "rb")
+	if file then file:close() end
+	return file ~= nil
 end
 
 local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -10,232 +12,163 @@ if not file_exists(install_path) then
 	print(install_path.."目录不存在")
 	print("克隆Packer插件管理器...\n")
 	vim.fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
-	vim.cmd('packadd packer.nvim')
+	--vim.cmd('packadd packer.nvim')
+
+	local rtp_addition = vim.fn.stdpath("data") .. "/site/pack/*/start/*"
+	if not string.find(vim.o.runtimepath, rtp_addition) then
+		vim.o.runtimepath = rtp_addition .. "," .. vim.o.runtimepath
+	end
+	vim.notify("Pakcer.nvim 安装完毕")
 end
 
-vim.cmd('packadd packer.nvim')
+-- pcall(require, "packer"): 捕获 `require "packer"`的执行错误
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+	vim.notify("没有安装 packer.nvim")
+	return
+end
 
-return require('packer').startup(function()
-	use {
-		'wbthomason/packer.nvim',
-	}
+packer.startup({
+	function(use)
+		-- 包管理工具Packer
+		use 'wbthomason/packer.nvim'
+		-- Copilot
+		use 'github/copilot.vim'
+		--启动界面快速打开最近的文件
+		use 'mhinz/vim-startify'
+		-- nginx 配置文件高亮
+		use 'chr4/nginx.vim'
+		-- systemd 系统文件高亮
+		use 'Matt-Deacalion/vim-systemd-syntax'
+		-- php
+		--use 'spf13/PIV', { 'for': 'php' }
+		--代码片段工具
+		use 'hrsh7th/cmp-vsnip'
+		use 'hrsh7th/vim-vsnip'
+		use 'hrsh7th/vim-vsnip-integ'
+		use {
+			'kyazdani42/nvim-tree.lua',
+			requires = {
+				'kyazdani42/nvim-web-devicons'
+			},
+			setup = function()
+				vim.api.nvim_set_keymap('n', '<c-e>', ':NvimTreeToggle<CR>', {})
+				vim.api.nvim_set_keymap('n', '<c-d>', ':NvimTreeFindFile<CR>', {})
+			end,
+			config = function()
+				require('plugin.nvimtree')
+			end
 
-	--[[
-	use {
-		'preservim/nerdtree',
-		setup = function()
-			vim.api.nvim_set_keymap('', '<c-e>', ':NERDTreeToggle<CR>', {})
-			vim.api.nvim_set_keymap('', '<c-d>', ':NERDTreeFind<CR>', {})
-		end
-	} 
-	--]]
-	use {
-		'kyazdani42/nvim-tree.lua',
-		requires = {
-			'kyazdani42/nvim-web-devicons'
-		},
-		setup = function()
-			vim.api.nvim_set_keymap('n', '<c-e>', ':NvimTreeToggle<CR>', {})
-			vim.api.nvim_set_keymap('n', '<c-d>', ':NvimTreeFindFile<CR>', {})
-		end,
-		config = function()
-			require('plugin.nvimtree')
-		end
-
-	}
-
-	use {
-		'plasticboy/vim-markdown', 
-		ft = { 'markdown' }
-	}
-
-	--主题
-	use {
-		'lifepillar/vim-solarized8',
-		--'sainnhe/gruvbox-material',
-		config = function()
-			vim.g.solarized_termtrans = 1
-			vim.g.solarized_termcolors = 256
-			vim.o.background = 'dark'
-			vim.cmd('syntax enable')
-			vim.cmd('colorscheme solarized8')
-		end
-	}
-
-	--可视化缩进
-	--use 'nathanaelkane/vim-indent-guides'
-	use 'chr4/nginx.vim'
-
-	--[[
-	--语法检查
-	use {
-		'scrooloose/syntastic',
-		config = function()
-			vim.g.syntastic_error_symbol = '✗'
-			--设置警告符号
-			vim.g.syntastic_warning_symbol = '⚠'
-			--是否在打开文件时检查
-			vim.g.syntastic_check_on_open = 1
-			--是否在保存文件后检查
-			--vim.g.syntastic_check_on_wq=1
-			vim.g.syntastic_auto_loc_list = 1
-			vim.g.syntastic_loc_list_height = 5
-			vim.g.syntastic_enable_highlighting = 0
-			--被动检查的文件类型
-			vim.g.syntastic_mode_map = "{ 'passive_filetypes': ['html'] }"
-		end
-	}
-	--]]
-
-	--systemd 系统文件高亮
-	use 'Matt-Deacalion/vim-systemd-syntax'
-
-	--php
-	--use 'spf13/PIV', { 'for': 'php' }
-	use {
-		'StanAngeloff/php.vim',
-		ft = { 'php' }
-	}
-
-	--状态栏
-	use {
-		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-		config = function()
-			require('lualine').setup({
-				theme = 'gruvbox'
-			})
-		end
-	}
-
-	--python
-	use {
-		'hynek/vim-python-pep8-indent', 
-		ft = { 'python' }
-	}
-
-	--go
-	use {
-		'fatih/vim-go', 
-		ft = {'go'},
-		cmd = 'GoUpdateBinaries'
-	}
-	use {
-		'buoto/gotests-vim', 
-		ft = { 'go' }
-	}
-	use {
-		'nvim-treesitter/nvim-treesitter',
-		-- 禁用插件
-		--disable = true,
-		--cmd = 'TSUpdate',
-		config = function()
-			require'nvim-treesitter.configs'.setup{
-				-- 启用高亮
-				highlight = {
-					enable = true,
-					-- 禁用 vim 基于正则达式的语法高亮，太慢
-					additional_vim_regex_highlighting = false
-				}
-			}
-		end
-	}
-	use {
-		'neovim/nvim-lspconfig',
-		config = function()
-			require('plugin.lspconfig')
-		end
-	}
-	use {
-		'hrsh7th/nvim-cmp',
-		requires = {
-			'hrsh7th/cmp-nvim-lsp', --neovim 内置 LSP 客户端的 nvim-cmp 源
-			--以下插件可选，可以根据个人喜好删减
-			--'onsails/lspkind-nvim', --美化自动完成提示信息
-			'hrsh7th/cmp-buffer', --从buffer中智能提示
-			--'octaltree/cmp-look', --用于完成英语单词
-			'hrsh7th/cmp-path', --自动提示硬盘上的文件
-			--'hrsh7th/cmp-calc', --输入数学算式（如1+1=）自动计算
-			--'f3fora/cmp-spell', --nvim-cmp 的拼写源基于 vim 的拼写建议
-			--'hrsh7th/cmp-emoji', --输入: 可以显示表情
-			'hrsh7th/cmp-cmdline', --cmp-cmdline 命令行补全
 		}
-	}
-	use {
-		'hrsh7th/vim-vsnip',
-		requires = {
-			'hrsh7th/cmp-vsnip',
-		},
-		config = function()
-			require('plugin.snippets')
-		end
-	}
-	--[[
-	use 'hrsh7th/nvim-cmp'
-	use 'hrsh7th/cmp-path'
-	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/vim-vsnip'
-	use {
-		'dense-analysis/ale',
-		ft = { 'go' },
-
-	}
-	--]]
-	--gitlens
-	use {
-		'APZelos/blamer.nvim',
-		config = function()
-			require('plugin.blamer')
-		end
-	}
-
-	--plist文件支持
-	use {
-		'darfink/vim-plist', 
-		ft = { 'plist' }
-	}
-
-	--启动界面快速打开最近的文件
-	use 'mhinz/vim-startify'
-
-    --[[
-	--代码片段工具
-	use {
-		'honza/vim-snippets',
-		-- Lazy loading
-		opt = true
-	}
-
-	--term
-	use {
-		'akinsho/toggleterm.nvim',
-		config = function()
-			require('plugin.toggleterm')
-		end
-	}
-    --]]
-    	use {
-		'onsails/lspkind-nvim', -- 补全菜单 nerd font 支持
-		config = function()
-			require('plugin.lspkind')
-		end
-	}
-
-	use {
-		'github/copilot.vim'
-	}
-
-	use { 
-		'ibhagwan/fzf-lua',
-		run = './install --bin',
-		setup = function()
-			vim.api.nvim_set_keymap('n', '<c-p>f', "<cmd>lua require('fzf-lua').files()<CR>", { })
-			vim.api.nvim_set_keymap('n', '<c-p>g', "<cmd>lua require('fzf-lua').live_grep()<CR>", { })
-		end,
-		config = function()
-			require('plugin.fzf-lua')
-		end
-	}
-end
-)
+		use {
+			'plasticboy/vim-markdown', 
+			ft = { 'markdown' }
+		}
+		--主题
+		use {
+			--'lifepillar/vim-solarized8',
+			'sainnhe/sonokai',
+			require = {
+				'rktjmp/lush.nvim'
+			},
+			config = function()
+				vim.cmd('colorscheme sonokai')
+				vim.cmd('hi Normal ctermfg=white ctermbg=black')
+			end
+		}
+		--状态栏
+		use {
+			'nvim-lualine/lualine.nvim',
+			requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+			config = function()
+				require('lualine').setup({
+					theme = 'gruvbox'
+				})
+			end
+		}
+		--python
+		use {
+			'hynek/vim-python-pep8-indent', 
+			ft = { 'python' }
+		}
+		--go
+		use {
+			'fatih/vim-go', 
+			ft = {'go'},
+			cmd = 'GoUpdateBinaries'
+		}
+		use {
+			'buoto/gotests-vim', 
+			ft = { 'go' }
+		}
+		-- 语法高亮(多语言支持); 语法树链接
+		-- https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
+		use {
+			'nvim-treesitter/nvim-treesitter',
+			-- 禁用插件
+			--disable = true,
+			--cmd = 'TSUpdate',
+			config = function()
+				require('plugin.treesitter')
+			end
+		}
+		use {
+			'neovim/nvim-lspconfig',
+			config = function()
+				require('plugin.lspconfig')
+			end
+		}
+		use {
+			'hrsh7th/nvim-cmp',
+			requires = {
+				'hrsh7th/cmp-nvim-lsp', --neovim 内置 LSP 客户端的 nvim-cmp 源
+				--以下插件可选，可以根据个人喜好删减
+				--'onsails/lspkind-nvim', --美化自动完成提示信息
+				'hrsh7th/cmp-buffer', --从buffer中智能提示
+				--'octaltree/cmp-look', --用于完成英语单词
+				'hrsh7th/cmp-path', --自动提示硬盘上的文件
+				--'hrsh7th/cmp-calc', --输入数学算式（如1+1=）自动计算
+				--'f3fora/cmp-spell', --nvim-cmp 的拼写源基于 vim 的拼写建议
+				--'hrsh7th/cmp-emoji', --输入: 可以显示表情
+				'hrsh7th/cmp-cmdline', --cmp-cmdline 命令行补全
+			}
+		}
+		-- git信息
+		use {
+			'APZelos/blamer.nvim',
+			config = function()
+				require('plugin.blamer')
+			end
+		}
+		-- plist文件支持
+		use {
+			'darfink/vim-plist', 
+			ft = { 'plist' }
+		}
+		--term
+		use {
+			'akinsho/toggleterm.nvim',
+			config = function()
+				require('plugin.toggleterm')
+			end
+		}
+		--]]
+		use {
+			'onsails/lspkind-nvim', -- 补全菜单 nerd font 支持
+			config = function()
+				require('plugin.lspkind')
+			end
+		}
+		use { 
+			'ibhagwan/fzf-lua',
+			run = './install --bin',
+			setup = function()
+				vim.api.nvim_set_keymap('n', '<c-p>f', "<cmd>lua require('fzf-lua').files()<CR>", { })
+				vim.api.nvim_set_keymap('n', '<c-p>g', "<cmd>lua require('fzf-lua').live_grep()<CR>", { })
+			end,
+			config = function()
+				require('plugin.fzf-lua')
+			end
+		}
+	end
+})

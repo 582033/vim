@@ -14,35 +14,35 @@
 		"description": "Class definition template."
 	},
 	"jsonorm": {
-		"prefix": ["json orm"],
+		"prefix": ["jsonorm"],
 		"body": [
 			"${1:filedName}  ${2:type}       `json:\"${3:displayName}\" orm:\"${3:displayName}\"`"
 		],
 		"description": "输出json orm的结构体"
 	},
 	"jsonom": {
-		"prefix": ["json omitempty"],
+		"prefix": ["jsonom"],
 		"body": [
 			"${1:filedName}  ${2:type}       `json:\"${3:displayName},omitempty\"`"
 		],
 		"description": "输出json omitempty的结构体"
 	},
 	"jsonf": {
-		"prefix": ["json form bind"],
+		"prefix": ["jsonf"],
 		"body": [
 			"${1:filedName}  ${2:type}       `json:\"${3:displayName}\" form:\"${3:displayName}\" binding:\"${4:required}\"`"
 		],
 		"description": "输出json form bind的结构体"
 	},
 	"print": {
-		"prefix": ["fmt.println"],
+		"prefix": ["print"],
 		"body": [
 			"fmt.Println($1)"
 		],
 		"description": "输出fmt.Println()方法"
 	},
-	"debug": {
-		"prefix": ["llllllog.Debugf"],
+	"log": {
+		"prefix": ["log"],
 		"body": [
 			"if debugBytes, _ := json.Marshal(${1:Value}); len(debugBytes) > 0 {",
 				"\tlog.Debugf(\"RequestID:%v DebugMessage:%s Value:%s\", ctx.GetRequestID(), \"${1:Value}\", string(debugBytes))",

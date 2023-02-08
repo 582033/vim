@@ -31,9 +31,8 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with( vim.lsp.diag
 local cmp = require'cmp'
 local types = require("cmp.types")
 local str = require("cmp.utils.str")
-
-
 local lspkind = require("lspkind")
+
 cmp.setup {
 	-- completion = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }, scrollbar = "║" },
 	-- documentation = {
@@ -47,13 +46,13 @@ cmp.setup {
 
 	-- 配置补全内容来源
 	sources = cmp.config.sources {
-		-- 支持从打开的文件中补全内容
-		{ name = 'buffer', option = { get_bufnrs = vim.api.nvim_list_bufs } },
 		-- 支持从 lsp 服务补全
 		{ name = 'nvim_lsp' },
+		{ name = 'vsnip' },
+		-- 支持从打开的文件中补全内容
+		{ name = 'buffer' },
 		-- 支持补全文件路径
 		{ name = 'path' },
-		{ name = 'vsnip' }
 	},
 
 	formatting = {
@@ -107,7 +106,7 @@ cmp.setup {
 		['<C-k>'] = cmp.mapping.scroll_docs(4),
 		--["<C-Space>"] = cmp.mapping.complete({ reason = cmp.ContextReason.{Manual,Auto} })),
 		['<CR>'] = cmp.mapping.confirm {
-			behavior = cmp.ConfirmBehavior.Replace,
+			--behavior = cmp.ConfirmBehavior.Replace,
 			select = true
 		},
 	},
@@ -164,5 +163,3 @@ require'lspconfig'.gopls.setup {
 		debounce_text_changes = 150,
 	},
 }
-
---require('plugin.snippets')
