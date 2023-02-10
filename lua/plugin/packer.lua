@@ -152,7 +152,6 @@ packer.startup({
 				require('plugin.toggleterm')
 			end
 		}
-		--]]
 		use {
 			'onsails/lspkind-nvim', -- 补全菜单 nerd font 支持
 			config = function()
@@ -170,5 +169,12 @@ packer.startup({
 				require('plugin.fzf-lua')
 			end
 		}
-	end
+	end,
+	config = {
+		display = {
+			open_fn = function()
+				return require("packer.util").float { border = "rounded" }
+			end
+		}
+	}
 })

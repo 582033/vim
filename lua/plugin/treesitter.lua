@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup{
-	ensure_installed = { "go", "html", "php", "yaml", "markdown", "bash", "json", "javascript", "bash", "python", "typescript", "vim"},
+	ensure_installed = { "go", "html", "php", "yaml", "markdown", "bash", "json", "javascript", "bash", "python", "typescript", "lua", "vim"},
 	-- 启用高亮
 	highlight = {
 		enable = true,
