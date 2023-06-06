@@ -7,7 +7,21 @@ local HEIGHT_RATIO = 1.0
 --宽度百分比
 local WIDTH_RATIO = 0.2
 
-nvimtree.setup({
+nvimtree.setup {
+	on_attach = function(bufnr)
+		local api = require "nvim-tree.api"
+		local function opts(desc)
+			return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+		end
+
+		api.config.mappings.default_on_attach(bufnr)
+		vim.keymap.set('n', 'u',     api.tree.change_root_to_parent,        opts('Up'))
+		vim.keymap.set('n', 'gi',     api.node.open.vertical,        opts('Open: Vertical Split'))
+		--vim.keymap.set('n', 'gi',     api.node.open.horizontal,        opts('Open: Horizontal Split'))
+		vim.keymap.set('n', 'x',     api.node.navigate.parent_close,        opts('Close Directory'))
+		--解绑原按键
+		vim.keymap.del('n', '<C-e>', { buffer = bufnr })
+	end,
 	disable_netrw = true,
 	sync_root_with_cwd = true,
 	sort_by = "case_sensitive",
@@ -35,16 +49,6 @@ nvimtree.setup({
 			end,
 		},
 		adaptive_size = true,
-		mappings = {
-			list = {
-				{ key = "u", action = "dir_up" },
-				{ key = "gi", action = "split" },
-				--{ key = "r", action = "refresh" },
-				--解绑原按键
-				{ key = "<C-e>", action = "" },
-				{ key = "x", action = "close_node" },
-			},
-		},
 		width = function()
 			return math.floor(vim.opt.columns:get() * WIDTH_RATIO)
 		end,
@@ -55,4 +59,4 @@ nvimtree.setup({
 	filters = {
 		dotfiles = true,
 	}
-})
+}
