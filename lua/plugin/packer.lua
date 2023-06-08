@@ -93,14 +93,16 @@ packer.startup({
 		}
 		--go
 		use {
-			'fatih/vim-go', 
-			ft = {'go'},
-			cmd = 'GoUpdateBinaries'
+			'ray-x/go.nvim',
+			config = function()
+				require('plugin/go')
+			end
 		}
-		use {
-			'buoto/gotests-vim', 
-			ft = { 'go' }
-		}
+		use 'ray-x/guihua.lua'
+		use 'mfussenegger/nvim-dap'
+		use 'rcarriga/nvim-dap-ui'
+		use 'theHamsta/nvim-dap-virtual-text'
+
 		-- 语法高亮(多语言支持); 语法树链接
 		-- https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
 		use {

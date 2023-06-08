@@ -1,3 +1,7 @@
+-- 禁用netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 --初始按键绑定:https://github.com/kyazdani42/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt
 local setup, nvimtree = pcall(require, "nvim-tree")
 if not setup then return end
