@@ -1,6 +1,7 @@
 -- 禁用netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+vim.api.nvim_set_var('loaded_netrw', 1)
+vim.api.nvim_set_var('loaded_netrwPlugin', 1)
+vim.api.nvim_set_var('loaded_netrwPlugin', 1)
 
 --初始按键绑定:https://github.com/kyazdani42/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt
 local setup, nvimtree = pcall(require, "nvim-tree")
@@ -28,6 +29,11 @@ nvimtree.setup {
 	end,
 	disable_netrw = true,
 	sync_root_with_cwd = true,
+	respect_buf_cwd = true,
+	update_focused_file = {
+		enable = true,
+		update_root = true
+	},
 	sort_by = "case_sensitive",
 	view = {
 		float = {
