@@ -2,6 +2,8 @@ Vim 自动化配置
 ===
 > 用以实现vim bash git tmux tmuxp的快速配置
 
+### **已更新为Neovim, vim版本不再使用(备份到vim-bak分支)**
+
 ### 初始支持
 
 * 使用[packer](https://github.com/wbthomason/packer.nvim)对插件进行管理
