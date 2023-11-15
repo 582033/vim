@@ -1,1 +1,2 @@
-require('plugin.packer')
+--require('plugin.packer')
+require('plugin.lazy')

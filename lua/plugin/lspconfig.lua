@@ -53,6 +53,8 @@ cmp.setup {
 		{ name = 'buffer' },
 		-- 支持补全文件路径
 		{ name = 'path' },
+		-- AiCoding, 需要开启codeium插件
+		{ name = 'codeium' },
 	},
 
 	formatting = {
@@ -63,6 +65,9 @@ cmp.setup {
 		},
 		format = lspkind.cmp_format({
 			with_text = false,
+			maxwidth = 50,
+			mode = 'symbol',
+			elide_char = '...',
 			before = function(entry, vim_item)
 				-- 提示来源
 				-- vim_item.menu = "["..string.upper(entry.source.name).."]"

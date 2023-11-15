@@ -39,6 +39,7 @@ require('lspkind').init({
 		Struct = "פּ",
 		Event = "",
 		Operator = "",
-		TypeParameter = ""
+		TypeParameter = "",
+		Codeium = ""
 	},
 })
