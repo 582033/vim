@@ -8,7 +8,7 @@ local setup, nvimtree = pcall(require, "nvim-tree")
 if not setup then return end
 
 -- 高度百分比
-local HEIGHT_RATIO = 1.0
+local HEIGHT_RATIO = 0.9
 --宽度百分比
 local WIDTH_RATIO = 0.2
 

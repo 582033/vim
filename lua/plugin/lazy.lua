@@ -27,7 +27,9 @@ require("lazy").setup({
 	--启动界面快速打开最近的文件
 	{'mhinz/vim-startify'},
 	-- nginx 配置文件高亮
-	{'chr4/nginx.vim'},
+	{
+		'chr4/nginx.vim'
+	},
 	-- php
 	--{'spf13/PIV', ft="php"},
 	--代码片段工具
@@ -59,22 +61,19 @@ require("lazy").setup({
 		dependencies = {
 			'rktjmp/lush.nvim'
 		},
+		lazy = false,
+		priority = 1000,
 		config = function()
 			vim.cmd('colorscheme sonokai')
-			vim.cmd('hi Normal ctermfg=white ctermbg=black')
+			--vim.cmd('hi Normal ctermfg=white ctermbg=black')
 		end
 	},
 	--状态栏
 	{
 		'nvim-lualine/lualine.nvim',
-		dependencies = { 
-			'kyazdani42/nvim-web-devicons', 
-			opt = true 
-		},
+		event = "VeryLazy",
 		config = function()
-			require('lualine').setup({
-				theme = 'gruvbox'
-			})
+			require('plugin.lualine')
 		end
 	},
 	--python
@@ -85,11 +84,15 @@ require("lazy").setup({
 	--go
 	{
 		'ray-x/go.nvim',
+		dependencies = {
+			'ray-x/guihua.lua',
+			'neovim/nvim-lspconfig',
+			"nvim-treesitter/nvim-treesitter",
+		},
 		config = function()
 			require('plugin/go')
 		end
 	},
-	{'ray-x/guihua.lua'},
 	{'mfussenegger/nvim-dap'},
 	{'rcarriga/nvim-dap-ui'},
 	{'theHamsta/nvim-dap-virtual-text'},
@@ -122,14 +125,14 @@ require("lazy").setup({
 			--'hrsh7th/cmp-calc', --输入数学算式（如1+1=）自动计算
 			--'f3fora/cmp-spell', --nvim-cmp 的拼写源基于 vim 的拼写建议
 			--'hrsh7th/cmp-emoji', --输入: 可以显示表情
-			'hrsh7th/cmp-cmdline', --cmp-cmdline 命令行补全
+			--'hrsh7th/cmp-cmdline', --cmp-cmdline 命令行补全
 		}
 	},
 	-- git信息
 	{
 		'f-person/git-blame.nvim',
 		keys = {
-			{ '<leader>g', ':GitBlameToggle<CR>' },
+			{ '<leader>l', ':GitBlameToggle<CR>' },
 		},
 		config = function()
 			require('plugin.git-blame')
@@ -154,17 +157,32 @@ require("lazy").setup({
 			require('plugin.lspkind')
 		end
 	},
+	-- 模糊搜索
 	{ 
 		'ibhagwan/fzf-lua',
 		dependencies = {
 			'kyazdani42/nvim-web-devicons'
 		},
 		keys = {
-			{ '<c-p>f', ':lua require("fzf-lua").files()<CR>' },
-			{ '<c-p>g', ':lua require("fzf-lua").live_grep()<CR>' },
+			{ '<leader>f', ':lua require("fzf-lua").files()<CR>' },
+			{ '<leader>g', ':lua require("fzf-lua").live_grep()<CR>' },
 		},
 		config = function()
 			require('plugin.fzf-lua')
+		end
+	},
+	--提示栏
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {
+		},
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+		config = function()
+			require('plugin.notice')
 		end
 	}
 })

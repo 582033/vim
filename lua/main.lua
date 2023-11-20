@@ -1,4 +1,4 @@
 require('option')
-require('plugin')
 require('layout')
+require('plugin')
 require('lang')

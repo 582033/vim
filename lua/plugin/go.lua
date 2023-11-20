@@ -52,10 +52,10 @@ require('go').setup({
 	lsp_keymaps = true, -- set to false to disable gopls/lsp keymap
 	lsp_codelens = true, -- set to false to disable codelens, true by default, you can use a function
 	-- function(bufnr)
-		--    vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>F", "<cmd>lua vim.lsp.buf.formatting()<CR>", {noremap=true, silent=true})
-		-- end
-		-- to setup a table of codelens
-		diagnostic = {  -- set diagnostic to false to disable vim.diagnostic setup
+	--    vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>F", "<cmd>lua vim.lsp.buf.formatting()<CR>", {noremap=true, silent=true})
+	-- end
+	-- to setup a table of codelens
+	diagnostic = {  -- set diagnostic to false to disable vim.diagnostic setup
 		hdlr = false, -- hook lsp diag handler and send diag to quickfix
 		underline = true,
 		-- virtual text setup
@@ -121,20 +121,20 @@ require('go').setup({
 	-- float term recommend if you use richgo/ginkgo with terminal color
 
 	floaterm = {   -- position
-	posititon = 'auto', -- one of {`top`, `bottom`, `left`, `right`, `center`, `auto`}
-	width = 0.45, -- width of float window if not auto
-	height = 0.98, -- height of float window if not auto
-	title_colors = 'nord', -- default to nord, one of {'nord', 'tokyo', 'dracula', 'rainbow', 'solarized ', 'monokai'}
-	-- can also set to a list of colors to define colors to choose from
-	-- e.g {'#D8DEE9', '#5E81AC', '#88C0D0', '#EBCB8B', '#A3BE8C', '#B48EAD'}
-},
-trouble = false, -- true: use trouble to open quickfix
-test_efm = false, -- errorfomat for quickfix, default mix mode, set to true will be efm only
-luasnip = false, -- enable included luasnip snippets. you can also disable while add lua/snips folder to luasnip load
---  Do not enable this if you already added the path, that will duplicate the entries
-on_jobstart = function(cmd) _=cmd end, -- callback for stdout
-on_stdout = function(err, data) _, _ = err, data end, -- callback when job started
-on_stderr = function(err, data)  _, _ = err, data  end, -- callback for stderr
-on_exit = function(code, signal, output)  _, _, _ = code, signal, output  end, -- callback for jobexit, output : string
-iferr_vertical_shift = 4 -- defines where the cursor will end up vertically from the begining of if err statement 
+		posititon = 'auto', -- one of {`top`, `bottom`, `left`, `right`, `center`, `auto`}
+		width = 0.45, -- width of float window if not auto
+		height = 0.98, -- height of float window if not auto
+		title_colors = 'nord', -- default to nord, one of {'nord', 'tokyo', 'dracula', 'rainbow', 'solarized ', 'monokai'}
+		-- can also set to a list of colors to define colors to choose from
+		-- e.g {'#D8DEE9', '#5E81AC', '#88C0D0', '#EBCB8B', '#A3BE8C', '#B48EAD'}
+	},
+	trouble = false, -- true: use trouble to open quickfix
+	test_efm = false, -- errorfomat for quickfix, default mix mode, set to true will be efm only
+	luasnip = false, -- enable included luasnip snippets. you can also disable while add lua/snips folder to luasnip load
+	--  Do not enable this if you already added the path, that will duplicate the entries
+	on_jobstart = function(cmd) _=cmd end, -- callback for stdout
+	on_stdout = function(err, data) _, _ = err, data end, -- callback when job started
+	on_stderr = function(err, data)  _, _ = err, data  end, -- callback for stderr
+	on_exit = function(code, signal, output)  _, _, _ = code, signal, output  end, -- callback for jobexit, output : string
+	iferr_vertical_shift = 4 -- defines where the cursor will end up vertically from the begining of if err statement 
 })

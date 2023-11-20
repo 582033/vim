@@ -7,9 +7,9 @@ yjiang_dir="$app_dir/habit"
 ###############################
 
 lnif() {
-    if [ -e "$1" ]; then
-        ln -sf "$1" "$2"
-    fi  
+	if [ -e "$1" ]; then
+		ln -sf "$1" "$2"
+	fi  
 }
 
 #$1 command 
@@ -23,13 +23,13 @@ cmd(){
 }
 
 yjiang_symlinks() {
-    lnif "$yjiang_dir/bash_local"         "$HOME/.bash_local"
-    lnif "$yjiang_dir/bashrc"             "$HOME/.bashrc"
-    lnif "$yjiang_dir/editrc"             "$HOME/.editrc"
-    lnif "$yjiang_dir/tmux.conf"          "$HOME/.tmux.conf"
-    lnif "$yjiang_dir/tmuxp.yaml"         "$HOME/.tmuxp.yaml"
-    lnif "$yjiang_dir/gitconfig"          "$HOME/.gitconfig"
-    lnif "$yjiang_dir/dircolors"          "$HOME/.dircolors"
+	lnif "$yjiang_dir/bash_local"         "$HOME/.bash_local"
+	lnif "$yjiang_dir/bashrc"             "$HOME/.bashrc"
+	lnif "$yjiang_dir/editrc"             "$HOME/.editrc"
+	lnif "$yjiang_dir/tmux.conf"          "$HOME/.tmux.conf"
+	lnif "$yjiang_dir/tmuxp.yaml"         "$HOME/.tmuxp.yaml"
+	lnif "$yjiang_dir/gitconfig"          "$HOME/.gitconfig"
+	lnif "$yjiang_dir/dircolors"          "$HOME/.dircolors"
 }
 
 setup_packer() {
@@ -54,48 +54,53 @@ setup_packer() {
 
 setup_package_manager() {
 	package_manager="Lazy"
-	path="$HOME/.local/share/nvim"
 	date=$(date +%s)
-	nvim_backup="/tmp/nvim_$date"
-	if [ -d $path ]; then
-		cmd "mv $HOME/.local/share/nvim/ $nvim_backup" "$package_manager目录已存在,旧目录已备份至$nvim_backup"
+	data_path="$HOME/.local/share/nvim"
+	if [ -d $data_path ]; then
+		nvim_data_backup="/tmp/nvim_data_$date"
+		cmd "mv $HOME/.local/share/nvim/ $nvim_data_backup" "$package_manager数据目录已存在,旧目录已备份至$nvim_data_backup"
+	fi
+	state_path="$HOME/.local/state/nvim"
+	if [ -d $state_path ]; then
+		nvim_state_backup="/tmp/nvim_state_$date"
+		cmd "mv $HOME/.local/state/nvim/ $nvim_state_backup" "$package_manager状态目录已存在,旧目录已备份至$nvim_state_backup"
 	fi
 	test -f lazy-lock.json || cmd "rm -f lazy-lock.json"
-	cmd "git clone https://github.com/folke/lazy.nvim.git $path/lazy.nvim"
+	cmd "git clone https://github.com/folke/lazy.nvim.git $data_path/lazy.nvim"
 	echo "下载完成, 执行插件安装..."
 	#nvim -c '+Lazy! sync' -c 'quitall'
 	nvim -c 'autocmd User Lazy sync' -c 'quitall'
 }
 
 create_vim_tmp_dir(){
-    tmp_dir="$base_dir/.vim_tmp"
+	tmp_dir="$base_dir/.vim_tmp"
 
-    if [ ! -d "$tmp_dir" ]; then
-        cmd "mkdir -p $tmp_dir"
-    fi
+	if [ ! -d "$tmp_dir" ]; then
+		cmd "mkdir -p $tmp_dir"
+	fi
 }
 
 version_ge(){
-    #echo $@
-    test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" == "$1"
+	#echo $@
+	test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" == "$1"
 }
 
 vim_version=$(nvim --version | grep NVIM\ v | sed 's/v//g' | awk '{print $2}')
 
 if version_ge $vim_version 0.5; then
-    setup_package_manager #安装包管理工具,并克隆预置插件
-    create_vim_tmp_dir  #创建vim缓存目录
-    if [ "$1" = 'yjiang' ];then
-        yjiang_symlinks     #自用习惯
-    fi
+	setup_package_manager #安装包管理工具,并克隆预置插件
+	create_vim_tmp_dir  #创建vim缓存目录
+	if [ "$1" = 'yjiang' ];then
+		yjiang_symlinks     #自用习惯
+	fi
 fi
 echo "Done."
 
 
 if [ ! -x "$(command -v rg)" ]; then
-    echo "某些插件依赖\`ripgrep\`, 请安装\`ripgrep\`"
+	echo "某些插件依赖\`ripgrep\`, 请安装\`ripgrep\`"
 fi
 
 if [ ! -x "$(command -v fzf)" ]; then
-    echo "某些插件依赖\`fzf\`, 请安装\`fzf\`"
+	echo "某些插件依赖\`fzf\`, 请安装\`fzf\`"
 fi

@@ -1,5 +1,5 @@
 require("toggleterm").setup{
-	open_mapping = [[<leader>tm]],
+	open_mapping = [[<leader>t]],
 	size = 80,
 	hide_numbers = true,
 	shade_filetypes = {},

@@ -3,15 +3,16 @@ vim.g.t_Co = 256
 --Only show 15 tabs
 vim.g.tabpagemax = 15
 --显示当前模式 - 插入/可视等
-vim.g.showmode = true
+vim.opt.showmode = true
 --突出显示当前行
-vim.g.cursorline = true
+vim.opt.cursorline = true
 --显示括号匹配
 vim.g.showmatch = true
 --开启实时搜索
-vim.g.incsearch = true
+vim.opt.incsearch = true
 --开启高亮
-vim.g.hlsearch = true
+vim.opt.hlsearch = true
+
 
 vim.cmd('highlight clear SignColumn')
 vim.cmd('highlight clear LineNr')
