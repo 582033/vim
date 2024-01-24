@@ -85,22 +85,32 @@ version_ge(){
 	test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" == "$1"
 }
 
-vim_version=$(nvim --version | grep NVIM\ v | sed 's/v//g' | awk '{print $2}')
 
+if command -v nvim >/dev/null 2>&1; then
+	echo "nvim已安装, 开始安装插件..."
+else
+	echo "nvim未安装"
+	exit
+fi
+
+vim_version=$(nvim --version | grep NVIM\ v | sed 's/v//g' | awk '{print $2}')
 if version_ge $vim_version 0.5; then
 	setup_package_manager #安装包管理工具,并克隆预置插件
 	create_vim_tmp_dir  #创建vim缓存目录
+
 	if [ "$1" = 'yjiang' ];then
 		yjiang_symlinks     #自用习惯
 	fi
+
+	if [ ! -x "$(command -v rg)" ]; then
+		echo "某些插件依赖\`ripgrep\`, 请安装\`ripgrep\`"
+	fi
+
+	if [ ! -x "$(command -v fzf)" ]; then
+		echo "某些插件依赖\`fzf\`, 请安装\`fzf\`"
+	fi
+else
+	echo "nvim版本过低,请升级到0.5+"
 fi
 echo "Done."
 
-
-if [ ! -x "$(command -v rg)" ]; then
-	echo "某些插件依赖\`ripgrep\`, 请安装\`ripgrep\`"
-fi
-
-if [ ! -x "$(command -v fzf)" ]; then
-	echo "某些插件依赖\`fzf\`, 请安装\`fzf\`"
-fi
