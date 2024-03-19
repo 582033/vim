@@ -33,7 +33,7 @@ require('go').setup({
 	goimport='gopls', -- goimport command, can be gopls[default] or goimport
 	fillstruct = 'gopls', -- default, can also use fillstruct
 	gofmt = 'gofumpt', --gofmt cmd,
-	max_line_len = 128, -- max line length in golines format, Target maximum line length for golines
+	--max_line_len = 128, -- max line length in golines format, Target maximum line length for golines
 	tag_transform = false, -- can be transform option("snakecase", "camelcase", etc) check gomodifytags for details and more options
 	tag_options = 'json=omitempty', -- sets options sent to gomodifytags, i.e., json=omitempty
 	gotests_template = "", -- sets gotests -template parameter (check gotests for details)
