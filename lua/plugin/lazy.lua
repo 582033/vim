@@ -93,8 +93,13 @@ require("lazy").setup({
 			require('plugin/go')
 		end
 	},
-	{'mfussenegger/nvim-dap'},
-	{'rcarriga/nvim-dap-ui'},
+	{
+		'rcarriga/nvim-dap-ui',
+		dependencies = {
+			'mfussenegger/nvim-dap',
+			'nvim-neotest/nvim-nio'
+		},
+	},
 	{'theHamsta/nvim-dap-virtual-text'},
 	-- 语法高亮(多语言支持); 语法树链接
 	-- https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
