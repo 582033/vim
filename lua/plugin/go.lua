@@ -1,10 +1,10 @@
 -- 保存时，自动运行gofmt + goimport
 
-local format_sync_grp = vim.api.nvim_create_augroup("GoImport", {})
+local format_sync_grp = vim.api.nvim_create_augroup("GoImports", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
-   require('go.format').goimport()
+   require('go.format').goimports()
   end,
   group = format_sync_grp,
 })
@@ -16,7 +16,7 @@ local function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-map("n", "<leader>i", ":GoImport<CR>", { silent = true})
+map("n", "<leader>i", ":GoImports<CR>", { silent = true})
 map("n", "<leader>ts", ":GoAddTest<CR>", { silent = true})
 map("n", "<leader>d", ":GoDebug<CR>", { silent = true})
 map("n", "<leader>dt", ":GoDbgStop<CR>", { silent = true})

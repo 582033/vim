@@ -75,7 +75,8 @@ cmp.setup {
 				-- Get the full snippet (and only keep first line)
 				local word = entry:get_insert_text()
 				if entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet then
-					word = vim.lsp.util.parse_snippet(word)
+					--word = vim.lsp.util.parse_snippet(word)
+					word = word:gsub("\n", " ")
 				end
 				word = str.oneline(word)
 
