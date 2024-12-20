@@ -1,6 +1,6 @@
 -- 保存时，自动运行gofmt + goimport
 
-local format_sync_grp = vim.api.nvim_create_augroup("GoImports", {})
+local format_sync_grp = vim.api.nvim_create_augroup("goimports", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
@@ -30,9 +30,9 @@ require('go').setup({
 	disable_defaults = false, -- true|false when true set false to all boolean settings and replace all table
 	-- settings with {}
 	go='go', -- go command, can be go[default] or go1.18beta1
-	goimport='gopls', -- goimport command, can be gopls[default] or goimport
+	goimports='gopls', -- goimport command, can be gopls[default] or goimport
 	fillstruct = 'gopls', -- default, can also use fillstruct
-	gofmt = 'gofumpt', --gofmt cmd,
+	gofmt = 'gopls', --gofmt cmd,
 	--max_line_len = 128, -- max line length in golines format, Target maximum line length for golines
 	tag_transform = false, -- can be transform option("snakecase", "camelcase", etc) check gomodifytags for details and more options
 	tag_options = 'json=omitempty', -- sets options sent to gomodifytags, i.e., json=omitempty
@@ -41,11 +41,12 @@ require('go').setup({
 	comment_placeholder = '' ,  -- comment_placeholder your cool placeholder e.g. 󰟓       
 	icons = {breakpoint = '🧘', currentpos = '🏃'},  -- setup to `false` to disable icons setup
 	verbose = false,  -- output loginf in messages
+	lsp_semantic_highlights = true, -- use highlights from gopls
 	lsp_cfg = false, -- true: use non-default gopls setup specified in go/lsp.lua
 	-- false: do nothing
 	-- if lsp_cfg is a table, merge table with with non-default gopls setup in go/lsp.lua, e.g.
 	--   lsp_cfg = {settings={gopls={matcher='CaseInsensitive', ['local'] = 'your_local_module_path', gofumpt = true }}}
-	lsp_gofumpt = false, -- true: set default gofmt in gopls format to gofumpt
+	lsp_gofumpt = true,
 	lsp_on_attach = nil, -- nil: use on_attach function defined in go/lsp.lua,
 	--      when lsp_cfg is true
 	-- if lsp_on_attach is a function: use this function as on_attach function for gopls

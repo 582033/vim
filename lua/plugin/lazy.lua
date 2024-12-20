@@ -13,17 +13,57 @@ end
 vim.opt.rtp:prepend(install_path)
 
 require("lazy").setup({
-	-- codeium
+	-- avante
 	{
-		'Exafunction/codeium.vim',
+		"yetone/avante.nvim",		
+		event = "VeryLazy",
+		lazy = false,
+		version = false,
+		build = "make",
 		dependencies = {
+			"stevearc/dressing.nvim",
 			"nvim-lua/plenary.nvim",
+			"MunifTanjim/nui.nvim",
 			"hrsh7th/nvim-cmp",
+			"nvim-tree/nvim-web-devicons", 
+			"zbirenbaum/copilot.lua", 
+			{
+				"HakonHarnes/img-clip.nvim",
+				event = "VeryLazy",
+				opts = {
+					default = {
+						embed_image_as_base64 = false,
+						prompt_for_file_name = false,
+						drag_and_drop = {
+							insert_mode = true,
+						},
+						use_absolute_path = true,
+					},
+				},
+			},
+			{
+				'MeanderingProgrammer/render-markdown.nvim',
+				opts = {
+					file_types = { "markdown", "Avante" },
+				},
+				ft = { "markdown", "Avante" },
+			},
 		},
 		config = function ()
-			--require("codeium").setup({ })
+			require("avante")
 		end
 	},
+	---- codeium
+	--{
+	--	'Exafunction/codeium.vim',
+	--	dependencies = {
+	--		"nvim-lua/plenary.nvim",
+	--		"hrsh7th/nvim-cmp",
+	--	},
+	--	config = function ()
+	--		--require("codeium").setup({ })
+	--	end
+	--},
 	--启动界面快速打开最近的文件
 	{'mhinz/vim-startify'},
 	-- nginx 配置文件高亮
@@ -90,8 +130,10 @@ require("lazy").setup({
 			"nvim-treesitter/nvim-treesitter",
 		},
 		config = function()
-			require('plugin/go')
-		end
+			require('plugin.go')
+		end,
+		event = {"CmdlineEnter"},
+		ft = {"go", 'gomod'},
 	},
 	{
 		'rcarriga/nvim-dap-ui',
@@ -177,17 +219,17 @@ require("lazy").setup({
 		end
 	},
 	--提示栏
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = {
-		},
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
-		config = function()
-			require('plugin.notice')
-		end
-	}
+	--{
+	--	"folke/noice.nvim",
+	--	event = "VeryLazy",
+	--	opts = {
+	--	},
+	--	dependencies = {
+	--		"MunifTanjim/nui.nvim",
+	--		"rcarriga/nvim-notify",
+	--	},
+	--	config = function()
+	--		require('plugin.notice')
+	--	end
+	--}
 })
