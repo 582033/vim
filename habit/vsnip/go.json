@@ -45,7 +45,7 @@
 		"prefix": ["log"],
 		"body": [
 			"if debugBytes, _ := json.Marshal(${1:Value}); len(debugBytes) > 0 {",
-				"\tlog.Debugf(\"RequestID:%v DebugMessage:%s Value:%s\", ctx.GetRequestID(), \"${1:Value}\", string(debugBytes))",
+				"\tfmt.Printf(\"RequestID:%v DebugMessage:%s Value:%s\", nil, \"${1:Value}\", string(debugBytes))",
 				"}"
 		],
 		"description": "Debug输出任意类型的对象"

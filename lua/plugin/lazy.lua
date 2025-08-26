@@ -14,56 +14,39 @@ vim.opt.rtp:prepend(install_path)
 
 require("lazy").setup({
 	-- avante
-	{
-		"yetone/avante.nvim",		
-		event = "VeryLazy",
-		lazy = false,
-		version = false,
-		build = "make",
-		dependencies = {
-			"stevearc/dressing.nvim",
-			"nvim-lua/plenary.nvim",
-			"MunifTanjim/nui.nvim",
-			"hrsh7th/nvim-cmp",
-			"nvim-tree/nvim-web-devicons", 
-			"zbirenbaum/copilot.lua", 
-			{
-				"HakonHarnes/img-clip.nvim",
-				event = "VeryLazy",
-				opts = {
-					default = {
-						embed_image_as_base64 = false,
-						prompt_for_file_name = false,
-						drag_and_drop = {
-							insert_mode = true,
-						},
-						use_absolute_path = true,
-					},
-				},
-			},
-			{
-				'MeanderingProgrammer/render-markdown.nvim',
-				opts = {
-					file_types = { "markdown", "Avante" },
-				},
-				ft = { "markdown", "Avante" },
-			},
-		},
-		config = function ()
-			require("avante")
-		end
-	},
-	---- codeium
 	--{
-	--	'Exafunction/codeium.vim',
+	--	"yetone/avante.nvim",		
+	--	event = "VeryLazy",
+	--	lazy = false,
+	--	version = false,
+	--	build = "make",
 	--	dependencies = {
+	--		"stevearc/dressing.nvim",
 	--		"nvim-lua/plenary.nvim",
-	--		"hrsh7th/nvim-cmp",
+	--		"MunifTanjim/nui.nvim",
+	--		{
+	--			'MeanderingProgrammer/render-markdown.nvim',
+	--			opts = {
+	--				file_types = { "markdown", "Avante" },
+	--			},
+	--			ft = { "markdown", "Avante" },
+	--		},
 	--	},
 	--	config = function ()
-	--		--require("codeium").setup({ })
+	--		require("avante")
 	--	end
 	--},
+	-- codeium
+	{
+		'Exafunction/codeium.vim',
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"hrsh7th/nvim-cmp",
+		},
+		config = function ()
+			--require("codeium").setup({ })
+		end
+	},
 	--启动界面快速打开最近的文件
 	{'mhinz/vim-startify'},
 	-- nginx 配置文件高亮
