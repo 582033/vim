@@ -80,6 +80,30 @@ create_vim_tmp_dir(){
 	fi
 }
 
+check_deps() {
+	local missing=()
+
+	command -v rg           >/dev/null 2>&1 || missing+=("ripgrep(rg) => fzf-lua 全文搜索依赖")
+	command -v fzf           >/dev/null 2>&1 || missing+=("fzf => fzf-lua 模糊搜索依赖")
+	command -v git           >/dev/null 2>&1 || missing+=("git => lazy.nvim/git-blame.nvim 依赖")
+	command -v curl          >/dev/null 2>&1 || missing+=("curl => nvim-treesitter 下载 parser 依赖")
+	command -v tar           >/dev/null 2>&1 || missing+=("tar => nvim-treesitter 解压 parser 依赖")
+	command -v tree-sitter    >/dev/null 2>&1 || missing+=("tree-sitter-cli => nvim-treesitter 编译 parser 依赖")
+	command -v cc >/dev/null 2>&1 || command -v gcc >/dev/null 2>&1 || command -v clang >/dev/null 2>&1 || missing+=("C 编译器(cc/gcc/clang) => nvim-treesitter 编译 parser 依赖")
+	command -v go             >/dev/null 2>&1 || missing+=("go => go.nvim Go 开发依赖")
+	command -v gopls         >/dev/null 2>&1 || missing+=("gopls => go.nvim LSP 依赖")
+
+	if [ ${#missing[@]} -eq 0 ]; then
+		echo "依赖检测通过, 所有外部工具已就绪"
+		return
+	fi
+
+	echo "缺少以下依赖, 请自行安装:"
+	for item in "${missing[@]}"; do
+		echo "  - $item"
+	done
+}
+
 version_ge(){
 	#echo $@
 	test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" == "$1"
@@ -102,13 +126,7 @@ if version_ge $vim_version 0.5; then
 		yjiang_symlinks     #自用习惯
 	fi
 
-	if [ ! -x "$(command -v rg)" ]; then
-		echo "某些插件依赖\`ripgrep\`, 请安装\`ripgrep\`"
-	fi
-
-	if [ ! -x "$(command -v fzf)" ]; then
-		echo "某些插件依赖\`fzf\`, 请安装\`fzf\`"
-	fi
+	check_deps  #检测外部依赖是否齐全
 else
 	echo "nvim版本过低,请升级到0.5+"
 fi

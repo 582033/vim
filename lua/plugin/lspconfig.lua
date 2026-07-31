@@ -1,8 +1,6 @@
 -- lsp diagnostic
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with( vim.lsp.diagnostic.on_publish_diagnostics, {
+vim.diagnostic.config({
 	-- Enable underline, use default values
-	-- Use a function to dynamically turn signs off
-	-- and on, using buffer local variables
 	underline = true,
 	-- Enable virtual text, override spacing to 2
 	virtual_text = {
@@ -10,17 +8,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with( vim.lsp.diag
 		-- Could be '●', '▎', 'x', '<'
 		prefix = '■',
 	},
-	-- [[
-	signs = function(bufnr, client_id)
-		local ok, result = pcall(vim.api.nvim_buf_get_var, bufnr, 'show_signs')
-		-- No buffer local variable set, so just enable by default
-		if not ok then
-			return true
-		end
-
-		return result
-	end,
-	--]]
 	signs = true,
 	-- Disable a feature
 	update_in_insert = false,
@@ -123,13 +110,12 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.mak
 --capabilities.textDocument.completion.completionItem.snippetSupport = true
 --capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 on_attach = function(client, bufnr)
-	-- 为方便使用，定义了两个工具函数
+	-- 为方便使用，定义了工具函数
 	local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-	local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
 	-- 配置标准补全快捷键
 	-- 在插入模式可以按 <c-x><c-o> 触发补全
-	buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+	vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
 	local opts = { noremap=true, silent=true }
 
@@ -149,12 +135,12 @@ on_attach = function(client, bufnr)
 	buf_set_keymap('n', 'sn', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
 	buf_set_keymap('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
 	-- 手工触发格式化
-	buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<cr>', opts)
+	buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.format({ async = true })<cr>', opts)
 	buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
 	buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-	buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>', opts)
+	buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
 	-- 列出所有语法错误列表
-	buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>', opts)
+	buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<cr>', opts)
 	-- 修改当前符号的名字
 	buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
 	buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>', opts)
@@ -166,9 +152,10 @@ lsp_flags = {
 	debounce_text_changes = 150,
 }
 
-require'lspconfig'.gopls.setup {
+vim.lsp.config('gopls', {
 	-- on_attach 表示当前缓冲加载服务端完成之后调用
 	on_attach = on_attach,
 	capabilities = capabilities,
 	flags = lsp_flags,
-}
+})
+vim.lsp.enable('gopls')
