@@ -42,6 +42,10 @@ if vim.fn.has('persistent_undo') == 1 then
 	vim.cmd('set undoreload=10000')
 end
 
+-- 关闭鼠标上报，交回终端处理，保证 iTerm2 等终端能直接拖拽选中并 Cmd+C 复制
+-- nvim 0.10+ 默认 mouse=nvi，会拦截拖拽事件
+vim.o.mouse = ''
+
 -- 从粘贴板操作
 vim.api.nvim_set_keymap('n', '<leader><c-c>', '"+y', {})
 vim.api.nvim_set_keymap('n', '<leader><c-v>', '"+p', {})
